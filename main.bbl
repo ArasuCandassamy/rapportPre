@@ -1,0 +1,409 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global/global}
+    \entry{ern_theory_2004}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=e85a4a72db4d523e27330f9eacdfc4a7}{%
+           family={Ern},
+           familyi={E\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=48c9c127feed47f563af418f0ac404bf}{%
+           family={Guermond},
+           familyi={G\bibinitperiod},
+           given={Jean-Luc},
+           giveni={J\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=1f6471951f0f7a6c875d495ed43ae0ec}{%
+           family={Antman},
+           familyi={A\bibinitperiod},
+           given={S.\bibnamedelimi S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a109e64d7dd72d3d3700a1a0216efd4b}{%
+           family={Marsden},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=5d6345132a2589d627a26c0778d1b0ad}{%
+           family={Sirovich},
+           familyi={S\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York}%
+      }
+      \strng{namehash}{eedb8ad8b78016d85df98a4344f910db}
+      \strng{fullhash}{eedb8ad8b78016d85df98a4344f910db}
+      \strng{fullhashraw}{eedb8ad8b78016d85df98a4344f910db}
+      \strng{bibnamehash}{eedb8ad8b78016d85df98a4344f910db}
+      \strng{authorbibnamehash}{eedb8ad8b78016d85df98a4344f910db}
+      \strng{authornamehash}{eedb8ad8b78016d85df98a4344f910db}
+      \strng{authorfullhash}{eedb8ad8b78016d85df98a4344f910db}
+      \strng{authorfullhashraw}{eedb8ad8b78016d85df98a4344f910db}
+      \strng{editorbibnamehash}{6961c45fe9f67645b9d5d0470e3e2361}
+      \strng{editornamehash}{6961c45fe9f67645b9d5d0470e3e2361}
+      \strng{editorfullhash}{6961c45fe9f67645b9d5d0470e3e2361}
+      \strng{editorfullhashraw}{6961c45fe9f67645b9d5d0470e3e2361}
+      \field{labelalpha}{EG04}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-4419-1918-2 978-1-4757-4355-5}
+      \field{series}{Applied {Mathematical} {Sciences}}
+      \field{title}{Theory and {Practice} of {Finite} {Elements}}
+      \field{urlday}{16}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{159}
+      \field{year}{2004}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-1-4757-4355-5
+      \endverb
+      \verb{file}
+      \verb PDF:/Users/arasucandassamy/Zotero/storage/KFL9ESFL/Ern et Guermond - 2004 - Theory and Practice of Finite Elements.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-1-4757-4355-5
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-1-4757-4355-5
+      \endverb
+    \endentry
+    \entry{brenner_mathematical_2008}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=77557a57c813819234bb79ef41fa2a22}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={Susanne\bibnamedelima C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=2c6b1842e47d9f9381084783103e62a5}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={L.\bibnamedelimi Ridgway},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=a109e64d7dd72d3d3700a1a0216efd4b}{%
+           family={Marsden},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=5d6345132a2589d627a26c0778d1b0ad}{%
+           family={Sirovich},
+           familyi={S\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=1f6471951f0f7a6c875d495ed43ae0ec}{%
+           family={Antman},
+           familyi={A\bibinitperiod},
+           given={S.\bibnamedelimi S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York}%
+      }
+      \strng{namehash}{39eb2167452bb7845bf6f353efee1344}
+      \strng{fullhash}{39eb2167452bb7845bf6f353efee1344}
+      \strng{fullhashraw}{39eb2167452bb7845bf6f353efee1344}
+      \strng{bibnamehash}{39eb2167452bb7845bf6f353efee1344}
+      \strng{authorbibnamehash}{39eb2167452bb7845bf6f353efee1344}
+      \strng{authornamehash}{39eb2167452bb7845bf6f353efee1344}
+      \strng{authorfullhash}{39eb2167452bb7845bf6f353efee1344}
+      \strng{authorfullhashraw}{39eb2167452bb7845bf6f353efee1344}
+      \strng{editorbibnamehash}{11658dabb2340ad63d0c951be9c1f775}
+      \strng{editornamehash}{11658dabb2340ad63d0c951be9c1f775}
+      \strng{editorfullhash}{11658dabb2340ad63d0c951be9c1f775}
+      \strng{editorfullhashraw}{11658dabb2340ad63d0c951be9c1f775}
+      \field{labelalpha}{BS08}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-75933-3 978-0-387-75934-0}
+      \field{series}{Texts in {Applied} {Mathematics}}
+      \field{title}{The {Mathematical} {Theory} of {Finite} {Element} {Methods}}
+      \field{volume}{15}
+      \field{year}{2008}
+      \verb{doi}
+      \verb 10.1007/978-0-387-75934-0
+      \endverb
+      \verb{file}
+      \verb PDF:/Users/arasucandassamy/Zotero/storage/PL5J5V4S/Brenner et Scott - 2008 - The Mathematical Theory of Finite Element Methods.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-0-387-75934-0
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-0-387-75934-0
+      \endverb
+    \endentry
+    \entry{gould_introduction_2013}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=814321b16f4422cc4e4d5e1070ce58ae}{%
+           family={Gould},
+           familyi={G\bibinitperiod},
+           given={Phillip\bibnamedelima L.},
+           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York}%
+      }
+      \strng{namehash}{814321b16f4422cc4e4d5e1070ce58ae}
+      \strng{fullhash}{814321b16f4422cc4e4d5e1070ce58ae}
+      \strng{fullhashraw}{814321b16f4422cc4e4d5e1070ce58ae}
+      \strng{bibnamehash}{814321b16f4422cc4e4d5e1070ce58ae}
+      \strng{authorbibnamehash}{814321b16f4422cc4e4d5e1070ce58ae}
+      \strng{authornamehash}{814321b16f4422cc4e4d5e1070ce58ae}
+      \strng{authorfullhash}{814321b16f4422cc4e4d5e1070ce58ae}
+      \strng{authorfullhashraw}{814321b16f4422cc4e4d5e1070ce58ae}
+      \field{labelalpha}{Gou13}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-4614-4832-7 978-1-4614-4833-4}
+      \field{title}{Introduction to {Linear} {Elasticity}}
+      \field{year}{2013}
+      \verb{doi}
+      \verb 10.1007/978-1-4614-4833-4
+      \endverb
+      \verb{file}
+      \verb PDF:/Users/arasucandassamy/Zotero/storage/K3NHP9IZ/Gould - 2013 - Introduction to Linear Elasticity.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/978-1-4614-4833-4
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/978-1-4614-4833-4
+      \endverb
+    \endentry
+    \entry{da_veiga_mathematical_2014}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c3d6e80df95d65c03c4a6a25bd7df3aa}{%
+           family={Da\bibnamedelima Veiga},
+           familyi={D\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={L.\bibnamedelimi Beirão},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=81aee8796fd7c7c099cdc144d9485292}{%
+           family={Buffa},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2d9505d780dcba8056fd96bdfefe5716}{%
+           family={Sangalli},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=834e46b0d767e21b1fa1763b72a3a831}{%
+           family={Vázquez},
+           familyi={V\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{14d8277fd5c57b6aad0b068671eb9c10}
+      \strng{fullhash}{2e01dd34b4bbf06c539a13bf97ab0c9e}
+      \strng{fullhashraw}{2e01dd34b4bbf06c539a13bf97ab0c9e}
+      \strng{bibnamehash}{14d8277fd5c57b6aad0b068671eb9c10}
+      \strng{authorbibnamehash}{14d8277fd5c57b6aad0b068671eb9c10}
+      \strng{authornamehash}{14d8277fd5c57b6aad0b068671eb9c10}
+      \strng{authorfullhash}{2e01dd34b4bbf06c539a13bf97ab0c9e}
+      \strng{authorfullhashraw}{2e01dd34b4bbf06c539a13bf97ab0c9e}
+      \field{labelalpha}{Da +14}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This review paper collects several results that form part of the theoretical foundation of isogeometric methods. We analyse variational techniques for the numerical resolution of PDEs based on splines or NURBS and we provide optimal approximation and error estimates in several cases of interest. The theory presented also includes estimates for T-splines, which are an extension of splines allowing for local refinement. In particular, we focus our attention on elliptic and saddle point problems, and we define spline edge and face elements. Our theoretical results are demonstrated by a rich set of numerical examples. Finally, we discuss implementation and efficiency together with preconditioning issues for the final linear system.}
+      \field{issn}{0962-4929, 1474-0508}
+      \field{journaltitle}{Acta Numerica}
+      \field{month}{5}
+      \field{title}{Mathematical analysis of variational isogeometric methods}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{23}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{157\bibrangedash 287}
+      \range{pages}{131}
+      \verb{doi}
+      \verb 10.1017/S096249291400004X
+      \endverb
+      \verb{file}
+      \verb PDF:/Users/arasucandassamy/Zotero/storage/YQQ79EWT/Da Veiga et al. - 2014 - Mathematical analysis of variational isogeometric methods.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/product/identifier/S096249291400004X/type/journal_article
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/product/identifier/S096249291400004X/type/journal_article
+      \endverb
+    \endentry
+    \entry{cinatl_finite}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=c9e14412fe44cf2468dafeb293104d12}{%
+           family={Cinatl},
+           familyi={C\bibinitperiod},
+           given={Emma},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Clemson University}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{c9e14412fe44cf2468dafeb293104d12}
+      \strng{fullhash}{c9e14412fe44cf2468dafeb293104d12}
+      \strng{fullhashraw}{c9e14412fe44cf2468dafeb293104d12}
+      \strng{bibnamehash}{c9e14412fe44cf2468dafeb293104d12}
+      \strng{authorbibnamehash}{c9e14412fe44cf2468dafeb293104d12}
+      \strng{authornamehash}{c9e14412fe44cf2468dafeb293104d12}
+      \strng{authorfullhash}{c9e14412fe44cf2468dafeb293104d12}
+      \strng{authorfullhashraw}{c9e14412fe44cf2468dafeb293104d12}
+      \field{labelalpha}{Cin18}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Finite {Element} {Discretizations} for {Linear} {Elasticity}}
+      \field{type}{phdthesis}
+      \field{year}{2018}
+    \endentry
+    \entry{guclu_psydac_2022}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=32b760c0d3454dc9de69b3589bcff00e}{%
+           family={Güçlü},
+           familyi={G\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a41366feab3b18b51741c3f945aa0e98}{%
+           family={Hadjout},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cf78aeba51d479cf9db983c56fbf6ebb}{%
+           family={Ratnani},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {CIMNE}%
+      }
+      \strng{namehash}{d0db1680e21b3b339c00a5604e59f41d}
+      \strng{fullhash}{d0db1680e21b3b339c00a5604e59f41d}
+      \strng{fullhashraw}{d0db1680e21b3b339c00a5604e59f41d}
+      \strng{bibnamehash}{d0db1680e21b3b339c00a5604e59f41d}
+      \strng{authorbibnamehash}{d0db1680e21b3b339c00a5604e59f41d}
+      \strng{authornamehash}{d0db1680e21b3b339c00a5604e59f41d}
+      \strng{authorfullhash}{d0db1680e21b3b339c00a5604e59f41d}
+      \strng{authorfullhashraw}{d0db1680e21b3b339c00a5604e59f41d}
+      \field{labelalpha}{GHR22}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Psydac is a Python 3 library for the solution of partial diﬀerential equations, which combines the convenience of a domain speciﬁc language with the speed of a high-performance parallel engine. Its main focus is on isogeometric analysis using tensor-product B-spline ﬁnite elements; to this end it uses an optimized sparse format called “stencil matrix”, which drastically reduces memory storage compared to the popular CSR/CSC formats. It supports multi-patch mapped geometries, and ﬁnite element exterior calculus. It can distribute each domain patch across many MPI processes, with multiple OpenMP threads operating in each block.}
+      \field{booktitle}{8th {European} {Congress} on {Computational} {Methods} in {Applied} {Sciences} and {Engineering}}
+      \field{shorttitle}{{PSYDAC}}
+      \field{title}{{PSYDAC}: a high-performance {IGA} library in {Python}}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.23967/eccomas.2022.227
+      \endverb
+      \verb{file}
+      \verb PDF:/Users/arasucandassamy/Zotero/storage/T2YTMAII/Güçlü et al. - 2022 - PSYDAC a high-performance IGA library in Python.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.scipedia.com/public/Guclu_et_al_2022a
+      \endverb
+      \verb{url}
+      \verb https://www.scipedia.com/public/Guclu_et_al_2022a
+      \endverb
+    \endentry
+    \entry{chen_variational}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2b01d303567b99056235e81bd74fd50e}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Long},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{2b01d303567b99056235e81bd74fd50e}
+      \strng{fullhash}{2b01d303567b99056235e81bd74fd50e}
+      \strng{fullhashraw}{2b01d303567b99056235e81bd74fd50e}
+      \strng{bibnamehash}{2b01d303567b99056235e81bd74fd50e}
+      \strng{authorbibnamehash}{2b01d303567b99056235e81bd74fd50e}
+      \strng{authornamehash}{2b01d303567b99056235e81bd74fd50e}
+      \strng{authorfullhash}{2b01d303567b99056235e81bd74fd50e}
+      \strng{authorfullhashraw}{2b01d303567b99056235e81bd74fd50e}
+      \field{labelalpha}{Che24}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This notes presents two variational formulations of linear elasticity: the displacement formulation and the stress-displacement (Hellinger-Reissner) formulation. The displacement formulation focuses on ﬁnding the displacement ﬁeld that minimizes a functional, while the stress-displacement formulation directly computes the stresses. The wellposedness of these formulations relies on Korn’s inequalities, inf-sup conditions, and the coercivity of bilinear forms.}
+      \field{title}{Variational Formulation of linear elasticity}
+      \field{year}{2024}
+      \verb{file}
+      \verb PDF:/Users/arasucandassamy/Zotero/storage/45DFEHUS/Chen - VARIATIONAL FORMULATION OF LINEAR ELASTICITY.pdf:application/pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
