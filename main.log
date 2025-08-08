@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.1)  7 AUG 2025 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.1)  8 AUG 2025 09:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1156,7 +1156,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 File: 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png Graphic file (type png)
 <use 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png>
 Package pdftex.def Info: 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png  used on input line 463.
-(pdftex.def)             Requested size: 460.93153pt x 459.76045pt.
+(pdftex.def)             Requested size: 409.72125pt x 408.68411pt.
 <figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png, id=202, 719.8092pt x 426.393pt>
 File: figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png>
@@ -1208,11 +1208,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14 <./figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png> <./degre5_nul.png>]
-<3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png, id=231, 1734.48pt x 1731.5892pt>
+<3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png, id=231, 1607.2848pt x 1300.86pt>
 File: 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png Graphic file (type png)
 <use 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png>
 Package pdftex.def Info: 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png  used on input line 567.
-(pdftex.def)             Requested size: 358.50317pt x 357.88449pt.
+(pdftex.def)             Requested size: 409.72125pt x 331.60574pt.
 <figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png, id=232, 719.8092pt x 426.393pt>
 File: figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png>
@@ -1226,12 +1226,12 @@ Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_3_lambda=1.25
 <figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png, id=234, 715.473pt x 426.393pt>
 File: figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png  used on input line 589.
+Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png  used on input line 588.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
 <figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png, id=235, 714.7503pt x 426.393pt>
 File: figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png  used on input line 595.
+Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png  used on input line 594.
 (pdftex.def)             Requested size: 250.95612pt x 149.70822pt.
 
 
@@ -1247,42 +1247,47 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15 <./3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png>]
-<convergence_degree_2_non_mixed_kappa=1.25.png, id=244, 619.3539pt x 398.9304pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16 <./figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png>]
+<convergence_degree_2_non_mixed_kappa=1.25.png, id=255, 619.3539pt x 398.9304pt>
 File: convergence_degree_2_non_mixed_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_2_non_mixed_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=1.25.png  used on input line 612.
+Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=1.25.png  used on input line 629.
 (pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=10.0.png, id=245, 619.3539pt x 398.9304pt>
+<convergence_degree_2_non_mixed_kappa=10.0.png, id=256, 619.3539pt x 398.9304pt>
 File: convergence_degree_2_non_mixed_kappa=10.0.png Graphic file (type png)
 <use convergence_degree_2_non_mixed_kappa=10.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=10.0.png  used on input line 617.
+Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=10.0.png  used on input line 634.
 (pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=100.0.png, id=246, 619.3539pt x 398.9304pt>
+<convergence_degree_2_non_mixed_kappa=100.0.png, id=257, 619.3539pt x 398.9304pt>
 File: convergence_degree_2_non_mixed_kappa=100.0.png Graphic file (type png)
 <use convergence_degree_2_non_mixed_kappa=100.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=100.0.png  used on input line 625.
+Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=100.0.png  used on input line 642.
 (pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=1000.0.png, id=247, 619.3539pt x 398.9304pt>
+<convergence_degree_2_non_mixed_kappa=1000.0.png, id=258, 619.3539pt x 398.9304pt>
 File: convergence_degree_2_non_mixed_kappa=1000.0.png Graphic file (type png)
 <use convergence_degree_2_non_mixed_kappa=1000.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=1000.0.png  used on input line 630.
+Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=1000.0.png  used on input line 647.
 (pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=10000.0.png, id=248, 619.3539pt x 398.9304pt>
+<convergence_degree_2_non_mixed_kappa=10000.0.png, id=259, 619.3539pt x 398.9304pt>
 File: convergence_degree_2_non_mixed_kappa=10000.0.png Graphic file (type png)
 <use convergence_degree_2_non_mixed_kappa=10000.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=10000.0.png  used on input line 636.
+Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=10000.0.png  used on input line 653.
 (pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=100000.0.png, id=249, 619.3539pt x 398.9304pt>
+<convergence_degree_2_non_mixed_kappa=100000.0.png, id=260, 619.3539pt x 398.9304pt>
 File: convergence_degree_2_non_mixed_kappa=100000.0.png Graphic file (type png)
 <use convergence_degree_2_non_mixed_kappa=100000.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=100000.0.png  used on input line 641.
+Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=100000.0.png  used on input line 658.
 (pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1290,37 +1295,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16 <./figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png> <./convergence_degree_2_non_mixed_kappa=1.25.png> <./convergence_degree_2_non_mixed_kappa=10.0.png>]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[17 <./convergence_degree_2_non_mixed_kappa=100.0.png> <./convergence_degree_2_non_mixed_kappa=1000.0.png> <./convergence_degree_2_non_mixed_kappa=10000.0.png> <./convergence_degree_2_non_mixed_kappa=100000.0.png>]
+[17 <./convergence_degree_2_non_mixed_kappa=1.25.png> <./convergence_degree_2_non_mixed_kappa=10.0.png> <./convergence_degree_2_non_mixed_kappa=100.0.png> <./convergence_degree_2_non_mixed_kappa=1000.0.png> <./convergence_degree_2_non_mixed_kappa=10000.0.png> <./convergence_degree_2_non_mixed_kappa=100000.0.png>]
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 704.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 721.
 <convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png, id=275, 899.7615pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 714.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 731.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
 <convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png, id=276, 899.7615pt x 565.8741pt>
 File: convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 720.
+Package pdftex.def Info: convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 737.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
 <convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png, id=277, 899.7615pt x 563.706pt>
 File: convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 727.
+Package pdftex.def Info: convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 744.
 (pdftex.def)             Requested size: 250.95612pt x 157.22589pt.
 <convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png, id=278, 899.7615pt x 563.706pt>
 File: convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 733.
+Package pdftex.def Info: convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 750.
 (pdftex.def)             Requested size: 250.95612pt x 157.22589pt.
 
 
@@ -1328,32 +1324,32 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 744.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 761.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
 <convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png, id=279, 899.7615pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png  used on input line 749.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png  used on input line 766.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
 <convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png, id=280, 899.7615pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png  used on input line 755.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png  used on input line 772.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
 <convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png, id=281, 899.7615pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png  used on input line 760.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png  used on input line 777.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
 <convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png, id=282, 899.0388pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png  used on input line 766.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png  used on input line 783.
 (pdftex.def)             Requested size: 250.95612pt x 157.95149pt.
 <convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png, id=283, 899.0388pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png  used on input line 771.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png  used on input line 788.
 (pdftex.def)             Requested size: 250.95612pt x 157.95149pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1427,18 +1423,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32038 strings out of 473190
- 615745 string characters out of 5715801
- 1498153 words of memory out of 5000000
- 54731 multiletter control sequences out of 15000+600000
+ 32045 strings out of 473190
+ 615914 string characters out of 5715801
+ 1498223 words of memory out of 5000000
+ 54738 multiletter control sequences out of 15000+600000
  631202 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,93p,1153b,1527s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,20n,93p,1180b,1527s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (22 pages, 7019230 bytes).
+Output written on main.pdf (22 pages, 6473277 bytes).
 PDF statistics:
- 446 PDF objects out of 1000 (max. 8388607)
- 316 compressed objects within 4 object streams
+ 447 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
  67 named destinations out of 1000 (max. 500000)
  275 words of extra memory for PDF output out of 10000 (max. 10000000)
 

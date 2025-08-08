@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1754572887.31941 "main.bcf" "main.bbl" "main" 1754573584.22714 0
-  "main.bcf" 1754573584.05456 109222 59401a73fe7ac69ef3a755a062040519 "pdflatex"
+["biber main"] 1754637138.9267 "main.bcf" "main.bbl" "main" 1754639472.74415 0
+  "main.bcf" 1754639472.60268 109222 59401a73fe7ac69ef3a755a062040519 "pdflatex"
   "sample.bib" 1750927284.74923 7690 8d8d566ffc00274bc5a8be08bc242356 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1754573578.87882 "/Users/arasucandassamy/Documents/PRe/Rapport PRE/main.tex" "main.pdf" "main" 1754573584.22748 0
-  "/Users/arasucandassamy/Documents/PRe/Rapport PRE/main.tex" 1754573562.02813 41417 44a97ed8a49df15222271167cfab4ed0 ""
+["pdflatex"] 1754639468.36874 "/Users/arasucandassamy/Documents/PRe/Rapport PRE/main.tex" "main.pdf" "main" 1754639472.74446 0
+  "/Users/arasucandassamy/Documents/PRe/Rapport PRE/main.tex" 1754639468.1571 43157 f3eb40532f7fb3808eab0922b7d1a9c5 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -236,7 +236,7 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1754042191 3345732 fe8a9d50559e7f1ebc20a4bd2ac7f85f ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png" 1750672040 2444505 22a35ba8958979978108915dacec2327 ""
-  "3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png" 1750839272.93757 2376669 20b44304129901a8a5ce23be7049cf40 ""
+  "3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png" 1754638733.08777 1725888 6aa7db863cb238efc3d7460b4da96c8e ""
   "convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png" 1750932248.89601 112416 271ab221cf88589ea6d7b1b3fc2ccbb1 ""
   "convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png" 1750925512.26209 108212 193c68f5ab8bd4122491f3b6122223c9 ""
   "convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png" 1750925655.72287 99696 942d5ab20132838bd2c21a19b071e78b ""
@@ -263,12 +263,12 @@
   "figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png" 1754558913.59016 74257 dc1203784d90b178327bbd5924b98aee ""
   "logoENSTA.jpg" 1750672040 643399 78ff1a3130b8ea6ee4290fc048e5a431 ""
   "logoMPI.png" 1750672040 31496 cb174ea2faa421a3f6d5dd64d72a7b8d ""
-  "main.aux" 1754573584.05191 11122 fb808eab4a7eebcb2e02c87689e1ef98 "pdflatex"
-  "main.bbl" 1754572888.75386 17648 a9edcde583c7b32b2820008905635004 "biber main"
-  "main.out" 1754573584.05354 3021 90aacb6c6cc56cca413b9562f79b29d8 "pdflatex"
-  "main.run.xml" 1754573584.05532 2307 2b12b76ce598b404d635c8a343907857 "pdflatex"
-  "main.tex" 1754573562.02813 41417 44a97ed8a49df15222271167cfab4ed0 ""
-  "main.toc" 1754573584.05539 1316 ba225df46fa329cc1d4e9e30ea8bbf06 "pdflatex"
+  "main.aux" 1754639472.6006 11386 8bdf743009d63615a4f84864aa8804d9 "pdflatex"
+  "main.bbl" 1754637140.07129 17648 a9edcde583c7b32b2820008905635004 "biber main"
+  "main.out" 1754639472.60171 3021 90aacb6c6cc56cca413b9562f79b29d8 "pdflatex"
+  "main.run.xml" 1754639472.60343 2307 2b12b76ce598b404d635c8a343907857 "pdflatex"
+  "main.tex" 1754639468.1571 43157 f3eb40532f7fb3808eab0922b7d1a9c5 ""
+  "main.toc" 1754639472.60351 1316 bf8ded240069c54335253e2bf867d6d5 "pdflatex"
   "omega_domain.jpeg" 1751010600 308160 55d75d2239a4deb3e11c03fa35ef69e9 ""
   "psydac_fonc_1.png" 1750672040 241321 719bc4a0edba576076be1a3b9d9ac30b ""
   (generated)

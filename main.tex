@@ -460,7 +460,7 @@ By solving the problem Dirichlet Homogeneous Boundary conditions on the whole bo
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\linewidth]{3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png}
+    \includegraphics[width=0.8\linewidth]{3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png}
     \caption{Plots comparison between the simulated and real $u_{e,3}$ with the error, for different plane $z$, with $d=2$ and $n_{\text{cell}} = 64$}
     \label{fig:3D_plots}
 \end{figure}
@@ -521,18 +521,18 @@ For this numerical resolution, I have used \textbf{GMRES} method to solve the li
 	\caption{Error plot between exact and numerical solution with degree 5 B-Splines with "higher" tolerance for the solvera}
 \end{figure}
 
-But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-Splines (at least for the tested configurations).
+But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-Splines (at least for the tested configurations). This plateau can be explained by the matrix of the bilinear form $a(.,.)$ which is ill-conditioned. Moreover, the bad conditioning can become worse with more refined mesh and higher degree B-Splines (as the convergence is faster).
 
 \subsection{Mixed boundary conditions}
 
-Then, I have made a simulation with Mixed Boundary Conditions, as it is introduced in \eqref{eq:strong_form}, with also non-homogeneous dirichlet boundary conditions.
+Then, I have made a simulation with Mixed Boundary Conditions, as it is introduced in \eqref{eq:strong_form}, with also non-homogeneous Dirichlet boundary conditions.
 
 Again, $\Omega = [0,1]^3$, with : 
 \begin{equation*}
 	\begin{aligned}
-		& \partial \Omega_{\text{DH}} = \left\{  (x,y,z) \in \partial\Omega \left| z = 0 \text{ or } z = 1 \right.  \right\} \\ 
-		& \partial \Omega_{\text{DNH}} = \left\{  (x,y,z) \in \partial\Omega \left| x = 0 \text{ or } x = 1 \right.  \right\} \\
-		& \partial \Omega_{\text{N}} = \left\{  (x,y,z) \in \partial\Omega \left| y = 0 \text{ or } y = 1 \right.  \right\}.
+		& \partial \Omega_{\text{DH}} = \left\{  (x,y,z) \in \partial\Omega \left| z = 0 \text{ or } z = 1 \right.  \right\} \hspace{0.5cm} 
+		\partial \Omega_{\text{DNH}} = \left\{  (x,y,z) \in \partial\Omega \left| x = 0 \text{ or } x = 1 \right.  \right\} \\
+		& \partial \Omega_{\text{N}} = \left\{  (x,y,z) \in \partial\Omega \left| y = 0 \text{ or } y = 1 \right.  \right\}
 	\end{aligned}
 \end{equation*}
 For that purpose, $\vec u_e, \vec f, \vec t_N$ and $\vec g$ are now defined as : 
@@ -564,7 +564,7 @@ Then, we can get the same plots and interpretation as before.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png}
+	\includegraphics[width=0.8\linewidth]{3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png}
 	\caption{Plots comparison between the simulated and real $u_{e,3}$ with the error, for different plane $z$, with $d=2$ and $n_{\text{cell}} = 128$}
 	\label{fig:3D_plots_mixed_BC}
 \end{figure}
@@ -583,7 +583,6 @@ Then, we can get the same plots and interpretation as before.
 		\caption{$d=3$}
 		\label{fig:deg3_NM}
 	\end{subfigure}
-	\\
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png}
@@ -600,8 +599,26 @@ Then, we can get the same plots and interpretation as before.
 	\label{fig:four_errors_graphs}
 \end{figure}
 
-\newpage 
-For fixed value $\lambda = 1.25$ and $\mu = 1$, the codes seems to give a numerical solution that converges to the theoritical one with the expected order. 
+\newpage
+For fixed value $\lambda = 1.25$ and $\mu = 1$, the codes seems to give a numerical solution that converges to the theoritical one with the expected order. We can notice that the plateau effect comes back and appears faster than in the case of Dirichlet Homogeneous Boundary Conditions. The $L^2$ error seems to converge to a value slightly higher than $10^{-8}$, while the $H^1$ error converges to a value slightly higher than $10^{-5}$, and this phenomena is more pronounced for higher degree B-Splines. The limit value of each error seems to be the same for all degree B-Splines, when the $L^2$ error becomes lower than $10^{-7}$ and the $H^1$ error becomes lower than $10^{-5}$. So, this plateau effect is not due to the degree of B-Splines, but rather to the ill-conditionedness of the matrix of the bilinear form $a(.,.)$. This ill-conditionedness becomes worse with the refinement of the mesh and the increase of the degree of B-Splines. A way to verify this hypothesis is to solve the linear system with a different solver, with a preconditioner applyied to the matrix before the resolution.
+
+These simulations have been made with $\lambda = 1.25$ and $\mu = 1$. We can now look at them for more realistic values of $\lambda$ and $\mu$. The following table \ref{tab:lame_coefficients} gives the Lamé coefficients for different materials. 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Material & $\lambda$ (GPa) & $\mu$ (GPa) \\
+\hline
+Steel & 120 & 80 \\
+\hline
+Concrete & 17 & 14 \\
+\hline
+Rubber & 0.16 & 0.00033 \\
+\hline
+\end{tabular}
+\caption{Lamé coefficients for different materials}
+\label{tab:lame_coefficients}
+\end{table}
 
 But, the estimates \eqref{eq:convergence_estimates} depends on $\frac{\lambda}{\mu}$, and when $\lambda \rightarrow + \infty$ (which is the case for incompressible material), the estimates doesn't hold. Numerically, it is hard to get a value goes to $+\infty$, but for increasing values of $\lambda$, we can get plots from figure \ref{fig:error_kappa} below. 
 
@@ -617,8 +634,8 @@ But, the estimates \eqref{eq:convergence_estimates} depends on $\frac{\lambda}{\
 		\includegraphics[width=\textwidth]{convergence_degree_2_non_mixed_kappa=10.0}
 		\caption{$\lambda=10$}
 	\end{subfigure}
-\end{figure}
-\begin{figure}[!h]
+% \end{figure}
+% \begin{figure}[!h]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
