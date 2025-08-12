@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.1)  8 AUG 2025 09:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.10)  12 AUG 2025 19:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -154,7 +154,9 @@ File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen146
 \Gin@req@width=\dimen147
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+ Excluding comment 'comment') (/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
@@ -222,7 +224,7 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yc=\dimen165
 \pgf@xd=\dimen166
 \pgf@yd=\dimen167
-\w@pgf@writea=\write3
+\w@pgf@writea=\write4
 \r@pgf@reada=\read2
 \c@pgf@counta=\count286
 \c@pgf@countb=\count287
@@ -575,59 +577,104 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count325
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count326
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks47
+\verbatim@line=\toks48
+\verbatim@in@stream=\read3
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box67
+\tcb@upperbox=\box68
+\tcb@lowerbox=\box69
+\tcb@phantombox=\box70
+\c@tcbbreakpart=\count327
+\c@tcblayer=\count328
+\c@tcolorbox@number=\count329
+\l__tcobox_tmpa_box=\box71
+\l__tcobox_tmpa_dim=\dimen288
+\tcb@temp=\box72
+\tcb@temp=\box73
+\tcb@temp=\box74
+\tcb@temp=\box75
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.4.1'
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box76
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.4.1'
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.4.1'
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+)
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box77
+\tcb@totalupperbox=\box78
+\tcb@totallowerbox=\box79
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count327
+\lrq@indent=\count330
  (/usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count328
-\c@listtotal=\count329
-\c@listcount=\count330
-\c@liststart=\count331
-\c@liststop=\count332
-\c@citecount=\count333
-\c@citetotal=\count334
-\c@multicitecount=\count335
-\c@multicitetotal=\count336
-\c@instcount=\count337
-\c@maxnames=\count338
-\c@minnames=\count339
-\c@maxitems=\count340
-\c@minitems=\count341
-\c@citecounter=\count342
-\c@maxcitecounter=\count343
-\c@savedcitecounter=\count344
-\c@uniquelist=\count345
-\c@uniquename=\count346
-\c@refsection=\count347
-\c@refsegment=\count348
-\c@maxextratitle=\count349
-\c@maxextratitleyear=\count350
-\c@maxextraname=\count351
-\c@maxextradate=\count352
-\c@maxextraalpha=\count353
-\c@abbrvpenalty=\count354
-\c@highnamepenalty=\count355
-\c@lownamepenalty=\count356
-\c@maxparens=\count357
-\c@parenlevel=\count358
-\blx@tempcnta=\count359
-\blx@tempcntb=\count360
-\blx@tempcntc=\count361
-\c@blx@maxsection=\count362
-\blx@maxsegment@0=\count363
-\blx@notetype=\count364
-\blx@parenlevel@text=\count365
-\blx@parenlevel@foot=\count366
-\blx@sectionciteorder@0=\count367
-\blx@sectionciteorderinternal@0=\count368
-\blx@entrysetcounter=\count369
-\blx@biblioinstance=\count370
+\c@tabx@nest=\count331
+\c@listtotal=\count332
+\c@listcount=\count333
+\c@liststart=\count334
+\c@liststop=\count335
+\c@citecount=\count336
+\c@citetotal=\count337
+\c@multicitecount=\count338
+\c@multicitetotal=\count339
+\c@instcount=\count340
+\c@maxnames=\count341
+\c@minnames=\count342
+\c@maxitems=\count343
+\c@minitems=\count344
+\c@citecounter=\count345
+\c@maxcitecounter=\count346
+\c@savedcitecounter=\count347
+\c@uniquelist=\count348
+\c@uniquename=\count349
+\c@refsection=\count350
+\c@refsegment=\count351
+\c@maxextratitle=\count352
+\c@maxextratitleyear=\count353
+\c@maxextraname=\count354
+\c@maxextradate=\count355
+\c@maxextraalpha=\count356
+\c@abbrvpenalty=\count357
+\c@highnamepenalty=\count358
+\c@lownamepenalty=\count359
+\c@maxparens=\count360
+\c@parenlevel=\count361
+\blx@tempcnta=\count362
+\blx@tempcntb=\count363
+\blx@tempcntc=\count364
+\c@blx@maxsection=\count365
+\blx@maxsegment@0=\count366
+\blx@notetype=\count367
+\blx@parenlevel@text=\count368
+\blx@parenlevel@foot=\count369
+\blx@sectionciteorder@0=\count370
+\blx@sectionciteorderinternal@0=\count371
+\blx@entrysetcounter=\count372
+\blx@biblioinstance=\count373
 \labelnumberwidth=\skip75
 \labelalphawidth=\skip76
 \biblabelsep=\skip77
@@ -636,12 +683,12 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \bibinitsep=\skip80
 \bibparsep=\skip81
 \bibhang=\skip82
-\blx@bcfin=\read3
-\blx@bcfout=\write4
+\blx@bcfin=\read4
+\blx@bcfout=\write5
 \blx@langwohyphens=\language90
-\c@mincomprange=\count371
-\c@maxcomprange=\count372
-\c@mincompwidth=\count373
+\c@mincomprange=\count374
+\c@maxcomprange=\count375
+\c@mincompwidth=\count376
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -651,74 +698,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count374
-\c@savedafterword=\count375
-\c@annotator=\count376
-\c@savedannotator=\count377
-\c@author=\count378
-\c@savedauthor=\count379
-\c@bookauthor=\count380
-\c@savedbookauthor=\count381
-\c@commentator=\count382
-\c@savedcommentator=\count383
-\c@editor=\count384
-\c@savededitor=\count385
-\c@editora=\count386
-\c@savededitora=\count387
-\c@editorb=\count388
-\c@savededitorb=\count389
-\c@editorc=\count390
-\c@savededitorc=\count391
-\c@foreword=\count392
-\c@savedforeword=\count393
-\c@holder=\count394
-\c@savedholder=\count395
-\c@introduction=\count396
-\c@savedintroduction=\count397
-\c@namea=\count398
-\c@savednamea=\count399
-\c@nameb=\count400
-\c@savednameb=\count401
-\c@namec=\count402
-\c@savednamec=\count403
-\c@translator=\count404
-\c@savedtranslator=\count405
-\c@shortauthor=\count406
-\c@savedshortauthor=\count407
-\c@shorteditor=\count408
-\c@savedshorteditor=\count409
-\c@labelname=\count410
-\c@savedlabelname=\count411
-\c@institution=\count412
-\c@savedinstitution=\count413
-\c@lista=\count414
-\c@savedlista=\count415
-\c@listb=\count416
-\c@savedlistb=\count417
-\c@listc=\count418
-\c@savedlistc=\count419
-\c@listd=\count420
-\c@savedlistd=\count421
-\c@liste=\count422
-\c@savedliste=\count423
-\c@listf=\count424
-\c@savedlistf=\count425
-\c@location=\count426
-\c@savedlocation=\count427
-\c@organization=\count428
-\c@savedorganization=\count429
-\c@origlocation=\count430
-\c@savedoriglocation=\count431
-\c@origpublisher=\count432
-\c@savedorigpublisher=\count433
-\c@publisher=\count434
-\c@savedpublisher=\count435
-\c@language=\count436
-\c@savedlanguage=\count437
-\c@origlanguage=\count438
-\c@savedoriglanguage=\count439
-\c@pageref=\count440
-\c@savedpageref=\count441
+\c@afterword=\count377
+\c@savedafterword=\count378
+\c@annotator=\count379
+\c@savedannotator=\count380
+\c@author=\count381
+\c@savedauthor=\count382
+\c@bookauthor=\count383
+\c@savedbookauthor=\count384
+\c@commentator=\count385
+\c@savedcommentator=\count386
+\c@editor=\count387
+\c@savededitor=\count388
+\c@editora=\count389
+\c@savededitora=\count390
+\c@editorb=\count391
+\c@savededitorb=\count392
+\c@editorc=\count393
+\c@savededitorc=\count394
+\c@foreword=\count395
+\c@savedforeword=\count396
+\c@holder=\count397
+\c@savedholder=\count398
+\c@introduction=\count399
+\c@savedintroduction=\count400
+\c@namea=\count401
+\c@savednamea=\count402
+\c@nameb=\count403
+\c@savednameb=\count404
+\c@namec=\count405
+\c@savednamec=\count406
+\c@translator=\count407
+\c@savedtranslator=\count408
+\c@shortauthor=\count409
+\c@savedshortauthor=\count410
+\c@shorteditor=\count411
+\c@savedshorteditor=\count412
+\c@labelname=\count413
+\c@savedlabelname=\count414
+\c@institution=\count415
+\c@savedinstitution=\count416
+\c@lista=\count417
+\c@savedlista=\count418
+\c@listb=\count419
+\c@savedlistb=\count420
+\c@listc=\count421
+\c@savedlistc=\count422
+\c@listd=\count423
+\c@savedlistd=\count424
+\c@liste=\count425
+\c@savedliste=\count426
+\c@listf=\count427
+\c@savedlistf=\count428
+\c@location=\count429
+\c@savedlocation=\count430
+\c@organization=\count431
+\c@savedorganization=\count432
+\c@origlocation=\count433
+\c@savedoriglocation=\count434
+\c@origpublisher=\count435
+\c@savedorigpublisher=\count436
+\c@publisher=\count437
+\c@savedpublisher=\count438
+\c@language=\count439
+\c@savedlanguage=\count440
+\c@origlanguage=\count441
+\c@savedoriglanguage=\count442
+\c@pageref=\count443
+\c@savedpageref=\count444
 \shorthandwidth=\skip83
 \shortjournalwidth=\skip84
 \shortserieswidth=\skip85
@@ -738,23 +785,33 @@ Package biblatex Info: ... file 'blx-compat.def' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 )
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-bibtex.def
+File: blx-bibtex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back bibtex backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count442
-\c@textcitetotal=\count443
-\c@textcitemaxnames=\count444
-\c@biburlbigbreakpenalty=\count445
-\c@biburlbreakpenalty=\count446
-\c@biburlnumpenalty=\count447
-\c@biburlucpenalty=\count448
-\c@biburllcpenalty=\count449
+\c@textcitecount=\count445
+\c@textcitetotal=\count446
+\c@textcitemaxnames=\count447
+\c@biburlbigbreakpenalty=\count448
+\c@biburlbreakpenalty=\count449
+\c@biburlnumpenalty=\count450
+\c@biburlucpenalty=\count451
+\c@biburllcpenalty=\count452
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count450
+\c@smartand=\count453
 )
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
@@ -764,8 +821,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count451
-\c@bbx:relatedtotal=\count452
+\c@bbx:relatedcount=\count454
+\c@bbx:relatedtotal=\count455
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -796,56 +853,52 @@ Package biblatex Info: ... and expl3
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 ))
-\c@theorem=\count453
-\c@corollary=\count454
-\@quotelevel=\count455
-\@quotereset=\count456
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 122.
+\c@theorem=\count456
+\c@corollary=\count457
+\@quotelevel=\count458
+\@quotereset=\count459
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 128.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./main.aux
-
-LaTeX Warning: Label `fig:four_errors_graphs' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-Package hyperref Info: Link coloring OFF on input line 122.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+Package hyperref Info: Link coloring OFF on input line 128.
  (./main.out) (./main.out)
-\@outlinefile=\write5
-\openout5 = `main.out'.
+\@outlinefile=\write6
+\openout6 = `main.out'.
 
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count457
-\scratchdimen=\dimen288
-\scratchbox=\box67
-\nofMPsegments=\count458
-\nofMParguments=\count459
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count460
-\MPscratchDim=\dimen289
-\MPnumerator=\count461
-\makeMPintoPDFobject=\count462
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count460
+\scratchdimen=\dimen289
+\scratchbox=\box80
+\nofMPsegments=\count461
+\nofMParguments=\count462
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count463
+\MPscratchDim=\dimen290
+\MPnumerator=\count464
+\makeMPintoPDFobject=\count465
+\everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -868,8 +921,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \textheight=731.23584pt
 * \oddsidemargin=-29.59087pt
 * \evensidemargin=-29.59087pt
-* \topmargin=-52.36449pt
-* \headheight=12.0pt
+* \topmargin=-55.36449pt
+* \headheight=15.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
@@ -896,56 +949,59 @@ File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `main.bcf'.
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout5 = `main-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 122.
-Package biblatex Info: Reference segment=0 on input line 122.
-<logoENSTA.jpg, id=62, 5400.175pt x 4043.105pt>
+Package biblatex Info: Reference section=0 on input line 128.
+Package biblatex Info: Reference segment=0 on input line 128.
+<logoENSTA.jpg, id=98, 5400.175pt x 4043.105pt>
 File: logoENSTA.jpg Graphic file (type jpg)
 <use logoENSTA.jpg>
-Package pdftex.def Info: logoENSTA.jpg  used on input line 127.
+Package pdftex.def Info: logoENSTA.jpg  used on input line 133.
 (pdftex.def)             Requested size: 142.26378pt x 106.48166pt.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 128.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 134.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 128.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 134.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 128.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 134.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 128.
+(Font)              <12> on input line 134.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 128.
+(Font)              <8> on input line 134.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 128.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 128.
+(Font)              <6> on input line 134.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 134.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 128.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 134.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<logoMPI.png, id=63, 1505.625pt x 855.195pt>
+<logoMPI.png, id=99, 1505.625pt x 855.195pt>
 File: logoMPI.png Graphic file (type png)
 <use logoMPI.png>
-Package pdftex.def Info: logoMPI.png  used on input line 131.
+Package pdftex.def Info: logoMPI.png  used on input line 137.
 (pdftex.def)             Requested size: 142.26378pt x 80.80069pt.
 
-Overfull \hbox (122.67204pt too wide) in paragraph at lines 126--133
+Overfull \hbox (122.67204pt too wide) in paragraph at lines 132--139
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--175
+Underfull \hbox (badness 10000) in paragraph at lines 163--182
 
  []
 
@@ -955,47 +1011,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--175
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc} <./logoENSTA.jpg> <./logoMPI.png>]
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [2]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [4]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5] (./main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
-\tf@toc=\write6
-\openout6 = `main.toc'.
+\tf@toc=\write7
+\openout7 = `main.toc'.
 
 
 
@@ -1004,234 +1032,177 @@ File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7
 
 ]
 Chapter 2.
-<omega_domain.jpeg, id=121, 1754.555pt x 1003.75pt>
+<omega_domain.jpeg, id=166, 1754.555pt x 1003.75pt>
 File: omega_domain.jpeg Graphic file (type jpg)
 <use omega_domain.jpeg>
-Package pdftex.def Info: omega_domain.jpeg  used on input line 257.
+Package pdftex.def Info: omega_domain.jpeg  used on input line 264.
 (pdftex.def)             Requested size: 312.41158pt x 178.72208pt.
 
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./omega_domain.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 328--330
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
 
  []
 
 
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [9{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 367.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
+Overfull \hbox (14.67871pt too wide) in paragraph at lines 363--368
+\OT1/lmr/m/it/12 bounded do-main . Then, one can show that there ex-ists $\OML/lmm/m/it/12 C > \OT1/lmr/m/n/12 0$ \OT1/lmr/m/it/12 such that: $\OMS/lmsy/m/n/12 8[] 2 [][]\OT1/lmr/m/n/12 (
+)\OML/lmm/m/it/12 ;  C[][] \OMS/lmsy/m/n/12 ^^T
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 376.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (22.71255pt too wide) detected at line 389
+Overfull \hbox (22.71255pt too wide) detected at line 394
 [][]
  []
 
 
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [10{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (16.07225pt too wide) in paragraph at lines 423--427
-\OT1/lmr/m/n/12 and in this case, there ex-ists an unique so-lu-tion $[] \OMS/lmsy/m/n/12 2 [][]\OT1/lmr/m/n/12 (
-) := []$
- []
-
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 429.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 434.
 
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-<psydac_fonc_1.png, id=187, 961.5925pt x 368.37625pt>
+<psydac_fonc_1.png, id=232, 961.5925pt x 368.37625pt>
 File: psydac_fonc_1.png Graphic file (type png)
 <use psydac_fonc_1.png>
-Package pdftex.def Info: psydac_fonc_1.png  used on input line 436.
+Package pdftex.def Info: psydac_fonc_1.png  used on input line 441.
 (pdftex.def)             Requested size: 384.11221pt x 147.15114pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 443.
+(Font)              <14.4> on input line 448.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 443.
+(Font)              <10> on input line 448.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 443.
+(Font)              <7> on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 443.
+(hyperref)                removing `math shift' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 443.
+(hyperref)                removing `\partial' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 443.
+(hyperref)                removing `\Omega' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 443.
+(hyperref)                removing `subscript' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 443.
+(hyperref)                removing `\partial' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 443.
+(hyperref)                removing `\Omega' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 443.
+(hyperref)                removing `math shift' on input line 448.
 
 
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12 <./psydac_fonc_1.png>]
-<3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png, id=200, 2409.0pt x 2402.9775pt>
+<3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png, id=245, 2409.0pt x 2402.9775pt>
 File: 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png Graphic file (type png)
 <use 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png>
-Package pdftex.def Info: 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png  used on input line 463.
+Package pdftex.def Info: 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png  used on input line 468.
 (pdftex.def)             Requested size: 409.72125pt x 408.68411pt.
-<figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png, id=202, 719.8092pt x 426.393pt>
+<figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png, id=247, 719.8092pt x 426.393pt>
 File: figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png  used on input line 488.
+Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png  used on input line 493.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 489.
-<figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png, id=203, 719.8092pt x 426.393pt>
+(Font)              <10.95> on input line 494.
+<figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png, id=248, 719.8092pt x 426.393pt>
 File: figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png  used on input line 494.
+Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png  used on input line 499.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png, id=204, 715.473pt x 426.393pt>
+<figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png, id=249, 715.473pt x 426.393pt>
 File: figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png  used on input line 501.
+Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png  used on input line 506.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png, id=205, 714.7503pt x 426.393pt>
+<figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png, id=250, 714.7503pt x 426.393pt>
 File: figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png  used on input line 507.
+Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png  used on input line 512.
 (pdftex.def)             Requested size: 250.95612pt x 149.70822pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[13 <./3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png>]
-<degre5_nul.png, id=216, 619.3539pt x 398.9304pt>
+<degre5_nul.png, id=251, 619.3539pt x 398.9304pt>
 File: degre5_nul.png Graphic file (type png)
 <use degre5_nul.png>
-Package pdftex.def Info: degre5_nul.png  used on input line 520.
+Package pdftex.def Info: degre5_nul.png  used on input line 525.
 (pdftex.def)             Requested size: 256.07481pt x 164.93822pt.
 
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+[13 <./3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png>]
 
 [14 <./figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png> <./degre5_nul.png>]
-<3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png, id=231, 1607.2848pt x 1300.86pt>
+<3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png, id=276, 1607.2848pt x 1300.86pt>
 File: 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png Graphic file (type png)
 <use 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png>
-Package pdftex.def Info: 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png  used on input line 567.
+Package pdftex.def Info: 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png  used on input line 573.
 (pdftex.def)             Requested size: 409.72125pt x 331.60574pt.
-<figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png, id=232, 719.8092pt x 426.393pt>
+<figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png, id=277, 719.8092pt x 426.393pt>
 File: figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png  used on input line 576.
+Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png  used on input line 582.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png, id=233, 719.8092pt x 426.393pt>
+<figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png, id=278, 719.8092pt x 426.393pt>
 File: figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png  used on input line 582.
+Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png  used on input line 588.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png, id=234, 715.473pt x 426.393pt>
+<figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png, id=279, 715.473pt x 426.393pt>
 File: figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png  used on input line 588.
+Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png  used on input line 594.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png, id=235, 714.7503pt x 426.393pt>
+<figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png, id=280, 714.7503pt x 426.393pt>
 File: figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png Graphic file (type png)
 <use figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png  used on input line 594.
+Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png  used on input line 600.
 (pdftex.def)             Requested size: 250.95612pt x 149.70822pt.
 
 
@@ -1239,173 +1210,236 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [15 <./3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png>]
+<figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png, id=288, 719.8092pt x 426.393pt>
+File: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png Graphic file (type png)
+<use figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png>
+Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png  used on input line 633.
+(pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
+<figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png, id=289, 715.473pt x 426.393pt>
+File: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png Graphic file (type png)
+<use figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png>
+Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png  used on input line 639.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png, id=290, 719.8092pt x 426.393pt>
+File: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png Graphic file (type png)
+<use figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png>
+Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png  used on input line 646.
+(pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
+<figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png, id=291, 715.473pt x 426.393pt>
+File: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png Graphic file (type png)
+<use figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png>
+Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png  used on input line 652.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png, id=292, 719.8092pt x 426.393pt>
+File: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png Graphic file (type png)
+<use figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png>
+Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png  used on input line 659.
+(pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
+<figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png, id=293, 715.473pt x 426.393pt>
+File: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png Graphic file (type png)
+<use figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png>
+Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png  used on input line 665.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 
 [16 <./figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png>]
-<convergence_degree_2_non_mixed_kappa=1.25.png, id=255, 619.3539pt x 398.9304pt>
-File: convergence_degree_2_non_mixed_kappa=1.25.png Graphic file (type png)
-<use convergence_degree_2_non_mixed_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=1.25.png  used on input line 629.
-(pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=10.0.png, id=256, 619.3539pt x 398.9304pt>
-File: convergence_degree_2_non_mixed_kappa=10.0.png Graphic file (type png)
-<use convergence_degree_2_non_mixed_kappa=10.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=10.0.png  used on input line 634.
-(pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=100.0.png, id=257, 619.3539pt x 398.9304pt>
-File: convergence_degree_2_non_mixed_kappa=100.0.png Graphic file (type png)
-<use convergence_degree_2_non_mixed_kappa=100.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=100.0.png  used on input line 642.
-(pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=1000.0.png, id=258, 619.3539pt x 398.9304pt>
-File: convergence_degree_2_non_mixed_kappa=1000.0.png Graphic file (type png)
-<use convergence_degree_2_non_mixed_kappa=1000.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=1000.0.png  used on input line 647.
-(pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=10000.0.png, id=259, 619.3539pt x 398.9304pt>
-File: convergence_degree_2_non_mixed_kappa=10000.0.png Graphic file (type png)
-<use convergence_degree_2_non_mixed_kappa=10000.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=10000.0.png  used on input line 653.
-(pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
-<convergence_degree_2_non_mixed_kappa=100000.0.png, id=260, 619.3539pt x 398.9304pt>
-File: convergence_degree_2_non_mixed_kappa=100000.0.png Graphic file (type png)
-<use convergence_degree_2_non_mixed_kappa=100000.0.png>
-Package pdftex.def Info: convergence_degree_2_non_mixed_kappa=100000.0.png  used on input line 658.
-(pdftex.def)             Requested size: 250.95612pt x 161.63898pt.
+<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png, id=307, 715.473pt x 426.393pt>
+File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
+<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png>
+Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png  used on input line 684.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png, id=308, 715.473pt x 426.393pt>
+File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png Graphic file (type png)
+<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png>
+Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png  used on input line 689.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png, id=309, 715.473pt x 426.393pt>
+File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png Graphic file (type png)
+<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png>
+Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png  used on input line 695.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png, id=310, 715.473pt x 426.393pt>
+File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png Graphic file (type png)
+<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png>
+Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png  used on input line 700.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png, id=311, 715.473pt x 426.393pt>
+File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png Graphic file (type png)
+<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png>
+Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png  used on input line 706.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png, id=312, 715.473pt x 426.393pt>
+File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png Graphic file (type png)
+<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png>
+Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png  used on input line 711.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+[17 <./figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png>]
+<figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png, id=327, 715.473pt x 426.393pt>
+File: figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png Graphic file (type png)
+<use figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png>
+Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png  used on input line 730.
+(pdftex.def)             Requested size: 409.72125pt x 244.1721pt.
 
-[17 <./convergence_degree_2_non_mixed_kappa=1.25.png> <./convergence_degree_2_non_mixed_kappa=10.0.png> <./convergence_degree_2_non_mixed_kappa=100.0.png> <./convergence_degree_2_non_mixed_kappa=1000.0.png> <./convergence_degree_2_non_mixed_kappa=10000.0.png> <./convergence_degree_2_non_mixed_kappa=100000.0.png>]
+
+[18 <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png>]
+
+[19 <./figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png>]
+
+[20]
+
+LaTeX Warning: Reference `sec:pure_traction' on page 21 undefined on input line 856.
+
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 721.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png, id=275, 899.7615pt x 565.8741pt>
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 892.
+
+
+[21]
+<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png, id=367, 899.7615pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 731.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 922.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png, id=276, 899.7615pt x 565.8741pt>
+<convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png, id=368, 899.7615pt x 565.8741pt>
 File: convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 737.
+Package pdftex.def Info: convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 928.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png, id=277, 899.7615pt x 563.706pt>
+<convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png, id=369, 899.7615pt x 563.706pt>
 File: convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 744.
+Package pdftex.def Info: convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 935.
 (pdftex.def)             Requested size: 250.95612pt x 157.22589pt.
-<convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png, id=278, 899.7615pt x 563.706pt>
+<convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png, id=370, 899.7615pt x 563.706pt>
 File: convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 750.
+Package pdftex.def Info: convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 941.
 (pdftex.def)             Requested size: 250.95612pt x 157.22589pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 761.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 952.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png, id=279, 899.7615pt x 565.8741pt>
+<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png, id=371, 899.7615pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png  used on input line 766.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png  used on input line 957.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png, id=280, 899.7615pt x 565.8741pt>
+<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png, id=372, 899.7615pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png  used on input line 772.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png  used on input line 963.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png, id=281, 899.7615pt x 565.8741pt>
+<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png, id=373, 899.7615pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png  used on input line 777.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png  used on input line 968.
 (pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png, id=282, 899.0388pt x 565.8741pt>
+<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png, id=374, 899.0388pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png  used on input line 783.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png  used on input line 974.
 (pdftex.def)             Requested size: 250.95612pt x 157.95149pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png, id=283, 899.0388pt x 565.8741pt>
+<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png, id=375, 899.0388pt x 565.8741pt>
 File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png Graphic file (type png)
 <use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png  used on input line 788.
+Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png  used on input line 979.
 (pdftex.def)             Requested size: 250.95612pt x 157.95149pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
+[22 <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png>]
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[18]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[19 <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png>]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[20 <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png>]
+[23 <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png>]
 Chapter 3.
+<geometry_thermoelasticity.png, id=395, 825.0825pt x 271.0125pt>
+File: geometry_thermoelasticity.png Graphic file (type png)
+<use geometry_thermoelasticity.png>
+Package pdftex.def Info: geometry_thermoelasticity.png  used on input line 990.
+(pdftex.def)             Requested size: 358.50317pt x 117.75714pt.
+
+
+[24
+
+ <./geometry_thermoelasticity.png>]
+<geometry_thermoelasticity_simplified.jpg, id=404, 1521.685pt x 1032.85875pt>
+File: geometry_thermoelasticity_simplified.jpg Graphic file (type jpg)
+<use geometry_thermoelasticity_simplified.jpg>
+Package pdftex.def Info: geometry_thermoelasticity_simplified.jpg  used on input line 1031.
+(pdftex.def)             Requested size: 307.2929pt x 208.56963pt.
+
+
+[25 <./geometry_thermoelasticity_simplified.jpg>]
+
+[26]
+
+[27]
+
+[28]
+<figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png, id=444, 618.6312pt x 395.3169pt>
+File: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png Graphic file (type png)
+<use figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png>
+Package pdftex.def Info: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png  used on input line 1241.
+(pdftex.def)             Requested size: 307.2929pt x 196.3671pt.
+<figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png, id=446, 618.6312pt x 395.076pt>
+File: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png Graphic file (type png)
+<use figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png>
+Package pdftex.def Info: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png  used on input line 1250.
+(pdftex.def)             Requested size: 307.2929pt x 196.24744pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+[29 <./figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png>]
+<figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png, id=455, 618.8721pt x 395.076pt>
+File: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png Graphic file (type png)
+<use figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png>
+Package pdftex.def Info: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png  used on input line 1262.
+(pdftex.def)             Requested size: 250.95612pt x 160.20383pt.
+<figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png, id=456, 618.8721pt x 395.076pt>
+File: figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png Graphic file (type png)
+<use figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png>
+Package pdftex.def Info: figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png  used on input line 1268.
+(pdftex.def)             Requested size: 250.95612pt x 160.20383pt.
+<custom_grid.png, id=458, 752.0898pt x 353.4003pt>
+File: custom_grid.png Graphic file (type png)
+<use custom_grid.png>
+Package pdftex.def Info: custom_grid.png  used on input line 1280.
+(pdftex.def)             Requested size: 512.14963pt x 240.65952pt.
 
-[21
 
-]
+[30 <./figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png> <./figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png> <./figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png>]
+
+[31 <./custom_grid.png>]
 Chapter 4.
 
 
+[32
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+]
 
-[22
+[33]
+Chapter 5.
+
+
+[34
 
 ] (./main.aux)
  ***********
@@ -1414,27 +1448,27 @@ L3 programming layer <2025-01-18>
  ***********
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 90AACB6C6CC56CCA413B9562F79B29D8;3021.
+(rerunfilecheck)             Checksum: F38D30EDCBC4DEA91DCE8AE2129E7838;4994.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32045 strings out of 473190
- 615914 string characters out of 5715801
- 1498223 words of memory out of 5000000
- 54738 multiletter control sequences out of 15000+600000
+ 35847 strings out of 473190
+ 725275 string characters out of 5715800
+ 1422443 words of memory out of 5000000
+ 58448 multiletter control sequences out of 15000+600000
  631202 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,93p,1180b,1527s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,19n,93p,1928b,1529s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (22 pages, 6473277 bytes).
+Output written on main.pdf (34 pages, 8106534 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 67 named destinations out of 1000 (max. 500000)
- 275 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 630 PDF objects out of 1000 (max. 8388607)
+ 460 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 417 words of extra memory for PDF output out of 10000 (max. 10000000)
 

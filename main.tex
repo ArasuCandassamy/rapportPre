@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{comment}
 \usepackage{geometry}
 \usepackage{color}
 \usepackage{fancyhdr}
@@ -18,12 +19,16 @@
 \usepackage{amsthm}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{tcolorbox}
+
+\tcbuselibrary{skins, breakable}
+
 
 
 \usepackage[
-backend=biber,
-style=alphabetic,
-sorting=ynt
+	backend=bibtex,
+	style=alphabetic,
+	sorting=ynt
 ]{biblatex}
 \addbibresource{sample.bib}
 
@@ -80,10 +85,11 @@ sorting=ynt
 \newtheorem{lemma}[theorem]{Lemma}
 
 
-\newcommand{\ReportTitle}{Contribution to the development of the Psydac}
+\newcommand{\ReportTitle}{Contribution to the development of Psydac
+}
 \author{Arasu Candassamy}
 
-\geometry{top=2cm, bottom=2cm, left=1.5cm, right=1.5cm}
+\geometry{top=2cm, bottom=2cm, left=1.5cm, right=1.5cm, headheight=15pt}
 
 \pagestyle{fancy}
 \fancyhf{} 
@@ -99,7 +105,7 @@ sorting=ynt
     \fancyhead[CE]{\rightmark}   
     \fancyhead[CO]{\ReportTitle} 
     \fancyfoot[C]{\textbf{Arasu Candassamy} / Max-Planck-Institute Für Plasmaphysik \\
-    \textcolor{red}{\textbf{Rapport Non-confidentiel et publiable sur Internet}}}
+    \textcolor{red}{\textbf{Non-confidential report and Can be published on the Internet}}}
     \fancyfoot[R]{\thepage}
     \renewcommand{\footrulewidth}{0.5pt}
 }
@@ -109,7 +115,7 @@ sorting=ynt
     \fancyhead[CE]{}   
     \fancyhead[CO]{} 
     \fancyfoot[C]{\textbf{Arasu Candassamy} / Max-Planck-Institute Für Plasmaphysik \\
-    \textcolor{red}{\textbf{Rapport Non-confidentiel et publiable sur Internet}}}
+    \textcolor{red}{\textbf{Non-confidential report and Can be published on the Internet}}}
     \fancyfoot[R]{\thepage}
     \renewcommand{\footrulewidth}{0.5pt}
 }
@@ -134,30 +140,31 @@ sorting=ynt
 \vspace{2cm}
 
 \begin{center}
-    {\LARGE \textbf{Projet de Recherche (PRe)}}
+    {\LARGE \textbf{Research Internship (PRe)}}
     
     \vspace{0.5cm}
-    \textbf{Spécialité : Mathématiques Appliquées} \\
-    \textbf{Année scolaire : 2024-2025}
+    \textbf{Major: Applied Mathematics} \\
+    \textbf{School year: 2024-2025}
     
     \vspace{2cm}
     
-    {\Huge \textcolor{gray}{Contribution to the development of the Psydac and Struphy finite element libraries.}} \\
+    {\Huge \textcolor{gray}{Contribution to the development of Psydac, a finite element library.}} \\
+	{\Large \textcolor{gray}{Implementation of solid mechanics equations using Psydac and simulation on a supercomputer.}} \\
     
     \vspace{1.5cm}
         
     \begin{framed}
         \centering
-        \textcolor{red}{\textbf{Rapport Non-confidentiel et publiable sur Internet}} 
+        \textcolor{red}{\textbf{Non-confidential report and Can be published on the Internet}} 
     \end{framed}
 \end{center}
 
 
 \begin{minipage}[t]{0.5\textwidth}
 	\begin{flushleft} 
-    \textbf{Auteur} : Arasu Candassamy \\
+    \textbf{Author} : Arasu Candassamy \\
     \vspace{1cm}
-	\textbf{Tuteur ENSTA :}\\
+	\textbf{ENSTA Supervisor:}\\
 	\textsc{Sonia Fliss}\\
 	\href{mailto:sonia.fliss@ensta.fr}{sonia.fliss@ensta.fr}
 	\end{flushleft}
@@ -165,9 +172,9 @@ sorting=ynt
 ~
 \begin{minipage}[t]{0.4\textwidth}
 	\begin{flushright} 
-    \textbf{Promotion} : 2026 \\
+    \textbf{Year Group}: 2026 \\
     \vspace{1cm}
-	\textbf{Tuteur Organisme d'accueil :}\\
+	\textbf{Host Organization Supervisor:}\\
 	\textsc{Martin Campos-Pinto}\\
 	\href{mailto:martin.campos-pinto@ipp.mpg.de}{martin.campos-pinto@ipp.mpg.de}\\
 	\end{flushright}
@@ -176,9 +183,9 @@ sorting=ynt
 \vspace{1cm}
 
 \begin{center}
-    \textbf{Stage effectué} du 26/05/2025 au 22/08/2025\\
-\textbf{Nom de l’organisme d’accueil :} Max-Planck-Institute Für Plasmaphysik\\
-\textbf{Adresse :} Boltzmannstrasse 2, 85748 Garching bei München
+    \textbf{Internship} from 26/05/2025 to 22/08/2025\\
+\textbf{Name of the host organization:} Max-Planck-Institute Für Plasmaphysik\\
+\textbf{Address:} Boltzmannstrasse 2, 85748 Garching bei München
 \end{center}
 
 
@@ -234,7 +241,7 @@ This internship report describes my experience and contributions within the NMPP
 \chapter{Linear Elasticity}
 
 \section{Physical Model and Strong Formulation}
-The following presentation of the context of work and physical background comes from \cite{gould_introduction_2013} and \cite{ern_theory_2004}. \\
+The following presentation of the context of work and physical background comes from \cite{gould_introduction_2013} and \cite{ern_theory_2004}.
 Let's denote by $\Omega \subset \mtr^3$ a deformable medium characterized by $\lambda$ and $\mu$ Lamé's coefficient ($\lambda, \mu > 0$). $\Omega$ is a bounded open domain with lipschitzian boundary. $\lambda$ is called Lamé's first coefficient, $\mu$ is the shear modulus. These coefficient are related to the Young modulus and Poisson coefficient of the medium. The deformable medium is under an external load $\vec f : \Omega \rightarrow \mtr^3$. Then, we are looking for $\vec u : \Omega \rightarrow \mtr^3$ the displacement field, when the equilibrium is reached. 
 
 The material verifies the following equilibrium condition : 
@@ -242,7 +249,7 @@ The material verifies the following equilibrium condition :
 \label{eq:equilibrium}
     \div \boldsymbol{\sigma} (\vec u) + \vec f = \vec 0 \text{ in } \Omega,
 \end{equation}
-where $\boldsymbol{\sigma} (\vec u)$ is the Cauchy Stress Tensor, defined by $\boldsymbol{\sigma} (\vec u) = C : \boldsymbol{\varepsilon} (\vec u)$. $C$ is the fourth-order stiffness tensor and $$\boldsymbol{\varepsilon} (\vec u) := \frac{1}{2}(\grad \vec u + (\grad \vec u)^T)$$ is the strain tensor. In the context of linear elascity, the relation between $\boldsymbol{\varepsilon} (\vec u)$ and $\boldsymbol{\sigma} (\vec u)$ is simpler : 
+where $\boldsymbol{\sigma} (\vec u)$ is the Cauchy Stress Tensor, defined by $\boldsymbol{\sigma} (\vec u) = C : \boldsymbol{\varepsilon} (\vec u)$. $C$ is the fourth-order stiffness tensor and $\boldsymbol{\varepsilon} (\vec u) := \frac{1}{2}(\grad \vec u + (\grad \vec u)^T)$ is the strain tensor. In the context of linear elascity, the relation between $\boldsymbol{\varepsilon} (\vec u)$ and $\boldsymbol{\sigma} (\vec u)$ is simpler : 
 
 \begin{equation}
 \label{eq:hooklaw}
@@ -262,20 +269,21 @@ For boundary conditions, there are two types of boundary conditions : Dirichlet 
 Let's decompose $\partial \Omega$ as $\partial \Omega_D$ and $\partial \Omega_N$ such that $\partial \Omega_D \cup \partial \Omega_N = \partial \Omega$, $\partial \Omega_D \cap \partial \Omega_N = \emptyset$. Let's denote by $\vec t_N : \partial \Omega_N \rightarrow \mtr^3$ the normal traction force and $\vec n$ the normal vector of $\partial \Omega$ outside-oriented. We can consider the boundary displacement on $\partial \Omega_D$ as equal to $\vec 0$. 
 
 In case of non-homogenous boundary conditions $\vec g : \partial \Omega_D \rightarrow \mtr^3$, we can solve the problem for $\vec u - \vec g$ by modifying the source term. Then, the solution of linear elasticity problem should verify :
-$$
+$
 \left\{ \begin{array}{ll}
 \vec u = \vec 0 & \partial \Omega_D \\
 \boldsymbol{\sigma} (\vec u) \cdot \vec n = \vec t_N & \partial \Omega_N
 \end{array} \right.
-$$
+$
 
 Physically, $\vec f$ is a "volume force" on $\Omega$ and $\vec t_N$ is a "surface force". 
 The strong formulation of this problem is : \\
 For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(\partial \Omega_N)$, find $\vec u \in \boldsymbol H^1(\Omega)$ such that : 
 
+\begin{tcolorbox}
 \begin{equation}
 \label{eq:strong_form}
-\left \{
+\left\{
 \begin{aligned}
     & - \div \boldsymbol{\sigma} (\vec u) = \vec f & \text{ in } & \Omega \hspace{1cm} \text{(Equilibrium)}\\
     & \boldsymbol{\sigma} (\vec u) = \lambda (\div \vec u) I_3 + \mu (\grad \vec u + (\grad \vec u)^T) & \text{ in }& \Omega \hspace{1cm} \text{(Hook's law)} \\
@@ -284,17 +292,18 @@ For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(
 \end{aligned}
 \right.
 \end{equation}
+\end{tcolorbox}
 
 where $\boldsymbol L^2(\Omega) = \left(L^2(\Omega) \right)^3, \boldsymbol L^2(\partial \Omega_N) = \left(L^2(\partial \Omega_N) \right)^3, \boldsymbol H^1(\Omega) = \left(H^1(\Omega) \right)^3, $
 
 \section{Pure displacement weak-formulation} \label{sec:Pure displacement weak-formulation}
 
-To derive the weak formulation from \eqref{eq:strong_form}, let's introduce the following functionnal space : $$\boldsymbol H^1_{\vec 0,D}(\Omega) = \left\{ \vec v \in \boldsymbol H^1(\Omega) \Big| \vec v_{|\partial\Omega_D} = \vec 0 \right\},$$
+To derive the weak formulation from \eqref{eq:strong_form}, let's introduce the following functionnal space : $\boldsymbol H^1_{\vec 0,D}(\Omega) = \left\{ \vec v \in \boldsymbol H^1(\Omega) \Big| \vec v_{|\partial\Omega_D} = \vec 0 \right\},$
 which is a sub-hilbert space of $\boldsymbol H^1(\Omega)$ equipped with the same dot product (as a closed space of a Hilbert space). By taking the scalar product of the equilibrium equation from \eqref{eq:strong_form} with $\vec v \in \left(H^1_{\vec 0,D}(\Omega) \right)^3$ and applying a Green's formula, one gets that :
-$$\int_\Omega \boldsymbol{\sigma} (\vec u) : (\grad \vec v) \dif V - \int_{\partial\Omega} \left(\boldsymbol{\sigma} (\vec u).\vec n \right).\vec v \dif S = \int_\Omega \vec f . \vec v \dif V$$
+$\int_\Omega \boldsymbol{\sigma} (\vec u) : (\grad \vec v) \dif V - \int_{\partial\Omega} \left(\boldsymbol{\sigma} (\vec u).\vec n \right).\vec v \dif S = \int_\Omega \vec f . \vec v \dif V$
 
 One can remark that with \eqref{eq:hooklaw}, the tensor $\boldsymbol \sigma (\vec u)$ is symetric. It implies that : 
-$$\boldsymbol \sigma (\vec u) : \grad \vec v = \boldsymbol \sigma(\vec u) : \boldsymbol \varepsilon (\vec v)$$
+$\boldsymbol \sigma (\vec u) : \grad \vec v = \boldsymbol \sigma(\vec u) : \boldsymbol \varepsilon (\vec v)$
 Moreover, $\vec v \in \left(H^1_{\vec 0,D}(\Omega) \right)^3$, then $\vec v_{|\partial\Omega_D} = \vec 0$. So the weak formulation can be simplified into : 
 
 \begin{equation}
@@ -317,8 +326,8 @@ With :
             &\boldsymbol H^1_{\vec 0,D}(\Omega) \times \boldsymbol H^1_{\vec 0,D}(\Omega)  \rightarrow \mtr \\
             &(\vec u,\vec v)  \longmapsto \int_\Omega \boldsymbol \sigma(\vec u) : \boldsymbol \varepsilon (\vec v) \dif V = \int_\Omega \lambda (\div \vec u) (\div \vec v) \dif V+ \int_\Omega 2\mu \boldsymbol \varepsilon(\vec u): \boldsymbol \varepsilon (\vec v)\dif V
         \end{aligned}
-        \right. \\[0.3cm]
-    & l : \left\{
+        \right. \\
+    	& l : \left\{
         \begin{aligned}
             &\boldsymbol H^1_{\vec 0,D}(\Omega) \rightarrow \mtr \\
             &\vec v \longmapsto \int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega_N} \vec t_N.\vec v \dif S
@@ -331,9 +340,9 @@ In continuum mechanics, \eqref{eq:weakdisplacementform} is called the Principle 
 $\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsymbol H^1(\Omega), \norm{\vec v}_{\boldsymbol H^1(\Omega)} = \left(\sum_{i=1}^3 \norm{v}_{H^1(\Omega)} \right)^{1/2}$. 
 \begin{lemma}
 \begin{enumerate}
-    \item $\displaystyle \forall \vec u \in \boldsymbol H^1(\Omega)$, $$\int_\Omega (\div \vec u)^2 \dif V \leq 3 \norm{\vec u}_{\boldsymbol H^1(\Omega)}^2$$
-    \item $\displaystyle \forall \vec u \in \boldsymbol H^1(\Omega)$,$$\boldsymbol \varepsilon(\vec u) : \boldsymbol \varepsilon(\vec u) \leq \grad \vec u : \grad \vec u$$
-    Then : $$\int_\Omega \boldsymbol \varepsilon(\vec u) : \boldsymbol \varepsilon(\vec u) \dif\Omega \leq \int_\Omega \grad \vec u : \grad \vec u \dif \Omega \leq \norm{\vec u}_{\boldsymbol H^1(\Omega)}^2$$
+    \item $\displaystyle \forall \vec u \in \boldsymbol H^1(\Omega)$, $\int_\Omega (\div \vec u)^2 \dif V \leq 3 \norm{\vec u}_{\boldsymbol H^1(\Omega)}^2$
+    \item $\displaystyle \forall \vec u \in \boldsymbol H^1(\Omega)$,$\boldsymbol \varepsilon(\vec u) : \boldsymbol \varepsilon(\vec u) \leq \grad \vec u : \grad \vec u$
+    Then : $\int_\Omega \boldsymbol \varepsilon(\vec u) : \boldsymbol \varepsilon(\vec u) \dif\Omega \leq \int_\Omega \grad \vec u : \grad \vec u \dif \Omega \leq \norm{\vec u}_{\boldsymbol H^1(\Omega)}^2$
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -343,7 +352,7 @@ $\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsy
 \begin{lemma}
 \label{Korn1}
     (First Korn's inequality) \\
-    Let $\Omega \subset \mtr^3$ a domain and denotes by $\norm{\boldsymbol \varepsilon(\vec u)}_{\boldsymbol L^2(\Omega)} := \left(\int_\Omega \boldsymbol \varepsilon(\vec u):\boldsymbol \varepsilon(\vec u)\right)^{1/2}$. Then, there exists $C > 0$ such that: $$\forall \vec v \in \boldsymbol H^1_{\vec 0}(\Omega), \hspace{1cm} C\norm{\vec v}_{\boldsymbol H^1(\Omega)} \leq \norm{\boldsymbol \varepsilon(\vec v)}_{\boldsymbol L^2(\Omega)}$$
+    Let $\Omega \subset \mtr^3$ a domain and denotes by $\norm{\boldsymbol \varepsilon(\vec u)}_{\boldsymbol L^2(\Omega)} := \left(\int_\Omega \boldsymbol \varepsilon(\vec u):\boldsymbol \varepsilon(\vec u)\right)^{1/2}$. Then, there exists $C > 0$ such that: $\forall \vec v \in \boldsymbol H^1_{\vec 0}(\Omega), \hspace{1cm} C\norm{\vec v}_{\boldsymbol H^1(\Omega)} \leq \norm{\boldsymbol \varepsilon(\vec v)}_{\boldsymbol L^2(\Omega)}$
 \end{lemma}
 \begin{proof}
     A proof can be found in \cite{brenner_mathematical_2008}
@@ -353,9 +362,9 @@ $\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsy
 \label{Korn2}
     (Second Korn's inequality) \\
     Let $\Omega \subset \mtr^3$ a domain. Then, there exists $C > 0$ such that: 
-    $$\forall \vec v \in \boldsymbol H^1(\Omega), \hspace{1cm} C\norm{\vec v}_{\boldsymbol H^1(\Omega)} \leq \norm{\boldsymbol \varepsilon(\vec v)}_{\boldsymbol L^2(\Omega)} + \norm{\vec v}_{\boldsymbol L^2(\Omega)}$$
+    $\forall \vec v \in \boldsymbol H^1(\Omega), \hspace{1cm} C\norm{\vec v}_{\boldsymbol H^1(\Omega)} \leq \norm{\boldsymbol \varepsilon(\vec v)}_{\boldsymbol L^2(\Omega)} + \norm{\vec v}_{\boldsymbol L^2(\Omega)}$
     By Rellich theorem, $\boldsymbol H^1(\Omega)$ is compactly embedded in $\boldsymbol L^2(\Omega)$ as $\Omega$ is a open bounded domain . Then, one can show that there exists $C > 0$ such that:
-    $$\forall \vec v \in \boldsymbol H^1(\Omega), \hspace{1cm} C\norm{\vec v}_{\boldsymbol H^1(\Omega)} \leq \norm{\boldsymbol \varepsilon(\vec v)}_{\boldsymbol L^2(\Omega)}$$
+    $\forall \vec v \in \boldsymbol H^1(\Omega), \hspace{1cm} C\norm{\vec v}_{\boldsymbol H^1(\Omega)} \leq \norm{\boldsymbol \varepsilon(\vec v)}_{\boldsymbol L^2(\Omega)}$
 \end{lemma}
 \begin{proof}
     A proof can be found in \cite{brenner_mathematical_2008}
@@ -370,10 +379,6 @@ $\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsy
     \begin{aligned}    
     \forall \vec v \in \boldsymbol H^1_{\vec 0,D}(\Omega), \left|l(\vec v)\right| 
     & \leq \left| \left(\vec f, \vec v \right)_{\boldsymbol L^2(\Omega)} + \left(\vec t_N, \vec v \right)_{\boldsymbol L^2(\partial \Omega_N)} \right| \\
-    % & \leq \left| \left(\vec f, \vec v \right)_{\boldsymbol L^2(\Omega)} \right| + \left| \left(\vec t_N, \vec v \right)_{\boldsymbol L^2(\partial \Omega_N)} \right| \\
-    % & \leq \norm{\vec f}_{\boldsymbol L^2(\Omega)}\norm{\vec v}_{\boldsymbol L^2(\Omega)} + \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\norm{\vec v}_{\boldsymbol L^2(\partial \Omega_N)} \\
-    % & \leq \norm{\vec f}_{\boldsymbol L^2(\Omega)}\norm{\vec v}_{\boldsymbol H^1(\Omega)} + \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\norm{\vec v}_{\boldsymbol L^2(\partial \Omega)} \\
-    % & \leq \norm{\vec f}_{\boldsymbol L^2(\Omega)}\norm{\vec v}_{\boldsymbol H^1(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\norm{\vec v}_{\boldsymbol H^1(\Omega)} \\
     \left|l(\vec v)\right| 
     & \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\right)\norm{\vec v}_{\boldsymbol H^1(\Omega)}\\
     \end{aligned}
@@ -395,11 +400,11 @@ $\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsy
                     \forall \vec u \in \boldsymbol H^1_{\vec 0,D}(\Omega), \hspace{0.3cm} a(u,u) 
                     &= \int_\Omega \lambda (\div \vec u)^2 \dif V + \int_\Omega 2\mu \boldsymbol \varepsilon(\vec u): \boldsymbol \varepsilon (\vec u)\dif V \\
                     & \geq 2\mu \norm{\boldsymbol \varepsilon(\vec u)}_{\boldsymbol{L}^2(\Omega)} \\
-                    a(u,u) & \geq 2\mu C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}
+                    a(u,u) & \geq 2\mu C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}^2
                 \end{aligned}
             \end{equation*}
             \item If $\Omega_D \subsetneq \Omega$, we can now apply \textbf{Lemma \ref{Korn2}} : there exists $C >0$ such that:
-            $$\forall \vec u \in \boldsymbol H^1_{\vec 0,D}(\Omega), \hspace{0.3cm}a(u,u) \geq 2\mu C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}$$
+            $\forall \vec u \in \boldsymbol H^1_{\vec 0,D}(\Omega), \hspace{0.3cm}a(u,u) \geq 2\mu C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}$
         \end{itemize}
 \end{itemize}
 
@@ -418,9 +423,9 @@ When, $\left| \Omega_D \right| = 0$, \eqref{eq:weakdisplacementform} turns into 
 }
 \end{equation}
 
-This problem isn't really well-posed. Regarding to the Rigid Displacement Field (translations and rotations) $\boldsymbol{\mathcal{R}} = \left\{\vec v \in \boldsymbol H^1(\Omega) \left| \exists x_1, x_2 \in \mtr^3, \vec v(x) = x_1 + x_2 \times x \right. \right\}$, $$\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm} \div v = 0 \text{ and } \boldsymbol \varepsilon(\vec v) = 0.$$
-Then : $$\forall \vec u \in \boldsymbol H^1(\Omega), \forall \vec v \in \boldsymbol{\mathcal{R}},\hspace{0.3cm} a(\vec u, \vec v)= 0.$$
-So, the weak formulation \eqref{eq:puretractionproblem} is solvable iff the following compatibility equality holds : $$\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm}\int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega} \vec t_N.\vec v \dif S = 0,$$
+This problem isn't really well-posed. Regarding to the Rigid Displacement Field (translations and rotations) $\boldsymbol{\mathcal{R}} = \left\{\vec v \in \boldsymbol H^1(\Omega) \left| \exists x_1, x_2 \in \mtr^3, \vec v(x) = x_1 + x_2 \times x \right. \right\}$, $\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm} \div v = 0 \text{ and } \boldsymbol \varepsilon(\vec v) = 0.$
+Then : $\forall \vec u \in \boldsymbol H^1(\Omega), \forall \vec v \in \boldsymbol{\mathcal{R}},\hspace{0.3cm} a(\vec u, \vec v)= 0.$
+So, the weak formulation \eqref{eq:puretractionproblem} is solvable iff the following compatibility equality holds : $\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm}\int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega} \vec t_N.\vec v \dif S = 0,$
 and in this case, there exists an unique solution $\vec u \in \hat{\boldsymbol H}^1(\Omega) := \left\{\vec v \in \boldsymbol H^1(\Omega) \left| \displaystyle \int_\Omega \vec v \dif V = \int_\Omega  \curl \vec v \dif V = \vec 0 \right. \right\}$ 
 In case of \textbf{Pure Traction Problem}, we are looking for a solution modulo a rigid displacement field.
 \textit{A more rigorous proof of the equivalence can be found in \cite{brenner_mathematical_2008} and \cite{chen_variational}.}
@@ -443,15 +448,15 @@ Raven is a supercomputer located at the Max-Planck Institute for Plasma Physics.
 \subsection{Dirichlet Homogeneous Boundary conditions on $\partial\Omega_D = \partial\Omega$} \label{subsec:Dirichlet Homogeneous Boundary conditions on}
 
 In a first time, to get the grips with \texttt{PSYDAC} and the HPC, I have considered the case $\Omega = [0,1]^3$, $\partial \Omega_D = \partial\Omega$ and $\partial \Omega_N = \emptyset$. To verify if the numerical resolution of \texttt{PSYDAC} of \eqref{eq:weakdisplacementform} is correct, I have used the Method of Manufactured Solutions. The concept is quite simpler, we assume that a function $\vec u_e \in \boldsymbol H^1_{\vec 0}(\Omega)$ verifies the strong problem \eqref{eq:strong_form}, then we compute the source term $\vec f$ and we solve the \eqref{eq:weakdisplacementform} with $\vec f$ as a source term and we look at the error between the numerical solution and the theoretical one.
-I have considered $\vec u_e$ defined as : $$\vec u_e = \begin{pmatrix}
+I have considered $\vec u_e$ defined as : $\vec u_e = \begin{pmatrix}
     0 \\
     0 \\
 \sin{\left(\pi x \right)} \sin{\left(\pi y \right)} \sin{\left(\pi z \right)}
-\end{pmatrix} \in \boldsymbol H^1_{\vec 0}(\Omega).$$ Then, we can compute manually the source term $\vec f$ : $$\vec f = \begin{pmatrix}
-     - \pi^{2} \left(\lambda + \mu\right) \sin{\left( y \right)} \cos{\left(\pi x \right)} \cos{\left(\pi z \right)} \\
-     - \pi^{2} \left(\lambda + \mu\right) \sin{\left(\pi x \right)} \cos{\left( y \right)} \cos{\left(\pi z \right)} \\  
+\end{pmatrix} \in \boldsymbol H^1_{\vec 0}(\Omega).$ Then, we can compute manually the source term $\vec f$ : $\vec f = \begin{pmatrix}
+     - \pi^{2} \left(\lambda + \mu\right) \cos{\left(\pi x \right)} \sin{\left(\pi y \right)}  \cos{\left(\pi z \right)} \\
+     - \pi^{2} \left(\lambda + \mu\right) \sin{\left(\pi x \right)} \cos{\left(\pi y \right)} \cos{\left(\pi z \right)} \\
       \pi^{2} \left(\lambda + 4 \mu\right) \sin{\left(\pi x \right)} \sin{\left(\pi y \right)} \sin{\left(\pi z \right)}
-\end{pmatrix} \in \boldsymbol L^2(\Omega).$$
+\end{pmatrix} \in \boldsymbol L^2(\Omega).$
 
 To make the numerical simulation with \texttt{PSYDAC}, we have to choose two important parameters : $d$ the maximum degree of B-Splines functions that will approximate the solution and $n_{\text{cells}}$ is the number of cells in each dimension of $\Omega$ for the finite dimensional space. $\displaystyle h \propto \frac{1}{n_{\text{cells}}}$, an usual discretization parameters for finite dimensional spaces and $d$ will conduct the convergence speed of the numerical solution. 
 By solving the problem Dirichlet Homogeneous Boundary conditions on the whole border, one can observe the following plots of the simulated $\vec u_{e,3}^h$ for different plane $z$. It is possible to plot also the error $\vec u_{e,3} - \vec u_{e,3}^h$.
@@ -469,7 +474,7 @@ We can observe that the numerical solution is "quite" near the real solution. To
 
 Denotes by $\boldsymbol V^h \subset \boldsymbol H^1(\Omega)$ the discrete finite dimensional space, $\vec u \in \boldsymbol H^{s+1}(\Omega) \subset \boldsymbol H^1(\Omega), 1 \leq s \leq d+1$ the real solution solution and $\vec u^h \in \boldsymbol V^h$ the discrete solution.
 Then, the Céa's lemma gives the following estimates : 
-$$\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)} \leq \frac{3\lambda + 2\mu}{2\mu C} \inf_{\vec v^h \in \boldsymbol H^1(\Omega)} \norm{\vec u - \vec v^h}_{\boldsymbol H^1(\Omega)}$$
+$\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)} \leq \frac{3\lambda + 2\mu}{2\mu C} \inf_{\vec v^h \in \boldsymbol H^1(\Omega)} \norm{\vec u - \vec v^h}_{\boldsymbol H^1(\Omega)}$
 \textit{where $C > 0$ is a constant from Korn's inequality (independant of $h$).}
 By applying \textbf{Corollary 4.21, 4.27}, \textbf{Theorem 6.2} from \cite{da_veiga_mathematical_2014} and Aubin-Nitsche theorem, we can get the following estimates : 
 \begin{equation}
@@ -508,8 +513,8 @@ By applying \textbf{Corollary 4.21, 4.27}, \textbf{Theorem 6.2} from \cite{da_ve
 		\caption{$d=5$}
 		\label{fig:deg5_NMDHBC}
 	\end{subfigure}
-	\caption{Four plots of relative errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$  \& $\mu = 1$)}
-	\label{fig:four_errors_graphs}
+	\caption{Four plots of relative errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}
+	\label{fig:four_errors_graphs_1}
 \end{figure}
 
 We can see that the numerical solution converges with the expected order to the real solution : the more the mesh is refined, the more the error is lower and the more the splines' degree is higher, the more the convergence rate is higher. 
@@ -524,6 +529,7 @@ For this numerical resolution, I have used \textbf{GMRES} method to solve the li
 But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-Splines (at least for the tested configurations). This plateau can be explained by the matrix of the bilinear form $a(.,.)$ which is ill-conditioned. Moreover, the bad conditioning can become worse with more refined mesh and higher degree B-Splines (as the convergence is faster).
 
 \subsection{Mixed boundary conditions}
+\label{sec:mixed_BC}
 
 Then, I have made a simulation with Mixed Boundary Conditions, as it is introduced in \eqref{eq:strong_form}, with also non-homogeneous Dirichlet boundary conditions.
 
@@ -540,8 +546,8 @@ For that purpose, $\vec u_e, \vec f, \vec t_N$ and $\vec g$ are now defined as :
 \begin{aligned}
 	& \vec u_e =
 	\begin{pmatrix}
-		0 \\  
-		0 \\ 
+		0 \\
+		0 \\
 		\sin{\left(\pi z \right)} \cos{\left(\pi x \right)} \cos{\left(\pi y \right)}
 	\end{pmatrix}, \hfill \vec f =  \begin{pmatrix}
 	\pi^{2} \left(\lambda + \mu\right) \sin{\left(\pi x \right)} \cos{\left(\pi y \right)} \cos{\left(\pi z \right)} \\
@@ -549,16 +555,16 @@ For that purpose, $\vec u_e, \vec f, \vec t_N$ and $\vec g$ are now defined as :
 	\pi^{2} \left(\lambda + 4 \mu\right) \sin{\left(\pi z \right)} \cos{\left(\pi x \right)} \cos{\left(\pi y \right)}
 	\end{pmatrix} \\
 	& \vec t_N = \begin{pmatrix}
-	0 \\  
-	- \lambda \pi \cos{\left(\pi x \right)} \cos{\left(\pi z \right)} \\  
+	0 \\
+	- \lambda \pi \cos{\left(\pi x \right)} \cos{\left(\pi z \right)} \\
 	0
 	\end{pmatrix}, \hfill \vec g = \begin{pmatrix}
-	0 \\  
-	0 \\ 
+	0 \\
+	0 \\
 	\pm \sin{\left(\pi z \right)} \cos{\left(\pi y \right)}
 	\end{pmatrix}
 \end{aligned}
-\end{equation*}	
+\end{equation*} 	
 
 Then, we can get the same plots and interpretation as before. 
 
@@ -595,7 +601,7 @@ Then, we can get the same plots and interpretation as before.
 		\caption{$d=5$}
 		\label{fig:deg5_NM}
 	\end{subfigure}
-	\caption{Four plots of relative errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$  \& $\mu = 1$)}
+	\caption{Four plots of relative errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}
 	\label{fig:four_errors_graphs}
 \end{figure}
 
@@ -620,61 +626,122 @@ Rubber & 0.16 & 0.00033 \\
 \label{tab:lame_coefficients}
 \end{table}
 
-But, the estimates \eqref{eq:convergence_estimates} depends on $\frac{\lambda}{\mu}$, and when $\lambda \rightarrow + \infty$ (which is the case for incompressible material), the estimates doesn't hold. Numerically, it is hard to get a value goes to $+\infty$, but for increasing values of $\lambda$, we can get plots from figure \ref{fig:error_kappa} below. 
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png}
+		\caption{Rubber with degree 2 B-Splines}
+		\label{fig:rubber_degree_2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png}
+		\caption{Rubber with degree 4 B-Splines}
+		\label{fig:rubber_degree_4}
+	\end{subfigure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png}
+		\caption{Concrete with degree 2 B-Splines}
+		\label{fig:concrete_degree_2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png}
+		\caption{Concrete with degree 4 B-Splines}
+		\label{fig:concrete_degree_4}
+	\end{subfigure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png}
+		\caption{Steel with degree 2 B-Splines}
+		\label{fig:steel_degree_2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png}
+		\caption{Steel with degree 4 B-Splines}
+		\label{fig:steel_degree_4}
+	\end{subfigure}
+	\caption{Error plots between exact solution and numerical solution with realistic values of Lamés' coefficients with degree 2 and 4 B-Splines}
+	\label{fig:error_realistic_lame}
+\end{figure}
+
+As we can see in figure \ref{fig:error_realistic_lame}, in the case of concrete and steel, the errors behaves as expected : well convergence with expected order and the plateau effect appears after a certain value of the error. 
+But for the rubber, the convergence order is not really respected, the error decreases faster than expected and the plateau degenerates... 
+To explain this, we can look at the estimates \eqref{eq:convergence_estimates} :
+$\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)} \lesssim \frac{3\lambda + 2\mu}{2\mu C} h^d \norm{\vec u}_{\boldsymbol H^{d+1}(\Omega)}$
+As $\lambda$ is very high compared to $\mu$, the estimates are not really valid anymore, as $\frac{3\lambda + 2\mu}{2\mu C} \rightarrow + \infty$ when $\lambda \rightarrow + \infty$. 
+This is the case for incompressible materials, like rubber, where $\lambda$ is very high compared to $\mu$. To get a better idea of the convergence, we can look at the error plots for different values of $\lambda$ with $\mu = 1$.
 
 \begin{figure}[!h]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_non_mixed_kappa=1.25}
-		\caption{$\lambda=1.25$}
+		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png}
+		\caption{$\lambda=1.25$~Pa}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_non_mixed_kappa=10.0}
-		\caption{$\lambda=10$}
+		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png}
+		\caption{$\lambda=10$~Pa}
 	\end{subfigure}
-% \end{figure}
-% \begin{figure}[!h]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_non_mixed_kappa=100.0}
-		\caption{$\lambda=100$}
+		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png}
+		\caption{$\lambda=100$~Pa}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_non_mixed_kappa=1000.0}
-		\caption{$\lambda=1000$}
+		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png}
+		\caption{$\lambda=1000$~Pa}
 	\end{subfigure}
 	\\
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_non_mixed_kappa=10000.0}
-		\caption{$\lambda=10000$}
+		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png}
+		\caption{$\lambda=10000$~Pa}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_non_mixed_kappa=100000.0}
-		\caption{$\lambda=100000$}
+		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png}
+		\caption{$\lambda=100000$~Pa}
 	\end{subfigure}
-	\caption{Error plots between exact solution and numerical solution with degree 2 B-Splines with increasing values of $\lambda$ with $\mu = 1$}
+	\caption{Error plots between exact solution and numerical solution with degree 2 B-Splines with increasing values of $\lambda$ with $\mu = 1$~Pa}
 	\label{fig:error_kappa}
 \end{figure}
 
+As we can see in figure \ref{fig:error_kappa}, the convergence order is not respected anymore when $\lambda$ is too high compared to $\mu$. We can observe that when $\frac{\lambda}{\mu} = 10^4$, the error behaves like the error curves for the rubber with degree 2 B-Splines in figure \ref{fig:rubber_degree_2} $\displaystyle \left(\frac{\lambda_{\text{rubber}}}{\mu_{\text{rubber}}} \approx 500\right)$. Then, for values of $\lambda$ such that $\frac{\lambda}{\mu} \geq 10^4$, the error is not even decreasing anymore.
 
-\newpage
+Two hypothesis can be made to explain this phenomena : 
+\begin{itemize}
+	\item The estimates \eqref{eq:convergence_estimates} are not valid anymore, as $\lambda$ is too high compared to $\mu$.
+	\item The bilinear form $a(.,.)$ is ill-conditioned, leading to numerical instability when $\lambda$ is "too high" compared to $\mu$.
+\end{itemize}
 
-To compensate the problem of high values of $\lambda$, I have proposed to explore a Mixed Formulation by introducing a pressure field.
+One can try to increase the degree of B-Splines to see if the convergence is reinforced as the power of $h$ in the estimates is higher. 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png}	
+	\caption{Error plot between exact solution and numerical solution with degree 4 B-Splines with $\lambda = 100000$~Pa and $\mu = 1$~Pa}
+	\label{fig:error_kappa_degree_4}
+\end{figure}
+
+As we can see in figure \ref{fig:error_kappa_degree_4}, the convergence is not reinforced, the error is still not decreasing. Actually, this phenomena is called \textbf{locking} and it is a well-known issue in FEM for incompressible materials. The locking occurs when the numerical solution is too stiff and does not converge to the real solution for high values of $\lambda$ compared to $\mu$.
+One way to avoid this issue is to use a mixed formulation, where the pressure field is introduced as an additional variable. This will be presented in the next section.
 
 \section{Mixed displacement-pressure formulation}
-To introduce this formulation, let's consider again the strong formulation from \eqref{eq:strong_form}. Then, denotes by $p$ the pressure field, defined by $\displaystyle p = - \lambda \div{\vec u}$. As we are seeking $\vec u \in \boldsymbol{H}^1(\Omega)$, $p$ is naturally living in $L^2(\Omega)$. Then Hook's law can be rewritten : $\boldsymbol{\sigma} (\vec u,p) = -p I_3 + 2\mu \boldsymbol{\varepsilon(\vec u} \text{ in }  \Omega $ \\
+To introduce this formulation, let's consider again the strong formulation from \eqref{eq:strong_form}. Then, denotes by $p$ the pressure field, defined by $\displaystyle p = - \lambda \div{\vec u}$. As we are seeking $\vec u \in \boldsymbol{H}^1(\Omega)$, $p$ is naturally living in $L^2(\Omega)$. Then Hook's law can be rewritten : $\boldsymbol{\sigma} (\vec u,p) = -p I_3 + 2\mu \boldsymbol{\varepsilon(\vec u)} \text{ in }  \Omega $ \\
 So the strong formulation can be re-write as : For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(\partial \Omega_N)$, find $(\vec u, p) \in \boldsymbol H^1(\Omega)\times L^2(\Omega)$ such that : 
 
 \begin{equation}
 	\label{eq:strong_pressure_disp_form}
-	\left \{
+	\left\{
 	\begin{aligned}
 		& - \div \boldsymbol{\sigma} (\vec u,p) = \vec f & \text{ in } & \Omega \hspace{1cm} \text{(Equilibrium)}\\
 		& \div{\vec u} + \frac{1}{\lambda} p = 0 & \text{ in } & \Omega \hspace{1cm} \text{(Pressure field definition)} \\
@@ -689,12 +756,12 @@ Then, the weak formulation is:
 \begin{equation}
 	\label{eq:weak_pressure_displ_form}
 	\boxed{
-		\left\{
-		\begin{aligned}
-			&\text{Find } (\vec u,p) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega) \text{ such that :}\\
-			& \tilde{a}((\vec u,p),(\vec v,q)) = l(\vec v,q) \hspace{0.5cm} \forall (\vec v,q) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega)
-		\end{aligned}
-		\right.
+	\left\{
+	\begin{aligned}
+		&\text{Find } (\vec u,p) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega) \text{ such that :}\\
+		& \tilde{a}((\vec u,p),(\vec v,q)) = l(\vec v,q) \hspace{0.5cm} \forall (\vec v,q) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega)
+	\end{aligned}
+	\right.
 	}
 \end{equation}
 
@@ -704,10 +771,11 @@ With :
 		& \tilde{a} : \left\{
 		\begin{aligned}
 			&\left( \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega) \right)^2 \rightarrow \mtr \\
-			&((\vec u,p),(\vec v,q))  \longmapsto \int_\Omega \left( 2\mu \boldsymbol{\varepsilon(\vec u)} : \boldsymbol{\varepsilon(\vec v)} - p (\div \vec v) + (\div \vec u)q + \frac{1}{\lambda} pq \right) \dif V
+			&((\vec u,p),(\vec v,q))  \longmapsto \int_\Omega \left( 2\mu \boldsymbol{\varepsilon}(\vec u) : \boldsymbol{\varepsilon}(\vec v) - p (\div \vec v) + (\div \vec u)q + \frac{1}{\lambda} pq \right) \dif V
 		\end{aligned}
-		\right. \\[0.3cm]
-		& l : \left\{
+		\right. \\
+		& l : 
+		\left\{
 		\begin{aligned}
 			&\boldsymbol H^1_{\vec 0,D}(\Omega) \rightarrow \mtr \\
 			&\vec v \longmapsto \int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega_N} \vec t_N.\vec v \dif S
@@ -716,12 +784,135 @@ With :
 	\end{aligned}
 \end{equation*}
 
-The well-posedness of this new mixed-problem can be proven by the way as the pure displacement problem in \textbf{Section \ref{sec:Pure displacement weak-formulation}}.
+
+\subsection{Well-posedness of the mixed displacement–pressure formulation}
+
+Let
+\[
+V:=\boldsymbol H^1_{\vec 0,D}(\Omega),\qquad Q:=L^2(\Omega),\qquad X:=V\times Q,
+\]
+with the product norm
+\[
+\|(\vec u,p)\|_X^2 := \|\vec u\|_{\boldsymbol H^1(\Omega)}^2 + \|p\|_{L^2(\Omega)}^2.
+\]
+
+\noindent \textbf{Now, we can prove the well-posedness of \eqref{eq:weak_pressure_displ_form} for every finite }$\lambda>0, \mu>0$ \text{ and } $\Omega_D \neq \emptyset$.
+\begin{itemize}
+	\item $(X,\|\cdot\|_X)$ is a Hilbert space.
+	\item $\tilde a(\cdot,\cdot)$ is a bilinear form on $X\times X$ and $l(\cdot)$ is linear on $X$.
+	\item $l(\cdot)$ is continuous: for all $(\vec v,q)\in X$,
+	\begin{equation*}
+		\begin{aligned}
+			|l(\vec v,q)|
+			&\le |(\vec f,\vec v)_{\boldsymbol L^2(\Omega)}| + |(\vec t_N,\vec v)_{\boldsymbol L^2(\partial\Omega_N)}| \\
+			&\le \Big(\|\vec f\|_{\boldsymbol L^2(\Omega)} + C_{\text{tr}}\|\vec t_N\|_{\boldsymbol L^2(\partial\Omega_N)}\Big)\|\vec v\|_{H^1(\Omega)} \\
+			|l(\vec v,q)| &\le C \big(\|\vec f\|_{\boldsymbol L^2(\Omega)} + \|\vec t_N\|_{\boldsymbol L^2(\partial\Omega_N)}\big)\|(\vec v,q)\|_X,
+		\end{aligned}
+	\end{equation*}
+	where $C_{\text{tr}}$ is the trace constant and $C$ a generic constant.
+	\item $\tilde a(\cdot,\cdot)$ is continuous: for all $(\vec u,p),(\vec v,q)\in X$,
+	\begin{equation*}
+		\begin{aligned}
+			|\tilde a((\vec u,p),(\vec v,q))|
+			&\le 2\mu \|\boldsymbol{\varepsilon}(\vec u)\|_{L^2}\|\boldsymbol{\varepsilon}(\vec v)\|_{L^2}
+				+ \|p\|_{L^2}\|\div \vec v\|_{L^2}
+				+ \|\div \vec u\|_{L^2}\|q\|_{L^2}
+				+ \tfrac{1}{\lambda}\|p\|_{L^2}\|q\|_{L^2} \\
+			&\le 2 \mu \|\vec u\|_{\boldsymbol H^1}\|\vec v\|_{\boldsymbol H^1}
+				+ 3 \|p\|_{L^2}\|\vec v\|_{\boldsymbol H^1}
+				+ 3 \|\vec u\|_{\boldsymbol H^1}\|q\|_{L^2}
+				+ \frac{1}{\lambda}\|p\|_{L^2}\|q\|_{L^2} \\
+			&\le 2 \mu \| (\vec u,p)\|_X \|(\vec v,q)\|_X
+				+ 3 \|(\vec u,p)\|_X \|(\vec v,q)\|_X
+				+ 3 \|(\vec u,p)\|_X \|(\vec v,q)\|_X \\
+				& + \frac{1}{\lambda}\|(\vec u,p)\|_X \|(\vec v,q)\|_X \\
+			|\tilde a((\vec u,p),(\vec v,q))| &\le (2\mu + 6 + \frac{1}{\lambda})\|(\vec u,p)\|_X \|(\vec v,q)\|_X.
+		\end{aligned}
+	\end{equation*}
+	using $\|\div \vec w\|_{L^2}\le 3 \|\vec w\|_{H^1}$, $\|p\|_{L^2} \le \|(\vec u,p)\|_X$ and $\|\vec u\|_{H^1} \le \|(\vec u,q)\|_X$.
+	\item $\tilde a(\cdot,\cdot)$ is coercive on $X$: for all $(\vec u,p)\in X$,
+	\begin{equation*}
+		\tilde a((\vec u,p),(\vec u,p)) = 2\mu \|\boldsymbol{\varepsilon}(\vec u)\|_{L^2}^2 + \tfrac{1}{\lambda}\|p\|_{L^2}^2
+		\ge 2\mu C_K^2 \|\vec u\|_{H^1}^2 + \tfrac{1}{\lambda}\|p\|_{L^2}^2
+		\ge \alpha \|(\vec u,p)\|_X^2,
+	\end{equation*}
+	with $\alpha:=\min\{2\mu C_K^2,\,1/\lambda\}>0$ (for fixed finite $\lambda$).
+\end{itemize}
+
+Then, by Lax–Milgram theorem, the mixed problem \eqref{eq:weak_pressure_displ_form} admits a unique solution $(\vec u,p)\in X$ and the stability estimate
+\[
+\|\vec u\|_{H^1(\Omega)}+\|p\|_{L^2(\Omega)} \le C\big(\|\vec f\|_{\boldsymbol L^2(\Omega)} + \|\vec t_N\|_{\boldsymbol L^2(\partial\Omega_N)}\big)
+\]
+holds with $C$ independent of $(\vec f,\vec t_N)$.
+
+\noindent \textbf{Remark.} As $\lambda\to \infty$ (near-incompressible limit) the coercivity constant degenerates on the pressure component; the formulation approaches a saddle-point (Stokes-like) problem requiring an inf-sup (Ladyzhenskaya–Babuška–Brezzi) condition on the pair $(V,Q)$ to remain stable.
+
+A way to ensure the inf-sup condition is to impose a non-zero mean value for the pressure field, i.e., $p\in L^2_0(\Omega)$, which is a common practice in numerical simulations of incompressible flows.
+
+Then, the following inf-sup condition holds:
+\[\inf_{q\in Q}\sup_{\vec v\in V}\frac{\tilde a((\vec v,q),(\vec u,p))}{\|\vec v\|_{H^1(\Omega)}\|q\|_{L^2(\Omega)}} \ge \beta > 0,\]
+for some $\beta>0$ independent of $\lambda$ and $\mu$. This condition ensures the stability of the mixed formulation and prevents spurious oscillations in the pressure field, and V = $H^1_0(\Omega)$ and $Q = L^2_0(\Omega)$ \cite{boffi_mixed_2008}.
+
+If $\Omega_D = \emptyset$, the Dirichlet boundary condition is not imposed, and the problem becomes a pure Stokes problem. In this case, the inf-sup condition is necessary to ensure the well-posedness of the problem, and the uniqueness of the solution is guaranteed by the compatibility condition on the external loads, as discussed in Section \ref{sec:pure_traction} modulo a rigid body motion.
+
+\subsection{Isogeometric discretisation and a priori error estimate}
+Under standard approximation and stability assumptions for the mixed formulation, the Galerkin solution enjoys the usual quasi-optimal a priori estimate. Let $(V_h,Q_h)\subset V\times Q$ be the tensor–product B-spline spaces of (vector) degree $d$ (for the displacement) and (scalar) degree $d$ or $d-1$ (for the pressure) with mesh size $h$, and assume that the discrete inf–sup condition holds with a constant $\beta>0$ independent of $h$, $\lambda$ and $\mu$ (locking–free setting) \cite{boffi_mixed_2008}. Then, for the exact solution $(\vec u,p)$ of \eqref{eq:weak_pressure_displ_form} and the discrete solution $(\vec u_h,p_h)\in V_h\times Q_h$, continuity plus coercivity on the kernel give the Céa type bound
+\[
+\|\vec u-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p-p_h\|_{L^2(\Omega)}
+\;\le\; C\,\Big( \inf_{\vec w_h\in V_h}\|\vec u-\vec w_h\|_{\boldsymbol H^1(\Omega)} + \inf_{q_h\in Q_h}\|p-q_h\|_{L^2(\Omega)}\Big),
+\]
+with $C$ independent of $h,\lambda,\mu$. For $(\vec u,p)$ sufficiently smooth, namely $\vec u\in \boldsymbol H^{d+1}(\Omega)$ and $p\in H^{d}(\Omega)$, spline approximation estimates yield
+\[
+\|\vec u-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p-p_h\|_{L^2(\Omega)} \;\le\; C h^{d}\Big(\|\vec u\|_{\boldsymbol H^{d+1}(\Omega)}+\|p\|_{H^{d}(\Omega)}\Big),
+\]
+and, under the additional elliptic regularity needed for a duality argument, the displacement $L^2$–error improves to
+\[
+\|\vec u-\vec u_h\|_{\boldsymbol L^2(\Omega)} \;\le\; C h^{d+1}\|\vec u\|_{\boldsymbol H^{d+1}(\Omega)}.
+\]
+Crucially, these constants remain bounded as $\lambda\to\infty$, in contrast with the pure displacement formulation whose coercivity deteriorates ($\alpha\sim 1/\lambda$), leading to volumetric locking; hence the mixed formulation delivers uniform (locking–free) convergence in the nearly incompressible regime \cite{boffi_mixed_2008,da_veiga_mathematical_2014}.
+
+
+
+
+
+
+% Let  and  be tensor-product B-spline spaces of degree  and mesh-size  (maximal continuity). If the exact solution satisfies the regularity
+% , standard approximation results for B-splines give the best-approximation estimates
+% \begin{equation*}
+% \inf_{(\vec w_h,q_h)\in V_h\times Q_h} \bigl(|\vec u-\vec w_h|{H^1} + |p-q_h|{L^2}\bigr) = O(h^d).
+% \end{equation*}
+% By C'ea's lemma (Galerkin orthogonality + continuity/coercivity) the discrete solution  satisfies
+% \begin{equation}\label{eq:cea}
+% |\vec u-\vec u_h|{H^1} + |p-p_h|{L^2} \le \frac{M}{\alpha};\inf_{(\vec w_h,q_h)}\bigl(|\vec u-\vec w_h|{H^1} + |p-q_h|{L^2}\bigr) = O(h^d),
+% \end{equation}
+% where the constants  are the continuity and coercivity constants. In practice one thus expects order  convergence in the -norm for displacements and in the -norm for pressure provided the solution is smooth enough.
+
+
 
 \subsection{Example of simulation using \texttt{PSYDAC}}
+In this section, we will present the results of a simulation using the mixed displacement-pressure formulation with B-Splines. 
 
-I have first try to implement the previous formulation with same hypothesis as in \textbf{Subsection \ref{subsec:Dirichlet Homogeneous Boundary conditions on}}. In this case, the known pressure field is defined as : 
-$$p_e = -\lambda \pi \sin(\pi x)\sin(\pi y)\cos(\pi z)$$
+For the manufactured solution, we will use the same one as in section \ref{subsec:Dirichlet Homogeneous Boundary conditions on}. For reminder, the exact solution is given by:
+$$
+\vec u_e(x,y,z)=
+\begin{pmatrix}
+0\\[2pt]
+0\\[2pt]
+\sin(\pi x)\sin(\pi y)\sin(\pi z)
+\end{pmatrix},\qquad
+p_e(x,y,z)= -\lambda\,\div \vec u_e = -\lambda \pi \sin(\pi x)\sin(\pi y)\cos(\pi z).
+$$
+
+$$
+\vec f = -\div \boldsymbol\sigma(\vec u_e,p_e)=
+\begin{pmatrix}
+-\pi^{2}(\lambda+\mu)\cos(\pi x)\sin(\pi y)\cos(\pi z)\\[4pt]
+-\pi^{2}(\lambda+\mu)\sin(\pi x)\cos(\pi y)\cos(\pi z)\\[4pt]
+\pi^{2}(\lambda+4\mu)\sin(\pi x)\sin(\pi y)\sin(\pi z)
+\end{pmatrix}.
+% -\pi^{2}(\lambda+\mu)\cos(\pi x)\sin(\pi y)\cos(\pi z)\[4pt]\\n-\pi^{2}(\lambda+\mu)\sin(\pi x)\cos(\pi y)\cos(\pi z)\[4pt]\\n\pi^{2}(\lambda+4\mu)\sin(\pi x)\sin(\pi y)\sin(\pi z)
+% \end{pmatrix}.
+$$
 
 
 \begin{figure}[!h]
@@ -751,7 +942,7 @@ $$p_e = -\lambda \pi \sin(\pi x)\sin(\pi y)\cos(\pi z)$$
 		\caption{$d=5$}
 		\label{fig:convergencedegree5mixeddirichlethomogeneouskappa1}
 	\end{subfigure}
-	\caption{Four plots of errors between exact solution and numerical solution with different degree B-Splines (with $\lambda = 1.25$  \& $\mu = 1$) using the mixed formulation}
+	\caption{Four plots of errors between exact solution and numerical solution with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$) using the mixed formulation}
 \end{figure}
 
 \begin{figure}[!h]
@@ -791,8 +982,308 @@ $$p_e = -\lambda \pi \sin(\pi x)\sin(\pi y)\cos(\pi z)$$
 	\caption{Error plots between exact solution and numerical solution with degree 2 B-Splines and mixed formulation with increasing values of $\lambda$}
 \end{figure}
 
-\newpage
-Compare these two formulation in "extreme" cases on the supercomputer ?
+\chapter{Thermoelasticity}
+\section{Introduction}
+This chapter is dedicated to the study of the thermoelasticity problem, which is a coupled problem between the mechanical and thermal fields. The aim is to solve the coupled system of equations that govern the behavior of a thermoelastic material under thermal and mechanical loads. This work has been initiated to solve a problem present during the IPP Programme Days 2025 by Prof. Dr. Rudolf Neu. The goal is to understand the deformation of a medium under the influence of thermal loads and mechanical forces. The medium is composite material, composed of copper and tungsten. The geometry is presented on the following figure.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{geometry_thermoelasticity.png}
+	\caption{Geometry of the thermoelasticity problem from the IPP Programme Days 2025}
+	\label{fig:geometry_thermoelasticity}
+\end{figure}
+
+\section{Simplified problem - Physical model and equations}
+
+Before solving this problem, I want to simplify it a bit by considering a slightly different geometry, which is a square without the hole in the middle. The goal is to understand the behavior of the medium under thermal and mechanical loads, to see how the deformation of the medium is affected by the thermal loads and to see if PSYDAC can effectively solve this simplified problem. The geometry of the simplified problem is presented on the figure \ref{fig:geometry_thermoelasticity_simplified}.
+
+\subsection{Problem setup and parameters}
+\label{subsec:problem_setup_parameters}
+The problem can be parameterized as follows with other boundary conditions and parameters:
+\begin{itemize}
+	\item The domain $\Omega$ is a square of size $22$: $\Omega = [0,22]^2$.
+	\item $\partial \Omega_{\text{heat}} = \{(x,y) \in \partial \Omega \,|\, x = 0 \text{ and } x = 22 \}$ is the left and right edges of the square, where heat $Q$ is applied. $\partial \Omega_{\text{temp}} = \{(x,y) \in \partial \Omega \,|\, y = 0 \text{ and } y = 22\}$ is the top and bottom edges of the square, where the temperature is fixed to $T_0$.
+	\item $\partial \Omega_{D} = \{(x,y) \in \partial \Omega \,|\, x = 0 \text{ and } x = 22 \}$ is the left and right edges of the square, where the Dirichlet boundary conditions are applied and the displacement is fixed. $\partial \Omega_{N} = \{(x,y) \in \partial \Omega \,|\, y = 0 \text{ and } y = 22\}$ is the top and bottom edges of the square, where the Neumann boundary conditions are applied and the traction is fixed.
+	\item For $y \in (0, 17)$, the material is composite and properties are given by a affine interpolation between the properties of copper and tungsten. For $y \in (17, 22)$, the material is pure tungsten.
+	For example, $\lambda$ is defined as:
+	\[\lambda(y) = \begin{cases}
+		\lambda_{\text{Cu}} + \frac{y}{17}(\lambda_{\text{W}} - \lambda_{\text{Cu}}) & \text{if } y \in (0, 17) \\
+		\lambda_{\text{W}} & \text{if } y \in (17, 22)
+	\end{cases}\]
+	\item The material properties are given by: 
+	\begin{table}[h!]
+	\centering
+	\begin{tabular}{lcc}
+	\hline
+	\textbf{Property} & \textbf{Cu} & \textbf{W} \\
+	\hline
+	Lamé's first constant $\lambda$ [Pa] & $1.1\times 10^{11}$ & $2.5\times 10^{11}$ \\
+	Shear modulus $\mu$ [Pa]             & $4.1\times 10^{10}$ & $1.6\times 10^{11}$ \\
+	Thermal expansion $\alpha$ [1/K]     & $1.7\times 10^{-5}$ & $4.5\times 10^{-6}$ \\
+	Thermal conductivity $\kappa$ [W/(m$\cdot$K)] & $401$ & $174$ \\
+	\hline
+	\end{tabular}
+	\caption{Material properties of Copper (Cu) and Tungsten (W).}
+	\end{table}
+\end{itemize}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{geometry_thermoelasticity_simplified.jpg}
+	\caption{Geometry of the simplified thermoelasticity problem}
+	\label{fig:geometry_thermoelasticity_simplified}
+\end{figure}
+
+\subsection{Strong Formulation}
+The presentation of the strong formulation of the thermoelasticity problem is based on the principles of continuum mechanics and thermodynamics taken from \cite{MeyerSpringer2015} and \cite{Persson2016}. The thermoelasticity problem is a coupled problem between the mechanical and thermal fields. The equations that govern the behavior of a thermoelastic material are given by the coupling of the heat equation and the elasticity equation.
+
+The full time-dependent thermoelasticity equations are:
+\begin{equation}
+	\left\{
+	\begin{aligned}
+		\rho(y) c_p(y) \frac{\partial T}{\partial t} + \div (\kappa(y) \grad T) &= Q - (3\lambda(y) + 2\mu(y))\alpha(y) T_0 \frac{\partial}{\partial t} (\div \vec u) \\
+		\rho(y) \frac{\partial^2 \vec u}{\partial t^2} - \div \boldsymbol{\sigma}(\vec u) &= \vec f  \\
+		\boldsymbol{\sigma}(\vec u) &= \lambda(y) (\div \vec u) I_3 + 2\mu(y) \boldsymbol{\varepsilon}(\vec u) - (3\lambda(y) + 2\mu(y)) \alpha(y) T I_3 
+	\end{aligned}
+	\right.
+\end{equation}
+
+where $\rho(y)$ is the density, $c_p(y)$ is the specific heat capacity at constant pressure, $T$ is the temperature, $\kappa(y)$ is the thermal conductivity, $Q$ is the heat source, $\vec u$ is the displacement field, $\vec f$ is the body force, $\boldsymbol{\sigma}$ is the stress tensor, $\lambda(y)$ and $\mu(y)$ are the Lamé coefficients, $\boldsymbol{\varepsilon}$ is the strain tensor, $\alpha(y)$ is the thermal expansion coefficient and $T_0$ is the reference temperature.
+
+For this study, we will consider the stationary case, where the time derivatives are zero ($\frac{\partial T}{\partial t} = 0$ and $\frac{\partial^2 \vec u}{\partial t^2} = 0$). This simplifies the system to:
+\begin{equation*}
+	\left\{
+	\begin{aligned}
+		- \div (\kappa(y) \grad T) &= Q \\
+		- \div \boldsymbol{\sigma}(\vec u) &= \vec f \\
+		\boldsymbol{\sigma}(\vec u) &= \lambda(y) (\div \vec u) I_3 + 2\mu(y) \boldsymbol{\varepsilon}(\vec u) - (3\lambda(y) + 2\mu(y)) \alpha(y) T I_3 
+	\end{aligned}
+	\right.
+\end{equation*}
+These stationary equations represent the equilibrium state of the thermoelastic material under constant thermal and mechanical loads.
+
+To complete the problem formulation, we must specify the boundary conditions. Based on the problem description, we have the following conditions on the boundary $\partial\Omega$:
+
+For the thermal problem:
+\begin{align}
+    T &= T_0 \quad &&\text{on } \partial\Omega_{\text{temp}} \label{eq:bc_temp_dirichlet_thermoelastic} \\
+    - \kappa \grad T \cdot \vec n &= q_S \quad &&\text{on } \partial\Omega_{\text{heat}} \label{eq:bc_temp_neumann_thermoelastic}
+\end{align}
+where $T_0$ is the reference temperature and $q_S$ is the applied heat flux on the boundary.
+
+For the mechanical problem:
+\begin{align}
+    \vec u &= \vec u_D \quad &&\text{on } \partial\Omega_D \label{eq:bc_disp_dirichlet_thermoelastic} \\
+    \boldsymbol{\sigma}(\vec u) \cdot \vec n &= \vec t_N \quad &&\text{on } \partial\Omega_N \label{eq:bc_disp_neumann_thermoelastic}
+\end{align}
+where $\vec u_D$ is the prescribed displacement and $\vec t_N$ is the prescribed traction. 
+To prove the well-posedness of the problem, we will limit the analysis to $T_0 = 0$ and $\vec u_D = \vec 0$, otherwise the problem can be rewritten with homogeneous boundary conditions with a change of variables.
+ 
+For a given $Q \in L^2(\Omega)$, $q_S \in L^2(\partial \Omega_{\text{heat}})$, $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(\partial \Omega_N)$, the entire strong problem is:
+\begin{tcolorbox}
+Find $(T,\vec u) \in H^1(\Omega) \times \boldsymbol H^1_{\vec 0,D}(\Omega)$ such that:
+\begin{align}
+	- \div (\kappa(y) \grad T) &= Q && \text{on } \Omega \\
+	- \div \boldsymbol{\sigma}(\vec u) &= \vec f && \text{on } \Omega \\
+	\boldsymbol{\sigma}(\vec u) &= \lambda(y) (\div \vec u) I_3 + 2\mu(y) \boldsymbol{\varepsilon}(\vec u) - (3\lambda(y) + 2\mu(y)) \alpha(y) T I_3 && \text{on } \Omega \\
+	\vec u &= \vec 0 && \text{on } \partial\Omega_D \\
+	\boldsymbol{\sigma}(\vec u) \cdot \vec n &= \vec t_N && \text{on } \partial\Omega_N \\
+	T &= 0 && \text{on } \partial\Omega_{\text{temp}} \\
+	-\kappa(y) \grad T \cdot \vec n &= q_S && \text{on } \partial\Omega_{\text{heat}}
+\end{align}
+\end{tcolorbox}
+
+This problem can be seen as a coupled thermo-mechanical problem, where the temperature field $T$ affects the mechanical behavior of the material through the thermal expansion term in the stress tensor $\boldsymbol{\sigma}(\vec u)$, but the mechanical displacement $\vec u$ does not directly affect the temperature field $T$. So, to solve this problem, one can first solve the thermal problem to obtain the temperature field $T$, and then use this temperature field to solve the mechanical problem for the displacement $\vec u$ with a modified source term that includes the thermal expansion effects. As $\displaystyle \forall y \in [0,22], \frac{\lambda(y)}{\mu(y)} \leq 50$, according to results from Subsection \ref{sec:mixed_BC}, we can use the pure displacement formulation to solve the mechanical problem.
+
+\subsection{Weak Formulation}
+
+The corresponding weak formulation is obtained by multiplying the PDEs by suitable test functions, integrating over the domain $\Omega$, and applying integration by parts.
+
+Let the solution space for temperature be $H^1_{0,\text{temp}} = \{ \phi \in H^1(\Omega) \mid \phi = 0 \text{ on } \partial\Omega_{\text{temp}} \}$ and for displacement be $\boldsymbol{H}^1_{\vec 0,D}(\Omega)$. The weak problem is:
+\begin{tcolorbox}
+Find $(T, \vec u) \in H^1_{0,\text{temp}} \times \boldsymbol{H}^1_{\vec 0,D}(\Omega)$ such that for all test functions $(\theta, \vec v) \in H^1_{0,\text{temp}} \times \boldsymbol{H}^1_{\vec 0,D}(\Omega)$:
+\begin{equation}
+	\left\{
+	\begin{aligned}
+		b(T, \theta) &= l_T(\theta) \\
+		a(\vec u, \vec v) &= l_U(\vec v)
+	\end{aligned}
+	\right.
+\end{equation}
+\label{eq:weak-thermoelasticity}
+\end{tcolorbox}
+With 
+\begin{equation*}
+	\begin{aligned}
+	& b : \left\{
+		\begin{aligned}
+			& H^1_{0,\text{temp}} \times H^1_{0,\text{temp}} \longrightarrow \mtr \\
+			& (T, \theta) \mapsto \int_{\Omega} \kappa(y) \grad T \cdot \grad \theta \, d\Omega 
+		\end{aligned}
+	\right. \\
+	& l_T : \left\{
+		\begin{aligned}
+			& H^1_{0,\text{temp}} \longrightarrow \mtr \\
+			& \int_{\Omega} Q \theta \, d\Omega - \int_{\partial\Omega_{\text{heat}}} q_S \theta \, dS
+		\end{aligned}
+	\right. \\
+	& a : \left\{
+		\begin{aligned}
+			& \boldsymbol{H}^1_{\vec 0,D}(\Omega) \times \boldsymbol{H}^1_{\vec 0,D}(\Omega) \longrightarrow \mtr \\
+			& (\vec u, \vec v) \mapsto \int_{\Omega} \Big( \lambda(y) (\div \vec u) (\div \vec v) + 2\mu(y) \boldsymbol{\varepsilon}(\vec u) : \boldsymbol{\varepsilon}(\vec v) \Big) \, d\Omega 
+		\end{aligned}
+	\right. \\
+	& l_U : \left\{
+		\begin{aligned}
+			& \boldsymbol{H}^1_{\vec 0,D}(\Omega) \longrightarrow \mtr \\ 
+			& \int_{\Omega} \vec f \cdot \vec v \, d\Omega + \int_{\partial\Omega_N} \vec t_N \cdot \vec v \, dS + \int_{\Omega} (3\lambda(y) + 2\mu(y)) \alpha(y) T (\div \vec v) \, d\Omega
+		\end{aligned}
+	\right.\\
+	& \exists \kappa_-, \kappa_+, \lambda_-, \lambda_+, \mu_-, \mu_+, \alpha_-, \alpha_+ > 0 \text{ such that } \forall y \in [0,22], \\
+	& 0 < \kappa_- \leq \kappa(y) \leq \kappa_+ < + \infty \qquad 0 < \lambda_- \leq \lambda(y) \leq \lambda_+ < + \infty \\
+	& 0 < \mu_- \leq \mu(y) \leq \mu_+ < + \infty \qquad 0 < \alpha_- \leq \alpha(y) \leq \alpha_+ < + \infty.
+	\end{aligned}
+\end{equation*}
+
+\noindent \textbf{Now, we prove the well-posedness of the thermal problem.} 
+\begin{itemize}
+    \item $(H^1_{0,\text{heat}}(\Omega),\|.\|_{H^1(\Omega)})$ is a Hilbert space.
+    \item $a(\cdot,\cdot)$ is a bilinear form on $H^1_{0,\text{heat}}(\Omega)\times H^1_{0,\text{heat}}(\Omega)$ and $\ell_T$ is a linear form on $H^1_{0,\text{heat}}(\Omega)$.
+    \item $\ell_T(\cdot)$ is continuous: by Cauchy--Schwarz and the trace inequality,
+    \begin{equation*}
+    \begin{aligned}
+    \forall \theta\in H^1_{0,\text{heat}}(\Omega),\qquad
+    |\ell_T(\theta)|
+    &\le \|Q\|_{L^2(\Omega)}\|\theta\|_{L^2(\Omega)} + \|q_S\|_{L^2(\partial\Omega_{\mathrm{heat}})}\|\theta\|_{L^2(\partial\Omega_{\mathrm{heat}})}\\
+    &\le \Big(\|Q\|_{L^2(\Omega)} + \|\gamma_0\|\,\|q_S\|_{L^2(\partial\Omega_{\mathrm{heat}})}\Big)\|\theta\|_{H^1(\Omega)},
+    \end{aligned}
+    \end{equation*}
+    where $\gamma_0: H^1(\Omega)\to L^2(\partial\Omega_{\mathrm{heat}})$ is the trace operator.
+    \item $a(\cdot,\cdot)$ is continuous:
+    \begin{equation*}
+    \begin{aligned}
+    \forall T,\theta\in H^1_{0,\text{heat}}(\Omega),\qquad
+    |a(T,\theta)|
+    &\le \kappa_{+}\|\nabla T\|_{L^2(\Omega)}\|\nabla\theta\|_{L^2(\Omega)}\\
+    &\le \kappa_{+}\|T\|_{H^1(\Omega)}\|\theta\|_{H^1(\Omega)}.
+    \end{aligned}
+    \end{equation*}
+    \item $a(\cdot,\cdot)$ is coercive: $\forall T\in H^1_{0,\text{heat}}(\Omega)$,
+    \begin{equation*}
+    a(T,T)=\int_\Omega \kappa(y)|\nabla T|^2\,\mathrm{d}x \ge \kappa_{\min}\|\nabla T\|_{L^2(\Omega)}^2 \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2}\|\nabla T\|_{L^2(\Omega)}^2\right).
+    \end{equation*}
+    Since functions in $H^1_{0,\text{heat}}(\Omega)$ vanish on $\partial\Omega_{\mathrm{temp}}$ and a Poincaré inequality holds on $H^1_{0,\text{heat}}(\Omega)$, there exists $C_P>0$ such that $\|T\|_{L^2(\Omega)}\le C_P\|\nabla T\|_{L^2(\Omega)}$. 
+    \begin{equation*}
+		\begin{aligned}
+		& a(T,T) \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2C_P^2}\|T\|_{L^2(\Omega)}^2\right) \ge \alpha\|T\|_{H^1(\Omega)}^2 \\
+		& \text{With } \alpha = \min\left(\frac{\kappa_{-}}{2}, \frac{\kappa_{-}}{2C_P^2}\right) > 0.
+		\end{aligned}
+    \end{equation*}
+\end{itemize}
+
+Therefore $a(\cdot,\cdot)$ is continuous and coercive on the Hilbert space $H^1_{0,\text{heat}}(\Omega)$, and $\ell_T\in H^1_{0,\text{heat}}(\Omega)'$. By the Lax--Milgram theorem there exists a unique $T\in H^1_{0,\text{heat}}(\Omega)$ such that
+\[
+a(T,\theta)=\ell_T(\theta)\qquad\forall\theta\in H^1_{0,\text{heat}}(\Omega).
+\]
+
+The well-posedness of the displacement problem is simalar to Section \ref{sec:Pure displacement weak-formulation}. Here, we can add that $\ell_U$ is continuous, $a$ is continuous and coercive with new constants:
+\begin{itemize}
+	\item $\forall v \in \boldsymbol{H}^1_{\vec 0,D}(\Omega),$
+	\begin{equation*}
+	\begin{aligned}
+	|\ell_U(v)| & \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\right)\norm{\vec v}_{\boldsymbol H^1(\Omega)} + (3 \lambda_+ + 2 \mu_+) \alpha_+ \|T\|_{L^2(\Omega)} \|\div \vec v\|_{L^2(\Omega)} \\
+	& \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\right)\norm{\vec v}_{\boldsymbol H^1(\Omega)} + 2(3 \lambda_+ + 2 \mu_+) \alpha_+ \|T\|_{L^2(\Omega)} \|\vec v\|_{\boldsymbol H^1(\Omega)}. \\
+	|\ell_U(v)| & \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)} + 2(3 \lambda_+ + 2 \mu_+) \alpha_+ \|T\|_{L^2(\Omega)} \right) \|\vec v\|_{\boldsymbol H^1(\Omega)}.
+	\end{aligned}
+	\end{equation*}
+	\item $\forall \vec u, \vec v \in \boldsymbol{H}^1_{\vec 0,D}(\Omega),$
+	\begin{equation*}
+		\left| a(\vec u, \vec v) \right| \leq (3\lambda_+ + 2\mu_+)\norm{\vec u}_{\boldsymbol H^1(\Omega)}\norm{\vec v}_{\boldsymbol H^1(\Omega)}
+	\end{equation*}
+	\item $\forall \vec u \in \boldsymbol{H}^1_{\vec 0,D}(\Omega),$
+	\begin{equation*}
+		\left| a(\vec u, \vec u) \right| \geq 2 \mu_- C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}^2
+	\end{equation*}
+	With $C > 0$ a constant from Korn's inequality.
+\end{itemize}
+
+\subsection{Numerical simulation}
+Denotes by $V^h \subset H^1_{0,\text{heat}}(\Omega)$ a finite-dimensional subspace of test functions for temperature, $\boldsymbol{V}^h \subset \boldsymbol{H}^1_{\vec 0,D}(\Omega)$ a finite-dimensional subspace of test functions for displacement. $d$ is the degree of the B-spline spaces used to approximate the solution. Let's suppose that $(T,\vec u) \in H^{s+1}(\Omega) \times \boldsymbol{H}^{s+1}(\Omega)$ for some $s \in [1, d+1]$ is solving \eqref{eq:weak-thermoelasticity} and let's denote the corresponding approximations by $(T^h,\vec u^h) \in V^h \times \boldsymbol{V}^h$. The best approximation estimates for the B-spline spaces $V^h$ and $\boldsymbol{V}^h$ is: 
+\begin{equation}
+	\begin{aligned}
+		& \|T - T^h\|_{H^1(\Omega)} \leq C_1 h^q \|T\|_{H^{q+1}(\Omega)}, \\
+		& \|T - T^h\|_{L^2(\Omega)} \leq C_2 h^{q+1} \|T\|_{H^{q+1}(\Omega)}, \\
+		& \|\vec u - \vec u^h\|_{\boldsymbol H^1(\Omega)} \leq C_3 h^q \|\vec u\|_{\boldsymbol H^{q+1}(\Omega)}, \\
+		& \|\vec u - \vec u^h\|_{\boldsymbol L^2(\Omega)} \leq C_4 h^{q+1} \|\vec u\|_{\boldsymbol H^{q+1}(\Omega)}.
+	\end{aligned}
+	\label{eq:approximation-estimates}
+\end{equation}
+where $C_1, C_2, C_3, C_4 > 0$ are constants independent of $h$, and $q = \min(d, s)$ \cite{da_veiga_mathematical_2014}.
+To evaluate the accuracy of the numerical solution, we can use these estimates to bound the error between the exact solution and the numerical approximation and compare it with the numerical results obtained from the simulation. Again, we use the manufactured solutions approach to evaluate the performance of the numerical method.
+
+For that purpose, we can consider $T_e$ and $\vec u_e$ defined as: 
+$$
+T_e = \cos\left(\frac{\pi x}{22}\right) \cos\left(\frac{\pi y}{22}\right) \qquad \vec u_e = \begin{pmatrix}
+	0 \\
+	\cos\left(\frac{\pi x}{22}\right) \cos\left(\frac{\pi y}{22}\right) 
+\end{pmatrix}
+$$
+and the corresponding source terms:
+\begin{equation*}
+	\begin{aligned}
+	& Q = - \div(\kappa(y) \grad T_e), \qquad q_S = -\kappa(y) \grad T_e \cdot \vec n, \\
+	& \vec f = -\div \boldsymbol{\sigma}(\vec u_e), \qquad \vec t_N = \boldsymbol{\sigma}(\vec u_e) \cdot \vec n.
+\end{aligned}
+\end{equation*}
+
+The first result I obtained was the following plot:
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png}
+	\caption{Error plot of the temperature field ($\|T - T^h\|_{L^2(\Omega)}$ and $\|T - T^h\|_{H^1(\Omega)}$) with $d=2$ B-splines and $\text{lim} = 17.0$}
+	\label{fig:error_temp_d2}
+\end{figure}
+
+In this figure, we can observe that the error in the temperature field is decreasing with the number of cells $n_{\text{cells}}$ until $n_{\text{cells}} = 32$. After that, the error is increasing and decreases again. This behavior is likely due to the interaction between the mesh refinement, the B-spline approximation properties and the properties of the medium. When the degree of the B-splines is set to 3, we can see notice in the figure \ref{fig:error_temp_d3}, that the hollow moves to a lower number of cells.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png}
+	\caption{Error plot of the temperature field ($\|T - T^h\|_{L^2(\Omega)}$ and $\|T - T^h\|_{H^1(\Omega)}$) with $d=3$ B-splines and $\text{lim} = 17.0$}
+	\label{fig:error_temp_d3}
+\end{figure}
+
+The same phenomenon is observed for the displacement field.
+One reason that can explain this phenomenon is the placement of the B-spline knots and the corresponding basis functions. As the mesh is refined, the B-spline basis functions become more localized, which can lead to better approximation properties in certain regions of the domain. In the medium that we are considering, the line $y = \text{lim} = 17.0$ plays a crucial role in the behavior of the solution because it corresponds to a significant change in the material properties. Moreover, \texttt{PSYDAC} cannot handle coefficients defined piecewise so it is necessary to an approximation of Heaviside functions to defined coeffients. For example, $\lambda(y)$ is defined by:
+$$ \lambda(y) = \big( (\lambda_W - \lambda_{Cu}) \frac{x}{\text{lim}} + \lambda_{Cu} \big) \text{H}(\text{lim}-x) + \lambda_{W} \text{H}(x-\text{lim}) \qquad H \text{ is the Heaviside function}.$$
+One hypothesis that can be made to verify the role of the line $y = \text{lim}$ is to move its value up and down and observe the effect on the solution. Especially, it's possible to move the value of $\text{lim}$ to $16.5$. This value of corresponds to line with breakpoints when the domain $\Omega$ is discretized into different cells. 
+\begin{figure}[!h]
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png}
+		\caption{Error plot of the temperature field}
+		\label{fig:error_temp_d2_lim_16_5}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png}
+		\caption{Error plot of the displacement field}
+		\label{fig:error_disp_d2_lim_16_5}
+	\end{subfigure}
+	\caption{Error plots with $\text{lim} = 16.5$ and degree 2 B-splines}
+\end{figure}
+
+In this case, we can observe the optimal convergence behavior of the error as predicted by the theory. So the position of the line $y = \text{lim}$ is crucial for the accuracy of the solution and the simulation.
+To make the simulation possible in case described in subsection \ref{subsec:problem_setup_parameters}, we need to get a simulation setup that solve the problem when $\text{lim} = 17$.
+For the moment, the function which discretised the domain and create the finite dimensional spline space takes only the number of cells per direction as argument. I have implemeted a new feature to the library which allows the user to provide a custom discretisation grid. This feature required to add new functions to the \texttt{Geometry} class and modify the previous \texttt{discretize} function in \texttt{PSYDAC}. To ensure the correct working of this new feature, I have also implemented a set of unit tests.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{custom_grid.png}
+	\caption{Example of a custom discretisation grid}
+	\label{fig:custom_grid_example}
+\end{figure}
+This new feature allows the user to define a custom grid for the discretisation of the domain. A entire description of this feature is available on GitHub : \href{https://github.com/pyccel/psydac/pull/518}{https://github.com/pyccel/psydac/pull/518}
+
+
 
 \newpage
 \printbibliography[heading=bibnumbered]
