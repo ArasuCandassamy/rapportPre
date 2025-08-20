@@ -1,0 +1,11 @@
+# ALL TEX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lot
+*.lof
+*.fls
+*.fdb_latexmk
