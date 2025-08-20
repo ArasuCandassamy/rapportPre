@@ -20,8 +20,51 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tcolorbox}
+\usepackage{listings}
 
 \tcbuselibrary{skins, breakable}
+
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstset{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{blue},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  frame=single,
+  tabsize=2,
+  language=Python,
+literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
+  {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1
+}
 
 
 
@@ -481,7 +524,8 @@ In case of \textbf{Pure Traction Problem}, we are looking for a solution modulo 
     \label{fig:Dependancy_Psydac}
 \end{figure}
 
-Raven is a supercomputer located at the Max-Planck Institute for Plasma Physics. It is part of the High Performance Computing (HPC) infrastructure and is used for large-scale simulations and data analysis in plasma physics and related fields. I had the opportunity to run my simulations on Raven, which provided me with access to powerful computational resources and parallel processing capabilities.
+Raven is a supercomputer located at the Max-Planck Institute for Plasma Physics. It is part of the High Performance Computing (HPC) infrastructure and is used for large-scale simulations and data analysis in plasma physics and related fields. I had the opportunity to run my simulations on Raven, which provided me with access to powerful computational resources and parallel processing capabilities. 
+
 
 \subsection{Dirichlet Homogeneous Boundary conditions on $\partial\Omega_D = \partial\Omega$} \label{subsec:Dirichlet Homogeneous Boundary conditions on}
 
@@ -497,6 +541,7 @@ I have considered $\vec u_e$ defined as : $\vec u_e = \begin{pmatrix}
 \end{pmatrix} \in \boldsymbol L^2(\Omega).$
 
 To make the numerical simulation with \texttt{PSYDAC}, we have to choose two important parameters : $d$ the maximum degree of B-Splines functions that will approximate the solution and $n_{\text{cells}}$ is the number of cells in each dimension of $\Omega$ for the finite dimensional space. $\displaystyle h \propto \frac{1}{n_{\text{cells}}}$, an usual discretization parameters for finite dimensional spaces and $d$ will conduct the convergence speed of the numerical solution. 
+The code Section \ref{sec:lin_elas_dirichlet} presents the implementation details of the linear elasticity problem with Dirichlet boundary conditions.
 By solving the problem Dirichlet Homogeneous Boundary conditions on the whole border, one can observe the following plots of the simulated $\vec u_{e,3}^h$ for different plane $z$. It is possible to plot also the error $\vec u_{e,3} - \vec u_{e,3}^h$.
 \begin{figure}[!h]
     \centering
@@ -885,7 +930,7 @@ Then, the following inf-sup condition holds:
 \[\inf_{q\in Q}\sup_{\vec v\in V}\frac{\tilde a((\vec v,q),(\vec u,p))}{\|\vec v\|_{H^1(\Omega)}\|q\|_{L^2(\Omega)}} \ge \beta > 0,\]
 for some $\beta>0$ independent of $\lambda$ and $\mu$. This condition ensures the stability of the mixed formulation and prevents spurious oscillations in the pressure field, and V = $H^1_0(\Omega)$ and $Q = L^2_0(\Omega)$ \cite{boffi_mixed_2008}.
 
-If $\Omega_D = \emptyset$, the Dirichlet boundary condition is not imposed, and the problem becomes a pure Stokes problem. In this case, the inf-sup condition is necessary to ensure the well-posedness of the problem, and the uniqueness of the solution is guaranteed by the compatibility condition on the external loads, as discussed in Section \ref{sec:pure_traction} modulo a rigid body motion.
+If $\Omega_D = \emptyset$, the Dirichlet boundary condition is not imposed, and the problem becomes a pure Stokes problem. In this case, the inf-sup condition is necessary to ensure the well-posedness of the problem, and the uniqueness of the solution is guaranteed by the compatibility condition on the external loads, as discussed in Section \ref{sec:Pure displacement weak-formulation} modulo a rigid body motion.
 
 \subsection{Isogeometric discretisation and a priori error estimate}
 Under standard approximation and stability assumptions for the mixed formulation, the Galerkin solution enjoys the usual quasi-optimal a priori estimate. Let $(V_h,Q_h)\subset V\times Q$ be the tensor–product B-spline spaces of (vector) degree $d$ (for the displacement) and (scalar) degree $d$ (for the pressure) with mesh size $h$, and assume that the discrete inf–sup condition holds with a constant $\beta>0$ independent of $h$, $\lambda$ and $\mu$ (locking–free setting) \cite{boffi_mixed_2008}. Then, for the exact solution $(\vec u_e,p_e)$ of \eqref{eq:weak_pressure_displ_form} and the discrete solution $(\vec u_h,p_h)\in V_h\times Q_h$, continuity plus coercivity on the kernel give the Céa type bound
@@ -1468,6 +1513,7 @@ In this case, the hole is represented by a square $[5,17] \times [3,15]$ and its
 \end{itemize}
 
 The physical domain is then defined as the union of these patches: $$\Omega = \bigcup_{i=1}^8 \Omega_i = ([0,22] \times [0,22]) \setminus ([5,17] \times [3,15])$$.
+The code to define this multipatch domain in \texttt{PSYDAC} is given in Section \ref{sec:multipatch_code}.
 
 The use of a multipatch domain needs to ensure that the patches are properly aligned and that the transformations between them are smooth. Moreover, bilinear forms must be defined consistently across patch boundaries to ensure the stability and accuracy of the numerical methods employed. 
 To do so, we call $\Sigma_{ij}$ the interface between patches $\Omega_i$ and $\Omega_j$, such that $\Sigma_{ij} = \partial \Omega_i \cap \partial \Omega_j$.
@@ -1673,8 +1719,222 @@ Beyond the technical achievements, this internship has been profoundly enriching
 
 \newpage
 \chapter{Appendices}
-\section{Other plots of solutions for the problem with Dirichlet Homogeneous Boundary Conditions}
+\section{Simulation code for linear elasticity with Dirichlet Homogeneous Boundary Conditions}
+\label{sec:lin_elas_dirichlet}
+
+\begin{lstlisting}[caption=Simulation code for the linear elasticity problem with Dirichlet boundary conditions.]
+from mpi4py import MPI
+from sympde.expr import BilinearForm, LinearForm, integral
+from sympde.expr     import find, EssentialBC, Norm, SemiNorm
+from sympde.topology import VectorFunctionSpace, Cube, element_of, Union, NormalVector
+from sympde.calculus import grad, inner, div, Transpose
+from sympde.core import Constant
+from sympde.core import Matrix
+
+from sympy import Identity, Tuple, sin, pi, cos, diff
+
+import matplotlib.pyplot as plt
+import numpy as np
+import time
+
+from psydac.api.settings import PSYDAC_BACKENDS
 
 
+from psydac.api.discretization import discretize
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+
+def run_lin_elas_non_mixed(ncells, degree, lambda_val, mu_val, comm=None, backend=None, solver_tol=1e-8):
+
+    #+++++++++++++++++++++++++++++++
+    # 1. Abstract model
+    #+++++++++++++++++++++++++++++++
+
+    domain = Cube()
+
+    timing   = {}
+    t0 = time.time()
+
+    domain = Cube()
+
+    nn = NormalVector(domain.boundary)
+
+
+    lambda_ = Constant('lambda_', is_real=True, real=True)
+    mu   = Constant('mu',   is_real=True, real=True)
+
+    # Symbolic symmetric strain tensor
+    def epsilon_symb(w):
+        return 0.5 * (grad(w) + Transpose(grad(w)))
+
+    # Symbolic stress tensor
+    def sigma_symb(w):
+        return lambda_ * div(w) * Identity(3) + 2 * mu * epsilon_symb(w)
+
+    # Define the symmetric strain tensor (for to compute the source term)
+    def epsilon(w): 
+        grad_w = Matrix([
+            [diff(w[0], x), diff(w[0], y), diff(w[0], z)],
+            [diff(w[1], x), diff(w[1], y), diff(w[1], z)],
+            [diff(w[2], x), diff(w[2], y), diff(w[2], z)]
+        ])
+        return 0.5 * (grad_w + grad_w.T)
+
+    # Define the stress tensor (to compute the source terms)
+    def sigma(w):
+        eps = epsilon(w)
+        div_w = diff(w[0], x) + diff(w[1], y) + diff(w[2], z)
+        C_eps = lambda_ * div_w * Identity(3) + 2 * mu * eps
+        return C_eps
+
+    V = VectorFunctionSpace('V', domain)
+
+    x,y,z = domain.coordinates
+
+    u,v = [element_of(V, name=i) for i in ['u', 'v']]
+
+    # Bilinear form
+    a = BilinearForm((u,v), integral(domain , inner(sigma_symb(u), epsilon_symb(v))))
+
+
+    # Exact solution
+    ue1 = 0
+    ue2 = 0
+    ue3 = sin(pi*x)*sin(pi*y)*sin(pi*z)
+    ue = Tuple(ue1, ue2, ue3)
+
+    # Second member
+    sigma_ue = sigma(ue)
+    f1 = diff(sigma_ue[0, 0], x) + diff(sigma_ue[0, 1], y) + diff(sigma_ue[0, 2], z)
+    f2 = diff(sigma_ue[1, 0], x) + diff(sigma_ue[1, 1], y) + diff(sigma_ue[1, 2], z)
+    f3 = diff(sigma_ue[2, 0], x) + diff(sigma_ue[2, 1], y) + diff(sigma_ue[2, 2], z)
+    f = Tuple(-f1, -f2, -f3)
+
+    # Linear forms
+    l = LinearForm(v, integral(domain, inner(f, v)))
+
+    # Dirichlet boundary conditions
+    bc = [EssentialBC(u, 0, domain.boundary)]
+
+    # Variational problem
+    equation = find(u, forall=v, lhs=a(u, v), rhs=l(v), bc=bc)
+
+    error = Matrix([u[0]-ue[0], u[1]-ue[1], u[2]-ue[2]])
+
+    l2norm = Norm(error, domain, kind='l2')
+    h1norm = Norm(error, domain, kind='h1')
+    h1_seminorm = SemiNorm(error, domain, kind='h1')
+
+    t1 = time.time()
+    timing["Abstract model"] = t1-t0
+
+    #+++++++++++++++++++++++++++++++
+    # 2. Discretization
+    #+++++++++++++++++++++++++++++++
+
+    t0 = time.time()
+    domain_h = discretize(domain, ncells=ncells, comm=comm)
+    Vh       = discretize(V, domain_h, degree=degree)
+
+    equation_h = discretize(equation, domain_h, [Vh, Vh], backend=backend)
+
+    l2norm_h = discretize(l2norm, domain_h, Vh, backend=backend)
+    h1norm_h = discretize(h1norm, domain_h, Vh, backend=backend)
+    h1_seminorm_h = discretize(h1_seminorm, domain_h, Vh, backend=backend)
+
+    #+++++++++++++++++++++++++++++++
+    # 3. Solver & Errors
+    #+++++++++++++++++++++++++++++++
+
+    equation_h.set_solver('gmres', info=True, tol=solver_tol)
+
+    t1 = time.time()
+    timing["Discretization"] = t1-t0
+
+    comm.Barrier()
+    t0       = time.time()
+    uh, info = equation_h.solve(mu=mu_val, lambda_=lambda_val)
+    t1       = time.time()
+    timing['solution'] = t1-t0
+
+    comm.Barrier()
+    t0 = time.time()
+    l2_error = l2norm_h.assemble(u=uh)
+    h1_error = h1norm_h.assemble(u=uh)
+    h1_seminorm_error = h1_seminorm_h.assemble(u=uh)
+    t1       = time.time()
+
+    timing['diagnostics'] = t1-t0
+    timing["Abstract model"] = comm.reduce(timing["Abstract model"], op=MPI.MAX)
+    timing["Discretization"] = comm.reduce(timing["Discretization"], op=MPI.MAX)
+    timing['solution']       = comm.reduce(timing['solution'], op=MPI.MAX)
+    timing['diagnostics']    = comm.reduce(timing['diagnostics'], op=MPI.MAX)
+
+    return uh, info, timing, l2_error, h1_error, h1_seminorm_error
+\end{lstlisting}
+
+
+\section{Multipatch domain decomposition with PSYDAC}
+\label{sec:multipatch_code}
+\vspace{-0.5cm}
+\begin{lstlisting}[caption=Multipatch domain decomposition with PSYDAC.]
+from psydac.feec.multipatch.multipatch_domain_utilities import sympde_Domain_join
+from sympde.topology import Square
+from sympde.topology import IdentityMapping
+
+def build_domain_hole(domain_name="domain"):
+    OmegaLog1 = Square('OmegaLog1', bounds1=(0., 5), bounds2=(0., 3))
+    mapping_1 = IdentityMapping('M1', 2)
+    domain_1 = mapping_1(OmegaLog1)
+
+    OmegaLog2 = Square('OmegaLog2', bounds1=(5, 17), bounds2=(0., 3))
+    mapping_2 = IdentityMapping('M2', 2)
+    domain_2 = mapping_2(OmegaLog2)
+
+    OmegaLog3 = Square('OmegaLog3', bounds1=(17, 22), bounds2=(0., 3))
+    mapping_3 = IdentityMapping('M3', 2)
+    domain_3 = mapping_3(OmegaLog3)
+
+    OmegaLog4 = Square('OmegaLog4', bounds1=(0, 5), bounds2=(3, 15))
+    mapping_4 = IdentityMapping('M4', 2)
+    domain_4 = mapping_4(OmegaLog4)
+
+    OmegaLog6 = Square('OmegaLog6', bounds1=(17, 22), bounds2=(3, 15))
+    mapping_6 = IdentityMapping('M6', 2)
+    domain_6 = mapping_6(OmegaLog6)
+
+    OmegaLog7 = Square('OmegaLog7', bounds1=(0, 5), bounds2=(15, 22))
+    mapping_7 = IdentityMapping('M7', 2)
+    domain_7 = mapping_7(OmegaLog7)
+
+    OmegaLog8 = Square('OmegaLog8', bounds1=(5, 17), bounds2=(15, 22))
+    mapping_8 = IdentityMapping('M8', 2)
+    domain_8 = mapping_8(OmegaLog8)
+
+    OmegaLog9 = Square('OmegaLog9', bounds1=(17, 22), bounds2=(15, 22))
+    mapping_9 = IdentityMapping('M9', 2)
+    domain_9 = mapping_9(OmegaLog9)
+    
+    # 7 8 9
+    # 4 * 6
+    # 1 2 3
+    patches = [domain_1, domain_2, domain_3, domain_4, domain_6, domain_7, domain_8, domain_9]
+    axis_0, axis_1 = 0, 1
+    ext_0, ext_1 = -1, +1
+
+    connectivity = [
+        [(domain_1, axis_0, ext_1), (domain_2, axis_0, ext_0), 1],
+        [(domain_2, axis_0, ext_1), (domain_3, axis_0, ext_0), 1],
+        [(domain_7, axis_0, ext_1), (domain_8, axis_0, ext_0), 1],
+        [(domain_8, axis_0, ext_1), (domain_9, axis_0, ext_0), 1],
+
+        [(domain_1, axis_1, ext_1), (domain_4, axis_1, ext_0), 1],
+        [(domain_4, axis_1, ext_1), (domain_7, axis_1, ext_0), 1],
+        [(domain_3, axis_1, ext_1), (domain_6, axis_1, ext_0), 1],
+        [(domain_6, axis_1, ext_1), (domain_9, axis_1, ext_0), 1],
+    ]
+    return sympde_Domain_join(patches, connectivity=connectivity, name=domain_name)
+\end{lstlisting}
 
 \end{document}

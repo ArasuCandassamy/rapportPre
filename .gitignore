@@ -9,3 +9,9 @@
 *.lof
 *.fls
 *.fdb_latexmk
+end.aux
+main-blx.bib
+main.bbl
+main.run.xml
+main.synctex.gz
+m
