@@ -1,0 +1,29 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Representation of a domain $\Omega $}}{11}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Dependancy graph of \texttt {PSYDAC}, from \blx@tocontentsinit {0}\cite {guclu_psydac_2022}}}{14}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Plots comparison between the simulated and real $u_{e,3}$ with the error, for different plane $z$, with $d=2$ and $n_{\text {cell}} = 64$}}{15}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Four plots of absolute errors ($\norm {\vec u - \vec u^h}_{\boldsymbol H^1(\Omega )}$ and $\norm {\vec u - \vec u^h}_{\boldsymbol L^2(\Omega )}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}}{16}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Error plot between exact and numerical solution with degree 5 B-Splines with "higher" tolerance for the solvera}}{17}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Four plots of absolute errors ($\norm {\vec u - \vec u^h}_{\boldsymbol H^1(\Omega )}$ and $\norm {\vec u - \vec u^h}_{\boldsymbol L^2(\Omega )}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}}{18}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Error plots between exact solution and numerical solution with realistic values of Lamés' coefficients with degree 2 and 4 B-Splines}}{19}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Error plots between exact solution and numerical solution with degree 2 B-Splines with increasing values of $\lambda $ with $\mu = 1$~Pa}}{20}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Error plot between exact solution and numerical solution with degree 4 B-Splines with $\lambda = 100000$~Pa and $\mu = 1$~Pa}}{21}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Relative error between exact and numerical solution with degree 2 B-Splines for different values of $\lambda $}}{25}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Relative error between exact and numerical solution with degree 2 B-Splines for steel's Lamé parameters}}{26}{figure.caption.15}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Geometry of the thermoelasticity problem from the IPP Programme Days 2025}}{28}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Geometry of the simplified thermoelasticity problem}}{29}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Error plot of the temperature field ($\|T - T^h\|_{L^2(\Omega )}$ and $\|T - T^h\|_{H^1(\Omega )}$) with $d=2$ B-splines and $\text {lim} = 17.0$}}{33}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Error plot of the temperature field ($\|T - T^h\|_{L^2(\Omega )}$ and $\|T - T^h\|_{H^1(\Omega )}$) with $d=3$ B-splines and $\text {lim} = 17.0$}}{34}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Error plots with $\text {lim} = 16.5$ and degree 2 B-splines}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Example of a custom discretisation grid}}{35}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Error plots of thermoelasticity with different degree B-splines using custom grid discretisation with $\text {lim} = 17$}}{36}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Time harmonic Maxwell's equation on a pretzel domain with inhomogeneous essential boundary conditions. Multi-patch domain (left), numerical amplitude $|u_h|$ (center) and amplitude error $|u_{ex}| - |u_h|$ (right) obtained with polynomial degree $p = 3$ and $N = 1$ from \blx@tocontentsinit {0}\cite {guclu_psydac_2022}}}{38}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Multipatch representation of a square domain with a square hole in the center.}}{38}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Simulation plots on a multipatch domain with $n_{cells} = 64$ per direction and domain with degree $p = 2$ B-Splines}}{41}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Error plots on a multipatch domain with degree $p = 2$ B-Splines}}{41}{figure.caption.29}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Internship Timeline}}{45}{figure.caption.30}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

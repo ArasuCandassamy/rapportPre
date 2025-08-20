@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.10)  12 AUG 2025 19:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.10)  19 AUG 2025 13:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -956,13 +956,19 @@ Package biblatex Info: Data encoding 'utf8' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'da_veiga_mathematical_2014':
+(biblatex)                - Invalid format of field 'month'.
+
+)
 Package biblatex Info: Reference section=0 on input line 128.
 Package biblatex Info: Reference segment=0 on input line 128.
-<logoENSTA.jpg, id=98, 5400.175pt x 4043.105pt>
-File: logoENSTA.jpg Graphic file (type jpg)
-<use logoENSTA.jpg>
-Package pdftex.def Info: logoENSTA.jpg  used on input line 133.
+<figures/logoENSTA.jpg, id=126, 5400.175pt x 4043.105pt>
+File: figures/logoENSTA.jpg Graphic file (type jpg)
+<use figures/logoENSTA.jpg>
+Package pdftex.def Info: figures/logoENSTA.jpg  used on input line 133.
 (pdftex.def)             Requested size: 142.26378pt x 106.48166pt.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 134.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
@@ -990,10 +996,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 134.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<logoMPI.png, id=99, 1505.625pt x 855.195pt>
-File: logoMPI.png Graphic file (type png)
-<use logoMPI.png>
-Package pdftex.def Info: logoMPI.png  used on input line 137.
+<figures/logoMPI.png, id=127, 1505.625pt x 855.195pt>
+File: figures/logoMPI.png Graphic file (type png)
+<use figures/logoMPI.png>
+Package pdftex.def Info: figures/logoMPI.png  used on input line 137.
 (pdftex.def)             Requested size: 142.26378pt x 80.80069pt.
 
 Overfull \hbox (122.67204pt too wide) in paragraph at lines 132--139
@@ -1009,34 +1015,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--182
 
 [1
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc} <./logoENSTA.jpg> <./logoMPI.png>]
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc} <./figures/logoENSTA.jpg> <./figures/logoMPI.png>]
 
 [2]
-
-[3]
-
-[4]
-
-[5] (./main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 7.
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 198.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-\tf@toc=\write7
-\openout7 = `main.toc'.
+)
 
+[3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
 
-
-[6
-
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-Chapter 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-
- []
-
-
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
@@ -1052,157 +1041,225 @@ Underfull \hbox (badness 10000) in paragraph at lines 237--238
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
-[7
-
-]
-Chapter 2.
-<omega_domain.jpeg, id=166, 1754.555pt x 1003.75pt>
-File: omega_domain.jpeg Graphic file (type jpg)
-<use omega_domain.jpeg>
-Package pdftex.def Info: omega_domain.jpeg  used on input line 264.
-(pdftex.def)             Requested size: 312.41158pt x 178.72208pt.
+ []
 
 
-[8
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./omega_domain.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 337--339
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
 
 
-[9{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-Overfull \hbox (14.67871pt too wide) in paragraph at lines 363--368
+[5] (./main.toc)
+\tf@toc=\write7
+\openout7 = `main.toc'.
+
+
+
+[6
+
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] (./main.lof)
+\tf@lof=\write8
+\openout8 = `main.lof'.
+
+
+
+[7
+
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+
+[8]
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+
+ []
+
+
+
+[9
+
+]
+
+[10]
+Chapter 2.
+<figures/omega_domain.jpeg, id=284, 1754.555pt x 1003.75pt>
+File: figures/omega_domain.jpeg Graphic file (type jpg)
+<use figures/omega_domain.jpeg>
+Package pdftex.def Info: figures/omega_domain.jpeg  used on input line 301.
+(pdftex.def)             Requested size: 312.41158pt x 178.72208pt.
+
+
+[11
+
+ <./figures/omega_domain.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
+
+ []
+
+
+
+[12]
+Overfull \hbox (14.67871pt too wide) in paragraph at lines 403--408
 \OT1/lmr/m/it/12 bounded do-main . Then, one can show that there ex-ists $\OML/lmm/m/it/12 C > \OT1/lmr/m/n/12 0$ \OT1/lmr/m/it/12 such that: $\OMS/lmsy/m/n/12 8[] 2 [][]\OT1/lmr/m/n/12 (
 )\OML/lmm/m/it/12 ;  C[][] \OMS/lmsy/m/n/12 ^^T
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 376.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 416.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (22.71255pt too wide) detected at line 394
+Overfull \hbox (22.71255pt too wide) detected at line 434
 [][]
  []
 
 
 
-[10{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+[13{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 434.
-
-
-[11]
-<psydac_fonc_1.png, id=232, 961.5925pt x 368.37625pt>
-File: psydac_fonc_1.png Graphic file (type png)
-<use psydac_fonc_1.png>
-Package pdftex.def Info: psydac_fonc_1.png  used on input line 441.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 473.
+<figures/psydac_fonc_1.png, id=337, 961.5925pt x 368.37625pt>
+File: figures/psydac_fonc_1.png Graphic file (type png)
+<use figures/psydac_fonc_1.png>
+Package pdftex.def Info: figures/psydac_fonc_1.png  used on input line 479.
 (pdftex.def)             Requested size: 384.11221pt x 147.15114pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 448.
+(Font)              <14.4> on input line 486.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 448.
+(Font)              <10> on input line 486.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 448.
+(Font)              <7> on input line 486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 448.
+(hyperref)                removing `math shift' on input line 486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 448.
+(hyperref)                removing `\partial' on input line 486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 448.
+(hyperref)                removing `\Omega' on input line 486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 448.
+(hyperref)                removing `subscript' on input line 486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 448.
+(hyperref)                removing `\partial' on input line 486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 448.
+(hyperref)                removing `\Omega' on input line 486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 448.
+(hyperref)                removing `math shift' on input line 486.
 
 
 
-[12 <./psydac_fonc_1.png>]
-<3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png, id=245, 2409.0pt x 2402.9775pt>
-File: 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png Graphic file (type png)
-<use 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png>
-Package pdftex.def Info: 3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png  used on input line 468.
+[14 <./figures/psydac_fonc_1.png>]
+<figures/3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png, id=352, 2409.0pt x 2402.9775pt>
+File: figures/3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png Graphic file (type png)
+<use figures/3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png>
+Package pdftex.def Info: figures/3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png  used on input line 503.
 (pdftex.def)             Requested size: 409.72125pt x 408.68411pt.
-<figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png, id=247, 719.8092pt x 426.393pt>
-File: figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
-<use figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png  used on input line 493.
+
+
+[15 <./figures/3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png>]
+<figures/figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png, id=359, 719.8092pt x 426.393pt>
+File: figures/figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
+<use figures/figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png  used on input line 528.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 494.
-<figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png, id=248, 719.8092pt x 426.393pt>
-File: figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png Graphic file (type png)
-<use figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png  used on input line 499.
+(Font)              <10.95> on input line 529.
+<figures/figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png, id=360, 719.8092pt x 426.393pt>
+File: figures/figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png Graphic file (type png)
+<use figures/figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png  used on input line 534.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png, id=249, 715.473pt x 426.393pt>
-File: figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png Graphic file (type png)
-<use figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png  used on input line 506.
+<figures/figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png, id=361, 715.473pt x 426.393pt>
+File: figures/figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png Graphic file (type png)
+<use figures/figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png  used on input line 541.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png, id=250, 714.7503pt x 426.393pt>
-File: figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png Graphic file (type png)
-<use figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png  used on input line 512.
+<figures/figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png, id=362, 714.7503pt x 426.393pt>
+File: figures/figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png Graphic file (type png)
+<use figures/figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png  used on input line 547.
 (pdftex.def)             Requested size: 250.95612pt x 149.70822pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<degre5_nul.png, id=251, 619.3539pt x 398.9304pt>
-File: degre5_nul.png Graphic file (type png)
-<use degre5_nul.png>
-Package pdftex.def Info: degre5_nul.png  used on input line 525.
-(pdftex.def)             Requested size: 256.07481pt x 164.93822pt.
-
-
-[13 <./3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png>]
-
-[14 <./figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png> <./figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png> <./degre5_nul.png>]
-<3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png, id=276, 1607.2848pt x 1300.86pt>
-File: 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png Graphic file (type png)
-<use 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png>
-Package pdftex.def Info: 3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png  used on input line 573.
-(pdftex.def)             Requested size: 409.72125pt x 331.60574pt.
-<figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png, id=277, 719.8092pt x 426.393pt>
-File: figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
-<use figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png  used on input line 582.
+[16 <./figures/figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png> <./figures/figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png> <./figures/figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png> <./figures/figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png>]
+<figures/degre5_nul.png, id=375, 619.3539pt x 398.9304pt>
+File: figures/degre5_nul.png Graphic file (type png)
+<use figures/degre5_nul.png>
+Package pdftex.def Info: figures/degre5_nul.png  used on input line 561.
+(pdftex.def)             Requested size: 358.50317pt x 230.91716pt.
+<figures/figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png, id=379, 719.8092pt x 426.393pt>
+File: figures/figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
+<use figures/figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png  used on input line 612.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png, id=278, 719.8092pt x 426.393pt>
-File: figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png Graphic file (type png)
-<use figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png  used on input line 588.
+<figures/figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png, id=380, 719.8092pt x 426.393pt>
+File: figures/figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png Graphic file (type png)
+<use figures/figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png  used on input line 618.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png, id=279, 715.473pt x 426.393pt>
-File: figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png Graphic file (type png)
-<use figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png  used on input line 594.
+<figures/figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png, id=381, 715.473pt x 426.393pt>
+File: figures/figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png Graphic file (type png)
+<use figures/figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png  used on input line 624.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png, id=280, 714.7503pt x 426.393pt>
-File: figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png Graphic file (type png)
-<use figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png>
-Package pdftex.def Info: figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png  used on input line 600.
+<figures/figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png, id=382, 714.7503pt x 426.393pt>
+File: figures/figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png Graphic file (type png)
+<use figures/figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png  used on input line 630.
 (pdftex.def)             Requested size: 250.95612pt x 149.70822pt.
 
 
@@ -1210,196 +1267,193 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[15 <./3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png>]
-<figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png, id=288, 719.8092pt x 426.393pt>
-File: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png Graphic file (type png)
-<use figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png>
-Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png  used on input line 633.
+[17 <./figures/degre5_nul.png>]
+<figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png, id=389, 719.8092pt x 426.393pt>
+File: figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png Graphic file (type png)
+<use figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png>
+Package pdftex.def Info: figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png  used on input line 662.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png, id=289, 715.473pt x 426.393pt>
-File: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png Graphic file (type png)
-<use figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png>
-Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png  used on input line 639.
+<figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png, id=390, 715.473pt x 426.393pt>
+File: figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png Graphic file (type png)
+<use figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png>
+Package pdftex.def Info: figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png  used on input line 668.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png, id=290, 719.8092pt x 426.393pt>
-File: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png Graphic file (type png)
-<use figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png>
-Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png  used on input line 646.
+<figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png, id=391, 719.8092pt x 426.393pt>
+File: figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png Graphic file (type png)
+<use figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png>
+Package pdftex.def Info: figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png  used on input line 675.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png, id=291, 715.473pt x 426.393pt>
-File: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png Graphic file (type png)
-<use figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png>
-Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png  used on input line 652.
+<figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png, id=392, 715.473pt x 426.393pt>
+File: figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png Graphic file (type png)
+<use figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png>
+Package pdftex.def Info: figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png  used on input line 681.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png, id=292, 719.8092pt x 426.393pt>
-File: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png Graphic file (type png)
-<use figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png>
-Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png  used on input line 659.
+<figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png, id=393, 719.8092pt x 426.393pt>
+File: figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png Graphic file (type png)
+<use figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png>
+Package pdftex.def Info: figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png  used on input line 688.
 (pdftex.def)             Requested size: 250.95612pt x 148.66072pt.
-<figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png, id=293, 715.473pt x 426.393pt>
-File: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png Graphic file (type png)
-<use figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png>
-Package pdftex.def Info: figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png  used on input line 665.
+<figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png, id=394, 715.473pt x 426.393pt>
+File: figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png Graphic file (type png)
+<use figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png>
+Package pdftex.def Info: figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png  used on input line 694.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-
-[16 <./figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png> <./figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png>]
-<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png, id=307, 715.473pt x 426.393pt>
-File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
-<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png>
-Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png  used on input line 684.
+<figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png, id=397, 715.473pt x 426.393pt>
+File: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
+<use figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png  used on input line 713.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png, id=308, 715.473pt x 426.393pt>
-File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png Graphic file (type png)
-<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png>
-Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png  used on input line 689.
+<figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png, id=398, 715.473pt x 426.393pt>
+File: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png Graphic file (type png)
+<use figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png>
+Package pdftex.def Info: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png  used on input line 718.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png, id=309, 715.473pt x 426.393pt>
-File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png Graphic file (type png)
-<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png>
-Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png  used on input line 695.
+<figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png, id=399, 715.473pt x 426.393pt>
+File: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png Graphic file (type png)
+<use figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png>
+Package pdftex.def Info: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png  used on input line 724.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png, id=310, 715.473pt x 426.393pt>
-File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png Graphic file (type png)
-<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png>
-Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png  used on input line 700.
+<figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png, id=400, 715.473pt x 426.393pt>
+File: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png Graphic file (type png)
+<use figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png>
+Package pdftex.def Info: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png  used on input line 729.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png, id=311, 715.473pt x 426.393pt>
-File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png Graphic file (type png)
-<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png>
-Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png  used on input line 706.
+<figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png, id=401, 715.473pt x 426.393pt>
+File: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png Graphic file (type png)
+<use figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png>
+Package pdftex.def Info: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png  used on input line 735.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
-<figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png, id=312, 715.473pt x 426.393pt>
-File: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png Graphic file (type png)
-<use figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png>
-Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png  used on input line 711.
+<figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png, id=402, 715.473pt x 426.393pt>
+File: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png Graphic file (type png)
+<use figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png>
+Package pdftex.def Info: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png  used on input line 740.
 (pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[18 <./figures/figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png> <./figures/figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png> <./figures/figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png> <./figures/figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png>]
 
+[19 <./figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png> <./figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png> <./figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png> <./figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png> <./figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png> <./figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png>]
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[17 <./figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png> <./figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png>]
-<figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png, id=327, 715.473pt x 426.393pt>
-File: figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png Graphic file (type png)
-<use figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png>
-Package pdftex.def Info: figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png  used on input line 730.
+[20 <./figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png> <./figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png> <./figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png> <./figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png> <./figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png> <./figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png>]
+<figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png, id=436, 715.473pt x 426.393pt>
+File: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png Graphic file (type png)
+<use figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png>
+Package pdftex.def Info: figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png  used on input line 759.
 (pdftex.def)             Requested size: 409.72125pt x 244.1721pt.
 
 
-[18 <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png> <./figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png>]
+[21 <./figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png>]
 
-[19 <./figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png>]
+[22]
 
-[20]
-
-LaTeX Warning: Reference `sec:pure_traction' on page 21 undefined on input line 856.
+LaTeX Warning: Reference `sec:pure_traction' on page 23 undefined on input line 888.
 
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 892.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 916.
 
 
-[21]
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png, id=367, 899.7615pt x 565.8741pt>
-File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
-<use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 922.
-(pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png, id=368, 899.7615pt x 565.8741pt>
-File: convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
-<use convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 928.
-(pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png, id=369, 899.7615pt x 563.706pt>
-File: convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
-<use convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 935.
-(pdftex.def)             Requested size: 250.95612pt x 157.22589pt.
-<convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png, id=370, 899.7615pt x 563.706pt>
-File: convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
-<use convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 941.
-(pdftex.def)             Requested size: 250.95612pt x 157.22589pt.
-File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png Graphic file (type png)
-<use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png  used on input line 952.
-(pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png, id=371, 899.7615pt x 565.8741pt>
-File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png Graphic file (type png)
-<use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png  used on input line 957.
-(pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png, id=372, 899.7615pt x 565.8741pt>
-File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png Graphic file (type png)
-<use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png  used on input line 963.
-(pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png, id=373, 899.7615pt x 565.8741pt>
-File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png Graphic file (type png)
-<use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png  used on input line 968.
-(pdftex.def)             Requested size: 250.95612pt x 157.83061pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png, id=374, 899.0388pt x 565.8741pt>
-File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png Graphic file (type png)
-<use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png  used on input line 974.
-(pdftex.def)             Requested size: 250.95612pt x 157.95149pt.
-<convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png, id=375, 899.0388pt x 565.8741pt>
-File: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png Graphic file (type png)
-<use convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png>
-Package pdftex.def Info: convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png  used on input line 979.
-(pdftex.def)             Requested size: 250.95612pt x 157.95149pt.
+[23]
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1.25.png, id=461, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1.25.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1.25.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1.25.png  used on input line 960.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10.0.png, id=462, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10.0.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10.0.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10.0.png  used on input line 966.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100.0.png, id=463, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100.0.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100.0.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100.0.png  used on input line 972.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000.0.png, id=464, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000.0.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000.0.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000.0.png  used on input line 978.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10000.0.png, id=465, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10000.0.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10000.0.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10000.0.png  used on input line 987.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100000.0.png, id=466, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100000.0.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100000.0.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100000.0.png  used on input line 993.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000000.0.png, id=467, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000000.0.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000000.0.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000000.0.png  used on input line 999.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1e+16.png, id=468, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1e+16.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1e+16.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1e+16.png  used on input line 1005.
+(pdftex.def)             Requested size: 250.95612pt x 149.55858pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[22 <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25.png> <./convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25.png>]
+[24 <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1.25.png> <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10.0.png> <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100.0.png> <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000.0.png>]
+<figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=120000000000.0.png, id=479, 715.473pt x 426.393pt>
+File: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=120000000000.0.png Graphic file (type png)
+<use figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=120000000000.0.png>
+Package pdftex.def Info: figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=120000000000.0.png  used on input line 1027.
+(pdftex.def)             Requested size: 409.72125pt x 244.1721pt.
 
-[23 <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0.png> <./convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[25 <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10000.0.png> <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100000.0.png> <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000000.0.png> <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1e+16.png>]
+
+[26 <./figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=120000000000.0.png>]
+
+[27]
 Chapter 3.
-<geometry_thermoelasticity.png, id=395, 825.0825pt x 271.0125pt>
-File: geometry_thermoelasticity.png Graphic file (type png)
-<use geometry_thermoelasticity.png>
-Package pdftex.def Info: geometry_thermoelasticity.png  used on input line 990.
+<figures/geometry_thermoelasticity.png, id=501, 825.0825pt x 271.0125pt>
+File: figures/geometry_thermoelasticity.png Graphic file (type png)
+<use figures/geometry_thermoelasticity.png>
+Package pdftex.def Info: figures/geometry_thermoelasticity.png  used on input line 1054.
 (pdftex.def)             Requested size: 358.50317pt x 117.75714pt.
 
 
-[24
+[28
 
- <./geometry_thermoelasticity.png>]
-<geometry_thermoelasticity_simplified.jpg, id=404, 1521.685pt x 1032.85875pt>
-File: geometry_thermoelasticity_simplified.jpg Graphic file (type jpg)
-<use geometry_thermoelasticity_simplified.jpg>
-Package pdftex.def Info: geometry_thermoelasticity_simplified.jpg  used on input line 1031.
+ <./figures/geometry_thermoelasticity.png>]
+<figures/geometry_thermoelasticity_simplified.jpg, id=508, 1521.685pt x 1032.85875pt>
+File: figures/geometry_thermoelasticity_simplified.jpg Graphic file (type jpg)
+<use figures/geometry_thermoelasticity_simplified.jpg>
+Package pdftex.def Info: figures/geometry_thermoelasticity_simplified.jpg  used on input line 1095.
 (pdftex.def)             Requested size: 307.2929pt x 208.56963pt.
 
 
-[25 <./geometry_thermoelasticity_simplified.jpg>]
+[29 <./figures/geometry_thermoelasticity_simplified.jpg>]
 
-[26]
+[30]
 
-[27]
+[31]
 
-[28]
-<figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png, id=444, 618.6312pt x 395.3169pt>
-File: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png Graphic file (type png)
-<use figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png>
-Package pdftex.def Info: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png  used on input line 1241.
+[32]
+<figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png, id=548, 618.6312pt x 395.3169pt>
+File: figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png Graphic file (type png)
+<use figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png>
+Package pdftex.def Info: figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png  used on input line 1305.
 (pdftex.def)             Requested size: 307.2929pt x 196.3671pt.
-<figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png, id=446, 618.6312pt x 395.076pt>
-File: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png Graphic file (type png)
-<use figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png>
-Package pdftex.def Info: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png  used on input line 1250.
+<figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png, id=550, 618.6312pt x 395.076pt>
+File: figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png Graphic file (type png)
+<use figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png>
+Package pdftex.def Info: figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png  used on input line 1314.
 (pdftex.def)             Requested size: 307.2929pt x 196.24744pt.
 
 
@@ -1407,39 +1461,191 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[29 <./figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png>]
-<figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png, id=455, 618.8721pt x 395.076pt>
-File: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png Graphic file (type png)
-<use figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png>
-Package pdftex.def Info: figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png  used on input line 1262.
+[33 <./figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png>]
+<figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png, id=557, 618.8721pt x 395.076pt>
+File: figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png Graphic file (type png)
+<use figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png>
+Package pdftex.def Info: figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png  used on input line 1326.
 (pdftex.def)             Requested size: 250.95612pt x 160.20383pt.
-<figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png, id=456, 618.8721pt x 395.076pt>
-File: figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png Graphic file (type png)
-<use figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png>
-Package pdftex.def Info: figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png  used on input line 1268.
+<figures/figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png, id=558, 618.8721pt x 395.076pt>
+File: figures/figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png Graphic file (type png)
+<use figures/figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png>
+Package pdftex.def Info: figures/figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png  used on input line 1332.
 (pdftex.def)             Requested size: 250.95612pt x 160.20383pt.
-<custom_grid.png, id=458, 752.0898pt x 353.4003pt>
-File: custom_grid.png Graphic file (type png)
-<use custom_grid.png>
-Package pdftex.def Info: custom_grid.png  used on input line 1280.
-(pdftex.def)             Requested size: 512.14963pt x 240.65952pt.
+<figures/custom_grid.png, id=560, 752.0898pt x 353.4003pt>
+File: figures/custom_grid.png Graphic file (type png)
+<use figures/custom_grid.png>
+Package pdftex.def Info: figures/custom_grid.png  used on input line 1344.
+(pdftex.def)             Requested size: 409.72125pt x 192.52654pt.
 
 
-[30 <./figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png> <./figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png> <./figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png>]
+[34 <./figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png> <./figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png> <./figures/figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png>]
+<figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=2_disp.png, id=569, 718.8456pt x 424.4658pt>
+File: figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=2_disp.png Graphic file (type png)
+<use figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=2_disp.png>
+Package pdftex.def Info: figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=2_disp.png  used on input line 1353.
+(pdftex.def)             Requested size: 250.95612pt x 148.18312pt.
+<figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=2.png, id=570, 718.8456pt x 424.4658pt>
+File: figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=2.png Graphic file (type png)
+<use figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=2.png>
+Package pdftex.def Info: figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=2.png  used on input line 1358.
+(pdftex.def)             Requested size: 250.95612pt x 148.18312pt.
+<figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=3_disp.png, id=571, 718.8456pt x 424.4658pt>
+File: figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=3_disp.png Graphic file (type png)
+<use figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=3_disp.png>
+Package pdftex.def Info: figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=3_disp.png  used on input line 1363.
+(pdftex.def)             Requested size: 250.95612pt x 148.18312pt.
+<figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=3.png, id=572, 718.8456pt x 424.4658pt>
+File: figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=3.png Graphic file (type png)
+<use figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=3.png>
+Package pdftex.def Info: figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=3.png  used on input line 1368.
+(pdftex.def)             Requested size: 250.95612pt x 148.18312pt.
 
-[31 <./custom_grid.png>]
+Underfull \hbox (badness 3354) in paragraph at lines 1352--1372
+[][] []
+ []
+
+
+
+[35 <./figures/custom_grid.png> <./figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=2_disp.png> <./figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=2.png> <./figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=3_disp.png> <./figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=3.png>]
+<figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=4_disp.png, id=583, 714.2685pt x 424.4658pt>
+File: figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=4_disp.png Graphic file (type png)
+<use figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=4_disp.png>
+Package pdftex.def Info: figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=4_disp.png  used on input line 1376.
+(pdftex.def)             Requested size: 250.95612pt x 149.12872pt.
+<figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=4.png, id=584, 714.2685pt x 424.4658pt>
+File: figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=4.png Graphic file (type png)
+<use figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=4.png>
+Package pdftex.def Info: figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=4.png  used on input line 1381.
+(pdftex.def)             Requested size: 250.95612pt x 149.12872pt.
+<figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=5_disp.png, id=585, 714.2685pt x 424.4658pt>
+File: figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=5_disp.png Graphic file (type png)
+<use figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=5_disp.png>
+Package pdftex.def Info: figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=5_disp.png  used on input line 1386.
+(pdftex.def)             Requested size: 250.95612pt x 149.12872pt.
+<figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=5.png, id=586, 714.2685pt x 424.4658pt>
+File: figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=5.png Graphic file (type png)
+<use figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=5.png>
+Package pdftex.def Info: figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=5.png  used on input line 1391.
+(pdftex.def)             Requested size: 250.95612pt x 149.12872pt.
+
+Underfull \hbox (badness 3354) in paragraph at lines 1375--1395
+[][] []
+ []
+
+
+Underfull \vbox (badness 3590) has occurred while \output is active []
+
+
+
+[36 <./figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=4_disp.png> <./figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=4.png> <./figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=5_disp.png> <./figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=5.png>]
+
+[37]
+<figures/maxwell_pretzel.png, id=605, 779.91376pt x 210.7875pt>
+File: figures/maxwell_pretzel.png Graphic file (type png)
+<use figures/maxwell_pretzel.png>
+Package pdftex.def Info: figures/maxwell_pretzel.png  used on input line 1442.
+(pdftex.def)             Requested size: 512.14963pt x 138.42223pt.
+<figures/square_hole.png, id=608, 1430.34375pt x 1031.855pt>
+File: figures/square_hole.png Graphic file (type png)
+<use figures/square_hole.png>
+Package pdftex.def Info: figures/square_hole.png  used on input line 1454.
+(pdftex.def)             Requested size: 256.07481pt x 184.73396pt.
+
+
+[38 <./figures/maxwell_pretzel.png> <./figures/square_hole.png>]
+
+[39]
+<figures/figures_multipatch/temperature.png, id=619, 1005.9984pt x 325.9377pt>
+File: figures/figures_multipatch/temperature.png Graphic file (type png)
+<use figures/figures_multipatch/temperature.png>
+Package pdftex.def Info: figures/figures_multipatch/temperature.png  used on input line 1581.
+(pdftex.def)             Requested size: 460.93153pt x 149.34131pt.
+<figures/figures_multipatch/ux.png, id=620, 1012.5027pt x 325.9377pt>
+File: figures/figures_multipatch/ux.png Graphic file (type png)
+<use figures/figures_multipatch/ux.png>
+Package pdftex.def Info: figures/figures_multipatch/ux.png  used on input line 1592.
+(pdftex.def)             Requested size: 460.93153pt x 148.37648pt.
+<figures/figures_multipatch/uy.png, id=621, 1012.5027pt x 325.9377pt>
+File: figures/figures_multipatch/uy.png Graphic file (type png)
+<use figures/figures_multipatch/uy.png>
+Package pdftex.def Info: figures/figures_multipatch/uy.png  used on input line 1598.
+(pdftex.def)             Requested size: 460.93153pt x 148.37648pt.
+
+
+[40 <./figures/figures_multipatch/temperature.png>]
+<figures/figures_multipatch/Temp_multipatch.png, id=633, 714.5094pt x 425.1885pt>
+File: figures/figures_multipatch/Temp_multipatch.png Graphic file (type png)
+<use figures/figures_multipatch/Temp_multipatch.png>
+Package pdftex.def Info: figures/figures_multipatch/Temp_multipatch.png  used on input line 1611.
+(pdftex.def)             Requested size: 250.95612pt x 149.33722pt.
+<figures/figures_multipatch/Disp_multipatch.png, id=634, 693.5511pt x 425.1885pt>
+File: figures/figures_multipatch/Disp_multipatch.png Graphic file (type png)
+<use figures/figures_multipatch/Disp_multipatch.png>
+Package pdftex.def Info: figures/figures_multipatch/Disp_multipatch.png  used on input line 1617.
+(pdftex.def)             Requested size: 250.95612pt x 153.84628pt.
+
+
+[41 <./figures/figures_multipatch/ux.png> <./figures/figures_multipatch/uy.png> <./figures/figures_multipatch/Temp_multipatch.png> <./figures/figures_multipatch/Disp_multipatch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1631--1632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1633--1634
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1635--1636
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1637--1638
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1639--1641
+
+ []
+
+
+
+[42]
+
+[43]
 Chapter 4.
+<figures/Timeline.jpg, id=653, 1135.24126pt x 282.05376pt>
+File: figures/Timeline.jpg Graphic file (type jpg)
+<use figures/Timeline.jpg>
+Package pdftex.def Info: figures/Timeline.jpg  used on input line 1665.
+(pdftex.def)             Requested size: 512.14963pt x 127.25009pt.
 
 
-[32
+[44
 
 ]
 
-[33]
+[45 <./figures/Timeline.jpg>]
 Chapter 5.
 
 
-[34
+[46
+
+]
+
+[47]
+Chapter 6.
+
+
+[48
 
 ] (./main.aux)
  ***********
@@ -1451,24 +1657,24 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F38D30EDCBC4DEA91DCE8AE2129E7838;4994.
+(rerunfilecheck)             Checksum: E21743F1DB1160648D72C83E371BCCE3;6284.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35847 strings out of 473190
- 725275 string characters out of 5715800
- 1422443 words of memory out of 5000000
- 58448 multiletter control sequences out of 15000+600000
- 631202 words of font info for 100 fonts, out of 8000000 for 9000
+ 36020 strings out of 473190
+ 733800 string characters out of 5715800
+ 1429806 words of memory out of 5000000
+ 58583 multiletter control sequences out of 15000+600000
+ 634148 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,19n,93p,1928b,1529s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 8106534 bytes).
+Output written on main.pdf (48 pages, 8758468 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 460 compressed objects within 5 object streams
- 114 named destinations out of 1000 (max. 500000)
- 417 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 827 PDF objects out of 1000 (max. 8388607)
+ 611 compressed objects within 7 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 548 words of extra memory for PDF output out of 10000 (max. 10000000)
 

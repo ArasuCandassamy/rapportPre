@@ -130,11 +130,11 @@
 
 % Logos
 \begin{minipage}{0.6\textwidth}
-    \includegraphics[width=5cm]{logoENSTA.jpg} 
+    \includegraphics[width=5cm]{figures/logoENSTA.jpg} 
 \end{minipage}
 \hfill
 \begin{minipage}{0.6\textwidth}
-    \includegraphics[width=5cm]{logoMPI.png}
+    \includegraphics[width=5cm]{figures/logoMPI.png}
 \end{minipage}
 
 \vspace{2cm}
@@ -195,21 +195,31 @@
 \section*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-\lipsum[1-2]
+This report presents the work conducted during a research internship at the Max-Planck Institute for Plasma Physics in the Numerical Methods for Plasma Physics department. This report is focusing on the implementation and validation of solid mechanics equations using the \texttt{Psydac}, a finite element library on Python.
 
-\vspace{1cm}
+The primary objective of this internship was to explore and extend Psydac's capabilities to solve partial differential equations from solid mechanics, which had not been previously tested in this library. The work focused on two main areas: linear elasticity and thermoelasticity problems and their execution on a supercomputer. For linear elasticity, two different formulations, pure displacement and mixed displacement-pressure formulations were implemented and analyzed. 
 
-\underline{Keywords}:
+The thermoelasticity study involved solving coupled thermo-mechanical problems on composite materials with spatially varying properties. This work required the development of enhanced discretization capabilities, including the implementation of custom grid discretization features to handle material property discontinuities. Additionally, a multipatch framework was explored to address complex geometries with holes, utilizing Nitsche's method for interface coupling.
 
-\vspace{1cm}
+This work successfully extends Psydac's application domain beyond plasma physics to solid mechanics, contributing to the library's versatility and demonstrating its potential for broader engineering applications involving complex geometries and material properties. 
+
+\vspace{0.4cm}
+
+\underline{Keywords}: Finite element method, Isogeometric analysis, B-splines, Solid mechanics, Linear elasticity, Thermoelasticity, Multipatch, Psydac, Python, High performance computing, Supercomputers.
 
 \section*{Résumé}
 
-\lipsum[1-2]
+Ce rapport présente les travaux menés lors d'un stage de recherche à l'Institut Max-Planck de Physique des Plasmas dans le département des Méthodes Numériques pour la Physique des Plasmas. Ce rapport se concentre sur l'implémentation et la validation d'équations de mécanique des solides en utilisant la bibliothèque d'éléments finis \texttt{Psydac} sur Python.
 
-\vspace{1cm}
+L'objectif principal de ce stage était d'explorer et d'étendre les capacités de Psydac pour résoudre des équations aux dérivées partielles issues de la mécanique des solides, qui n'avaient pas été testées auparavant dans cette bibliothèque. Le travail s'est concentré sur deux domaines principaux : l'élasticité linéaire et les problèmes de thermoélasticité, ainsi que leur exécution sur un supercalculateur. Pour l'élasticité linéaire, deux formulations différentes ont été implémentées et analysées : la formulation en déplacement pur et la formulation mixte déplacement-pression.
 
-\underline{Mots-clés}:
+L'étude de thermoélasticité a impliqué la résolution de problèmes thermo-mécaniques couplés sur des matériaux composites avec des propriétés variant spatialement. Ce travail a nécessité le développement de capacités de discrétisation améliorées, incluant l'implémentation de fonctionnalités de discrétisation de grille personnalisée pour gérer les discontinuités de propriétés matérielles. De plus, un framework multipatch a été exploré pour traiter des géométries complexes avec des trous, utilisant la méthode de Nitsche pour le couplage d'interfaces.
+
+Ce travail étend avec succès le domaine d'application de Psydac au-delà de la physique des plasmas vers la mécanique des solides, contribuant à la polyvalence de la bibliothèque et démontrant son potentiel pour des applications d'ingénierie plus larges impliquant des géométries complexes et des propriétés matérielles.
+
+\vspace{0.4cm}
+
+\underline{Mots-clés}: Méthode des éléments finis, Analyse isogéométrique, B-splines, Mécanique des solides, Élasticité linéaire, Thermoélasticité, Multipatch, Psydac, Python, Calcul haute performance, Supercalculateurs.
 
 \newpage\null
 
@@ -217,28 +227,55 @@
 
 \section*{Acknowledgement}
 \addcontentsline{toc}{chapter}{Acknowledgement}
-\lipsum[1-2]
+
+I would like to express my sincere gratitude to all those who made this internship a truly enriching and memorable experience.
+
+First and foremost, I thank the Numerical Methods for Plasma Physics (NMPP) laboratory and the Max-Planck Institute for Plasma Physics for their warm welcome and for providing me with the opportunity to conduct this research in such an exceptional scientific environment. \\
+
+My deepest appreciation goes to my supervisor, Prof. Dr. Martin Campos Pinto, for his invaluable guidance, expertise, and constant support throughout this internship. His insights and encouragement were instrumental in the success of this work. \\
+
+I am particularly grateful to Dr. Yaman Güçlü, my co-supervisor and head developer of PSYDAC, for his technical expertise and patience in helping me understand the intricacies of the library. His mentorship was crucial for the successful implementation of the various numerical methods presented in this report.\\
+
+I extend my heartfelt thanks to the PSYDAC development team: Ms. Elena Moral Sanchez, Mr. Julian Owezarek, and Mr. Frederik Schnack, with whom I had the pleasure of collaborating throughout my internship. Their technical support and fruitful discussions greatly enriched my understanding of the library and contributed significantly to the advancement of this work. \\
+
+Special recognition goes to Ms. Svenja Eichler, the laboratory secretary, who ensured my smooth integration into the institute and was always available to assist with administrative matters. I also thank Mr. Max Lindqvist for his invaluable help with the computational infrastructure and his guidance in using the Raven supercomputer.\\
+
+I would like to acknowledge my office colleagues, Mr. Victor Fournet and Mr. Joris Thiel, for creating such a pleasant and collaborative working atmosphere. Their friendship and support made this experience even more enjoyable.\\
+
+My gratitude extends to all the laboratory members who welcomed me so warmly: Nishant Narechania, Valentin Carlier, Pauline Vidal, Sandra Jeyakumar\dots Their kindness and openness created a truly inspiring work environment.\\
+
+Finally, I thank my flatmates during my stay in Munich, Mr. Thomas Lefert and Mr. Louis Marchal, for their companionship and for making my time in Germany both productive and memorable.\\
+
+This internship would not have been the same without all of these wonderful people, and I am deeply grateful for their contributions to both my professional and personal growth.\\
 
 
 \newpage
 \tableofcontents
 \thispagestyle{test}
 
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
 
 \newpage
 \chapter{Introduction}
 
-The Max-Planck Institute for Plasma Physics (IPP), located in Garching and Greifswald, is a renowned research institute in Plasma physics and Nuclear fusion. Founded under the Max-Planck Society in 1960, this institute has a long tradition of scientific excellence and innovation. The Department of Numerical Methods for Plasma Physics (NMPP), where my internship took place, plays a crucial role in developing advanced simulation techniques to understand and predict the behavior of plasmas in complex environments (in tokamaks or stelerators). \\
+This report presents the work conducted during a three-month research internship at the Max Planck Institute for Plasma Physics (IPP) from May to August 2025. The IPP is one of Europe's leading research institutions dedicated to fusion energy research, with two main sites in Garching near Munich and Greifswald. The institute focuses on developing the scientific and technological foundations for fusion power plants, conducting experiments on major facilities like ASDEX Upgrade and Wendelstein 7-X stellarator. \\
 
-The Finite Element Method (FEM) is a widely used numerical technique for solving Partial Differential Equations (PDEs). It is particularly well-suited for addressing plasma physics problems due to its ability to handle complex geometries and varied boundary conditions. FEM allows for the discretization of a continuous domain into a set of finite elements, thereby facilitating the numerical resolution of equations governing the physical phenomena under study. \\
+Within IPP, the Numerical Methods for Plasma Physics (NMPP) department plays a crucial role in developing advanced computational tools for plasma simulations. The department is responsible for creating and maintaining several high-performance computing libraries that support the institute's research activities. Among these tools, \texttt{GEMPIC} (Geometric Electromagnetic Particle-In-Cell) provides sophisticated particle simulation capabilities for kinetic plasma modeling, while \texttt{Struphy} offers specialized structure-preserving algorithms for long-term plasma evolution studies. These libraries collectively form a comprehensive computational ecosystem that enables researchers to tackle the challenging multi-physics problems inherent in fusion plasma research.\\
 
-In the context of electromagnetism, the Finite Element Exterior Calculus (FEEC) formulation is a powerful approach for solving Maxwell's equations. This method is particularly suitable for problems involving electromagnetic fields, as it preserves certain topological and physical properties of the original equations. FEEC provides a powerfull framework for plasma simulation, where electromagnetic interactions play a central role. \\
+At the heart of this computational infrastructure lies \texttt{Psydac} (Python Spline Discretizations for Advanced Computations), a state-of-the-art finite element library that implements isogeometric analysis using B-splines and NURBS. Originally developed for plasma physics applications, \texttt{Psydac} leverages the power of spline-based discretizations to achieve high-order accuracy while maintaining geometric flexibility. The library incorporates advanced features such as multipatch domains, parallel computing capabilities, and integration with high-performance computing environments. Its modular design, built upon \texttt{SymPDE} for symbolic problem formulation and \texttt{Pyccel} for code acceleration, makes it particularly well-suited for solving complex partial differential equations across various physics domains.\\
 
-Psydac is an integrated development environment (IDE) specifically designed for simulation and data analysis in plasma physics. It offers a range of tools to facilitate the implementation of numerical methods, including FEM and FEEC frameworks. Psydac enables researchers to develop complex models, simulate them, and analyze results efficiently and intuitively. Psydac also stands out as an isogeometric analysis library, an approach that integrates geometric modeling and numerical analysis within a unified framework. Isogeometric analysis allows simulations to be performed directly on the geometric models used for design, eliminating the need to convert CAD models into traditional meshes for simulations. This provides increased accuracy and better integration between design and analysis, reducing errors and improving the efficiency of the simulation process. Using Psydac, researchers can leverage these capabilities to develop more accurate models and perform more reliable analyses, which is particularly advantageous in the complex field of plasma physics. \\
+The primary objective of this internship was to explore and extend \texttt{Psydac}'s capabilities beyond its traditional plasma physics applications into the realm of solid mechanics. This work involved implementing and validating solutions for linear elasticity and thermoelasticity problems, areas that had not been previously tested within the library's framework. The research encompassed two main directions: developing pure displacement and mixed displacement-pressure formulations for elasticity problems, and addressing thermoelasticity challenges involving composite materials with spatially varying properties.\\
 
-This internship report describes my experience and contributions within the NMPP Department at the IPP. Psydac should be able to solve any PDEs but it hasn't been tested on equations from solid mechanics. Then, during this internship, I have explored the linear elasticity problem, its simulation using Psydac and its running on Supercomputer Raven.
+This report is structured into two main chapters that document the progression of this work. Chapter 2 focuses on linear elasticity, beginning with the mathematical foundations and weak formulations, followed by extensive numerical simulations using \texttt{Psydac} on the Raven supercomputer. Special attention is given to the comparison between pure displacement and mixed formulations, particularly in the context of nearly incompressible materials where volumetric locking becomes a significant concern. Chapter 3 addresses thermoelasticity problems, starting with a simplified geometry before tackling the full complexity of composite materials with material property discontinuities. This chapter also presents the development of enhanced discretization capabilities, including custom grid features that were specifically implemented to handle material interfaces. The work concludes with an exploration of multipatch frameworks for complex geometries, demonstrating \texttt{Psydac}'s versatility in handling domains with holes using Nitsche's method for interface coupling.\\
+
+Through this comprehensive study, the internship shows \texttt{Psydac}'s potential for broader engineering applications while contributing new capabilities to the library's functionality. The results validate the effectiveness of isogeometric analysis for solid mechanics problems and highlight both the advantages and challenges of extending specialized plasma physics tools to other domains.
+
 
 \chapter{Linear Elasticity}
+\label{chap:linear_elasticity}
 
 \section{Physical Model and Strong Formulation}
 The following presentation of the context of work and physical background comes from \cite{gould_introduction_2013} and \cite{ern_theory_2004}.
@@ -261,7 +298,7 @@ For boundary conditions, there are two types of boundary conditions : Dirichlet 
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.61\linewidth]{omega_domain}
+	\includegraphics[width=0.61\linewidth]{figures/omega_domain}
 	\caption{Representation of a domain $\Omega$}
 	\label{fig:omegadomain}
 \end{figure}
@@ -306,17 +343,20 @@ One can remark that with \eqref{eq:hooklaw}, the tensor $\boldsymbol \sigma (\ve
 $\boldsymbol \sigma (\vec u) : \grad \vec v = \boldsymbol \sigma(\vec u) : \boldsymbol \varepsilon (\vec v)$
 Moreover, $\vec v \in \left(H^1_{\vec 0,D}(\Omega) \right)^3$, then $\vec v_{|\partial\Omega_D} = \vec 0$. So the weak formulation can be simplified into : 
 
+\begin{tcolorbox}
 \begin{equation}
 \label{eq:weakdisplacementform}
-\boxed{
 \left\{
     \begin{aligned}
     &\text{Find } \vec u \in \boldsymbol H^1_{\vec 0,D}(\Omega) \text{ such that :}\\
     & a(\vec u,\vec v) = l(\vec v) \hspace{0.5cm} \forall \vec v \in \boldsymbol H^1_{\vec 0,D}(\Omega)
     \end{aligned}
 \right.
-}
 \end{equation}
+\end{tcolorbox}
+
+
+
 
 With : 
 \begin{equation*}
@@ -410,18 +450,17 @@ $\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsy
 
 Then, by Lax-Milgram theorem, the problem \eqref{eq:weakdisplacementform} is well-posed when $\left| \Omega_D \right| > 0$. \\
 When, $\left| \Omega_D \right| = 0$, \eqref{eq:weakdisplacementform} turns into the\textbf{ Pure Traction Problem} : 
-
+\begin{tcolorbox}
 \begin{equation}
 \label{eq:puretractionproblem}
-\boxed{
 \left\{
     \begin{aligned}
     &\text{Find } \vec u \in \boldsymbol H^1(\Omega) \text{ such that :}\\
     & a(\vec u,\vec v) = \int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega} \vec t_N.\vec v \dif S =:l(\vec v) \hspace{0.5cm} \forall \vec v \in \boldsymbol H^1(\Omega)
     \end{aligned}
 \right.
-}
 \end{equation}
+\end{tcolorbox}
 
 This problem isn't really well-posed. Regarding to the Rigid Displacement Field (translations and rotations) $\boldsymbol{\mathcal{R}} = \left\{\vec v \in \boldsymbol H^1(\Omega) \left| \exists x_1, x_2 \in \mtr^3, \vec v(x) = x_1 + x_2 \times x \right. \right\}$, $\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm} \div v = 0 \text{ and } \boldsymbol \varepsilon(\vec v) = 0.$
 Then : $\forall \vec u \in \boldsymbol H^1(\Omega), \forall \vec v \in \boldsymbol{\mathcal{R}},\hspace{0.3cm} a(\vec u, \vec v)= 0.$
@@ -434,11 +473,10 @@ In case of \textbf{Pure Traction Problem}, we are looking for a solution modulo 
 \section{Numerical simulation using \texttt{PSYDAC} on the Supercomputer Raven}
 
 \texttt{PSYDAC} is high-level programming IDE and very intuitive to use. It is using \texttt{SymPDE} and \texttt{Pyccel}. \texttt{SymPDE} implements in \texttt{Python} abstract objects (Functionnal Space, diffential operators, linear and bilinear forms...). \texttt{Pyccel} is a transpiler, used to convert a \texttt{Python} Code into a \texttt{C} or \texttt{Fortran} code, in order to take advantage from code acceleration and parallelization. The figure \ref{fig:Dependancy_Psydac} summarize the dependancy between \texttt{PSYDAC}, \texttt{SymPDE} and \texttt{Pyccel}. A more detailled presentation of \texttt{PSYDAC} can be found in \cite{guclu_psydac_2022}.
-\newpage 
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.75\linewidth]{psydac_fonc_1.png}
+    \includegraphics[width=0.75\linewidth]{figures/psydac_fonc_1.png}
     \caption{Dependancy graph of \texttt{PSYDAC}, from \cite{guclu_psydac_2022}}
     \label{fig:Dependancy_Psydac}
 \end{figure}
@@ -460,12 +498,9 @@ I have considered $\vec u_e$ defined as : $\vec u_e = \begin{pmatrix}
 
 To make the numerical simulation with \texttt{PSYDAC}, we have to choose two important parameters : $d$ the maximum degree of B-Splines functions that will approximate the solution and $n_{\text{cells}}$ is the number of cells in each dimension of $\Omega$ for the finite dimensional space. $\displaystyle h \propto \frac{1}{n_{\text{cells}}}$, an usual discretization parameters for finite dimensional spaces and $d$ will conduct the convergence speed of the numerical solution. 
 By solving the problem Dirichlet Homogeneous Boundary conditions on the whole border, one can observe the following plots of the simulated $\vec u_{e,3}^h$ for different plane $z$. It is possible to plot also the error $\vec u_{e,3} - \vec u_{e,3}^h$.
-
-\newpage
-
-\begin{figure}
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=0.8\linewidth]{3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png}
+    \includegraphics[width=0.8\linewidth]{figures/3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png}
     \caption{Plots comparison between the simulated and real $u_{e,3}$ with the error, for different plane $z$, with $d=2$ and $n_{\text{cell}} = 64$}
     \label{fig:3D_plots}
 \end{figure}
@@ -490,39 +525,40 @@ By applying \textbf{Corollary 4.21, 4.27}, \textbf{Theorem 6.2} from \cite{da_ve
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_DH/convergence_plot_degree_2_lambda=1.25.png}
 		\caption{$d=2$}
 		\label{fig:deg2_NMDHBC}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_DH/convergence_plot_degree_3_lambda=1.25.png}
 		\caption{$d=3$}
 		\label{fig:deg3_NMDHBC}
 	\end{subfigure}
 	\\
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_DH/convergence_plot_degree_4_lambda=1.25.png}
 		\caption{$d=4$}
 		\label{fig:deg4_NMDHBC}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_DH/convergence_plot_degree_5_lambda=1.25.png}
 		\caption{$d=5$}
 		\label{fig:deg5_NMDHBC}
 	\end{subfigure}
-	\caption{Four plots of relative errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}
+	\caption{Four plots of absolute errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}
 	\label{fig:four_errors_graphs_1}
 \end{figure}
 
 We can see that the numerical solution converges with the expected order to the real solution : the more the mesh is refined, the more the error is lower and the more the splines' degree is higher, the more the convergence rate is higher. 
 For this numerical resolution, I have used \textbf{GMRES} method to solve the linear system at the end of the discretization. That needed to take care of the tolerance of the solver, because with a fixed tolerance, if the $d$ and $n_{\text{cells}}$ are "too higher", the convergence rate cannot hold. The following figure illustrates this case, when $d=5$ and $n_{\text{cells}} = 16$.
 
+\newpage
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\linewidth]{degre5_nul}
+	\includegraphics[width=0.7\linewidth]{figures/degre5_nul}
 	\caption{Error plot between exact and numerical solution with degree 5 B-Splines with "higher" tolerance for the solvera}
 \end{figure}
 
@@ -566,46 +602,39 @@ For that purpose, $\vec u_e, \vec f, \vec t_N$ and $\vec g$ are now defined as :
 \end{aligned}
 \end{equation*} 	
 
-Then, we can get the same plots and interpretation as before. 
+Then, we can get the same plots and interpretation as before in figure \ref{fig:four_errors_graphs}. 
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\linewidth]{3d_plots_degree_2_non_mixed_ncell=128_function_u3_planes_z.png}
-	\caption{Plots comparison between the simulated and real $u_{e,3}$ with the error, for different plane $z$, with $d=2$ and $n_{\text{cell}} = 128$}
-	\label{fig:3D_plots_mixed_BC}
-\end{figure}
 
 \begin{figure}[!h]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed/convergence_plot_degree_2_lambda=1.25.png}
 		\caption{$d=2$}
 		\label{fig:deg2_NM}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed/convergence_plot_degree_3_lambda=1.25.png}
 		\caption{$d=3$}
 		\label{fig:deg3_NM}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed/convergence_plot_degree_4_lambda=1.25.png}
 		\caption{$d=4$}
 		\label{fig:deg4_NM}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed/convergence_plot_degree_5_lambda=1.25.png}
 		\caption{$d=5$}
 		\label{fig:deg5_NM}
 	\end{subfigure}
-	\caption{Four plots of relative errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}
+	\caption{Four plots of absolute errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}
 	\label{fig:four_errors_graphs}
 \end{figure}
 
-\newpage
 For fixed value $\lambda = 1.25$ and $\mu = 1$, the codes seems to give a numerical solution that converges to the theoritical one with the expected order. We can notice that the plateau effect comes back and appears faster than in the case of Dirichlet Homogeneous Boundary Conditions. The $L^2$ error seems to converge to a value slightly higher than $10^{-8}$, while the $H^1$ error converges to a value slightly higher than $10^{-5}$, and this phenomena is more pronounced for higher degree B-Splines. The limit value of each error seems to be the same for all degree B-Splines, when the $L^2$ error becomes lower than $10^{-7}$ and the $H^1$ error becomes lower than $10^{-5}$. So, this plateau effect is not due to the degree of B-Splines, but rather to the ill-conditionedness of the matrix of the bilinear form $a(.,.)$. This ill-conditionedness becomes worse with the refinement of the mesh and the increase of the degree of B-Splines. A way to verify this hypothesis is to solve the linear system with a different solver, with a preconditioner applyied to the matrix before the resolution.
 
 These simulations have been made with $\lambda = 1.25$ and $\mu = 1$. We can now look at them for more realistic values of $\lambda$ and $\mu$. The following table \ref{tab:lame_coefficients} gives the Lamé coefficients for different materials. 
@@ -630,39 +659,39 @@ Rubber & 0.16 & 0.00033 \\
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png}
 		\caption{Rubber with degree 2 B-Splines}
 		\label{fig:rubber_degree_2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png}
 		\caption{Rubber with degree 4 B-Splines}
 		\label{fig:rubber_degree_4}
 	\end{subfigure}
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png}
 		\caption{Concrete with degree 2 B-Splines}
 		\label{fig:concrete_degree_2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png}
 		\caption{Concrete with degree 4 B-Splines}
 		\label{fig:concrete_degree_4}
 	\end{subfigure}
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png}
 		\caption{Steel with degree 2 B-Splines}
 		\label{fig:steel_degree_2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png}
 		\caption{Steel with degree 4 B-Splines}
 		\label{fig:steel_degree_4}
 	\end{subfigure}
@@ -677,38 +706,38 @@ $\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)} \lesssim \frac{3\lambda + 2\
 As $\lambda$ is very high compared to $\mu$, the estimates are not really valid anymore, as $\frac{3\lambda + 2\mu}{2\mu C} \rightarrow + \infty$ when $\lambda \rightarrow + \infty$. 
 This is the case for incompressible materials, like rubber, where $\lambda$ is very high compared to $\mu$. To get a better idea of the convergence, we can look at the error plots for different values of $\lambda$ with $\mu = 1$.
 
-\begin{figure}[!h]
+\begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png}
+		\includegraphics[width=\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1.25.png}
 		\caption{$\lambda=1.25$~Pa}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10.0.png}
 		\caption{$\lambda=10$~Pa}
 	\end{subfigure}
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100.0.png}
 		\caption{$\lambda=100$~Pa}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=1000.0.png}
 		\caption{$\lambda=1000$~Pa}
 	\end{subfigure}
 	\\
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=10000.0.png}
 		\caption{$\lambda=10000$~Pa}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png}
+		\includegraphics[width=\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png}
 		\caption{$\lambda=100000$~Pa}
 	\end{subfigure}
 	\caption{Error plots between exact solution and numerical solution with degree 2 B-Splines with increasing values of $\lambda$ with $\mu = 1$~Pa}
@@ -725,9 +754,9 @@ Two hypothesis can be made to explain this phenomena :
 
 One can try to increase the degree of B-Splines to see if the convergence is reinforced as the power of $h$ in the estimates is higher. 
 
-\begin{figure}
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png}	
+	\includegraphics[width=0.8\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png}	
 	\caption{Error plot between exact solution and numerical solution with degree 4 B-Splines with $\lambda = 100000$~Pa and $\mu = 1$~Pa}
 	\label{fig:error_kappa_degree_4}
 \end{figure}
@@ -739,6 +768,7 @@ One way to avoid this issue is to use a mixed formulation, where the pressure fi
 To introduce this formulation, let's consider again the strong formulation from \eqref{eq:strong_form}. Then, denotes by $p$ the pressure field, defined by $\displaystyle p = - \lambda \div{\vec u}$. As we are seeking $\vec u \in \boldsymbol{H}^1(\Omega)$, $p$ is naturally living in $L^2(\Omega)$. Then Hook's law can be rewritten : $\boldsymbol{\sigma} (\vec u,p) = -p I_3 + 2\mu \boldsymbol{\varepsilon(\vec u)} \text{ in }  \Omega $ \\
 So the strong formulation can be re-write as : For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(\partial \Omega_N)$, find $(\vec u, p) \in \boldsymbol H^1(\Omega)\times L^2(\Omega)$ such that : 
 
+\begin{tcolorbox}
 \begin{equation}
 	\label{eq:strong_pressure_disp_form}
 	\left\{
@@ -750,20 +780,22 @@ So the strong formulation can be re-write as : For a given $\vec f \in \boldsymb
 	\end{aligned}
 	\right.
 \end{equation}
+\end{tcolorbox}
+
 
 Now, to derive the weak formulation associated, first we multiply the Equilibrium equation by $v \in \boldsymbol H^1_{\vec 0,D}(\Omega)$ and we interger by part on $\Omega$, then we multiply the Pressure field equation by $q \in L^2(\Omega)$ and we interger over $\Omega$. Then we just have to add both integrals. 
 Then, the weak formulation is: 
+\begin{tcolorbox}
 \begin{equation}
 	\label{eq:weak_pressure_displ_form}
-	\boxed{
 	\left\{
 	\begin{aligned}
 		&\text{Find } (\vec u,p) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega) \text{ such that :}\\
 		& \tilde{a}((\vec u,p),(\vec v,q)) = l(\vec v,q) \hspace{0.5cm} \forall (\vec v,q) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega)
 	\end{aligned}
 	\right.
-	}
 \end{equation}
+\end{tcolorbox}
 
 With : 
 \begin{equation*}
@@ -856,24 +888,16 @@ for some $\beta>0$ independent of $\lambda$ and $\mu$. This condition ensures th
 If $\Omega_D = \emptyset$, the Dirichlet boundary condition is not imposed, and the problem becomes a pure Stokes problem. In this case, the inf-sup condition is necessary to ensure the well-posedness of the problem, and the uniqueness of the solution is guaranteed by the compatibility condition on the external loads, as discussed in Section \ref{sec:pure_traction} modulo a rigid body motion.
 
 \subsection{Isogeometric discretisation and a priori error estimate}
-Under standard approximation and stability assumptions for the mixed formulation, the Galerkin solution enjoys the usual quasi-optimal a priori estimate. Let $(V_h,Q_h)\subset V\times Q$ be the tensor–product B-spline spaces of (vector) degree $d$ (for the displacement) and (scalar) degree $d$ or $d-1$ (for the pressure) with mesh size $h$, and assume that the discrete inf–sup condition holds with a constant $\beta>0$ independent of $h$, $\lambda$ and $\mu$ (locking–free setting) \cite{boffi_mixed_2008}. Then, for the exact solution $(\vec u,p)$ of \eqref{eq:weak_pressure_displ_form} and the discrete solution $(\vec u_h,p_h)\in V_h\times Q_h$, continuity plus coercivity on the kernel give the Céa type bound
+Under standard approximation and stability assumptions for the mixed formulation, the Galerkin solution enjoys the usual quasi-optimal a priori estimate. Let $(V_h,Q_h)\subset V\times Q$ be the tensor–product B-spline spaces of (vector) degree $d$ (for the displacement) and (scalar) degree $d$ (for the pressure) with mesh size $h$, and assume that the discrete inf–sup condition holds with a constant $\beta>0$ independent of $h$, $\lambda$ and $\mu$ (locking–free setting) \cite{boffi_mixed_2008}. Then, for the exact solution $(\vec u_e,p_e)$ of \eqref{eq:weak_pressure_displ_form} and the discrete solution $(\vec u_h,p_h)\in V_h\times Q_h$, continuity plus coercivity on the kernel give the Céa type bound
 \[
-\|\vec u-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p-p_h\|_{L^2(\Omega)}
-\;\le\; C\,\Big( \inf_{\vec w_h\in V_h}\|\vec u-\vec w_h\|_{\boldsymbol H^1(\Omega)} + \inf_{q_h\in Q_h}\|p-q_h\|_{L^2(\Omega)}\Big),
+\|\vec u_e-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p_e-p_h\|_{L^2(\Omega)}
+\;\le\; C\,\Big( \inf_{\vec w_h\in V_h}\|\vec u_e-\vec w_h\|_{\boldsymbol H^1(\Omega)} + \inf_{q_h\in Q_h}\|p_e-q_h\|_{L^2(\Omega)}\Big),
 \]
-with $C$ independent of $h,\lambda,\mu$. For $(\vec u,p)$ sufficiently smooth, namely $\vec u\in \boldsymbol H^{d+1}(\Omega)$ and $p\in H^{d}(\Omega)$, spline approximation estimates yield
+with $C > 0$, and \textit{a priori} $C \propto \frac{2\mu + 6 + 1/\lambda}{\min(2\mu C_K^2,1 / \lambda)}$. For $(\vec u,p)$ sufficiently smooth, namely $\vec u\in \boldsymbol H^{d+1}(\Omega)$ and $p\in H^{d}(\Omega)$, spline approximation estimates yield
 \[
-\|\vec u-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p-p_h\|_{L^2(\Omega)} \;\le\; C h^{d}\Big(\|\vec u\|_{\boldsymbol H^{d+1}(\Omega)}+\|p\|_{H^{d}(\Omega)}\Big),
+\|\vec u_e-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p_e-p_h\|_{L^2(\Omega)} \;\le\; C h^{d}\Big(\|\vec u_e\|_{\boldsymbol H^{d+1}(\Omega)}+\|p_e\|_{H^{d}(\Omega)}\Big),
 \]
-and, under the additional elliptic regularity needed for a duality argument, the displacement $L^2$–error improves to
-\[
-\|\vec u-\vec u_h\|_{\boldsymbol L^2(\Omega)} \;\le\; C h^{d+1}\|\vec u\|_{\boldsymbol H^{d+1}(\Omega)}.
-\]
-Crucially, these constants remain bounded as $\lambda\to\infty$, in contrast with the pure displacement formulation whose coercivity deteriorates ($\alpha\sim 1/\lambda$), leading to volumetric locking; hence the mixed formulation delivers uniform (locking–free) convergence in the nearly incompressible regime \cite{boffi_mixed_2008,da_veiga_mathematical_2014}.
-
-
-
-
+Then, while $2 \mu C_K^2 > \frac{1}{\lambda}$, the coercivity constant $\alpha$ is bounded away from zero, and the estimate holds uniformly in $\lambda$ and $\mu$. But, when $\lambda \rightarrow \infty$, the coercivity constant $\alpha$ tends to zero, leading to a loss of stability in the numerical method. Now we can look at the convergence estimates for the mixed displacement-pressure formulation to see if this formulation can solve for higher values of $\frac{\lambda}{\mu}$ than the pure-displacement formulation.
 
 
 % Let  and  be tensor-product B-spline spaces of degree  and mesh-size  (maximal continuity). If the exact solution satisfies the regularity
@@ -913,81 +937,121 @@ $$
 % -\pi^{2}(\lambda+\mu)\cos(\pi x)\sin(\pi y)\cos(\pi z)\[4pt]\\n-\pi^{2}(\lambda+\mu)\sin(\pi x)\cos(\pi y)\cos(\pi z)\[4pt]\\n\pi^{2}(\lambda+4\mu)\sin(\pi x)\sin(\pi y)\sin(\pi z)
 % \end{pmatrix}.
 $$
+And the boundary conditions are: 
+\begin{align*}
+\vec u_e|_{\partial\Omega} &= 0,\\
+p_e|_{\partial\Omega} &= \begin{cases}
+-\lambda \pi \sin(\pi x) \sin(\pi y) & \text{if } z = 0 \\
+\lambda \pi \sin(\pi x) \sin(\pi y) & \text{if } z = 1
+\end{cases}
+\end{align*}
 
-
-\begin{figure}[!h]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25}
-		\caption{$d=2$}
-		\label{fig:convergencedegree2mixeddirichlethomogeneouskappa1}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_3_mixed_dirichlet_homogeneous_kappa=1.25}
-		\caption{$d=3$}
-		\label{fig:convergencedegree3mixeddirichlethomogeneouskappa1}
-	\end{subfigure}
-	\\
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_4_mixed_dirichlet_homogeneous_kappa=1.25}
-		\caption{$d=4$}
-		\label{fig:convergencedegree4mixeddirichlethomogeneouskappa1}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_5_mixed_dirichlet_homogeneous_kappa=1.25}
-		\caption{$d=5$}
-		\label{fig:convergencedegree5mixeddirichlethomogeneouskappa1}
-	\end{subfigure}
-	\caption{Four plots of errors between exact solution and numerical solution with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$) using the mixed formulation}
-\end{figure}
+As now, the exact solution depends on $\lambda$, we will look at the relative between exact and numerical solutions for different values of $\lambda$. (This wasn't necessary before as the exact solution was independent of $\lambda$ so the norm the exact solution was the same for all values of $\lambda$).
+To do so, we can look at the relative error between exact and numerical solution, defined by: 
+$$
+E_{rel} = \frac{\|\vec u_e - \vec u_h\|_{H^1} + \|p_e - p_h\|_{L^2}}{\|\vec u_e\|_{H^1} + \|p_e\|_{L^2}}.
+$$
+and its variation across the number of cells for different values of $\lambda$.
 
 \begin{figure}[!h]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1.25}
-		\caption{$\lambda=1.25$}
+		\includegraphics[width=\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1.25.png}
+		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 1.25$~Pa and $\frac{\lambda}{\mu} = 1.25$}
+		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda1.25}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10.0}
-		\caption{$\lambda=10$}
-	\end{subfigure}
-	\\
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100.0}
-		\caption{$\lambda=100$}
+		\includegraphics[width=\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10.0.png}
+		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 10$~Pa and $\frac{\lambda}{\mu} = 10$}
+		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda10}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_mixed_dirichlet_homogeneous_kappa=1000.0}
-		\caption{$\lambda=1000$}
-	\end{subfigure}
-	\\
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_mixed_dirichlet_homogeneous_kappa=10000.0}
-		\caption{$\lambda=10000$}
+		\includegraphics[width=\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100.0.png}
+		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 100$~Pa and $\frac{\lambda}{\mu} = 100$}
+		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda100}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{convergence_degree_2_mixed_dirichlet_homogeneous_kappa=100000.0}
-		\caption{$\lambda=100000$}
+		\includegraphics[width=\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000.0.png}
+		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 10^3$~Pa and $\frac{\lambda}{\mu} = 1000$}
+		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda1000}
 	\end{subfigure}
-	\caption{Error plots between exact solution and numerical solution with degree 2 B-Splines and mixed formulation with increasing values of $\lambda$}
 \end{figure}
+\begin{figure}[!h] \ContinuedFloat
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=10000.0.png}
+		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 10^4$~Pa and $\frac{\lambda}{\mu} = 10000$}
+		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda10000}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=100000.0.png}
+		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 10^5$~Pa and $\frac{\lambda}{\mu} = 100000$}
+		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda100000}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1000000.0.png}
+		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 10^6$~Pa and $\frac{\lambda}{\mu} = 1000000$}
+		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda1000000}
+	\end{subfigure}
+		\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=1e+16.png}
+		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 10^{16}$~Pa and $\frac{\lambda}{\mu} = 10^{16}$}
+		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda1e16}
+	\end{subfigure}
+	\caption{Relative error between exact and numerical solution with degree 2 B-Splines for different values of $\lambda$}
+	\label{fig:convergencedegree2mixeddirichlethomogeneous}
+\end{figure}
+
+
+The convergence analysis presented in Figure \ref{fig:convergencedegree2mixeddirichlethomogeneous} reveals several important characteristics of the mixed displacement-pressure formulation across different Lamé parameter values. This comprehensive study examines the behavior of the numerical scheme for values of $\lambda$ ranging from $1.25$~Pa to $10^{16}$~Pa, corresponding to materials from highly compressible to nearly incompressible regimes.
+
+We can observe that from $\frac{\lambda}{\mu} = 100$, the convergence behavior is robust and following a $-3$ slope. This indicates that the mixed formulation maintains optimal convergence properties even as the material approaches incompressibility. The observed slope is higher than expected. This could be due to the fact that as $\lambda$ increases, the pressure variable becomes more dominant in the formulation and influences the overall convergence behavior. This is only a intuition and an interpretation of the error plots, and further analysis would be needed to confirm this hypothesis. That hasn't been done yet.
+The plateau phenomena is observed again when the error reaches a certain threshold and no longer decreases significantly with mesh refinement.
+
+However, as $\frac{\lambda}{\mu} \gg 1$, so here $\frac{\lambda}{\mu} = 10^{16}$, the same phenomena as in the pure displacement formulation occurs, where the error does not decrease anymore. This is likely due to the fact that the pressure variable is not able to compensate for the locking phenomena that occurs when $\lambda$ is too high compared to $\mu$. We can suppose that the coercivity constant $\alpha$ has reached its limit and now $\alpha = \frac{1}{\lambda}$.
+
+When we look at the continuity and coercivity constants of the bilinear form $a$, one can also think that the more $\mu$ becomes higher, the more this loss of coercivity will appears faster when $\lambda \rightarrow \infty$.
+
+For example, if we consider steel's Lamé parameters, which are typically around $\lambda = 120$~GPa and $\mu = 80$~GPa, we find that $\frac{\lambda}{\mu} = 1.5$. As we can see in the following error plot, the locking phenomena appears.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=120000000000.0.png}
+	\caption{Relative error between exact and numerical solution with degree 2 B-Splines for steel's Lamé parameters}
+	\label{fig:convergencedegree2mixeddirichlethomogeneoussteel}
+\end{figure}
+
+The same behavior is actually observed for rubber and concrete, even if the ratio $\frac{\lambda}{\mu}$ is not as high like \ref{fig:convergencedegree2mixeddirichlethomogeneouslambda1e16}. This is due to the fact that with the mixed formulation, when $\mu$ increases, the coercivity constant $\alpha$ becomes smaller faster when $\lambda$ increases.
+
+\section{Conclusion}
+
+This chapter presented a comprehensive study of linear elasticity formulations implemented in \texttt{PSYDAC}, demonstrating the library's capability to handle solid mechanics problems beyond its original plasma physics applications. Two distinct formulations were investigated: the pure displacement formulation and the mixed displacement-pressure formulation, each offering unique advantages for different material regimes.
+
+The pure displacement formulation proved effective for materials with moderate Lamé parameter ratios, achieving optimal convergence rates as predicted by theoretical estimates. However, the study revealed significant limitations when dealing with nearly incompressible materials, where the ratio $\frac{\lambda}{\mu}$ becomes large. The locking phenomenon observed for values of $\frac{\lambda}{\mu} \geq 10^4$ demonstrates the practical limitations of this approach for such materials, with convergence rates deteriorating significantly or even failing entirely.
+
+The mixed displacement-pressure formulation successfully addressed many of the incompressibility issues inherent in the pure displacement approach. By introducing pressure as an additional variable, this formulation maintained robust convergence behavior for much higher values of $\frac{\lambda}{\mu}$, effectively extending the applicable range to materials approaching the incompressible limit. 
+
+Both formulations were thoroughly validated using the method of manufactured solutions across various material parameters, mesh refinements, and B-spline degrees. The convergence studies confirmed the expected optimal rates, with the occasional plateau effects attributed to matrix ill-conditioning at very fine mesh resolutions. The successful implementation on the Raven supercomputer demonstrated \texttt{PSYDAC}'s scalability and performance capabilities for large-scale solid mechanics simulations.
+
+The comprehensive comparison between these formulations provides valuable insights for practitioners choosing appropriate numerical methods based on material properties. For standard engineering materials like steel and concrete, where $\frac{\lambda}{\mu}$ remains moderate, the pure displacement formulation offers computational efficiency and straightforward implementation. For applications involving nearly incompressible materials or when robustness across a wide range of material parameters is required, the mixed formulation provides superior stability and accuracy.
+
+This work has contributed to expanding \texttt{PSYDAC}'s application domain while maintaining its high-order accuracy and geometric flexibility. The implementations developed during this study are available as interactive Jupyter notebooks demonstrating both formulations, accessible through the IGA-Python repository: \href{https://github.com/pyccel/IGA-Python/pull/21}{https://github.com/pyccel/IGA-Python/pull/21}. These resources provide practical examples and can serve as starting points for further developments in computational solid mechanics using isogeometric analysis.
+
 
 \chapter{Thermoelasticity}
 \section{Introduction}
 This chapter is dedicated to the study of the thermoelasticity problem, which is a coupled problem between the mechanical and thermal fields. The aim is to solve the coupled system of equations that govern the behavior of a thermoelastic material under thermal and mechanical loads. This work has been initiated to solve a problem present during the IPP Programme Days 2025 by Prof. Dr. Rudolf Neu. The goal is to understand the deformation of a medium under the influence of thermal loads and mechanical forces. The medium is composite material, composed of copper and tungsten. The geometry is presented on the following figure.
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{geometry_thermoelasticity.png}
+	\includegraphics[width=0.7\textwidth]{figures/geometry_thermoelasticity.png}
 	\caption{Geometry of the thermoelasticity problem from the IPP Programme Days 2025}
 	\label{fig:geometry_thermoelasticity}
 \end{figure}
@@ -1028,7 +1092,7 @@ The problem can be parameterized as follows with other boundary conditions and p
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{geometry_thermoelasticity_simplified.jpg}
+	\includegraphics[width=0.6\textwidth]{figures/geometry_thermoelasticity_simplified.jpg}
 	\caption{Geometry of the simplified thermoelasticity problem}
 	\label{fig:geometry_thermoelasticity_simplified}
 \end{figure}
@@ -1123,7 +1187,7 @@ With
 	& l_T : \left\{
 		\begin{aligned}
 			& H^1_{0,\text{temp}} \longrightarrow \mtr \\
-			& \int_{\Omega} Q \theta \, d\Omega - \int_{\partial\Omega_{\text{heat}}} q_S \theta \, dS
+			& \theta \mapsto\int_{\Omega} Q \theta \, d\Omega - \int_{\partial\Omega_{\text{heat}}} q_S \theta \, dS
 		\end{aligned}
 	\right. \\
 	& a : \left\{
@@ -1135,7 +1199,7 @@ With
 	& l_U : \left\{
 		\begin{aligned}
 			& \boldsymbol{H}^1_{\vec 0,D}(\Omega) \longrightarrow \mtr \\ 
-			& \int_{\Omega} \vec f \cdot \vec v \, d\Omega + \int_{\partial\Omega_N} \vec t_N \cdot \vec v \, dS + \int_{\Omega} (3\lambda(y) + 2\mu(y)) \alpha(y) T (\div \vec v) \, d\Omega
+			& \vec v \mapsto \int_{\Omega} \vec f \cdot \vec v \, d\Omega + \int_{\partial\Omega_N} \vec t_N \cdot \vec v \, dS + \int_{\Omega} (3\lambda(y) + 2\mu(y)) \alpha(y) T (\div \vec v) \, d\Omega
 		\end{aligned}
 	\right.\\
 	& \exists \kappa_-, \kappa_+, \lambda_-, \lambda_+, \mu_-, \mu_+, \alpha_-, \alpha_+ > 0 \text{ such that } \forall y \in [0,22], \\
@@ -1238,7 +1302,7 @@ and the corresponding source terms:
 The first result I obtained was the following plot:
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png}
+	\includegraphics[width=0.6\textwidth]{figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17.0_d=2.png}
 	\caption{Error plot of the temperature field ($\|T - T^h\|_{L^2(\Omega)}$ and $\|T - T^h\|_{H^1(\Omega)}$) with $d=2$ B-splines and $\text{lim} = 17.0$}
 	\label{fig:error_temp_d2}
 \end{figure}
@@ -1247,7 +1311,7 @@ In this figure, we can observe that the error in the temperature field is decrea
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png}
+	\includegraphics[width=0.6\textwidth]{figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=17_d=3.png}
 	\caption{Error plot of the temperature field ($\|T - T^h\|_{L^2(\Omega)}$ and $\|T - T^h\|_{H^1(\Omega)}$) with $d=3$ B-splines and $\text{lim} = 17.0$}
 	\label{fig:error_temp_d3}
 \end{figure}
@@ -1259,13 +1323,13 @@ One hypothesis that can be made to verify the role of the line $y = \text{lim}$ 
 \begin{figure}[!h]
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas/Temp_X_max=22_Y_max=22_lim=16.5_d=2.png}
 		\caption{Error plot of the temperature field}
 		\label{fig:error_temp_d2_lim_16_5}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas/Disp_X_max=22_Y_max=22_lim=16.5_d=2_disp.png}
 		\caption{Error plot of the displacement field}
 		\label{fig:error_disp_d2_lim_16_5}
 	\end{subfigure}
@@ -1277,15 +1341,334 @@ To make the simulation possible in case described in subsection \ref{subsec:prob
 For the moment, the function which discretised the domain and create the finite dimensional spline space takes only the number of cells per direction as argument. I have implemeted a new feature to the library which allows the user to provide a custom discretisation grid. This feature required to add new functions to the \texttt{Geometry} class and modify the previous \texttt{discretize} function in \texttt{PSYDAC}. To ensure the correct working of this new feature, I have also implemented a set of unit tests.
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=1\textwidth]{custom_grid.png}
+	\includegraphics[width=0.8\textwidth]{figures/custom_grid.png}
 	\caption{Example of a custom discretisation grid}
 	\label{fig:custom_grid_example}
 \end{figure}
 This new feature allows the user to define a custom grid for the discretisation of the domain. A entire description of this feature is available on GitHub : \href{https://github.com/pyccel/psydac/pull/518}{https://github.com/pyccel/psydac/pull/518}
 
+With this features, we can now simulate correctly the problem when $\text{lim} = 17$ as it was described in the simplified problem setup. The results are shown in the figures below.
+\begin{figure}[!h]
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=2_disp.png}
+		\caption{Displacement field for degree 2 B-splines}
+		\label{fig:disp_d2_lim_17}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=2.png}
+		\caption{Temperature field for degree 2 B-splines}
+		\label{fig:temp_d2_lim_17}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=3_disp.png}
+		\caption{Displacement field for degree 3 B-splines}
+		\label{fig:disp_d3_lim_17}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=3.png}
+		\caption{Temperature field for degree 3 B-splines}
+		\label{fig:temp_d3_lim_17}
+	\end{subfigure}
+\end{figure}
+\newpage
+\begin{figure}[!h]\ContinuedFloat
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=4_disp.png}
+		\caption{Displacement field for degree 4 B-splines}
+		\label{fig:disp_d4_lim_17}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=4.png}
+		\caption{Temperature field for degree 4 B-splines}
+		\label{fig:temp_d4_lim_17}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=5_disp.png}
+		\caption{Displacement field for degree 5 B-splines}
+		\label{fig:disp_d5_lim_17}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Temp_X_max=22_Y_max=22_lim=17_d=5.png}
+		\caption{Temperature field for degree 5 B-splines}
+		\label{fig:temp_d5_lim_17}
+	\end{subfigure}
+	\caption{Error plots of thermoelasticity with different degree B-splines using custom grid discretisation with $\text{lim} = 17$}
+\end{figure}
 
+From the results presented in the previous figures, we can observe that the error curves validate the theoretical estimates established in equation \eqref{eq:approximation-estimates}. The convergence behavior follows the expected order for both the temperature and displacement fields across all tested degrees of B-splines. The numerical solution demonstrates optimal convergence rates consistent with the theoretical predictions for smooth solutions.
+
+However, we can identify the plateau phenomenon when the error reaches certain threshold values, specifically around $10^{-9}$ for the $L^2$ norm and between $10^{-7}$ and $10^{-8}$ for the $H^1$ norm. This behavior mirrors exactly what was observed in Chapter \ref{chap:linear_elasticity}, suggesting that the underlying causes remain the same. The plateau effect is primarily attributed to the ill-conditioning of the system matrix, which becomes more pronounced as the mesh is refined and the degree of B-splines increases.
+
+Interestingly, the error magnitudes are nearly identical for both the displacement and temperature fields. This similarity can be explained by the structure of our manufactured solutions: the exact temperature field $T_e$ is identical to the second component of the displacement field $\vec{u}_e$, while the first component of the displacement field is zero and $T_e$ appears in the source term when the displacement problem is solved. This deliberate choice in our test case creates a natural correspondence between the two fields, resulting in comparable approximation errors for both problems.
+
+The successful implementation of the custom grid discretization feature has proven essential for handling the thermoelasticity problem with material property discontinuities at $y = 17$. This enhancement to \texttt{PSYDAC} enables accurate simulations in scenarios where material interfaces do not align with uniform grid boundaries, which is crucial for realistic engineering applications involving composite materials. It could be possible to use another main functionality of \texttt{PSYDAC}: resolution on a multipatch domain. This approach will be tackled in the next section. 
+
+\section{Initial problem - Resolution on a multipatch domain}
+
+In this section, we will consider the initial problem described in figure \ref{fig:geometry_thermoelasticity}. To model this medium and simulate the thermoelastic behavior, we will use the multipatch framework provided by \texttt{PSYDAC}.
+
+\subsection{Quick overview of the multipatch framework}
+
+The multipatch framework in \texttt{PSYDAC} allows for the simulation of problems defined on non-conforming grids, which is particularly useful for complex geometries and material interfaces. This framework enables the coupling of different patches, each potentially using different discretization strategies, while ensuring compatibility at the interfaces. 
+
+In \texttt{Psydac}, the \emph{multipatch framework} is designed to represent complex computational domains by decomposing them into a collection of simpler \emph{patches}. Each patch is the image of a reference domain (typically $[0,1]^d$) under a smooth mapping $F_k$, defined either analytically or imported from CAD/NURBS geometry. This approach allows the exact representation of curved geometries while maintaining a structured, tensor-product B-spline discretization within each patch.
+
+From a mathematical perspective, each patch $\Omega_k$ supports a local finite element space $V_h^\ell(\Omega_k)$, built from tensor-product B-splines or NURBS of chosen degree and regularity. These local spaces form a discrete de~Rham sequence
+\[
+V_h^0(\Omega_k) \xrightarrow{\nabla} V_h^1(\Omega_k) \xrightarrow{\nabla \times} V_h^2(\Omega_k) \xrightarrow{\nabla \cdot} V_h^3(\Omega_k),
+\]
+ensuring that key identities such as $\nabla \times (\nabla \varphi) = 0$ and $\nabla \cdot (\nabla \times \mathbf{u}) = 0$ hold at the discrete level.
+
+Globally, the domain $\Omega$ is the union $\Omega = \bigcup_{k=1}^K \Omega_k$, and \texttt{Psydac} constructs the \emph{broken space}
+\[
+V_h^\ell := \left\{ v \in L^2(\Omega) \; \middle| \; v|_{\Omega_k} \in V_h^\ell(\Omega_k) \right\},
+\]
+which does not enforce conformity across patch interfaces. This choice yields block-diagonal mass matrices (one block per patch), enabling local $L^2$ projections and efficient parallelization. To recover the necessary continuity when required, \texttt{Psydac} applies \emph{conforming projection operators} $P_h^\ell$ that average interface degrees of freedom, defining discrete operators
+\[
+d_h^\ell = d^\ell \, P_h^\ell,
+\]
+where $d^\ell$ is the continuous differential operator. This guarantees the \emph{commuting diagram property} of Finite Element Exterior Calculus (FEEC), thus preserving stability, exactness of sequences, and the structure of discrete Hodge--Helmholtz decompositions.
+
+This multipatch combined with the broken-FEEC approach provides:
+\begin{enumerate}
+    \item \textbf{Geometric flexibility}: each patch can have its own parametrization, allowing the exact modeling of complex CAD geometries;
+    \item \textbf{Computational locality}: operators and projections involve only neighboring patches, enhancing scalability for large-scale parallel simulations.
+\end{enumerate}
+
+For example, \texttt{PSYDAC} can reproduce a Pretzel geometry by defining multiple patches that conform to the intricate shape of the object. Each patch can be individually parameterized to capture the local geometry accurately, while the multipatch framework ensures that the overall simulation remains consistent and stable. Then, it's possible to solve Poisson's equation, Time-dependent Maxwell equations on a Pretzel geometry.
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/maxwell_pretzel.png}
+	\caption{Time harmonic Maxwell's equation on a pretzel domain with inhomogeneous essential boundary conditions. Multi-patch domain (left), numerical amplitude $|u_h|$ (center) and amplitude error $|u_{ex}| - |u_h|$ (right) obtained with polynomial degree $p = 3$ and $N = 1$ from \cite{guclu_psydac_2022}}
+\end{figure}
+
+In this context, the multipatch framework is particularly advantageous for handling the thermoelasticity problem with this unusual geometry. 
+
+\subsection{A simple multipatch : square hole}
+
+To take the grips on the multipatch framework, we start with a simple example: a square domain with a square hole in the center. This geometry can be easily represented using a multipatch approach with 8 square patches. Actually, the domain can be described with fewer patches but to define correctly the boundary conditions, we need to define the patches in a way that allows us to apply the Dirichlet boundary conditions on the entire boundary of the domain.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/square_hole.png}
+	\caption{Multipatch representation of a square domain with a square hole in the center.}
+\end{figure}
+
+In this case, the hole is represented by a square $[5,17] \times [3,15]$ and its surrounded by 8 patches. Each patch is obtained by applying a transformation to the reference square $[0,1]^2$. The patches are defined as follows: $\forall (\hat x, \hat y) \in [0,1]^2$,
+\begin{itemize}
+	\item Patch 1: $\Omega_1 := [0,5] \times [0,3]$ with $F_1(\hat x, \hat y) = (5\hat x, 3\hat y)$
+	\item Patch 2: $\Omega_2 := [5,17] \times [0,3]$ with $F_2(\hat x, \hat y) = (12\hat x + 5, 3\hat y)$
+	\item Patch 3: $\Omega_3 := [17,22] \times [0,3]$ with $F_3(\hat x, \hat y) = (5\hat x + 17, 3\hat y)$
+	\item Patch 4: $\Omega_4 := [0,5] \times [3,15]$ with $F_4(\hat x, \hat y) = (5\hat x, 12\hat y + 3)$
+	\item Patch 5: $\Omega_5 := [17,22] \times [3,15]$ with $F_5(\hat x, \hat y) = (5\hat x + 17, 12\hat y + 3)$
+	\item Patch 6: $\Omega_6 := [0,5] \times [15,22]$ with $F_6(\hat x, \hat y) = (5\hat x, 7\hat y + 15)$
+	\item Patch 7: $\Omega_7 := [5,17] \times [15,22]$ with $F_7(\hat x, \hat y) = (12\hat x + 5, 7\hat y + 15)$
+	\item Patch 8: $\Omega_8 := [17,22] \times [15,22]$ with $F_8(\hat x, \hat y) = (5\hat x + 17, 7\hat y + 15)$
+\end{itemize}
+
+The physical domain is then defined as the union of these patches: $$\Omega = \bigcup_{i=1}^8 \Omega_i = ([0,22] \times [0,22]) \setminus ([5,17] \times [3,15])$$.
+
+The use of a multipatch domain needs to ensure that the patches are properly aligned and that the transformations between them are smooth. Moreover, bilinear forms must be defined consistently across patch boundaries to ensure the stability and accuracy of the numerical methods employed. 
+To do so, we call $\Sigma_{ij}$ the interface between patches $\Omega_i$ and $\Omega_j$, such that $\Sigma_{ij} = \partial \Omega_i \cap \partial \Omega_j$.
+
+Then, bilinear forms are penalized across the interfaces to ensure continuity and stability: this is called Nitsche's method. 
+This method consist to add a penalty term to the bilinear forms that involves the traces of the functions on the interface $\Sigma_{ij}$, a symmetrization term and a penalty term that ensures the continuity of the traces across the interface. It is also possible to add a weak Dirichlet condition on the boundary to enforce the desired behavior.
+
+Consequently, the bilinear forms are redefined as follows:
+
+\begin{align*}
+a(u,v) &= a_\Omega(u,v) + \sum_{i,j} a_{ij}(u,v) \\
+b(T,\Theta) &= b_\Omega(T,\Theta) + \sum_{i,j} b_{ij}(T,\Theta)
+\end{align*}
+With : 
+\begin{equation*}
+	\begin{aligned}
+	& a_\Omega : \left\{
+		\begin{aligned}
+			& \boldsymbol{H}^1_{\vec 0,D}(\Omega) \times \boldsymbol{H}^1_{\vec 0,D}(\Omega) \longrightarrow \mtr \\
+			& (\vec u, \vec v) \mapsto \int_{\Omega} \Big( \lambda(y) (\div \vec u) (\div \vec v) + 2\mu(y) \boldsymbol{\varepsilon}(\vec u) : \boldsymbol{\varepsilon}(\vec v) \Big) \, d\Omega 
+		\end{aligned}
+	\right. \\
+	& a_{ij} : \left\{
+		\begin{aligned}
+			& \boldsymbol{H}^1_{\vec 0,D}(\Omega) \longrightarrow \mtr \\ 
+			& (\vec u, \vec v) \mapsto \int_{\Sigma_{ij}} - \{\boldsymbol{\sigma}(\vec u) \cdot \vec n\} \cdot \left[\left[ \vec v \right]\right] - \{\boldsymbol{\sigma}(\vec v) \cdot \vec n\} \cdot \left[\left[ \vec u \right]\right] + \gamma_u \frac{\{2 \mu + \lambda\}}{h} \left[\left[ \vec u \right]\right] \cdot \left[\left[ \vec v \right]\right] \, d\Gamma
+		\end{aligned}
+	\right.\\
+	& b_\Omega : \left\{
+		\begin{aligned}
+			& H^1_{0,\text{temp}}(\Omega) \times H^1_{0,\text{temp}}(\Omega) \longrightarrow \mtr \\
+			& (T, \theta) \mapsto \int_{\Omega} \kappa(y) \grad T \cdot \grad \theta \, d\Omega 
+		\end{aligned}
+	\right. \\
+	& b_{ij} : \left\{
+		\begin{aligned}
+			& H^1_{0,\text{temp}}(\Omega) \times H^1_{0,\text{temp}}(\Omega) \longrightarrow \mtr \\
+			& (T, \theta) \mapsto \int_{\Sigma_{ij}} - \{ \kappa(y) \grad T \cdot \vec n \} \left[\left[ \theta \right]\right] - \{ \kappa(y) \grad \theta \cdot \vec n \}  \left[\left[ T \right]\right] + \gamma_T \frac{\{ \kappa \}}{h} \left[\left[ T \right]\right]\left[\left[ \theta \right]\right] \, d\Gamma
+		\end{aligned}
+	\right. \\
+	& \text{Where } \{ \cdot \} \text{ denotes the average across the interface } \Sigma_{ij}, \left[\left[\cdot\right]\right] \text{ denotes the jump and } \\
+	& \gamma_u, \gamma_T > 0 \text{ are penalty parameters.} 
+	\end{aligned}
+\end{equation*}
+
+% I have also added Dirichlet weak conditions for the displacement on the boundary of the domain to ensure that the solution satisfies the desired behavior on the boundary. This is characterized by an additional bilinear and linear form for the displacement problem:
+% \begin{equation*}
+% 	\begin{aligned}
+% 	& a_{\text{weak Dirichlet}} : \left\{
+% 		\begin{aligned}
+% 			& \boldsymbol{H}^1(\Omega) \times \boldsymbol{H}^1(\Omega) \longrightarrow \mtr \\
+% 			& (\vec u, \vec v) \mapsto \int_{\partial\Omega_D} - \boldsymbol{\sigma}(\vec u) \cdot \vec n \cdot \vec v - \boldsymbol{\sigma}(\vec v) \cdot \vec n \cdot \vec u + \gamma_u \frac{2\mu + \lambda}{h} \vec u \cdot \vec v \, dS
+% 		\end{aligned}
+% 	\right. \\
+% 	& l_{U,\text{weak Dirichlet}} : \left\{
+% 		\begin{aligned}
+% 			& \boldsymbol{H}^1(\Omega) \longrightarrow \mtr \\
+% 						& \vec v \mapsto \int_{\partial\Omega_D} - \boldsymbol{\sigma}(\vec v) \cdot \vec n \cdot \vec u_D + \gamma_u \frac{2\mu + \lambda}{h} \vec u_D \cdot \vec v \, dS
+% 		\end{aligned}
+% 	\right.
+% 	\end{aligned}
+% \end{equation*}
+
+With these modifications, the complete weak formulation for the thermoelasticity problem on the multipatch domain becomes:
+\begin{tcolorbox}
+Find $(T, \vec u) \in H^1(\Omega) \times \boldsymbol{H}^1(\Omega)$ such that for all test functions $(\theta, \vec v) \in H^1(\Omega) \times \boldsymbol{H}^1(\Omega)$:
+\begin{equation}
+	\left\{
+	\begin{aligned}
+		b_{\Omega}(T, \theta) + \sum_{i \neq j} b_{ij}(T, \theta) &= l_{T}(\theta) \\
+		a_{\Omega}(\vec u, \vec v) + \sum_{i \neq j} a_{ij}(\vec u, \vec v) &= l_{U}(\vec v)
+	\end{aligned}
+	\right.
+\end{equation}
+\end{tcolorbox}
+
+The penalty parameters $\gamma_u$ and $\gamma_T$ must be chosen sufficiently large to ensure stability while maintaining accuracy. Typically, values in the range $[10, 100]$ work well in practice, though the optimal choice may depend on the specific problem parameters and mesh size.
+
+This multipatch formulation with Nitsche's method allows for flexible handling of complex geometries while maintaining the stability and convergence properties of the underlying finite element discretization. The approach is particularly well-suited for problems involving material interfaces, complex boundaries, or domains that cannot be easily represented by a single structured mesh.
+
+To test the convergence of the simulation on the multipatch domain, we use the same exact functions $T_e$ and $\vec{u}_e$ as defined in the previous section:
+
+$$
+T_e = \sin\left(\frac{\pi x}{22}\right) \sin\left(\frac{\pi y}{22}\right) \qquad \vec u_e = \begin{pmatrix}
+	0 \\
+	\sin\left(\frac{\pi x}{22}\right) \sin\left(\frac{\pi y}{22}\right) 
+\end{pmatrix}
+$$
+
+For the multipatch convergence test, we impose Dirichlet boundary conditions on all boundaries of the global domain $\partial\Omega$. This means that both the temperature and displacement fields are prescribed on the entire outer boundary of the domain (excluding the hole). The boundary conditions are therefore:
+
+\begin{align}
+	T &= T_e \quad &&\text{on } \partial\Omega \\
+	\vec u &= \vec u_e \quad &&\text{on } \partial\Omega
+\end{align}
+
+With these homogeneous boundary conditions, the corresponding source terms are computed as:
+\begin{equation*}
+	\begin{aligned}
+	& Q = - \div(\kappa(y) \grad T_e), \\
+	& \vec f = -\div \boldsymbol{\sigma}(\vec u_e)
+	\end{aligned}
+\end{equation*}
+
+This test configuration allows us to verify that the multipatch implementation correctly handles the coupling between patches while maintaining the expected convergence rates for both the temperature and displacement fields.
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{figures/figures_multipatch/temperature.png}
+		\caption{Temperature field : $T_e$ (left) - $T_h$ (center) - Error (right)}
+	\end{subfigure}
+\end{figure}
+
+Unfortunately, my implementation of the multipatch method is not yet complete. The simulation is running, but the displacement problem doesn't converge as expected. The displacement numerical solution seems to get some continuity problems between interfaces, while the thermal simulation seems to be working correctly.
+
+\begin{figure}  \ContinuedFloat
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{figures/figures_multipatch/ux.png}
+		\caption{Displacement field on x-axis : $u_{e,x}$ (left) - $u_{h,x}$ (center) - Error (right)}
+		\label{fig:ux_multipatch}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{figures/figures_multipatch/uy.png}
+		\caption{Displacement field on y-axis : $u_{e,y}$ (left) - $u_{h,y}$ (center) - Error (right)}
+		\label{fig:uy_multipatch}
+	\end{subfigure}
+	\caption{Simulation plots on a multipatch domain with $n_{cells} = 64$ per direction and domain with degree $p = 2$ B-Splines}
+\end{figure}
+
+As we can see on figures \ref{fig:ux_multipatch} and \ref{fig:uy_multipatch}, the displacement field on the x-axis is not continuous across the interfaces, which leads to a non-convergence of the numerical solution. The error is not decreasing as expected, and the solution is not smooth across the interfaces. This issue is likely due to the Nitsche's method implementation or the way the bilinear forms are defined across the interfaces. Even by moving the values of constant $\gamma_u$ to different values, the solution is not converging as expected\dots
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/figures_multipatch/Temp_multipatch.png}
+		\caption{Error on the temperature field}
+		\label{fig:error_temp_multipatch}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/figures_multipatch/Disp_multipatch.png}
+		\caption{Error on the displacement field}
+		\label{fig:error_disp_multipatch}
+	\end{subfigure}
+	\caption{Error plots on a multipatch domain with degree $p = 2$ B-Splines}
+\end{figure}
+
+Looking at the error plots across the number of cells, the error on the displacement field seems to be constant, while the error on the temperature field is decreasing. To a certain extent, the error on temperature is decreasing as expected\dots
+One can suppose that the Nitsche's method is not enforcing the continuity of the displacement field across the interfaces properly, leading to the observed constant error. But, this problem needs further investigation and potentially a different approach to ensure the continuity of the displacement field across the interfaces.
+
+\section{Conclusion}
+
+This chapter has explored the application of thermoelasticity problems within the \texttt{PSYDAC} framework, demonstrating the library's capability to handle coupled thermo-mechanical systems with varying material properties. The study encompassed two main configurations: a simplified square domain and a more complex geometry with a hole requiring multipatch treatment. \\
+
+The simplified problem provided valuable insights into the behavior of coupled thermoelasticity systems under thermal and mechanical loads. The theoretical foundation, based on the stationary coupling between heat conduction and linear elasticity equations, was successfully implemented and validated using manufactured solutions. The decoupled approach, where temperature is solved first and then used as a source term in the mechanical problem, proved effective for the material parameters considered. \\
+
+A significant achievement of this work was the development and implementation of custom grid discretization capabilities in \texttt{PSYDAC}. The custom grid feature enables practitioners to strategically place mesh boundaries at material interfaces, ensuring that the B-spline basis functions properly capture the discontinuous nature of material properties. This capability is essential for realistic engineering applications involving composite materials, layered structures, or any scenario where material properties vary abruptly within the computational domain. \\
+
+The convergence analysis demonstrated that both temperature and displacement fields achieve optimal convergence rates consistent with theoretical predictions when appropriate discretization strategies are employed. Error magnitudes for both fields showed remarkable similarity, which can be attributed to the structure of the manufactured solutions and the coupling nature of the problem. The plateau phenomenon observed at fine mesh resolutions mirrors the behavior seen in the linear elasticity studies, confirming that matrix ill-conditioning remains a limiting factor for very high precision requirements. \\
+
+The exploration of multipatch methods for complex geometries represents an ambitious extension of the work, though it revealed implementation challenges that require further development. While the thermal problem showed encouraging results on the multipatch domain, the displacement field exhibited continuity issues across patch interfaces. This suggests that the Nitsche method implementation for the elasticity equations needs refinement to properly enforce interface conditions for vector-valued problems. \\
+
+The difficulties encountered with the multipatch approach highlight the complexity of ensuring proper coupling between patches for systems of PDEs.
+Despite these challenges, the thermoelasticity work has significantly expanded \texttt{PSYDAC}'s application domain. The custom grid discretization feature alone represents a valuable contribution that enables the library to handle realistic material configurations common in engineering practice. The insights gained from the coupling of thermal and mechanical fields provide a foundation for future developments in multiphysics simulations. \\
+
+Looking forward, the multipatch implementation requires additional development to achieve full functionality for coupled vector problems. The successful thermal simulation suggests that with proper refinement of the interface treatments, the multipatch approach could become a powerful tool for handling complex geometries in thermoelasticity and other multiphysics applications. The foundation established in this work provides a solid starting point for these future developments.
+
+\chapter{Conclusion}
+\vspace{-1cm}
+This research internship at the Max Planck Institute for Plasma Physics has been a transformative experience that successfully achieved its primary objectives while providing invaluable insights into the computational mechanics domain. The work has demonstrated that \texttt{PSYDAC}, originally designed for plasma physics applications, can be effectively extended to solve solid mechanics problems, particularly linear elasticity and thermoelasticity equations.
+
+\paragraph{\underline{Scientific Achievements:}}
+This internship successfully extended \texttt{PSYDAC} from plasma physics to solid mechanics, implementing both pure displacement and mixed displacement-pressure formulations for linear elasticity, developing custom grid discretization for thermoelasticity problems with material discontinuities, and exploring multipatch methods for complex geometries. The work validated theoretical convergence rates, identified volumetric locking limitations in incompressible materials, and contributed essential capabilities for handling composite materials and coupled multiphysics simulations within the isogeometric analysis framework.
+
+\paragraph{\underline{Methodological Insights and Personal Growth:}}
+
+This internship provided me with a profound understanding of the research methodology, particularly the systematic decomposition of complex problems into manageable steps. Working with \texttt{PSYDAC} on the Raven supercomputer taught me that effective research progress comes through patient iteration and careful validation rather than attempting to solve everything simultaneously. The experience enhanced my computational skills while developing a holistic perspective on the interplay between theoretical foundations, practical implementation constraints, and high-performance computing resource management, insights that will prove invaluable for future scientific endeavors.
+
+
+\paragraph{\underline{Collaborative Outcomes and Future Prospects:}}
+
+This internship will contribute directly to a presentation at the International Conference on Isogeometric Analysis (IGA 2025) in the Netherlands in September 2025. Moreover, my work will take part in a collaborative publication with Dr. Yaman Güçlü. These opportunities represent important milestones in my research trajectory and will enable the broader isogeometric analysis community to benefit from the methodological contributions, technical implementations, and validation studies developed during this work.
+
+\paragraph{\underline{Personal Reflection:}}
+Beyond the technical achievements, this internship has been profoundly enriching on a personal level. Working within an international research environment at IPP exposed me to diverse perspectives and collaborative approaches that broadened my understanding of scientific research culture. The experience of presenting complex technical concepts and contributing to open-source projects enhanced both my technical skills and professional confidence. The supportive environment provided by the NMPP team created ideal conditions for learning and growth, combining independent research responsibility with accessible mentorship that allowed me to develop problem-solving skills while maintaining access to expert guidance when needed.
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/Timeline.jpg}
+	\caption{Internship Timeline}
+	\label{fig:internship_timeline}
+\end{figure}
 
 \newpage
+\vspace{-1cm}
 \printbibliography[heading=bibnumbered]
 
 \newpage

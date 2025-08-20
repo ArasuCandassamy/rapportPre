@@ -68,9 +68,9 @@
     \verb{doi}
     \verb 10.1007/978-1-4757-4355-5
     \endverb
-    \field{isbn}{978-1-4419-1918-2 978-1-4757-4355-5}
-    \field{series}{Applied {Mathematical} {Sciences}}
-    \field{title}{Theory and {Practice} of {Finite} {Elements}}
+    \field{isbn}{978-1-4419-1918-2, 978-1-4757-4355-5}
+    \field{series}{Applied Mathematical Sciences}
+    \field{title}{Theory and Practice of Finite Elements}
     \verb{url}
     \verb http://link.springer.com/10.1007/978-1-4757-4355-5
     \endverb
@@ -79,8 +79,8 @@
       {New York, NY}%
     }
     \verb{file}
-    \verb PDF:/Users/arasucandassamy/Zotero/storage/KFL9ESFL/Ern et Guermond -
-    \verb 2004 - Theory and Practice of Finite Elements.pdf:application/pdf
+    \verb PDF:/Users/arasucandassamy/Zotero/storage/KFL9ESFL/Ern_et_Guermond_20
+    \verb 04.pdf:application/pdf
     \endverb
     \field{year}{2004}
     \field{urlday}{16}
@@ -143,8 +143,8 @@
       {{hash=MJM}{%
          family={Morel},
          familyi={M\bibinitperiod},
-         given={J.\bibnamedelima M.},
-         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={J.-M.},
+         giveni={J\bibinithyphendelim M\bibinitperiod},
       }}%
       {{hash=TF}{%
          family={Takens},
@@ -168,17 +168,16 @@
     \strng{namehash}{BD+1}
     \strng{fullhash}{BDBFDLFDRGFRSFM1}
     \field{labelnamesource}{author}
-    \field{labeltitlesource}{shorttitle}
+    \field{labeltitlesource}{title}
     \field{labelalpha}{Bof+08}
     \field{sortinit}{2}
     \field{sortinithash}{2}
     \verb{doi}
     \verb 10.1007/978-3-540-78319-0
     \endverb
-    \field{isbn}{978-3-540-78314-5 978-3-540-78319-0}
-    \field{series}{Lecture {Notes} in {Mathematics}}
-    \field{shorttitle}{Mixed {Finite} {Elements}, {Compatibility} {Conditions}, and {Applications}}
-    \field{title}{Mixed {Finite} {Elements}, {Compatibility} {Conditions}, and {Applications}: {Lectures} given at the {C}.{I}.{M}.{E}. {Summer} {School} held in {Cetraro}, {Italy} {June} 26–{July} 1, 2006}
+    \field{isbn}{978-3-540-78314-5, 978-3-540-78319-0}
+    \field{series}{Lecture Notes in Mathematics}
+    \field{title}{Mixed Finite Elements, Compatibility Conditions, and Applications: Lectures given at the C.I.M.E. Summer School held in Cetraro, Italy, June 26–July 1, 2006}
     \verb{url}
     \verb http://link.springer.com/10.1007/978-3-540-78319-0
     \endverb
@@ -187,9 +186,8 @@
       {Berlin, Heidelberg}%
     }
     \verb{file}
-    \verb PDF:/Users/arasucandassamy/Zotero/storage/AVCBZRXP/Boffi et al. - 200
-    \verb 8 - Mixed Finite Elements, Compatibility Conditions, and Applications
-    \verb  Lectures given at the C.I.M.E. Su.pdf:application/pdf
+    \verb PDF:/Users/arasucandassamy/Zotero/storage/AVCBZRXP/Boffi_et_al_2008.p
+    \verb df:application/pdf
     \endverb
     \field{year}{2008}
     \field{urlday}{16}
@@ -248,9 +246,9 @@
     \verb{doi}
     \verb 10.1007/978-0-387-75934-0
     \endverb
-    \field{isbn}{978-0-387-75933-3 978-0-387-75934-0}
-    \field{series}{Texts in {Applied} {Mathematics}}
-    \field{title}{The {Mathematical} {Theory} of {Finite} {Element} {Methods}}
+    \field{isbn}{978-0-387-75933-3, 978-0-387-75934-0}
+    \field{series}{Texts in Applied Mathematics}
+    \field{title}{The Mathematical Theory of Finite Element Methods}
     \verb{url}
     \verb http://link.springer.com/10.1007/978-0-387-75934-0
     \endverb
@@ -259,9 +257,8 @@
       {New York, NY}%
     }
     \verb{file}
-    \verb PDF:/Users/arasucandassamy/Zotero/storage/PL5J5V4S/Brenner et Scott -
-    \verb  2008 - The Mathematical Theory of Finite Element Methods.pdf:applica
-    \verb tion/pdf
+    \verb PDF:/Users/arasucandassamy/Zotero/storage/PL5J5V4S/Brenner_et_Scott_2
+    \verb 008.pdf:application/pdf
     \endverb
     \field{year}{2008}
   \endentry
@@ -291,8 +288,8 @@
     \verb{doi}
     \verb 10.1007/978-1-4614-4833-4
     \endverb
-    \field{isbn}{978-1-4614-4832-7 978-1-4614-4833-4}
-    \field{title}{Introduction to {Linear} {Elasticity}}
+    \field{isbn}{978-1-4614-4832-7, 978-1-4614-4833-4}
+    \field{title}{Introduction to Linear Elasticity}
     \verb{url}
     \verb https://link.springer.com/10.1007/978-1-4614-4833-4
     \endverb
@@ -300,8 +297,8 @@
       {New York, NY}%
     }
     \verb{file}
-    \verb PDF:/Users/arasucandassamy/Zotero/storage/K3NHP9IZ/Gould - 2013 - Int
-    \verb roduction to Linear Elasticity.pdf:application/pdf
+    \verb PDF:/Users/arasucandassamy/Zotero/storage/K3NHP9IZ/Gould_2013.pdf:app
+    \verb lication/pdf
     \endverb
     \field{year}{2013}
   \endentry
@@ -344,30 +341,25 @@
     \field{sortinit}{2}
     \field{sortinithash}{2}
     \field{abstract}{%
-    This review paper collects several results that form part of the theoretical foundation of isogeometric methods. We analyse variational techniques for the numerical resolution of PDEs based on splines or NURBS and we provide optimal approximation and error estimates in several cases of interest. The theory presented also includes estimates for T-splines, which are an extension of splines allowing for local refinement. In particular, we focus our attention on elliptic and saddle point problems, and we define spline edge and face elements. Our theoretical results are demonstrated by a rich set of numerical examples. Finally, we discuss implementation and efficiency together with preconditioning issues for the final linear system.%
+    Review of theoretical foundations of isogeometric methods, including error estimates, spline-based elements, and preconditioning.%
     }
     \verb{doi}
     \verb 10.1017/S096249291400004X
     \endverb
     \field{issn}{0962-4929, 1474-0508}
     \field{pages}{157\bibrangedash 287}
-    \field{title}{Mathematical analysis of variational isogeometric methods}
+    \field{title}{Mathematical Analysis of Variational Isogeometric Methods}
     \verb{url}
     \verb https://www.cambridge.org/core/product/identifier/S096249291400004X/t
     \verb ype/journal_article
     \endverb
     \field{volume}{23}
-    \verb{file}
-    \verb PDF:/Users/arasucandassamy/Zotero/storage/YQQ79EWT/Da Veiga et al. -
-    \verb 2014 - Mathematical analysis of variational isogeometric methods.pdf:
-    \verb application/pdf
-    \endverb
     \field{journaltitle}{Acta Numerica}
-    \field{month}{05}
     \field{year}{2014}
     \field{urlday}{26}
     \field{urlmonth}{06}
     \field{urlyear}{2025}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{MeyerSpringer2015}{report}{}{}
@@ -386,9 +378,9 @@
       }}%
     }
     \list{language}{1}{%
-      {English}%
+      {en}%
     }
-    \keyw{transverse isotropy, linear thermoelasticity, Finite-Element-Method, thermoelasticity}
+    \keyw{transverse isotropy, linear thermoelasticity, finite element method, thermoelasticity}
     \strng{namehash}{MASR1}
     \strng{fullhash}{MASR1}
     \field{labelnamesource}{author}
@@ -397,7 +389,7 @@
     \field{sortinit}{2}
     \field{sortinithash}{2}
     \field{abstract}{%
-    In this preprint, we look onto the theory of linear thermoelasticity. At the beginning, this theory is shortly repeated and afterwards applied to transversely isotropic materials. Then, the corresponding weak formulation is derived, which is the starting point for a FE-discretisation. In the last part, we explain how we added this material behaviour to an adaptive Finite-Element-code and show some numerical results.%
+    Theory of linear thermoelasticity with applications to transversely isotropic materials and FE discretization.%
     }
     \field{issn}{1864-0087}
     \field{note}{First published on 06.02.2015}
@@ -424,7 +416,7 @@
       }}%
     }
     \list{language}{1}{%
-      {English}%
+      {en}%
     }
     \keyw{finite element method, linear thermoelasticity}
     \strng{namehash}{PA1}
@@ -434,7 +426,7 @@
     \field{labelalpha}{Per16}
     \field{sortinit}{2}
     \field{sortinithash}{2}
-    \field{title}{A generalized finite element method for linear thermoelasticity}
+    \field{title}{A Generalized Finite Element Method for Linear Thermoelasticity}
     \list{location}{1}{%
       {Gothenburg, Sweden}%
     }
@@ -465,7 +457,7 @@
     \field{labelalpha}{Cin18}
     \field{sortinit}{2}
     \field{sortinithash}{2}
-    \field{title}{Finite {Element} {Discretizations} for {Linear} {Elasticity}}
+    \field{title}{Finite Element Discretizations for Linear Elasticity}
     \list{institution}{1}{%
       {Clemson University}%
     }
@@ -503,26 +495,20 @@
     \strng{namehash}{GYHSRA1}
     \strng{fullhash}{GYHSRA1}
     \field{labelnamesource}{author}
-    \field{labeltitlesource}{shorttitle}
+    \field{labeltitlesource}{title}
     \field{labelalpha}{GHR22}
     \field{sortinit}{2}
     \field{sortinithash}{2}
     \field{abstract}{%
-    Psydac is a Python 3 library for the solution of partial diﬀerential equations, which combines the convenience of a domain speciﬁc language with the speed of a high-performance parallel engine. Its main focus is on isogeometric analysis using tensor-product B-spline ﬁnite elements; to this end it uses an optimized sparse format called “stencil matrix”, which drastically reduces memory storage compared to the popular CSR/CSC formats. It supports multi-patch mapped geometries, and ﬁnite element exterior calculus. It can distribute each domain patch across many MPI processes, with multiple OpenMP threads operating in each block.%
+    Psydac is a Python 3 library for PDEs, focused on isogeometric analysis with optimized sparse stencil matrices.%
     }
-    \field{booktitle}{8th {European} {Congress} on {Computational} {Methods} in {Applied} {Sciences} and {Engineering}}
+    \field{booktitle}{8th European Congress on Computational Methods in Applied Sciences and Engineering}
     \verb{doi}
     \verb 10.23967/eccomas.2022.227
     \endverb
-    \field{shorttitle}{{PSYDAC}}
-    \field{title}{{PSYDAC}: a high-performance {IGA} library in {Python}}
+    \field{title}{PSYDAC: A High-Performance IGA Library in Python}
     \verb{url}
     \verb https://www.scipedia.com/public/Guclu_et_al_2022a
-    \endverb
-    \verb{file}
-    \verb PDF:/Users/arasucandassamy/Zotero/storage/T2YTMAII/Güçlü et al. -
-    \verb 2022 - PSYDAC a high-performance IGA library in Python.pdf:applicatio
-    \verb n/pdf
     \endverb
     \field{year}{2022}
     \field{urlday}{17}
@@ -550,13 +536,9 @@
     \field{sortinit}{2}
     \field{sortinithash}{2}
     \field{abstract}{%
-    This notes presents two variational formulations of linear elasticity: the displacement formulation and the stress-displacement (Hellinger-Reissner) formulation. The displacement formulation focuses on ﬁnding the displacement ﬁeld that minimizes a functional, while the stress-displacement formulation directly computes the stresses. The wellposedness of these formulations relies on Korn’s inequalities, inf-sup conditions, and the coercivity of bilinear forms.%
+    Two variational formulations of linear elasticity: the displacement formulation and the stress-displacement (Hellinger-Reissner) formulation.%
     }
-    \field{title}{Variational Formulation of linear elasticity}
-    \verb{file}
-    \verb PDF:/Users/arasucandassamy/Zotero/storage/45DFEHUS/Chen - VARIATIONAL
-    \verb  FORMULATION OF LINEAR ELASTICITY.pdf:application/pdf
-    \endverb
+    \field{title}{Variational Formulation of Linear Elasticity}
     \field{year}{2024}
   \endentry
 \enddatalist
