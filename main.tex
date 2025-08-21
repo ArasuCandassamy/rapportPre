@@ -607,7 +607,7 @@ For this numerical resolution, I have used \textbf{GMRES} method to solve the li
 	\caption{Error plot between exact and numerical solution with degree 5 B-Splines with "higher" tolerance for the solvera}
 \end{figure}
 
-But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-Splines (at least for the tested configurations). This plateau can be explained by the matrix of the bilinear form $a(.,.)$ which is ill-conditioned. Moreover, the bad conditioning can become worse with more refined mesh and higher degree B-Splines (as the convergence is faster).
+But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-Splines (at least for the tested configurations). This plateau can be explained by the matrix of the bilinear form $a(.,.)$ which is ill-conditioned. Moreover, the bad conditioning can become worse with more refined mesh and higher degree B-Splines (as the convergence is faster). Consequently, the iterative solver stops when the maximum number of iterations is reached (the default value is $3000$).
 
 \subsection{Mixed boundary conditions}
 \label{sec:mixed_BC}
