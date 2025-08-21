@@ -17,6 +17,49 @@
 \endgroup
 
 \datalist[entry]{ynt/global//global/global/global}
+  \entry{Hansbo2003}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=HA}{%
+         family={Hansbo},
+         familyi={H\bibinitperiod},
+         given={Anita},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Hansbo},
+         familyi={H\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=LMG}{%
+         family={Larson},
+         familyi={L\bibinitperiod},
+         given={Mats\bibnamedelima G.},
+         giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HAHPLMG1}
+    \strng{fullhash}{HAHPLMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{HHL03}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \verb{doi}
+    \verb 10.1051/m2an:2003039
+    \endverb
+    \field{note}{Received November 25, 2002; Revised March 6, 2003}
+    \field{number}{3}
+    \field{pages}{495\bibrangedash 514}
+    \field{title}{A Finite Element Method on Composite Grids Based on Nitsche's Method}
+    \verb{url}
+    \verb https://doi.org/10.1051/m2an:2003039
+    \endverb
+    \field{volume}{37}
+    \field{journaltitle}{ESAIM: Mathematical Modelling and Numerical Analysis}
+    \field{year}{2003}
+  \endentry
+
   \entry{ern_theory_2004}{book}{}{}
     \name{author}{2}{}{%
       {{hash=EA}{%
@@ -83,9 +126,52 @@
     \verb 04.pdf:application/pdf
     \endverb
     \field{year}{2004}
-    \field{urlday}{16}
-    \field{urlmonth}{06}
-    \field{urlyear}{2025}
+  \endentry
+
+  \entry{fritz_comparison_2004}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=FA}{%
+         family={Fritz},
+         familyi={F\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hüeber},
+         familyi={H\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wohlmuth},
+         familyi={W\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{FAHSWB1}
+    \strng{fullhash}{FAHSWB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{FHW04}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \verb{doi}
+    \verb 10.1007/s10092-004-0087-4
+    \endverb
+    \field{note}{Received 01 May 2003; Accepted 01 June 2004}
+    \field{pages}{115\bibrangedash 137}
+    \field{title}{A comparison of mortar and Nitsche techniques for linear elasticity}
+    \verb{url}
+    \verb https://doi.org/10.1007/s10092-004-0087-4
+    \endverb
+    \field{volume}{41}
+    \field{journaltitle}{Calcolo}
+    \field{year}{2004}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{boffi_mixed_2008}{book}{}{}
@@ -190,9 +276,6 @@
     \verb df:application/pdf
     \endverb
     \field{year}{2008}
-    \field{urlday}{16}
-    \field{urlmonth}{06}
-    \field{urlyear}{2025}
   \endentry
 
   \entry{brenner_mathematical_2008}{book}{}{}
@@ -356,9 +439,6 @@
     \field{volume}{23}
     \field{journaltitle}{Acta Numerica}
     \field{year}{2014}
-    \field{urlday}{26}
-    \field{urlmonth}{06}
-    \field{urlyear}{2025}
     \warn{\item Invalid format of field 'month'}
   \endentry
 
@@ -511,9 +591,48 @@
     \verb https://www.scipedia.com/public/Guclu_et_al_2022a
     \endverb
     \field{year}{2022}
-    \field{urlday}{17}
-    \field{urlmonth}{06}
-    \field{urlyear}{2025}
+  \endentry
+
+  \entry{Guclu2023}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=GY}{%
+         family={Güçlü},
+         familyi={G\bibinitperiod},
+         given={Yaman},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hadjout},
+         familyi={H\bibinitperiod},
+         given={Said},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PMC}{%
+         family={Pinto},
+         familyi={P\bibinitperiod},
+         given={Martin\bibnamedelima Campos},
+         giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GYHSPMC1}
+    \strng{fullhash}{GYHSPMC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{GHP23}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \verb{doi}
+    \verb 10.1007/s10915-023-02351-x
+    \endverb
+    \field{note}{Correction published on 10 November 2023}
+    \field{number}{52}
+    \field{title}{A Broken FEEC Framework for Electromagnetic Problems on Mapped Multipatch Domains}
+    \verb{url}
+    \verb https://link.springer.com/article/10.1007/s10915-023-02351-x
+    \endverb
+    \field{volume}{97}
+    \field{journaltitle}{Journal of Scientific Computing}
+    \field{year}{2023}
   \endentry
 
   \entry{chen_variational}{article}{}{}

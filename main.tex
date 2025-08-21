@@ -306,7 +306,7 @@ This internship would not have been the same without all of these wonderful peop
 
 The Max Planck Institute of Plasma Physics (IPP) is one of the leading research institutions dedicated to fusion energy research, with two main sites in Garching near Munich and Greifswald. The institute focuses on developing the scientific and technological foundations for fusion power plants, conducting experiments on major facilities like ASDEX Upgrade and Wendelstein 7-X stellarator. \\
 
-At IPP, the Numerical Methods for Plasma Physics (NMPP) department plays a crucial role in developing advanced computational tools for plasma physics simulations. The department is responsible for creating and maintaining several high-performance computing libraries that support the institute's research activities. Among these tools, \texttt{GEMPIC} (Geometric Electromagnetic Particle-In-Cell) provides sophisticated particle simulation capabilities for kinetic plasma modelling, while \texttt{Struphy} offers specialized structure-preserving algorithms for long-term plasma evolution studies. These libraries collectively form a comprehensive computational ecosystem that enables researchers to tackle the challenging multi-physics problems inherent in fusion plasma research.\\
+At IPP, the Numerical Methods for Plasma Physics (NMPP) department is developing advanced computational tools for plasma physics simulations. The department is responsible for creating and maintaining several high-performance computing libraries that support the institute's research activities. Among these tools, \texttt{GEMPIC} (Geometric Electromagnetic Particle-In-Cell) provides sophisticated particle simulation capabilities for kinetic plasma modelling, while \texttt{Struphy} offers specialized structure-preserving algorithms for long-term plasma evolution studies. These libraries collectively form a comprehensive computational ecosystem that enables researchers to tackle the challenging multi-physics problems inherent in fusion plasma research.\\
 
 \texttt{Psydac} is a finite element library developed by NMPP. It implements isogeometric analysis (IGA) using B-splines and NURBS to solve partial differential equations from plasma physics. \texttt{Psydac} leverages the power of spline-based discretizations to achieve high-order accuracy while maintaining geometric flexibility. The library incorporates advanced features such as multipatch domains, parallel computing capabilities, and integration with high-performance computing environments. Its modular design, built upon \texttt{SymPDE} for symbolic problem formulation and \texttt{Pyccel} for code acceleration, makes it particularly well-suited for solving complex partial differential equations across various physics domains.\\
 
@@ -607,7 +607,7 @@ For this numerical resolution, I used the \textbf{GMRES} method to solve the lin
 	\caption{Error plot between exact and numerical solution with degree 5 B-splines with "high" tolerance for the solver}
 \end{figure}
 
-But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-splines (at least for the tested configurations). This plateau can be explained by the matrix of the bilinear form $a(.,.)$ which is ill-conditioned. Moreover, the bad conditioning can become worse with more refined mesh and higher degree B-splines (as the convergence is faster). Consequently, the iterative solver stops when the maximum number of iterations is reached (the default value is $3000$).
+But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-splines (at least for the tested configurations). This plateau can be explained by the matrix of the bilinear form $a(.,.)$ which is ill-conditioned. Moreover, the bad conditioning can become worse with more refined mesh and higher degree B-splines (as the convergence is faster). Consequently, the iterative solver stops when the maximum number of iterations is reached (the default value is $3000$ iterations).
 
 \subsection{Mixed boundary conditions}
 \label{sec:mixed_BC}
@@ -676,7 +676,7 @@ Then, we can get the same plots and interpretation as before in figure \ref{fig:
 		\caption{$d=5$}
 		\label{fig:deg5_NM}
 	\end{subfigure}
-	\caption{Four plots of absolute errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-splines (with $\lambda = 1.25$ and $\mu = 1$)}
+	\caption{Four plots of absolute errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-splines (with $\lambda = 1.25$~Pa and $\mu = 1$~Pa)}
 	\label{fig:four_errors_graphs}
 \end{figure}
 
@@ -928,12 +928,12 @@ A way to ensure the inf-sup condition is to impose a zero mean value for the pre
 
 Then, the following inf-sup condition holds:
 \[\inf_{q\in Q}\sup_{\vec v\in V}\frac{\tilde a((\vec v,q),(\vec u,p))}{\|\vec v\|_{H^1(\Omega)}\|q\|_{L^2(\Omega)}} \ge \beta > 0,\]
-for some $\beta>0$ independent of $\lambda$ and $\mu$. This condition ensures the stability of the mixed formulation and prevents spurious oscillations in the pressure field, with $V = H^1_0(\Omega)$ and $Q = L^2_0(\Omega)$ \cite{boffi_mixed_2008}.
+for some $\beta>0$ independent of $\lambda$ and $\mu$. This condition ensures the stability and the well-posedness of the mixed formulation with $V = H^1_0(\Omega)$ and $Q = L^2_0(\Omega)$ \cite{boffi_mixed_2008}.
 
-If $\Omega_D = \emptyset$, the Dirichlet boundary condition is not imposed, and the problem becomes a pure Stokes problem. In this case, the inf-sup condition is necessary to ensure the well-posedness of the problem, and the uniqueness of the solution is guaranteed by the compatibility condition on the external loads, as discussed in Section \ref{sec:Pure displacement weak-formulation} modulo a rigid body motion.
+If $\Omega_D = \emptyset$, the Dirichlet boundary condition is not imposed, and the problem becomes a pure Stokes problem. In this case, the uniqueness of the solution is guaranteed by the compatibility condition on the external loads, as discussed in Section \ref{sec:Pure displacement weak-formulation} modulo a rigid body motion.
 
 \subsection{Isogeometric discretization and a priori error estimate}
-Under standard approximation and stability assumptions for the mixed formulation, the Galerkin solution enjoys the usual quasi-optimal a priori estimate. Let $(V_h,Q_h)\subset V\times Q$ be the tensor–product B-spline spaces of (vector) degree $d$ (for the displacement) and (scalar) degree $d$ (for the pressure) with mesh size $h$, and assume that the discrete inf–sup condition holds with a constant $\beta>0$ independent of $h$, $\lambda$ and $\mu$ (locking–free setting) \cite{boffi_mixed_2008}. Then, for the exact solution $(\vec u_e,p_e)$ of \eqref{eq:weak_pressure_displ_form} and the discrete solution $(\vec u_h,p_h)\in V_h\times Q_h$, continuity plus coercivity on the kernel give the Céa-type bound
+Let $(V_h,Q_h)\subset V\times Q$ be the tensor–product B-spline spaces of (vector) degree $d$ (for the displacement) and (scalar) degree $d$ (for the pressure) with mesh size $h$, and assume that the discrete inf–sup condition holds with a constant $\beta>0$ independent of $h$, $\lambda$ and $\mu$ (locking–free setting) \cite{boffi_mixed_2008}. Then, for the exact solution $(\vec u_e,p_e)$ of \eqref{eq:weak_pressure_displ_form} and the discrete solution $(\vec u_h,p_h)\in V_h\times Q_h$, continuity plus coercivity on the kernel give the Céa-type bound
 \[
 \|\vec u_e-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p_e-p_h\|_{L^2(\Omega)}
 \;\le\; C\,\Big( \inf_{\vec w_h\in V_h}\|\vec u_e-\vec w_h\|_{\boldsymbol H^1(\Omega)} + \inf_{q_h\in Q_h}\|p_e-q_h\|_{L^2(\Omega)}\Big),
@@ -1439,18 +1439,19 @@ The successful implementation of the custom grid discretization feature has prov
 In this section, we will consider the initial problem described in figure \ref{fig:geometry_thermoelasticity}. To model this medium and simulate the thermoelastic behavior, we will use the multipatch framework provided by \texttt{PSYDAC}.
 
 \subsection{Quick overview of the multipatch framework}
+\textit{This section presents a quick overview of the multipatch framework in \texttt{PSYDAC}. For a more detailed description of the multipatch framework, please refer t \cite{guclu_psydac_2022} and \cite{Guclu2023}} \\
 
-The multipatch framework in \texttt{PSYDAC} allows for the simulation of problems defined on non-conforming grids, which is particularly useful for complex geometries and material interfaces. This framework enables the coupling of different patches, each potentially using different discretization strategies, while ensuring compatibility at the interfaces. 
+The multipatch framework in \texttt{PSYDAC} allows for the simulation of problems defined on non-conforming grids, which is particularly useful for complex geometries and material interfaces. This framework enables the coupling of different patches, each potentially using different discretization strategies of mapping.
 
-In \texttt{Psydac}, the \emph{multipatch framework} is designed to represent complex computational domains by decomposing them into a collection of simpler \emph{patches}. Each patch is the image of a reference domain (typically $[0,1]^d$) under a smooth mapping $F_k$, defined either analytically or imported from CAD/NURBS geometry. This approach allows the exact representation of curved geometries while maintaining a structured, tensor-product B-spline discretization within each patch.
+In \texttt{Psydac}, the \emph{multipatch framework} is designed to represent complex physical domains by decomposing them into a collection of simpler \emph{patches}. Each patch is the image of a logical domain (typically $[0,1]^d$) under a smooth mapping $F_k$. This approach allows the exact representation of curved geometries while maintaining a structured, tensor-product B-spline discretization within each patch.
 
-From a mathematical perspective, each patch $\Omega_k$ supports a local finite element space $V_h^\ell(\Omega_k)$, built from tensor-product B-splines or NURBS of chosen degree and regularity. These local spaces form a discrete de~Rham sequence
+Mathematically, each patch $\Omega_k$ supports a local finite element space $V_h^\ell(\Omega_k)$, built from tensor-product B-splines or NURBS of chosen degree and regularity. These local spaces form a discrete de Rham sequence
 \[
 V_h^0(\Omega_k) \xrightarrow{\nabla} V_h^1(\Omega_k) \xrightarrow{\nabla \times} V_h^2(\Omega_k) \xrightarrow{\nabla \cdot} V_h^3(\Omega_k),
 \]
 ensuring that key identities such as $\nabla \times (\nabla \varphi) = 0$ and $\nabla \cdot (\nabla \times \mathbf{u}) = 0$ hold at the discrete level.
 
-Globally, the domain $\Omega$ is the union $\Omega = \bigcup_{k=1}^K \Omega_k$, and \texttt{Psydac} constructs the \emph{broken space}
+The domain $\Omega$ is the union $\Omega = \bigcup_{k=1}^K \Omega_k$, and \texttt{Psydac} constructs the \emph{broken space}
 \[
 V_h^\ell := \left\{ v \in L^2(\Omega) \; \middle| \; v|_{\Omega_k} \in V_h^\ell(\Omega_k) \right\},
 \]
@@ -1466,7 +1467,7 @@ This multipatch combined with the broken-FEEC approach provides:
 	\item \textbf{Computational locality}: operators and projections involve only neighboring patches, enhancing scalability for large-scale parallel simulations.
 \end{enumerate}
 
-For example, \texttt{PSYDAC} can reproduce a Pretzel geometry by defining multiple patches that conform to the intricate shape of the object. Each patch can be individually parameterized to capture the local geometry accurately, while the multipatch framework ensures that the overall simulation remains consistent and stable. Then, it's possible to solve Poisson's equation, Time-dependent Maxwell equations on a Pretzel geometry.
+For example, \texttt{PSYDAC} can reproduce a Pretzel geometry by defining multiple patches that conform to the intricate shape of the object. Each patch can be individually parameterized to capture the local geometry accurately, while the multipatch framework ensures that the overall simulation remains consistent and stable. Then, it's possible to solve Poisson's equation or Time-dependent Maxwell equations on a Pretzel geometry.
 \newpage
 \begin{figure}[!h]
 	\centering
@@ -1505,8 +1506,7 @@ The use of a multipatch domain needs to ensure that the patches are properly ali
 To do so, we call $\Sigma_{ij}$ the interface between patches $\Omega_i$ and $\Omega_j$, such that $\Sigma_{ij} = \partial \Omega_i \cap \partial \Omega_j$.
 
 Then, bilinear forms are penalized across the interfaces to ensure continuity and stability: this is called Nitsche's method. 
-This method consists of adding a penalty term to the bilinear forms that involves the traces of the functions on the interface $\Sigma_{ij}$, a symmetrization term and a penalty term that ensures the continuity of the traces across the interface. It is also possible to add a weak Dirichlet condition on the boundary to enforce the desired behavior.
-
+This method consists of adding a penalty term to the bilinear forms that involves the traces of the functions on the interface $\Sigma_{ij}$, a symmetrization term and a penalty term that ensures the continuity of the traces across the interface \cite{fritz_comparison_2004} \cite{Hansbo2003}.
 Consequently, the bilinear forms are redefined as follows:
 
 \begin{align*}
