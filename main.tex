@@ -240,11 +240,11 @@ literate=
 
 This report presents the work conducted during a research internship at the Max-Planck Institute for Plasma Physics in the Numerical Methods for Plasma Physics department. This report is focusing on the implementation and validation of solid mechanics equations using the \texttt{Psydac}, a finite element library on Python.
 
-The primary objective of this internship was to explore and extend Psydac's capabilities to solve partial differential equations from solid mechanics, which had not been previously tested in this library. The work focused on two main areas: linear elasticity and thermoelasticity problems and their execution on a supercomputer. For linear elasticity, two different formulations, pure displacement and mixed displacement-pressure formulations were implemented and analyzed. 
+The primary objective of this internship was to explore and extend Psydac's capabilities to solve partial differential equations from solid mechanics, which had not been previously tested in this library. The work focused on two main areas: linear elasticity and stationary thermoelasticity problems and their execution on a supercomputer. For linear elasticity, two different formulations, pure displacement and mixed displacement-pressure formulations were implemented and analyzed. 
 
 The thermoelasticity study involved solving coupled thermo-mechanical problems on composite materials with spatially varying properties. This work required the development of enhanced discretization capabilities, including the implementation of custom grid discretization features to handle material property discontinuities. Additionally, a multipatch framework was explored to address complex geometries with holes, utilizing Nitsche's method for interface coupling.
 
-This work successfully extends Psydac's application domain beyond plasma physics to solid mechanics, contributing to the library's versatility and demonstrating its potential for broader engineering applications involving complex geometries and material properties. 
+All simulations were performed on the supercomputer Raven. These results have been used to validate the implemented and the effectiveness of Psydac to solve solid mechanics problems.
 
 \vspace{0.4cm}
 
@@ -256,9 +256,9 @@ Ce rapport présente les travaux menés lors d'un stage de recherche à l'Instit
 
 L'objectif principal de ce stage était d'explorer et d'étendre les capacités de Psydac pour résoudre des équations aux dérivées partielles issues de la mécanique des solides, qui n'avaient pas été testées auparavant dans cette bibliothèque. Le travail s'est concentré sur deux domaines principaux : l'élasticité linéaire et les problèmes de thermoélasticité, ainsi que leur exécution sur un supercalculateur. Pour l'élasticité linéaire, deux formulations différentes ont été implémentées et analysées : la formulation en déplacement pur et la formulation mixte déplacement-pression.
 
-L'étude de thermoélasticité a impliqué la résolution de problèmes thermo-mécaniques couplés sur des matériaux composites avec des propriétés variant spatialement. Ce travail a nécessité le développement de capacités de discrétisation améliorées, incluant l'implémentation de fonctionnalités de discrétisation de grille personnalisée pour gérer les discontinuités de propriétés matérielles. De plus, un framework multipatch a été exploré pour traiter des géométries complexes avec des trous, utilisant la méthode de Nitsche pour le couplage d'interfaces.
+L'étude de thermoélasticité a impliqué la résolution de problèmes thermo-mécaniques couplés sur des matériaux composites avec des propriétés variant spatialement. Ce travail a nécessité le développement de fonctionnalités de discrétisation sur une grille personnalisée pour gérer les discontinuités de propriétés matérielles. De plus, une implémentation utilisant un domain \textit{multipatch} a été testé pour traiter des géométries complexes. Cette implémentation a fait appel à la méthode de Nitsche pour assurer la continuité aux interfaces.
 
-Ce travail étend avec succès le domaine d'application de Psydac au-delà de la physique des plasmas vers la mécanique des solides, contribuant à la polyvalence de la bibliothèque et démontrant son potentiel pour des applications d'ingénierie plus larges impliquant des géométries complexes et des propriétés matérielles.
+Toutes les simulations ont été testées sur le supercalculateur Raven. Ces résultats ont été utilisés pour valider l'implémentation et l'efficacité de Psydac pour résoudre des problèmes issus de la mécanique des solides.
 
 \vspace{0.4cm}
 
