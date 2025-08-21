@@ -513,50 +513,50 @@ In case of \textbf{Pure Traction Problem}, we are looking for a solution modulo 
 \textit{A more rigorous proof of the equivalence can be found in \cite{brenner_mathematical_2008} and \cite{chen_variational}.}
 
 
-\section{Numerical simulation using \texttt{PSYDAC} on the Supercomputer Raven}
+\section{Numerical simulation using \texttt{PSYDAC} on the supercomputer Raven}
 
-\texttt{PSYDAC} is a high-level programming IDE and very intuitive to use. It uses \texttt{SymPDE} and \texttt{Pyccel}. \texttt{SymPDE} implements in \texttt{Python} abstract objects (Functional Space, diffential operators, linear and bilinear forms...). \texttt{Pyccel} is a transpiler, used to convert a \texttt{Python} Code into a \texttt{C} or \texttt{Fortran} code, in order to take advantage from code acceleration and parallelization. The figure \ref{fig:Dependancy_Psydac} summarize the dependancy between \texttt{PSYDAC}, \texttt{SymPDE} and \texttt{Pyccel}. A more detailled presentation of \texttt{PSYDAC} can be found in \cite{guclu_psydac_2022}.
+\texttt{PSYDAC} is a high-level programming IDE and very intuitive to use. It uses \texttt{SymPDE} and \texttt{Pyccel}. \texttt{SymPDE} implements in \texttt{Python} abstract objects (functional space, differential operators, linear and bilinear forms...). \texttt{Pyccel} is a transpiler, used to convert a \texttt{Python} code into a \texttt{C} or \texttt{Fortran} code, in order to take advantage of code acceleration and parallelization. Figure \ref{fig:Dependancy_Psydac} summarizes the dependency between \texttt{PSYDAC}, \texttt{SymPDE} and \texttt{Pyccel}. A more detailed presentation of \texttt{PSYDAC} can be found in \cite{guclu_psydac_2022}.
 
 \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figures/psydac_fonc_1.png}
-    \caption{Dependancy graph of \texttt{PSYDAC}, from \cite{guclu_psydac_2022}}
-    \label{fig:Dependancy_Psydac}
+	\centering
+	\includegraphics[width=0.75\linewidth]{figures/psydac_fonc_1.png}
+	\caption{Dependency graph of \texttt{PSYDAC}, from \cite{guclu_psydac_2022}}
+	\label{fig:Dependancy_Psydac}
 \end{figure}
 
 Raven is a supercomputer located at the Max-Planck Institute for Plasma Physics. It is part of the High Performance Computing (HPC) infrastructure and is used for large-scale simulations and data analysis in plasma physics and related fields. I had the opportunity to run my simulations on Raven, which provided me with access to powerful computational resources and parallel processing capabilities. 
 
 
-\subsection{Dirichlet Homogeneous Boundary conditions on $\partial\Omega_D = \partial\Omega$} \label{subsec:Dirichlet Homogeneous Boundary conditions on}
+\subsection{Dirichlet homogeneous boundary conditions on $\partial\Omega_D = \partial\Omega$} \label{subsec:Dirichlet Homogeneous Boundary conditions on}
 
-In a first time, to get the grips with \texttt{PSYDAC} and the HPC, I have considered the case $\Omega = [0,1]^3$, $\partial \Omega_D = \partial\Omega$ and $\partial \Omega_N = \emptyset$. To verify if the numerical resolution of \texttt{PSYDAC} of \eqref{eq:weakdisplacementform} is correct, I have used the Method of Manufactured Solutions. The concept is quite simpler, we assume that a function $\vec u_e \in \boldsymbol H^1_{\vec 0}(\Omega)$ verifies the strong problem \eqref{eq:strong_form}, then we compute the source term $\vec f$ and we solve the \eqref{eq:weakdisplacementform} with $\vec f$ as a source term and we look at the error between the numerical solution and the theoretical one.
-I have considered $\vec u_e$ defined as : $\vec u_e = \begin{pmatrix}
-    0 \\
-    0 \\
+At first, to get familiar with \texttt{PSYDAC} and the HPC, I considered the case $\Omega = [0,1]^3$, $\partial \Omega_D = \partial\Omega$ and $\partial \Omega_N = \emptyset$. To verify if the numerical resolution of \texttt{PSYDAC} of \eqref{eq:weakdisplacementform} is correct, I used the Method of Manufactured Solutions. The concept is quite simple: we assume that a function $\vec u_e \in \boldsymbol H^1_{\vec 0}(\Omega)$ verifies the strong problem \eqref{eq:strong_form}, then we compute the source term $\vec f$ and we solve \eqref{eq:weakdisplacementform} with $\vec f$ as a source term and we look at the error between the numerical solution and the theoretical one.
+I considered $\vec u_e$ defined as: $\vec u_e = \begin{pmatrix}
+	0 \\
+	0 \\
 \sin{\left(\pi x \right)} \sin{\left(\pi y \right)} \sin{\left(\pi z \right)}
-\end{pmatrix} \in \boldsymbol H^1_{\vec 0}(\Omega).$ Then, we can compute manually the source term $\vec f$ : $\vec f = \begin{pmatrix}
-     - \pi^{2} \left(\lambda + \mu\right) \cos{\left(\pi x \right)} \sin{\left(\pi y \right)}  \cos{\left(\pi z \right)} \\
-     - \pi^{2} \left(\lambda + \mu\right) \sin{\left(\pi x \right)} \cos{\left(\pi y \right)} \cos{\left(\pi z \right)} \\
-      \pi^{2} \left(\lambda + 4 \mu\right) \sin{\left(\pi x \right)} \sin{\left(\pi y \right)} \sin{\left(\pi z \right)}
+\end{pmatrix} \in \boldsymbol H^1_{\vec 0}(\Omega).$ Then, we can compute manually the source term $\vec f$: $\vec f = \begin{pmatrix}
+	 - \pi^{2} \left(\lambda + \mu\right) \cos{\left(\pi x \right)} \sin{\left(\pi y \right)}  \cos{\left(\pi z \right)} \\
+	 - \pi^{2} \left(\lambda + \mu\right) \sin{\left(\pi x \right)} \cos{\left(\pi y \right)} \cos{\left(\pi z \right)} \\
+	  \pi^{2} \left(\lambda + 4 \mu\right) \sin{\left(\pi x \right)} \sin{\left(\pi y \right)} \sin{\left(\pi z \right)}
 \end{pmatrix} \in \boldsymbol L^2(\Omega).$
 
-To make the numerical simulation with \texttt{PSYDAC}, we have to choose two important parameters : $d$ the maximum degree of B-Splines functions that will approximate the solution and $n_{\text{cells}}$ is the number of cells in each dimension of $\Omega$ for the finite dimensional space. $\displaystyle h \propto \frac{1}{n_{\text{cells}}}$, an usual discretization parameters for finite dimensional spaces and $d$ will conduct the convergence speed of the numerical solution. 
-The code Section \ref{sec:lin_elas_dirichlet} presents the implementation details of the linear elasticity problem with Dirichlet boundary conditions.
-By solving the problem Dirichlet Homogeneous Boundary conditions on the whole border, one can observe the following plots of the simulated $\vec u_{e,3}^h$ for different plane $z$. It is possible to plot also the error $\vec u_{e,3} - \vec u_{e,3}^h$.
+To make the numerical simulation with \texttt{PSYDAC}, we have to choose two important parameters: $d$ the maximum degree of B-spline functions that will approximate the solution and $n_{\text{cells}}$ is the number of cells in each dimension of $\Omega$ for the finite dimensional space. $\displaystyle h \propto \frac{1}{n_{\text{cells}}}$, a usual discretization parameter for finite dimensional spaces and $d$ will control the convergence speed of the numerical solution. 
+The code in Section \ref{sec:lin_elas_dirichlet} presents the implementation details of the linear elasticity problem with Dirichlet boundary conditions.
+By solving the problem with Dirichlet homogeneous boundary conditions on the whole boundary, one can observe the following plots of the simulated $\vec u_{e,3}^h$ for different planes $z$. It is also possible to plot the error $\vec u_{e,3} - \vec u_{e,3}^h$.
 \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png}
-    \caption{Plots comparison between the simulated and real $u_{e,3}$ with the error, for different plane $z$, with $d=2$ and $n_{\text{cell}} = 64$}
-    \label{fig:3D_plots}
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/3d_plots_degree_2_non_mixed_dirichlet_homogeneous_ncell=64.png}
+	\caption{Plots comparison between the simulated and real $u_{e,3}$ with the error, for different planes $z$, with $d=2$ and $n_{\text{cell}} = 64$}
+	\label{fig:3D_plots}
 \end{figure}
 
-We can observe that the numerical solution is "quite" near the real solution. To get a better estimation of convergence rate, let's look at the Céa's lemma in this case.
+We can observe that the numerical solution is quite close to the real solution. To get a better estimation of the convergence rate, let's look at Céa's lemma in this case.
 
-Denotes by $\boldsymbol V^h \subset \boldsymbol H^1(\Omega)$ the discrete finite dimensional space, $\vec u \in \boldsymbol H^{s+1}(\Omega) \subset \boldsymbol H^1(\Omega), 1 \leq s \leq d+1$ the real solution solution and $\vec u^h \in \boldsymbol V^h$ the discrete solution.
-Then, the Céa's lemma gives the following estimates : 
+Let $\boldsymbol V^h \subset \boldsymbol H^1(\Omega)$ be the discrete finite dimensional space, $\vec u \in \boldsymbol H^{s+1}(\Omega) \subset \boldsymbol H^1(\Omega), 1 \leq s \leq d+1$ the real solution and $\vec u^h \in \boldsymbol V^h$ the discrete solution.
+Then, Céa's lemma gives the following estimates: 
 $\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)} \leq \frac{3\lambda + 2\mu}{2\mu C} \inf_{\vec v^h \in \boldsymbol H^1(\Omega)} \norm{\vec u - \vec v^h}_{\boldsymbol H^1(\Omega)}$
-\textit{where $C > 0$ is a constant from Korn's inequality (independant of $h$).}
-By applying \textbf{Corollary 4.21, 4.27}, \textbf{Theorem 6.2} from \cite{da_veiga_mathematical_2014} and Aubin-Nitsche theorem, we can get the following estimates : 
+\textit{where $C > 0$ is a constant from Korn's inequality (independent of $h$).}
+By applying \textbf{Corollary 4.21, 4.27}, \textbf{Theorem 6.2} from \cite{da_veiga_mathematical_2014} and the Aubin-Nitsche theorem, we can get the following estimates: 
 \begin{equation}
 \begin{aligned}
 & \norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)} \lesssim \frac{3\lambda + 2\mu}{2\mu C} h^q \norm{\vec u}_{\boldsymbol H^{q+1}(\Omega)} \\
@@ -564,7 +564,7 @@ By applying \textbf{Corollary 4.21, 4.27}, \textbf{Theorem 6.2} from \cite{da_ve
 \end{aligned}
 \label{eq:convergence_estimates}
 \end{equation}
-\textit{where $q = \min{(s,d)}$}. In this case, $u_e$ is an infinitly smooth solution, then $q = d$. 
+\textit{where $q = \min{(s,d)}$}. In this case, $u_e$ is an infinitely smooth solution, then $q = d$. 
 
 \begin{figure}[!h]
 	\centering
@@ -593,28 +593,28 @@ By applying \textbf{Corollary 4.21, 4.27}, \textbf{Theorem 6.2} from \cite{da_ve
 		\caption{$d=5$}
 		\label{fig:deg5_NMDHBC}
 	\end{subfigure}
-	\caption{Four plots of absolute errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}
+	\caption{Four plots of absolute errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-splines (with $\lambda = 1.25$ and $\mu = 1$)}
 	\label{fig:four_errors_graphs_1}
 \end{figure}
 
-We can see that the numerical solution converges with the expected order to the real solution : the more the mesh is refined, the more the error is lower and the more the splines' degree is higher, the more the convergence rate is higher. 
-For this numerical resolution, I have used \textbf{GMRES} method to solve the linear system at the end of the discretization. That needed to take care of the tolerance of the solver, because with a fixed tolerance, if the $d$ and $n_{\text{cells}}$ are "too higher", the convergence rate cannot hold. The following figure illustrates this case, when $d=5$ and $n_{\text{cells}} = 16$.
+We can see that the numerical solution converges with the expected order to the real solution: the more the mesh is refined, the lower the error is, and the higher the spline degree is, the higher the convergence rate is. 
+For this numerical resolution, I used the \textbf{GMRES} method to solve the linear system at the end of the discretization. This required taking care of the solver tolerance, because with a fixed tolerance, if $d$ and $n_{\text{cells}}$ are "too high", the convergence rate cannot hold. The following figure illustrates this case, when $d=5$ and $n_{\text{cells}} = 16$.
 
 \newpage
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/degre5_nul}
-	\caption{Error plot between exact and numerical solution with degree 5 B-Splines with "higher" tolerance for the solvera}
+	\caption{Error plot between exact and numerical solution with degree 5 B-splines with "high" tolerance for the solver}
 \end{figure}
 
-But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-Splines (at least for the tested configurations). This plateau can be explained by the matrix of the bilinear form $a(.,.)$ which is ill-conditioned. Moreover, the bad conditioning can become worse with more refined mesh and higher degree B-Splines (as the convergence is faster). Consequently, the iterative solver stops when the maximum number of iterations is reached (the default value is $3000$).
+But even with a lower tolerance for the solver ($10^{-15}$ for figure \ref{fig:deg5_NMDHBC}), the error reaches a plateau, which is not the case for lower degree B-splines (at least for the tested configurations). This plateau can be explained by the matrix of the bilinear form $a(.,.)$ which is ill-conditioned. Moreover, the bad conditioning can become worse with more refined mesh and higher degree B-splines (as the convergence is faster). Consequently, the iterative solver stops when the maximum number of iterations is reached (the default value is $3000$).
 
 \subsection{Mixed boundary conditions}
 \label{sec:mixed_BC}
 
-Then, I have made a simulation with Mixed Boundary Conditions, as it is introduced in \eqref{eq:strong_form}, with also non-homogeneous Dirichlet boundary conditions.
+Then, I made a simulation with mixed boundary conditions, as introduced in \eqref{eq:strong_form}, with also non-homogeneous Dirichlet boundary conditions.
 
-Again, $\Omega = [0,1]^3$, with : 
+Again, $\Omega = [0,1]^3$, with: 
 \begin{equation*}
 	\begin{aligned}
 		& \partial \Omega_{\text{DH}} = \left\{  (x,y,z) \in \partial\Omega \left| z = 0 \text{ or } z = 1 \right.  \right\} \hspace{0.5cm} 
@@ -622,7 +622,7 @@ Again, $\Omega = [0,1]^3$, with :
 		& \partial \Omega_{\text{N}} = \left\{  (x,y,z) \in \partial\Omega \left| y = 0 \text{ or } y = 1 \right.  \right\}
 	\end{aligned}
 \end{equation*}
-For that purpose, $\vec u_e, \vec f, \vec t_N$ and $\vec g$ are now defined as : 
+For that purpose, $\vec u_e, \vec f, \vec t_N$ and $\vec g$ are now defined as: 
 \begin{equation*}
 \begin{aligned}
 	& \vec u_e =
@@ -676,11 +676,11 @@ Then, we can get the same plots and interpretation as before in figure \ref{fig:
 		\caption{$d=5$}
 		\label{fig:deg5_NM}
 	\end{subfigure}
-	\caption{Four plots of absolute errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-Splines (with $\lambda = 1.25$ and $\mu = 1$)}
+	\caption{Four plots of absolute errors ($\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)}$ and $\norm{\vec u - \vec u^h}_{\boldsymbol L^2(\Omega)}$) with different degree B-splines (with $\lambda = 1.25$ and $\mu = 1$)}
 	\label{fig:four_errors_graphs}
 \end{figure}
 
-For fixed value $\lambda = 1.25$ and $\mu = 1$, the codes seems to give a numerical solution that converges to the theoritical one with the expected order. We can notice that the plateau effect comes back and appears faster than in the case of Dirichlet Homogeneous Boundary Conditions. The $L^2$ error seems to converge to a value slightly higher than $10^{-8}$, while the $H^1$ error converges to a value slightly higher than $10^{-5}$, and this phenomena is more pronounced for higher degree B-Splines. The limit value of each error seems to be the same for all degree B-Splines, when the $L^2$ error becomes lower than $10^{-7}$ and the $H^1$ error becomes lower than $10^{-5}$. So, this plateau effect is not due to the degree of B-Splines, but rather to the ill-conditionedness of the matrix of the bilinear form $a(.,.)$. This ill-conditionedness becomes worse with the refinement of the mesh and the increase of the degree of B-Splines. A way to verify this hypothesis is to solve the linear system with a preconditioner applyied to the matrices before the resolution and see if the maximum number of iterations is reached.
+For fixed values $\lambda = 1.25$ and $\mu = 1$, the code seems to give a numerical solution that converges to the theoretical one with the expected order. We can notice that the plateau effect comes back and appears faster than in the case of Dirichlet homogeneous boundary conditions. The $L^2$ error seems to converge to a value slightly higher than $10^{-8}$, while the $H^1$ error converges to a value slightly higher than $10^{-5}$, and this phenomenon is more pronounced for higher degree B-splines. The limit value of each error seems to be the same for all degree B-splines, when the $L^2$ error becomes lower than $10^{-7}$ and the $H^1$ error becomes lower than $10^{-5}$. So, this plateau effect is not due to the degree of B-splines, but rather to the ill-conditioning of the matrix of the bilinear form $a(.,.)$. This ill-conditioning becomes worse with the refinement of the mesh and the increase of the degree of B-splines. A way to verify this hypothesis is to solve the linear system with a preconditioner applied to the matrices before the resolution and see if the maximum number of iterations is reached.
 
 These simulations have been made with $\lambda = 1.25$ and $\mu = 1$. We can now look at them for more realistic values of $\lambda$ and $\mu$. The following table \ref{tab:lame_coefficients} gives the Lamé coefficients for different materials. 
 \begin{table}[h]
@@ -705,48 +705,48 @@ Rubber & 0.16 & 0.00033 \\
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=160000000.0.png}
-		\caption{Rubber with degree 2 B-Splines}
+		\caption{Rubber with degree 2 B-splines}
 		\label{fig:rubber_degree_2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=160000000.0.png}
-		\caption{Rubber with degree 4 B-Splines}
+		\caption{Rubber with degree 4 B-splines}
 		\label{fig:rubber_degree_4}
 	\end{subfigure}
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=17000000000.0.png}
-		\caption{Concrete with degree 2 B-Splines}
+		\caption{Concrete with degree 2 B-splines}
 		\label{fig:concrete_degree_2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=17000000000.0.png}
-		\caption{Concrete with degree 4 B-Splines}
+		\caption{Concrete with degree 4 B-splines}
 		\label{fig:concrete_degree_4}
 	\end{subfigure}
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_2_lambda=120000000000.0.png}
-		\caption{Steel with degree 2 B-Splines}
+		\caption{Steel with degree 2 B-splines}
 		\label{fig:steel_degree_2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/figures_non_mixed_realistic/convergence_plot_degree_4_lambda=120000000000.0.png}
-		\caption{Steel with degree 4 B-Splines}
+		\caption{Steel with degree 4 B-splines}
 		\label{fig:steel_degree_4}
 	\end{subfigure}
-	\caption{Error plots between exact solution and numerical solution with realistic values of Lamés' coefficients with degree 2 and 4 B-Splines}
+	\caption{Error plots between exact solution and numerical solution with realistic values of Lamé coefficients with degree 2 and 4 B-splines}
 	\label{fig:error_realistic_lame}
 \end{figure}
 
-As we can see in figure \ref{fig:error_realistic_lame}, in the case of concrete and steel, the errors behaves as expected : well convergence with expected order and the plateau effect appears after a certain value of the error. 
-But for the rubber, the convergence order is not really respected, the error decreases faster than expected and the plateau degenerates... 
-To explain this, we can look at the estimates \eqref{eq:convergence_estimates} :
+As we can see in figure \ref{fig:error_realistic_lame}, in the case of concrete and steel, the errors behave as expected: good convergence with expected order and the plateau effect appears after a certain value of the error. 
+But for rubber, the convergence order is not really respected, the error decreases faster than expected and the plateau degenerates... 
+To explain this, we can look at the estimates \eqref{eq:convergence_estimates}:
 $\norm{\vec u - \vec u^h}_{\boldsymbol H^1(\Omega)} \lesssim \frac{3\lambda + 2\mu}{2\mu C} h^d \norm{\vec u}_{\boldsymbol H^{d+1}(\Omega)}$
 As $\lambda$ is very high compared to $\mu$, the estimates are not really valid anymore, as $\frac{3\lambda + 2\mu}{2\mu C} \rightarrow + \infty$ when $\lambda \rightarrow + \infty$. 
 This is the case for incompressible materials, like rubber, where $\lambda$ is very high compared to $\mu$. To get a better idea of the convergence, we can look at the error plots for different values of $\lambda$ with $\mu = 1$.
@@ -785,28 +785,28 @@ This is the case for incompressible materials, like rubber, where $\lambda$ is v
 		\includegraphics[width=\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_2_lambda=100000.0.png}
 		\caption{$\lambda=100000$~Pa}
 	\end{subfigure}
-	\caption{Error plots between exact solution and numerical solution with degree 2 B-Splines with increasing values of $\lambda$ with $\mu = 1$~Pa}
+	\caption{Error plots between exact solution and numerical solution with degree 2 B-splines with increasing values of $\lambda$ with $\mu = 1$~Pa}
 	\label{fig:error_kappa}
 \end{figure}
 
-As we can see in figure \ref{fig:error_kappa}, the convergence order is not respected anymore when $\lambda$ is too high compared to $\mu$. We can observe that when $\frac{\lambda}{\mu} = 10^4$, the error behaves like the error curves for the rubber with degree 2 B-Splines in figure \ref{fig:rubber_degree_2} $\displaystyle \left(\frac{\lambda_{\text{rubber}}}{\mu_{\text{rubber}}} \approx 500\right)$. Then, for values of $\lambda$ such that $\frac{\lambda}{\mu} \geq 10^4$, the error is not even decreasing anymore.
+As we can see in figure \ref{fig:error_kappa}, the convergence order is not respected anymore when $\lambda$ is too high compared to $\mu$. We can observe that when $\frac{\lambda}{\mu} = 10^4$, the error behaves like the error curves for rubber with degree 2 B-splines in figure \ref{fig:rubber_degree_2} $\displaystyle \left(\frac{\lambda_{\text{rubber}}}{\mu_{\text{rubber}}} \approx 500\right)$. Then, for values of $\lambda$ such that $\frac{\lambda}{\mu} \geq 10^4$, the error is not even decreasing anymore.
 
-Two hypothesis can be made to explain this phenomena : 
+Two hypotheses can be made to explain this phenomenon: 
 \begin{itemize}
 	\item The estimates \eqref{eq:convergence_estimates} are not valid anymore, as $\lambda$ is too high compared to $\mu$.
 	\item The bilinear form $a(.,.)$ is ill-conditioned, leading to numerical instability when $\lambda$ is "too high" compared to $\mu$.
 \end{itemize}
 
-One can try to increase the degree of B-Splines to see if the convergence is reinforced as the power of $h$ in the estimates is higher. 
+One can try to increase the degree of B-splines to see if the convergence is reinforced as the power of $h$ in the estimates is higher. 
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/figures_increasing_lambda_non_mixed/convergence_plot_degree_4_lambda=100000.0.png}	
-	\caption{Error plot between exact solution and numerical solution with degree 4 B-Splines with $\lambda = 100000$~Pa and $\mu = 1$~Pa}
+	\caption{Error plot between exact solution and numerical solution with degree 4 B-splines with $\lambda = 100000$~Pa and $\mu = 1$~Pa}
 	\label{fig:error_kappa_degree_4}
 \end{figure}
 
-As we can see in figure \ref{fig:error_kappa_degree_4}, the convergence is not reinforced, the error is still not decreasing. Actually, this phenomena is called \textbf{locking} and it is a well-known issue in FEM for incompressible materials. The locking occurs when the numerical solution is too stiff and does not converge to the real solution for high values of $\lambda$ compared to $\mu$.
+As we can see in figure \ref{fig:error_kappa_degree_4}, the convergence is not reinforced, the error is still not decreasing. Actually, this phenomenon is called \textbf{locking} and it is a well-known issue in FEM for incompressible materials. The locking occurs when the numerical solution is too stiff and does not converge to the real solution for high values of $\lambda$ compared to $\mu$.
 One way to avoid this issue is to use a mixed formulation, where the pressure field is introduced as an additional variable. This will be presented in the next section.
 
 \section{Mixed displacement-pressure formulation}
