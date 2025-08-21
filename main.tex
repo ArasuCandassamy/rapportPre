@@ -238,9 +238,9 @@ literate=
 \section*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-This report presents the work conducted during a research internship at the Max-Planck Institute for Plasma Physics in the Numerical Methods for Plasma Physics department. This report is focusing on the implementation and validation of solid mechanics equations using the \texttt{Psydac}, a finite element library on Python.
+This report presents the work that I conducted during a research internship at the Max-Planck Institute for Plasma Physics in the Numerical Methods for Plasma Physics department. This report is focusing on the implementation and validation of solid mechanics equations using the \texttt{Psydac}, a finite element library on Python.
 
-The primary objective of this internship was to explore and extend Psydac's capabilities to solve partial differential equations from solid mechanics, which had not been previously tested in this library. The work focused on two main areas: linear elasticity and stationary thermoelasticity problems and their execution on a supercomputer. For linear elasticity, two formulations, pure displacement and mixed displacement-pressure formulations, were implemented and analyzed. 
+The primary objective of my internship was to explore and extend Psydac's capabilities to solve partial differential equations from solid mechanics, which had not been previously tested in this library. The work focused on two main areas: linear elasticity and stationary thermoelasticity problems and their execution on a supercomputer. For linear elasticity, two formulations, pure displacement and mixed displacement-pressure formulations, were implemented and analyzed. 
 
 The thermoelasticity study involved solving coupled thermo-mechanical problems on composite materials with spatially varying properties. This work required the development of enhanced discretization capabilities, including the implementation of custom grid discretization features to handle material property discontinuities. Additionally, a multipatch framework was explored to address complex geometries with holes, utilizing Nitsche's method for interface coupling.
 
@@ -252,11 +252,11 @@ All simulations were performed on the supercomputer Raven. These results have be
 
 \section*{Résumé}
 
-Ce rapport présente les travaux menés lors d'un stage de recherche à l'Institut Max-Planck de Physique des Plasmas dans le département des Méthodes Numériques pour la Physique des Plasmas. Ce rapport se concentre sur l'implémentation et la validation d'équations de mécanique des solides en utilisant la bibliothèque d'éléments finis \texttt{Psydac} sur Python.
+Ce rapport présente mes travaux menés lors d'un stage de recherche à l'Institut Max-Planck de Physique des Plasmas dans le département des Méthodes Numériques pour la Physique des Plasmas. Ce rapport se concentre sur l'implémentation et la validation d'équations de mécanique des solides en utilisant la bibliothèque d'éléments finis \texttt{Psydac} sur Python.
 
-L'objectif principal de ce stage était d'explorer et d'étendre les capacités de Psydac pour résoudre des équations aux dérivées partielles issues de la mécanique des solides, qui n'avaient pas été testées auparavant dans cette bibliothèque. Le travail s'est concentré sur deux domaines principaux : l'élasticité linéaire et les problèmes de thermoélasticité, ainsi que leur exécution sur un supercalculateur. Pour l'élasticité linéaire, deux formulations différentes ont été implémentées et analysées : la formulation en déplacement pur et la formulation mixte déplacement-pression.
+L'objectif principal de mon stage était d'explorer les capacités de Psydac pour résoudre des équations aux dérivées partielles issues de la mécanique des solides, qui n'avaient pas été testées auparavant dans cette bibliothèque. Le travail s'est concentré sur deux domaines principaux : l'élasticité linéaire et les problèmes de thermoélasticité, ainsi que leur exécution sur un supercalculateur. Pour l'élasticité linéaire, deux formulations différentes ont été implémentées et analysées : la formulation en déplacement pur et la formulation mixte déplacement-pression.
 
-L'étude de thermoélasticité a impliqué la résolution de problèmes thermo-mécaniques couplés sur des matériaux composites avec des propriétés variant spatialement. Ce travail a nécessité le développement de fonctionnalités de discrétisation sur une grille personnalisée pour gérer les discontinuités de propriétés matérielles. De plus, une implémentation utilisant un domain \textit{multipatch} a été testé pour traiter des géométries complexes. Cette implémentation a fait appel à la méthode de Nitsche pour assurer la continuité aux interfaces.
+L'étude de thermoélasticité a impliqué la résolution de problèmes thermo-mécaniques couplés sur des matériaux composites avec des propriétés variant spatialement. Ce travail a nécessité le développement de fonctionnalités de discrétisation sur une grille personnalisée pour gérer les discontinuités de propriétés matérielles. De plus, une implémentation utilisant un domaine \textit{multipatch} a été testée pour traiter une géométrie complexe. Cette implémentation a fait appel à la méthode de Nitsche pour assurer la continuité aux interfaces des patches.
 
 Toutes les simulations ont été testées sur le supercalculateur Raven. Ces résultats ont été utilisés pour valider l'implémentation et l'efficacité de Psydac pour résoudre des problèmes issus de la mécanique des solides.
 
@@ -271,26 +271,13 @@ Toutes les simulations ont été testées sur le supercalculateur Raven. Ces ré
 \section*{Acknowledgement}
 \addcontentsline{toc}{chapter}{Acknowledgement}
 
-I would like to express my sincere gratitude to all those who made this internship a truly enriching and memorable experience.
+I would like to express my sincere gratitude to my supervisor, Pr. Dr. Martin Campos Pinto, for his invaluable guidance, expertise, and constant support throughout this internship.
 
-First and foremost, I thank the Numerical Methods for Plasma Physics (NMPP) laboratory and the Max-Planck Institute for Plasma Physics for their warm welcome and for providing me with the opportunity to conduct this research in such an exceptional scientific environment. \\
+I am particularly thankful to Dr. Yaman Güçlü, my co-supervisor and head developer of Psydac, for his technical expertise and support. I am also grateful to the entire PSYDAC team for their collaboration and assistance during this project (Ms. Elena Moral Sanchez, Mr. Julian Owezarek, and Mr. Frederik Schnack).
 
-My deepest appreciation goes to my supervisor, Prof. Dr. Martin Campos Pinto, for his invaluable guidance, expertise, and constant support throughout this internship. His insights and encouragement were instrumental in the success of this work. \\
+I want to thank Ms. Svenja Eichler for her help in facilitating my integration into the institute and for her support with administrative matters.
 
-I am particularly grateful to Dr. Yaman Güçlü, my co-supervisor and head developer of PSYDAC, for his technical expertise and patience in helping me understand the intricacies of the library. His mentorship was crucial for the successful implementation of the various numerical methods presented in this report.\\
-
-I extend my heartfelt thanks to the PSYDAC development team: Ms. Elena Moral Sanchez, Mr. Julian Owezarek, and Mr. Frederik Schnack, with whom I had the pleasure of collaborating throughout my internship. Their technical support and fruitful discussions greatly enriched my understanding of the library and contributed significantly to the advancement of this work. \\
-
-Special recognition goes to Ms. Svenja Eichler, the laboratory secretary, who ensured my smooth integration into the institute and was always available to assist with administrative matters. I also thank Mr. Max Lindqvist for his invaluable help with the computational infrastructure and his guidance in using the Raven supercomputer.\\
-
-I would like to acknowledge my office colleagues, Mr. Victor Fournet and Mr. Joris Thiel, for creating such a pleasant and collaborative working atmosphere. Their friendship and support made this experience even more enjoyable.\\
-
-My gratitude extends to all the laboratory members who welcomed me so warmly: Nishant Narechania, Valentin Carlier, Pauline Vidal, Sandra Jeyakumar\dots Their kindness and openness created a truly inspiring work environment.\\
-
-Finally, I thank my flatmates during my stay in Munich, Mr. Thomas Lefert and Mr. Louis Marchal, for their companionship and for making my time in Germany both productive and memorable.\\
-
-This internship would not have been the same without all of these wonderful people, and I am deeply grateful for their contributions to both my professional and personal growth.\\
-
+Finally, I thank the entire Numerical Method for Plasma Physics (NMPP) team for their warm welcome and support throughout my internship.
 
 \newpage
 \tableofcontents
