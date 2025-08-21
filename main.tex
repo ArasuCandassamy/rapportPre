@@ -810,8 +810,8 @@ As we can see in figure \ref{fig:error_kappa_degree_4}, the convergence is not r
 One way to avoid this issue is to use a mixed formulation, where the pressure field is introduced as an additional variable. This will be presented in the next section.
 
 \section{Mixed displacement-pressure formulation}
-To introduce this formulation, let's consider again the strong formulation from \eqref{eq:strong_form}. Then, denotes by $p$ the pressure field, defined by $\displaystyle p = - \lambda \div{\vec u}$. As we are seeking $\vec u \in \boldsymbol{H}^1(\Omega)$, $p$ is naturally living in $L^2(\Omega)$. Then Hooke's law can be rewritten : $\boldsymbol{\sigma} (\vec u,p) = -p I_3 + 2\mu \boldsymbol{\varepsilon(\vec u)} \text{ in }  \Omega $ \\
-So the strong formulation can be re-write as : For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(\partial \Omega_N)$, find $(\vec u, p) \in \boldsymbol H^1(\Omega)\times L^2(\Omega)$ such that : 
+To introduce this formulation, let's consider again the strong formulation from \eqref{eq:strong_form}. Then, denote by $p$ the pressure field, defined by $\displaystyle p = - \lambda \div{\vec u}$. As we are seeking $\vec u \in \boldsymbol{H}^1(\Omega)$, $p$ is naturally living in $L^2(\Omega)$. Then Hooke's law can be rewritten as: $\boldsymbol{\sigma} (\vec u,p) = -p I_3 + 2\mu \boldsymbol{\varepsilon(\vec u)} \text{ in }  \Omega $ \\
+So the strong formulation can be rewritten as: For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(\partial \Omega_N)$, find $(\vec u, p) \in \boldsymbol H^1(\Omega)\times L^2(\Omega)$ such that: 
 
 \begin{tcolorbox}
 \begin{equation}
@@ -820,29 +820,29 @@ So the strong formulation can be re-write as : For a given $\vec f \in \boldsymb
 	\begin{aligned}
 		& - \div \boldsymbol{\sigma} (\vec u,p) = \vec f & \text{ in } & \Omega \hspace{1cm} \text{(Equilibrium)}\\
 		& \div{\vec u} + \frac{1}{\lambda} p = 0 & \text{ in } & \Omega \hspace{1cm} \text{(Pressure field definition)} \\
-		& \vec u = \vec 0 & \text{ in } &\partial \Omega_D \\
-		& \boldsymbol{\sigma} (\vec u) \cdot \vec n = \vec t_N & \text{ in }& \partial \Omega_N
+		& \vec u = \vec 0 & \text{ on } &\partial \Omega_D \\
+		& \boldsymbol{\sigma} (\vec u) \cdot \vec n = \vec t_N & \text{ on }& \partial \Omega_N
 	\end{aligned}
 	\right.
 \end{equation}
 \end{tcolorbox}
 
 
-Now, to derive the weak formulation associated, first we multiply the Equilibrium equation by $v \in \boldsymbol H^1_{\vec 0,D}(\Omega)$ and we interger by part on $\Omega$, then we multiply the Pressure field equation by $q \in L^2(\Omega)$ and we interger over $\Omega$. Then we just have to add both integrals. 
-Then, the weak formulation is: 
+Now, to derive the weak formulation, first we multiply the equilibrium equation by $v \in \boldsymbol H^1_{\vec 0,D}(\Omega)$ and integrate by parts on $\Omega$, then we multiply the pressure field equation by $q \in L^2(\Omega)$ and integrate over $\Omega$. Then we simply add both integrals. 
+The weak formulation is then: 
 \begin{tcolorbox}
 \begin{equation}
 	\label{eq:weak_pressure_displ_form}
 	\left\{
 	\begin{aligned}
-		&\text{Find } (\vec u,p) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega) \text{ such that :}\\
+		&\text{Find } (\vec u,p) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega) \text{ such that:}\\
 		& \tilde{a}((\vec u,p),(\vec v,q)) = l(\vec v,q) \hspace{0.5cm} \forall (\vec v,q) \in \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega)
 	\end{aligned}
 	\right.
 \end{equation}
 \end{tcolorbox}
 
-With : 
+With: 
 \begin{equation*}
 	\begin{aligned}
 		& \tilde{a} : \left\{
@@ -855,7 +855,7 @@ With :
 		\left\{
 		\begin{aligned}
 			&\boldsymbol H^1_{\vec 0,D}(\Omega) \rightarrow \mtr \\
-			&\vec v \longmapsto \int_\Omega \vec f . \vec v \dif \Omega + \int_{\partial\Omega_N} \vec t_N.\vec v \dif \Gamma
+			&\vec v \longmapsto \int_\Omega \vec f \cdot \vec v \dif \Omega + \int_{\partial\Omega_N} \vec t_N \cdot \vec v \dif \Gamma
 		\end{aligned}
 		\right.
 	\end{aligned}
@@ -882,11 +882,11 @@ with the product norm
 		\begin{aligned}
 			|l(\vec v,q)|
 			&\le |(\vec f,\vec v)_{\boldsymbol L^2(\Omega)}| + |(\vec t_N,\vec v)_{\boldsymbol L^2(\partial\Omega_N)}| \\
-			&\le \Big(\|\vec f\|_{\boldsymbol L^2(\Omega)} + C_{\text{tr}}\|\vec t_N\|_{\boldsymbol L^2(\partial\Omega_N)}\Big)\|\vec v\|_{H^1(\Omega)} \\
+			&\le \Big(\|\vec f\|_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \|\vec t_N\|_{\boldsymbol L^2(\partial\Omega_N)}\Big)\|\vec v\|_{H^1(\Omega)} \\
 			|l(\vec v,q)| &\le C \big(\|\vec f\|_{\boldsymbol L^2(\Omega)} + \|\vec t_N\|_{\boldsymbol L^2(\partial\Omega_N)}\big)\|(\vec v,q)\|_X,
 		\end{aligned}
 	\end{equation*}
-	where $C_{\text{tr}}$ is the trace constant and $C$ a generic constant.
+	where $\gamma_0$ is the trace operator and $C$ is a generic constant.
 	\item $\tilde a(\cdot,\cdot)$ is continuous: for all $(\vec u,p),(\vec v,q)\in X$,
 	\begin{equation*}
 		\begin{aligned}
@@ -916,24 +916,24 @@ with the product norm
 	with $\alpha:=\min\{2\mu C_K^2,\,1/\lambda\}>0$ (for fixed finite $\lambda$).
 \end{itemize}
 
-Then, by Lax–Milgram theorem, the mixed problem \eqref{eq:weak_pressure_displ_form} admits a unique solution $(\vec u,p)\in X$ and the stability estimate
+Then, by the Lax–Milgram theorem, the mixed problem \eqref{eq:weak_pressure_displ_form} admits a unique solution $(\vec u,p)\in X$ and the stability estimate
 \[
 \|\vec u\|_{H^1(\Omega)}+\|p\|_{L^2(\Omega)} \le C\big(\|\vec f\|_{\boldsymbol L^2(\Omega)} + \|\vec t_N\|_{\boldsymbol L^2(\partial\Omega_N)}\big)
 \]
 holds with $C$ independent of $(\vec f,\vec t_N)$.
 
-\noindent \textbf{Remark.} As $\lambda\to \infty$ (near-incompressible limit) the coercivity constant degenerates on the pressure component; the formulation approaches a saddle-point (Stokes-like) problem requiring an inf-sup (Ladyzhenskaya–Babuška–Brezzi) condition on the pair $(V,Q)$ to remain stable.
+\noindent \textbf{Remark.} As $\lambda\to \infty$ (near-incompressible limit), the coercivity constant degenerates on the pressure component; the formulation approaches a saddle-point (Stokes-like) problem requiring an inf-sup (Ladyzhenskaya–Babuška–Brezzi) condition on the pair $(V,Q)$ to remain stable.
 
-A way to ensure the inf-sup condition is to impose a non-zero mean value for the pressure field, i.e., $p\in L^2_0(\Omega)$, which is a common practice in numerical simulations of incompressible flows.
+A way to ensure the inf-sup condition is to impose a zero mean value for the pressure field, i.e., $p\in L^2_0(\Omega)$, which is a common practice in numerical simulations of incompressible flows.
 
 Then, the following inf-sup condition holds:
 \[\inf_{q\in Q}\sup_{\vec v\in V}\frac{\tilde a((\vec v,q),(\vec u,p))}{\|\vec v\|_{H^1(\Omega)}\|q\|_{L^2(\Omega)}} \ge \beta > 0,\]
-for some $\beta>0$ independent of $\lambda$ and $\mu$. This condition ensures the stability of the mixed formulation and prevents spurious oscillations in the pressure field, and V = $H^1_0(\Omega)$ and $Q = L^2_0(\Omega)$ \cite{boffi_mixed_2008}.
+for some $\beta>0$ independent of $\lambda$ and $\mu$. This condition ensures the stability of the mixed formulation and prevents spurious oscillations in the pressure field, with $V = H^1_0(\Omega)$ and $Q = L^2_0(\Omega)$ \cite{boffi_mixed_2008}.
 
 If $\Omega_D = \emptyset$, the Dirichlet boundary condition is not imposed, and the problem becomes a pure Stokes problem. In this case, the inf-sup condition is necessary to ensure the well-posedness of the problem, and the uniqueness of the solution is guaranteed by the compatibility condition on the external loads, as discussed in Section \ref{sec:Pure displacement weak-formulation} modulo a rigid body motion.
 
-\subsection{Isogeometric discretisation and a priori error estimate}
-Under standard approximation and stability assumptions for the mixed formulation, the Galerkin solution enjoys the usual quasi-optimal a priori estimate. Let $(V_h,Q_h)\subset V\times Q$ be the tensor–product B-spline spaces of (vector) degree $d$ (for the displacement) and (scalar) degree $d$ (for the pressure) with mesh size $h$, and assume that the discrete inf–sup condition holds with a constant $\beta>0$ independent of $h$, $\lambda$ and $\mu$ (locking–free setting) \cite{boffi_mixed_2008}. Then, for the exact solution $(\vec u_e,p_e)$ of \eqref{eq:weak_pressure_displ_form} and the discrete solution $(\vec u_h,p_h)\in V_h\times Q_h$, continuity plus coercivity on the kernel give the Céa type bound
+\subsection{Isogeometric discretization and a priori error estimate}
+Under standard approximation and stability assumptions for the mixed formulation, the Galerkin solution enjoys the usual quasi-optimal a priori estimate. Let $(V_h,Q_h)\subset V\times Q$ be the tensor–product B-spline spaces of (vector) degree $d$ (for the displacement) and (scalar) degree $d$ (for the pressure) with mesh size $h$, and assume that the discrete inf–sup condition holds with a constant $\beta>0$ independent of $h$, $\lambda$ and $\mu$ (locking–free setting) \cite{boffi_mixed_2008}. Then, for the exact solution $(\vec u_e,p_e)$ of \eqref{eq:weak_pressure_displ_form} and the discrete solution $(\vec u_h,p_h)\in V_h\times Q_h$, continuity plus coercivity on the kernel give the Céa-type bound
 \[
 \|\vec u_e-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p_e-p_h\|_{L^2(\Omega)}
 \;\le\; C\,\Big( \inf_{\vec w_h\in V_h}\|\vec u_e-\vec w_h\|_{\boldsymbol H^1(\Omega)} + \inf_{q_h\in Q_h}\|p_e-q_h\|_{L^2(\Omega)}\Big),
@@ -942,26 +942,13 @@ with $C > 0$, and \textit{a priori} $C \propto \frac{2\mu + 6 + 1/\lambda}{\min(
 \[
 \|\vec u_e-\vec u_h\|_{\boldsymbol H^1(\Omega)}+\|p_e-p_h\|_{L^2(\Omega)} \;\le\; C h^{d}\Big(\|\vec u_e\|_{\boldsymbol H^{d+1}(\Omega)}+\|p_e\|_{H^{d}(\Omega)}\Big),
 \]
-Then, while $2 \mu C_K^2 > \frac{1}{\lambda}$, the coercivity constant $\alpha$ is bounded away from zero, and the estimate holds uniformly in $\lambda$ and $\mu$. But, when $\lambda \rightarrow \infty$, the coercivity constant $\alpha$ tends to zero, leading to a loss of stability in the numerical method. Now we can look at the convergence estimates for the mixed displacement-pressure formulation to see if this formulation can solve for higher values of $\frac{\lambda}{\mu}$ than the pure-displacement formulation.
-
-
-% Let  and  be tensor-product B-spline spaces of degree  and mesh-size  (maximal continuity). If the exact solution satisfies the regularity
-% , standard approximation results for B-splines give the best-approximation estimates
-% \begin{equation*}
-% \inf_{(\vec w_h,q_h)\in V_h\times Q_h} \bigl(|\vec u-\vec w_h|{H^1} + |p-q_h|{L^2}\bigr) = O(h^d).
-% \end{equation*}
-% By C'ea's lemma (Galerkin orthogonality + continuity/coercivity) the discrete solution  satisfies
-% \begin{equation}\label{eq:cea}
-% |\vec u-\vec u_h|{H^1} + |p-p_h|{L^2} \le \frac{M}{\alpha};\inf_{(\vec w_h,q_h)}\bigl(|\vec u-\vec w_h|{H^1} + |p-q_h|{L^2}\bigr) = O(h^d),
-% \end{equation}
-% where the constants  are the continuity and coercivity constants. In practice one thus expects order  convergence in the -norm for displacements and in the -norm for pressure provided the solution is smooth enough.
-
+Then, while $2 \mu C_K^2 > \frac{1}{\lambda}$, the coercivity constant $\alpha$ is bounded away from zero, and the estimate holds uniformly in $\lambda$ and $\mu$. But when $\lambda \rightarrow \infty$, the coercivity constant $\alpha$ tends to zero, leading to a loss of stability in the numerical method. Now we can look at the convergence estimates for the mixed displacement-pressure formulation to see if this formulation can solve for higher values of $\frac{\lambda}{\mu}$ than the pure-displacement formulation.
 
 
 \subsection{Example of simulation using \texttt{PSYDAC}}
-In this section, we will present the results of a simulation using the mixed displacement-pressure formulation with B-Splines. 
+In this section, we will present the results of a simulation using the mixed displacement-pressure formulation with B-splines. 
 
-For the manufactured solution, we will use the same one as in section \ref{subsec:Dirichlet Homogeneous Boundary conditions on}. For reminder, the exact solution is given by:
+For the manufactured solution, we will use the same one as in Section \ref{subsec:Dirichlet Homogeneous Boundary conditions on}. For reference, the exact solution is given by:
 $$
 \vec u_e(x,y,z)=
 \begin{pmatrix}
@@ -979,8 +966,6 @@ $$
 -\pi^{2}(\lambda+\mu)\sin(\pi x)\cos(\pi y)\cos(\pi z)\\[4pt]
 \pi^{2}(\lambda+4\mu)\sin(\pi x)\sin(\pi y)\sin(\pi z)
 \end{pmatrix}.
-% -\pi^{2}(\lambda+\mu)\cos(\pi x)\sin(\pi y)\cos(\pi z)\[4pt]\\n-\pi^{2}(\lambda+\mu)\sin(\pi x)\cos(\pi y)\cos(\pi z)\[4pt]\\n\pi^{2}(\lambda+4\mu)\sin(\pi x)\sin(\pi y)\sin(\pi z)
-% \end{pmatrix}.
 $$
 And the boundary conditions are: 
 \begin{align*}
@@ -991,7 +976,7 @@ p_e|_{\partial\Omega} &= \begin{cases}
 \end{cases}
 \end{align*}
 
-As now, the exact solution depends on $\lambda$, we will look at the relative between exact and numerical solutions for different values of $\lambda$. (This wasn't necessary before as the exact solution was independent of $\lambda$ so the norm the exact solution was the same for all values of $\lambda$).
+Since the exact solution now depends on $\lambda$, we will look at the relative error between exact and numerical solutions for different values of $\lambda$. (This wasn't necessary before as the exact solution was independent of $\lambda$, so the norm of the exact solution was the same for all values of $\lambda$).
 To do so, we can look at the relative error between exact and numerical solution, defined by: 
 $$
 E_{rel} = \frac{\|\vec u_e - \vec u_h\|_{H^1} + \|p_e - p_h\|_{L^2}}{\|\vec u_e\|_{H^1} + \|p_e\|_{L^2}}.
@@ -1051,30 +1036,30 @@ and its variation across the number of cells for different values of $\lambda$.
 		\caption{$E_{rel}(n_{\text{cells}})$ with $\lambda = 10^{16}$~Pa and $\frac{\lambda}{\mu} = 10^{16}$}
 		\label{fig:convergencedegree2mixeddirichlethomogeneouslambda1e16}
 	\end{subfigure}
-	\caption{Relative error between exact and numerical solution with degree 2 B-Splines for different values of $\lambda$}
+	\caption{Relative error between exact and numerical solution with degree 2 B-splines for different values of $\lambda$}
 	\label{fig:convergencedegree2mixeddirichlethomogeneous}
 \end{figure}
 
 
 The convergence analysis presented in Figure \ref{fig:convergencedegree2mixeddirichlethomogeneous} reveals several important characteristics of the mixed displacement-pressure formulation across different Lamé parameter values. This comprehensive study examines the behavior of the numerical scheme for values of $\lambda$ ranging from $1.25$~Pa to $10^{16}$~Pa, corresponding to materials from highly compressible to nearly incompressible regimes.
 
-We can observe that from $\frac{\lambda}{\mu} = 100$, the convergence behavior is robust and following a $-3$ slope. This indicates that the mixed formulation maintains optimal convergence properties even as the material approaches incompressibility. The observed slope is higher than expected. This could be due to the fact that as $\lambda$ increases, the pressure variable becomes more dominant in the formulation and influences the overall convergence behavior. This is only a intuition and an interpretation of the error plots, and further analysis would be needed to confirm this hypothesis. That hasn't been done yet.
-The plateau phenomena is observed again when the error reaches a certain threshold and no longer decreases significantly with mesh refinement.
+We can observe that from $\frac{\lambda}{\mu} = 100$, the convergence behavior is robust and follows a $-3$ slope. This indicates that the mixed formulation maintains optimal convergence properties even as the material approaches incompressibility. The observed slope is higher than expected. This could be due to the fact that as $\lambda$ increases, the pressure variable becomes more dominant in the formulation and influences the overall convergence behavior. This is only an intuition and an interpretation of the error plots, and further analysis would be needed to confirm this hypothesis. That has not been done yet.
+The plateau phenomenon is observed again when the error reaches a certain threshold and no longer decreases significantly with mesh refinement.
 
-However, as $\frac{\lambda}{\mu} \gg 1$, so here $\frac{\lambda}{\mu} = 10^{16}$, the same phenomena as in the pure displacement formulation occurs, where the error does not decrease anymore. This is likely due to the fact that the pressure variable is not able to compensate for the locking phenomena that occurs when $\lambda$ is too high compared to $\mu$. We can suppose that the coercivity constant $\alpha$ has reached its limit and now $\alpha = \frac{1}{\lambda}$.
+However, when $\frac{\lambda}{\mu} \gg 1$, so here $\frac{\lambda}{\mu} = 10^{16}$, the same phenomenon as in the pure displacement formulation occurs, where the error does not decrease anymore. This is likely due to the fact that the pressure variable is not able to compensate for the locking phenomenon that occurs when $\lambda$ is too high compared to $\mu$. We can suppose that the coercivity constant $\alpha$ has reached its limit and now $\alpha = \frac{1}{\lambda}$.
 
-When we look at the continuity and coercivity constants of the bilinear form $a$, one can also think that the more $\mu$ becomes higher, the more this loss of coercivity will appears faster when $\lambda \rightarrow \infty$.
+When we look at the continuity and coercivity constants of the bilinear form $a$, one can also think that the more $\mu$ becomes higher, the more this loss of coercivity will appear faster when $\lambda \rightarrow \infty$.
 
-For example, if we consider steel's Lamé parameters, which are typically around $\lambda = 120$~GPa and $\mu = 80$~GPa, we find that $\frac{\lambda}{\mu} = 1.5$. As we can see in the following error plot, the locking phenomena appears.
+For example, if we consider steel's Lamé parameters, which are typically around $\lambda = 120$~GPa and $\mu = 80$~GPa, we find that $\frac{\lambda}{\mu} = 1.5$. As we can see in the following error plot, the locking phenomenon appears.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/figures_mixed_DH/sum_convergence_plot_degree_2_lambda=120000000000.0.png}
-	\caption{Relative error between exact and numerical solution with degree 2 B-Splines for steel's Lamé parameters}
+	\caption{Relative error between exact and numerical solution with degree 2 B-splines for steel's Lamé parameters}
 	\label{fig:convergencedegree2mixeddirichlethomogeneoussteel}
 \end{figure}
 
-The same behavior is actually observed for rubber and concrete, even if the ratio $\frac{\lambda}{\mu}$ is not as high like \ref{fig:convergencedegree2mixeddirichlethomogeneouslambda1e16}. This is due to the fact that with the mixed formulation, when $\mu$ increases, the coercivity constant $\alpha$ becomes smaller faster when $\lambda$ increases.
+The same behavior is actually observed for rubber and concrete, even if the ratio $\frac{\lambda}{\mu}$ is not as high as in \ref{fig:convergencedegree2mixeddirichlethomogeneouslambda1e16}. This is due to the fact that with the mixed formulation, when $\mu$ increases, the coercivity constant $\alpha$ becomes smaller faster when $\lambda$ increases.
 
 \section{Conclusion}
 
