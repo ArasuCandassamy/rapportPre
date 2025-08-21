@@ -308,14 +308,13 @@ This report presents the work conducted during a three-month research internship
 
 Within IPP, the Numerical Methods for Plasma Physics (NMPP) department plays a crucial role in developing advanced computational tools for plasma simulations. The department is responsible for creating and maintaining several high-performance computing libraries that support the institute's research activities. Among these tools, \texttt{GEMPIC} (Geometric Electromagnetic Particle-In-Cell) provides sophisticated particle simulation capabilities for kinetic plasma modeling, while \texttt{Struphy} offers specialized structure-preserving algorithms for long-term plasma evolution studies. These libraries collectively form a comprehensive computational ecosystem that enables researchers to tackle the challenging multi-physics problems inherent in fusion plasma research.\\
 
-At the heart of this computational infrastructure lies \texttt{Psydac} (Python Spline Discretizations for Advanced Computations), a state-of-the-art finite element library that implements isogeometric analysis using B-splines and NURBS. Originally developed for plasma physics applications, \texttt{Psydac} leverages the power of spline-based discretizations to achieve high-order accuracy while maintaining geometric flexibility. The library incorporates advanced features such as multipatch domains, parallel computing capabilities, and integration with high-performance computing environments. Its modular design, built upon \texttt{SymPDE} for symbolic problem formulation and \texttt{Pyccel} for code acceleration, makes it particularly well-suited for solving complex partial differential equations across various physics domains.\\
+At the heart of this computational infrastructure lies \texttt{Psydac}, a state-of-the-art finite element library that implements isogeometric analysis using B-splines and NURBS. Originally developed for plasma physics applications, \texttt{Psydac} leverages the power of spline-based discretizations to achieve high-order accuracy while maintaining geometric flexibility. The library incorporates advanced features such as multipatch domains, parallel computing capabilities, and integration with high-performance computing environments. Its modular design, built upon \texttt{SymPDE} for symbolic problem formulation and \texttt{Pyccel} for code acceleration, makes it particularly well-suited for solving complex partial differential equations across various physics domains.\\
 
 The primary objective of this internship was to explore and extend \texttt{Psydac}'s capabilities beyond its traditional plasma physics applications into the realm of solid mechanics. This work involved implementing and validating solutions for linear elasticity and thermoelasticity problems, areas that had not been previously tested within the library's framework. The research encompassed two main directions: developing pure displacement and mixed displacement-pressure formulations for elasticity problems, and addressing thermoelasticity challenges involving composite materials with spatially varying properties.\\
 
 This report is structured into two main chapters that document the progression of this work. Chapter 2 focuses on linear elasticity, beginning with the mathematical foundations and weak formulations, followed by extensive numerical simulations using \texttt{Psydac} on the Raven supercomputer. Special attention is given to the comparison between pure displacement and mixed formulations, particularly in the context of nearly incompressible materials where volumetric locking becomes a significant concern. Chapter 3 addresses thermoelasticity problems, starting with a simplified geometry before tackling the full complexity of composite materials with material property discontinuities. This chapter also presents the development of enhanced discretization capabilities, including custom grid features that were specifically implemented to handle material interfaces. The work concludes with an exploration of multipatch frameworks for complex geometries, demonstrating \texttt{Psydac}'s versatility in handling domains with holes using Nitsche's method for interface coupling.\\
 
 Through this comprehensive study, the internship shows \texttt{Psydac}'s potential for broader engineering applications while contributing new capabilities to the library's functionality. The results validate the effectiveness of isogeometric analysis for solid mechanics problems and highlight both the advantages and challenges of extending specialized plasma physics tools to other domains.
-
 
 \chapter{Linear Elasticity}
 \label{chap:linear_elasticity}
@@ -680,7 +679,7 @@ Then, we can get the same plots and interpretation as before in figure \ref{fig:
 	\label{fig:four_errors_graphs}
 \end{figure}
 
-For fixed value $\lambda = 1.25$ and $\mu = 1$, the codes seems to give a numerical solution that converges to the theoritical one with the expected order. We can notice that the plateau effect comes back and appears faster than in the case of Dirichlet Homogeneous Boundary Conditions. The $L^2$ error seems to converge to a value slightly higher than $10^{-8}$, while the $H^1$ error converges to a value slightly higher than $10^{-5}$, and this phenomena is more pronounced for higher degree B-Splines. The limit value of each error seems to be the same for all degree B-Splines, when the $L^2$ error becomes lower than $10^{-7}$ and the $H^1$ error becomes lower than $10^{-5}$. So, this plateau effect is not due to the degree of B-Splines, but rather to the ill-conditionedness of the matrix of the bilinear form $a(.,.)$. This ill-conditionedness becomes worse with the refinement of the mesh and the increase of the degree of B-Splines. A way to verify this hypothesis is to solve the linear system with a different solver, with a preconditioner applyied to the matrix before the resolution.
+For fixed value $\lambda = 1.25$ and $\mu = 1$, the codes seems to give a numerical solution that converges to the theoritical one with the expected order. We can notice that the plateau effect comes back and appears faster than in the case of Dirichlet Homogeneous Boundary Conditions. The $L^2$ error seems to converge to a value slightly higher than $10^{-8}$, while the $H^1$ error converges to a value slightly higher than $10^{-5}$, and this phenomena is more pronounced for higher degree B-Splines. The limit value of each error seems to be the same for all degree B-Splines, when the $L^2$ error becomes lower than $10^{-7}$ and the $H^1$ error becomes lower than $10^{-5}$. So, this plateau effect is not due to the degree of B-Splines, but rather to the ill-conditionedness of the matrix of the bilinear form $a(.,.)$. This ill-conditionedness becomes worse with the refinement of the mesh and the increase of the degree of B-Splines. A way to verify this hypothesis is to solve the linear system with a preconditioner applyied to the matrices before the resolution and see if the maximum number of iterations is reached.
 
 These simulations have been made with $\lambda = 1.25$ and $\mu = 1$. We can now look at them for more realistic values of $\lambda$ and $\mu$. The following table \ref{tab:lame_coefficients} gives the Lamé coefficients for different materials. 
 \begin{table}[h]
@@ -1256,7 +1255,7 @@ With
 \noindent \textbf{Now, we prove the well-posedness of the thermal problem.} 
 \begin{itemize}
     \item $(H^1_{0,\text{heat}}(\Omega),\|.\|_{H^1(\Omega)})$ is a Hilbert space.
-    \item $a(\cdot,\cdot)$ is a bilinear form on $H^1_{0,\text{heat}}(\Omega)\times H^1_{0,\text{heat}}(\Omega)$ and $\ell_T$ is a linear form on $H^1_{0,\text{heat}}(\Omega)$.
+    \item $b(\cdot,\cdot)$ is a bilinear form on $H^1_{0,\text{heat}}(\Omega)\times H^1_{0,\text{heat}}(\Omega)$ and $\ell_T$ is a linear form on $H^1_{0,\text{heat}}(\Omega)$.
     \item $\ell_T(\cdot)$ is continuous: by Cauchy--Schwarz and the trace inequality,
     \begin{equation*}
     \begin{aligned}
@@ -1267,31 +1266,31 @@ With
     \end{aligned}
     \end{equation*}
     where $\gamma_0: H^1(\Omega)\to L^2(\partial\Omega_{\mathrm{heat}})$ is the trace operator.
-    \item $a(\cdot,\cdot)$ is continuous:
+    \item $b(\cdot,\cdot)$ is continuous:
     \begin{equation*}
     \begin{aligned}
     \forall T,\theta\in H^1_{0,\text{heat}}(\Omega),\qquad
-    |a(T,\theta)|
+    |b(T,\theta)|
     &\le \kappa_{+}\|\nabla T\|_{L^2(\Omega)}\|\nabla\theta\|_{L^2(\Omega)}\\
     &\le \kappa_{+}\|T\|_{H^1(\Omega)}\|\theta\|_{H^1(\Omega)}.
     \end{aligned}
     \end{equation*}
-    \item $a(\cdot,\cdot)$ is coercive: $\forall T\in H^1_{0,\text{heat}}(\Omega)$,
+    \item $b(\cdot,\cdot)$ is coercive: $\forall T\in H^1_{0,\text{heat}}(\Omega)$,
     \begin{equation*}
-    a(T,T)=\int_\Omega \kappa(y)|\nabla T|^2\,\mathrm{d}x \ge \kappa_{\min}\|\nabla T\|_{L^2(\Omega)}^2 \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2}\|\nabla T\|_{L^2(\Omega)}^2\right).
+    b(T,T)=\int_\Omega \kappa(y)|\nabla T|^2\,\mathrm{d}x \ge \kappa_{\min}\|\nabla T\|_{L^2(\Omega)}^2 \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2}\|\nabla T\|_{L^2(\Omega)}^2\right).
     \end{equation*}
     Since functions in $H^1_{0,\text{heat}}(\Omega)$ vanish on $\partial\Omega_{\mathrm{temp}}$ and a Poincaré inequality holds on $H^1_{0,\text{heat}}(\Omega)$, there exists $C_P>0$ such that $\|T\|_{L^2(\Omega)}\le C_P\|\nabla T\|_{L^2(\Omega)}$. 
     \begin{equation*}
 		\begin{aligned}
-		& a(T,T) \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2C_P^2}\|T\|_{L^2(\Omega)}^2\right) \ge \alpha\|T\|_{H^1(\Omega)}^2 \\
+		& b(T,T) \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2C_P^2}\|T\|_{L^2(\Omega)}^2\right) \ge \alpha\|T\|_{H^1(\Omega)}^2 \\
 		& \text{With } \alpha = \min\left(\frac{\kappa_{-}}{2}, \frac{\kappa_{-}}{2C_P^2}\right) > 0.
 		\end{aligned}
     \end{equation*}
 \end{itemize}
 
-Therefore $a(\cdot,\cdot)$ is continuous and coercive on the Hilbert space $H^1_{0,\text{heat}}(\Omega)$, and $\ell_T\in H^1_{0,\text{heat}}(\Omega)'$. By the Lax--Milgram theorem there exists a unique $T\in H^1_{0,\text{heat}}(\Omega)$ such that
+Therefore $b(\cdot,\cdot)$ is continuous and coercive on the Hilbert space $H^1_{0,\text{heat}}(\Omega)$, and $\ell_T\in H^1_{0,\text{heat}}(\Omega)'$. By the Lax--Milgram theorem there exists a unique $T\in H^1_{0,\text{heat}}(\Omega)$ such that
 \[
-a(T,\theta)=\ell_T(\theta)\qquad\forall\theta\in H^1_{0,\text{heat}}(\Omega).
+b(T,\theta)=\ell_T(\theta)\qquad\forall\theta\in H^1_{0,\text{heat}}(\Omega).
 \]
 
 The well-posedness of the displacement problem is simalar to Section \ref{sec:Pure displacement weak-formulation}. Here, we can add that $\ell_U$ is continuous, $a$ is continuous and coercive with new constants:
