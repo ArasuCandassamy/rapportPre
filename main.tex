@@ -238,13 +238,13 @@ literate=
 \section*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-This report presents the work that I conducted during a research internship at the Max-Planck Institute for Plasma Physics in the Numerical Methods for Plasma Physics department. This report is focusing on the implementation and validation of solid mechanics equations using the \texttt{Psydac}, a finite element library on Python.
+This report presents the work that I conducted during a research internship at the Max-Planck Institute for Plasma Physics in the Numerical Methods for Plasma Physics department. This report is focusing on the implementation and validation of solid mechanics equations using \texttt{Psydac}, a finite element library in Python.
 
 The primary objective of my internship was to explore and extend Psydac's capabilities to solve partial differential equations from solid mechanics, which had not been previously tested in this library. The work focused on two main areas: linear elasticity and stationary thermoelasticity problems and their execution on a supercomputer. For linear elasticity, two formulations, pure displacement and mixed displacement-pressure formulations, were implemented and analyzed. 
 
 The thermoelasticity study involved solving coupled thermo-mechanical problems on composite materials with spatially varying properties. This work required the development of enhanced discretization capabilities, including the implementation of custom grid discretization features to handle material property discontinuities. Additionally, a multipatch framework was explored to address complex geometries with holes, utilizing Nitsche's method for interface coupling.
 
-All simulations were performed on the supercomputer Raven. These results have been used to validate the implemented and the effectiveness of Psydac to solve solid mechanics problems.
+All simulations were performed on the supercomputer Raven, which is maintained by the Max Planck Computing and Data Facility. These results have been used to verify the implementation and the effectiveness of Psydac to solve solid mechanics problems.
 
 \vspace{0.4cm}
 
@@ -258,7 +258,7 @@ L'objectif principal de mon stage était d'explorer les capacités de Psydac pou
 
 L'étude de thermoélasticité a impliqué la résolution de problèmes thermo-mécaniques couplés sur des matériaux composites avec des propriétés variant spatialement. Ce travail a nécessité le développement de fonctionnalités de discrétisation sur une grille personnalisée pour gérer les discontinuités de propriétés matérielles. De plus, une implémentation utilisant un domaine \textit{multipatch} a été testée pour traiter une géométrie complexe. Cette implémentation a fait appel à la méthode de Nitsche pour assurer la continuité aux interfaces des patches.
 
-Toutes les simulations ont été testées sur le supercalculateur Raven. Ces résultats ont été utilisés pour valider l'implémentation et l'efficacité de Psydac pour résoudre des problèmes issus de la mécanique des solides.
+Toutes les simulations ont été testées sur le supercalculateur Raven, qui est maintenu par l'équipe du Max Planck Computing and Data Facility. Ces résultats ont été utilisés pour valider l'implémentation et l'efficacité de Psydac pour résoudre des problèmes issus de la mécanique des solides.
 
 \vspace{0.4cm}
 
@@ -301,7 +301,7 @@ At IPP, the Numerical Methods for Plasma Physics (NMPP) department is developing
 
 The primary objective of this internship was to explore \texttt{Psydac}'s capabilities to solve equations from solid mechanics. This work involved implementing and validating solutions for linear elasticity and stationary thermoelasticity problems, areas that had not been previously tested within the library's framework. The research encompassed two main directions: developing pure displacement and mixed displacement-pressure formulations for linear elasticity problems, and addressing thermoelasticity challenges involving composite materials with spatially varying properties.\\
 
-This report is structured into two main chapters that document the progression of this work. Chapter 2 focuses on linear elasticity, beginning with the mathematical foundations and its well-posedness, followed by extensive numerical simulations using \texttt{Psydac} on the Raven supercomputer. Special attention is given to the comparison between two formulations, particularly in the context of nearly incompressible materials where volumetric locking becomes a significant concern. Chapter 3 addresses the stationary thermoelasticity problem. This problem is inspired by a real application presented at the IPP Days (two days of presentations and discussions on the latest advancements in plasma physics and fusion research). It starts with a resolution on a simplified geometry, before exploring a more complex configuration with a multipatch domain. This chapter will briefly present a feature that I have implemented to handle discretisation on a custom grid.\\
+This report is structured into two main chapters that document the progression of this work. Chapter 2 focuses on linear elasticity, beginning with the mathematical foundations and its well-posedness, followed by extensive numerical simulations using \texttt{Psydac} on the Raven supercomputer. Special attention is given to the comparison between two formulations, particularly in the context of nearly incompressible materials where volumetric locking becomes a significant concern. Chapter 3 addresses the stationary thermoelasticity problem. This problem is inspired by a real application presented at the IPP Days (two days of presentations and discussions on the latest advancements in plasma physics and fusion research). It starts with a numerical solution on a simplified geometry, before exploring a more complex configuration with a multipatch domain. This chapter will briefly present a feature that I have implemented to handle discretisation on a custom grid.\\
 
 Through this comprehensive study, the internship shows \texttt{Psydac}'s potential for broader engineering applications while contributing new capabilities to the library's functionality. The results validate the effectiveness of isogeometric analysis for solid mechanics problems and highlight both the advantages and challenges of extending specialized plasma physics tools to other domains.
 
@@ -518,7 +518,7 @@ Raven is a supercomputer located at the Max-Planck Institute for Plasma Physics.
 
 \subsection{Dirichlet homogeneous boundary conditions on $\partial\Omega_D = \partial\Omega$} \label{subsec:Dirichlet Homogeneous Boundary conditions on}
 
-At first, to get familiar with \texttt{PSYDAC} and the HPC, I considered the case $\Omega = [0,1]^3$, $\partial \Omega_D = \partial\Omega$ and $\partial \Omega_N = \emptyset$. To verify if the numerical resolution of \texttt{PSYDAC} of \eqref{eq:weakdisplacementform} is correct, I used the Method of Manufactured Solutions. The concept is quite simple: we assume that a function $\vec u_e \in \boldsymbol H^1_{\vec 0}(\Omega)$ verifies the strong problem \eqref{eq:strong_form}, then we compute the source term $\vec f$ and we solve \eqref{eq:weakdisplacementform} with $\vec f$ as a source term and we look at the error between the numerical solution and the theoretical one.
+At first, to get familiar with \texttt{PSYDAC} and the HPC, I considered the case $\Omega = [0,1]^3$, $\partial \Omega_D = \partial\Omega$ and $\partial \Omega_N = \emptyset$. To verify if the numerical solution of \texttt{PSYDAC} of \eqref{eq:weakdisplacementform} is correct, I used the Method of Manufactured Solutions. The concept is quite simple: we assume that a function $\vec u_e \in \boldsymbol H^1_{\vec 0}(\Omega)$ verifies the strong problem \eqref{eq:strong_form}, then we compute the source term $\vec f$ and we solve \eqref{eq:weakdisplacementform} with $\vec f$ as a source term and we look at the error between the numerical solution and the theoretical one.
 I considered $\vec u_e$ defined as: $\vec u_e = \begin{pmatrix}
 	0 \\
 	0 \\
@@ -587,7 +587,7 @@ By applying \textbf{Corollary 4.21, 4.27}, \textbf{Theorem 6.2} from \cite{da_ve
 \end{figure}
 
 We can see that the numerical solution converges with the expected order to the real solution: the more the mesh is refined, the lower the error is, and the higher the spline degree is, the higher the convergence rate is. 
-For this numerical resolution, I used the \textbf{GMRES} method to solve the linear system at the end of the discretization. This required taking care of the solver tolerance, because with a fixed tolerance, if $d$ and $n_{\text{cells}}$ are "too high", the convergence rate cannot hold. The following figure illustrates this case, when $d=5$ and $n_{\text{cells}} = 16$.
+For this numerical solution, I used the \textbf{GMRES} method to solve the linear system at the end of the discretization. This required taking care of the solver tolerance, because with a fixed tolerance, if $d$ and $n_{\text{cells}}$ are "too high", the convergence rate cannot hold. The following figure illustrates this case, when $d=5$ and $n_{\text{cells}} = 16$.
 
 \newpage
 \begin{figure}[!h]
@@ -669,7 +669,7 @@ Then, we can get the same plots and interpretation as before in figure \ref{fig:
 	\label{fig:four_errors_graphs}
 \end{figure}
 
-For fixed values $\lambda = 1.25$ and $\mu = 1$, the code seems to give a numerical solution that converges to the theoretical one with the expected order. We can notice that the plateau effect comes back and appears faster than in the case of Dirichlet homogeneous boundary conditions. The $L^2$ error seems to converge to a value slightly higher than $10^{-8}$, while the $H^1$ error converges to a value slightly higher than $10^{-5}$, and this phenomenon is more pronounced for higher degree B-splines. The limit value of each error seems to be the same for all degree B-splines, when the $L^2$ error becomes lower than $10^{-7}$ and the $H^1$ error becomes lower than $10^{-5}$. So, this plateau effect is not due to the degree of B-splines, but rather to the ill-conditioning of the matrix of the bilinear form $a(.,.)$. This ill-conditioning becomes worse with the refinement of the mesh and the increase of the degree of B-splines. A way to verify this hypothesis is to solve the linear system with a preconditioner applied to the matrices before the resolution and see if the maximum number of iterations is reached.
+For fixed values $\lambda = 1.25$ and $\mu = 1$, the code seems to give a numerical solution that converges to the theoretical one with the expected order. We can notice that the plateau effect comes back and appears faster than in the case of Dirichlet homogeneous boundary conditions. The $L^2$ error seems to converge to a value slightly higher than $10^{-8}$, while the $H^1$ error converges to a value slightly higher than $10^{-5}$, and this phenomenon is more pronounced for higher degree B-splines. The limit value of each error seems to be the same for all degree B-splines, when the $L^2$ error becomes lower than $10^{-7}$ and the $H^1$ error becomes lower than $10^{-5}$. So, this plateau effect is not due to the degree of B-splines, but rather to the ill-conditioning of the matrix of the bilinear form $a(.,.)$. This ill-conditioning becomes worse with the refinement of the mesh and the increase of the degree of B-splines. A way to verify this hypothesis is to solve the linear system with a preconditioner applied to the matrices before the solution and see if the maximum number of iterations is reached.
 
 These simulations have been made with $\lambda = 1.25$ and $\mu = 1$. We can now look at them for more realistic values of $\lambda$ and $\mu$. The following table \ref{tab:lame_coefficients} gives the Lamé coefficients for different materials. 
 \begin{table}[h]
@@ -1421,9 +1421,9 @@ However, we can identify the plateau phenomenon when the error reaches certain t
 
 The error magnitudes are nearly identical for both the displacement and temperature fields. This similarity can be explained by the structure of our manufactured solutions: the exact temperature field $T_e$ is identical to the second component of the displacement field $\vec{u}_e$, while the first component of the displacement field is zero and $T_e$ appears in the source term when the displacement problem is solved. This deliberate choice in our test case creates a natural correspondence between the two fields, resulting in comparable approximation errors for both problems.
 
-The successful implementation of the custom grid discretization feature has proven essential for handling the thermoelasticity problem with material property discontinuities at $y = 17$. This enhancement to \texttt{PSYDAC} enables accurate simulations in scenarios where material interfaces do not align with uniform grid boundaries, which is crucial for realistic engineering applications involving composite materials. It could be possible to use another main functionality of \texttt{PSYDAC}: resolution on a multipatch domain. This approach will be tackled in the next section. 
+The successful implementation of the custom grid discretization feature has proven essential for handling the thermoelasticity problem with material property discontinuities at $y = 17$. This enhancement to \texttt{PSYDAC} enables accurate simulations in scenarios where material interfaces do not align with uniform grid boundaries, which is crucial for realistic engineering applications involving composite materials. It could be possible to use another main functionality of \texttt{PSYDAC}: calculation on a multipatch domain. This approach will be tackled in the next section. 
 
-\section{Initial problem - Resolution on a multipatch domain}
+\section{Initial problem - Solution on a multipatch domain}
 
 In this section, we will consider the initial problem described in figure \ref{fig:geometry_thermoelasticity}. To model this medium and simulate the thermoelastic behavior, we will use the multipatch framework provided by \texttt{PSYDAC}.
 
