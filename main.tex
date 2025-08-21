@@ -1664,13 +1664,9 @@ The simplified problem provided valuable insights into the behavior of coupled t
 
 A significant achievement of this work was the development and implementation of custom grid discretization capabilities in \texttt{PSYDAC}. The custom grid feature enables practitioners to strategically place mesh boundaries at material interfaces, ensuring that the B-spline basis functions properly capture the discontinuous nature of material properties. This capability is essential for realistic engineering applications involving composite materials, layered structures, or any scenario where material properties vary abruptly within the computational domain. \\
 
-The exploration of multipatch methods for complex geometries represents an ambitious extension of the work, though it revealed implementation challenges that require further development. While the thermal problem showed encouraging results on the multipatch domain, the displacement field exhibited continuity issues across patch interfaces. This suggests that the Nitsche method implementation for the elasticity equations needs refinement to properly enforce interface conditions for vector-valued problems. \\
-
-The difficulties encountered with the multipatch approach highlight the complexity of ensuring proper coupling between patches for systems of PDEs.
-Despite these challenges, the thermoelasticity work has significantly expanded \texttt{PSYDAC}'s application domain. The custom grid discretization feature alone represents a valuable contribution that enables the library to handle realistic material configurations common in engineering practice. The insights gained from the coupling of thermal and mechanical fields provide a foundation for future developments in multiphysics simulations. \\
+The exploration of multipatch methods for complex geometries represents an ambitious extension of the work, though it revealed implementation challenges that require further development. While the thermal problem showed encouraging results on the multipatch domain, the displacement field exhibited continuity issues across patch interfaces. This suggests that the Nitsche method implementation for the elasticity equations needs a closer investigation to properly enforce interface conditions for vector-valued problems. \\
 
 \chapter{Conclusion}
-\vspace{-1cm}
 This research internship at the Max Planck Institute for Plasma Physics has been a great experience that successfully achieved its primary objectives while providing invaluable insights into the computational mechanics domain. The work has demonstrated that \texttt{PSYDAC}, originally designed for plasma physics applications, can be effectively extended to solve solid mechanics problems, particularly linear elasticity and thermoelasticity equations.
 
 
