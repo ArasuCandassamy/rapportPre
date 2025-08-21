@@ -1078,7 +1078,7 @@ This work has contributed to expanding \texttt{PSYDAC}'s application domain whil
 
 \chapter{Thermoelasticity}
 \section{Introduction}
-This chapter is dedicated to the study of the thermoelasticity problem, which is a coupled problem between the mechanical and thermal fields. The aim is to solve the coupled system of equations that govern the behavior of a thermoelastic material under thermal and mechanical loads. This work has been initiated to solve a problem present during the IPP Programme Days 2025 by Prof. Dr. Rudolf Neu. The goal is to understand the deformation of a medium under the influence of thermal loads and mechanical forces. The medium is composite material, composed of copper and tungsten. The geometry is presented on the following figure.
+This chapter is dedicated to the study of the thermoelasticity problem, which is a coupled problem between the mechanical and thermal fields. The aim is to solve the coupled system of equations that governs the behavior of a thermoelastic material under thermal and mechanical loads. This work was initiated to solve a problem presented during the IPP Programme Days 2025 by Prof. Dr. Rudolf Neu. The goal is to understand the deformation of a medium under the influence of thermal loads and mechanical forces. The medium is a composite material, composed of copper and tungsten. The geometry is presented in the following figure.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/geometry_thermoelasticity.png}
@@ -1088,7 +1088,7 @@ This chapter is dedicated to the study of the thermoelasticity problem, which is
 
 \section{Simplified problem - Physical model and equations}
 
-Before solving this problem, I want to simplify it a bit by considering a slightly different geometry, which is a square without the hole in the middle. The goal is to understand the behavior of the medium under thermal and mechanical loads, to see how the deformation of the medium is affected by the thermal loads and to see if PSYDAC can effectively solve this simplified problem. The geometry of the simplified problem is presented on the figure \ref{fig:geometry_thermoelasticity_simplified}.
+Before solving this problem, I want to simplify it a bit by considering a slightly different geometry, which is a square without the hole in the middle. The goal is to understand the behavior of the medium under thermal and mechanical loads, to see how the deformation of the medium is affected by the thermal loads and to see if PSYDAC can effectively solve this simplified problem. The geometry of the simplified problem is presented in figure \ref{fig:geometry_thermoelasticity_simplified}.
 
 \subsection{Problem setup and parameters}
 \label{subsec:problem_setup_parameters}
@@ -1096,8 +1096,9 @@ The problem can be parameterized as follows with other boundary conditions and p
 \begin{itemize}
 	\item The domain $\Omega$ is a square of size $22$: $\Omega = [0,22]^2$.
 	\item $\partial \Omega_{\text{heat}} = \{(x,y) \in \partial \Omega \,|\, x = 0 \text{ and } x = 22 \}$ is the left and right edges of the square, where heat $Q$ is applied. $\partial \Omega_{\text{temp}} = \{(x,y) \in \partial \Omega \,|\, y = 0 \text{ and } y = 22\}$ is the top and bottom edges of the square, where the temperature is fixed to $T_0$.
-	\item $\partial \Omega_{D} = \{(x,y) \in \partial \Omega \,|\, x = 0 \text{ and } x = 22 \}$ is the left and right edges of the square, where the Dirichlet boundary conditions are applied and the displacement is fixed. $\partial \Omega_{N} = \{(x,y) \in \partial \Omega \,|\, y = 0 \text{ and } y = 22\}$ is the top and bottom edges of the square, where the Neumann boundary conditions are applied and the traction is fixed.
-	\item For $y \in (0, 17)$, the material is composite and properties are given by a affine interpolation between the properties of copper and tungsten. For $y \in (17, 22)$, the material is pure tungsten.
+	\item $\partial \Omega_{D} = \{(x,y) \in \partial \Omega \,|\, x = 0 \text{ and } x = 22 \}$ are the left and right edges of the square, where the Dirichlet boundary conditions are applied and the displacement is fixed. $\partial \Omega_{N} = \{(x,y) \in \partial \Omega \,|\, y = 0 \text{ and } y = 22\}$ are the top and bottom edges of the square, where the Neumann boundary conditions are applied and the traction is fixed.
+	\item For $y \in (0, 17)$, the material is composite and properties are given by an affine interpolation between copper and tungsten properties.
+	For $y \in (17, 22)$, the material is pure tungsten. 
 	For example, $\lambda$ is defined as:
 	\[\lambda(y) = \begin{cases}
 		\lambda_{\text{Cu}} + \frac{y}{17}(\lambda_{\text{W}} - \lambda_{\text{Cu}}) & \text{if } y \in (0, 17) \\
@@ -1159,15 +1160,15 @@ To complete the problem formulation, we must specify the boundary conditions. Ba
 
 For the thermal problem:
 \begin{align}
-    T &= T_0 \quad &&\text{on } \partial\Omega_{\text{temp}} \label{eq:bc_temp_dirichlet_thermoelastic} \\
-    - \kappa \grad T \cdot \vec n &= q_S \quad &&\text{on } \partial\Omega_{\text{heat}} \label{eq:bc_temp_neumann_thermoelastic}
+	T &= T_0 \quad &&\text{on } \partial\Omega_{\text{temp}} \label{eq:bc_temp_dirichlet_thermoelastic} \\
+	- \kappa \grad T \cdot \vec n &= q_S \quad &&\text{on } \partial\Omega_{\text{heat}} \label{eq:bc_temp_neumann_thermoelastic}
 \end{align}
 where $T_0$ is the reference temperature and $q_S$ is the applied heat flux on the boundary.
 
 For the mechanical problem:
 \begin{align}
-    \vec u &= \vec u_D \quad &&\text{on } \partial\Omega_D \label{eq:bc_disp_dirichlet_thermoelastic} \\
-    \boldsymbol{\sigma}(\vec u) \cdot \vec n &= \vec t_N \quad &&\text{on } \partial\Omega_N \label{eq:bc_disp_neumann_thermoelastic}
+	\vec u &= \vec u_D \quad &&\text{on } \partial\Omega_D \label{eq:bc_disp_dirichlet_thermoelastic} \\
+	\boldsymbol{\sigma}(\vec u) \cdot \vec n &= \vec t_N \quad &&\text{on } \partial\Omega_N \label{eq:bc_disp_neumann_thermoelastic}
 \end{align}
 where $\vec u_D$ is the prescribed displacement and $\vec t_N$ is the prescribed traction. 
 To prove the well-posedness of the problem, we will limit the analysis to $T_0 = 0$ and $\vec u_D = \vec 0$, otherwise the problem can be rewritten with homogeneous boundary conditions with a change of variables.
@@ -1176,9 +1177,9 @@ For a given $Q \in L^2(\Omega)$, $q_S \in L^2(\partial \Omega_{\text{heat}})$, $
 \begin{tcolorbox}
 Find $(T,\vec u) \in H^1(\Omega) \times \boldsymbol H^1_{\vec 0,D}(\Omega)$ such that:
 \begin{align}
-	- \div (\kappa(y) \grad T) &= Q && \text{on } \Omega \\
-	- \div \boldsymbol{\sigma}(\vec u) &= \vec f && \text{on } \Omega \\
-	\boldsymbol{\sigma}(\vec u) &= \lambda(y) (\div \vec u) I_3 + 2\mu(y) \boldsymbol{\varepsilon}(\vec u) - (3\lambda(y) + 2\mu(y)) \alpha(y) T I_3 && \text{on } \Omega \\
+	- \div (\kappa(y) \grad T) &= Q && \text{in } \Omega \\
+	- \div \boldsymbol{\sigma}(\vec u) &= \vec f && \text{in } \Omega \\
+	\boldsymbol{\sigma}(\vec u) &= \lambda(y) (\div \vec u) I_3 + 2\mu(y) \boldsymbol{\varepsilon}(\vec u) - (3\lambda(y) + 2\mu(y)) \alpha(y) T I_3 && \text{in } \Omega \\
 	\vec u &= \vec 0 && \text{on } \partial\Omega_D \\
 	\boldsymbol{\sigma}(\vec u) \cdot \vec n &= \vec t_N && \text{on } \partial\Omega_N \\
 	T &= 0 && \text{on } \partial\Omega_{\text{temp}} \\
@@ -1240,38 +1241,38 @@ With
 
 \noindent \textbf{Now, we prove the well-posedness of the thermal problem.} 
 \begin{itemize}
-    \item $(H^1_{0,\text{heat}}(\Omega),\|.\|_{H^1(\Omega)})$ is a Hilbert space.
-    \item $b(\cdot,\cdot)$ is a bilinear form on $H^1_{0,\text{heat}}(\Omega)\times H^1_{0,\text{heat}}(\Omega)$ and $\ell_T$ is a linear form on $H^1_{0,\text{heat}}(\Omega)$.
-    \item $\ell_T(\cdot)$ is continuous: by Cauchy--Schwarz and the trace inequality,
-    \begin{equation*}
-    \begin{aligned}
-    \forall \theta\in H^1_{0,\text{heat}}(\Omega),\qquad
-    |\ell_T(\theta)|
-    &\le \|Q\|_{L^2(\Omega)}\|\theta\|_{L^2(\Omega)} + \|q_S\|_{L^2(\partial\Omega_{\mathrm{heat}})}\|\theta\|_{L^2(\partial\Omega_{\mathrm{heat}})}\\
-    &\le \Big(\|Q\|_{L^2(\Omega)} + \|\gamma_0\|\,\|q_S\|_{L^2(\partial\Omega_{\mathrm{heat}})}\Big)\|\theta\|_{H^1(\Omega)},
-    \end{aligned}
-    \end{equation*}
-    where $\gamma_0: H^1(\Omega)\to L^2(\partial\Omega_{\mathrm{heat}})$ is the trace operator.
-    \item $b(\cdot,\cdot)$ is continuous:
-    \begin{equation*}
-    \begin{aligned}
-    \forall T,\theta\in H^1_{0,\text{heat}}(\Omega),\qquad
-    |b(T,\theta)|
-    &\le \kappa_{+}\|\nabla T\|_{L^2(\Omega)}\|\nabla\theta\|_{L^2(\Omega)}\\
-    &\le \kappa_{+}\|T\|_{H^1(\Omega)}\|\theta\|_{H^1(\Omega)}.
-    \end{aligned}
-    \end{equation*}
-    \item $b(\cdot,\cdot)$ is coercive: $\forall T\in H^1_{0,\text{heat}}(\Omega)$,
-    \begin{equation*}
-    b(T,T)=\int_\Omega \kappa(y)|\nabla T|^2\,\mathrm{d}x \ge \kappa_{\min}\|\nabla T\|_{L^2(\Omega)}^2 \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2}\|\nabla T\|_{L^2(\Omega)}^2\right).
-    \end{equation*}
-    Since functions in $H^1_{0,\text{heat}}(\Omega)$ vanish on $\partial\Omega_{\mathrm{temp}}$ and a Poincaré inequality holds on $H^1_{0,\text{heat}}(\Omega)$, there exists $C_P>0$ such that $\|T\|_{L^2(\Omega)}\le C_P\|\nabla T\|_{L^2(\Omega)}$. 
-    \begin{equation*}
+	\item $(H^1_{0,\text{heat}}(\Omega),\|.\|_{H^1(\Omega)})$ is a Hilbert space.
+	\item $b(\cdot,\cdot)$ is a bilinear form on $H^1_{0,\text{heat}}(\Omega)\times H^1_{0,\text{heat}}(\Omega)$ and $\ell_T$ is a linear form on $H^1_{0,\text{heat}}(\Omega)$.
+	\item $\ell_T(\cdot)$ is continuous: by Cauchy--Schwarz and the trace inequality,
+	\begin{equation*}
+	\begin{aligned}
+	\forall \theta\in H^1_{0,\text{heat}}(\Omega),\qquad
+	|\ell_T(\theta)|
+	&\le \|Q\|_{L^2(\Omega)}\|\theta\|_{L^2(\Omega)} + \|q_S\|_{L^2(\partial\Omega_{\mathrm{heat}})}\|\theta\|_{L^2(\partial\Omega_{\mathrm{heat}})}\\
+	&\le \Big(\|Q\|_{L^2(\Omega)} + \|\gamma_0\|\,\|q_S\|_{L^2(\partial\Omega_{\mathrm{heat}})}\Big)\|\theta\|_{H^1(\Omega)},
+	\end{aligned}
+	\end{equation*}
+	where $\gamma_0: H^1(\Omega)\to L^2(\partial\Omega_{\mathrm{heat}})$ is the trace operator.
+	\item $b(\cdot,\cdot)$ is continuous:
+	\begin{equation*}
+	\begin{aligned}
+	\forall T,\theta\in H^1_{0,\text{heat}}(\Omega),\qquad
+	|b(T,\theta)|
+	&\le \kappa_{+}\|\nabla T\|_{L^2(\Omega)}\|\nabla\theta\|_{L^2(\Omega)}\\
+	&\le \kappa_{+}\|T\|_{H^1(\Omega)}\|\theta\|_{H^1(\Omega)}.
+	\end{aligned}
+	\end{equation*}
+	\item $b(\cdot,\cdot)$ is coercive: $\forall T\in H^1_{0,\text{heat}}(\Omega)$,
+	\begin{equation*}
+	b(T,T)=\int_\Omega \kappa(y)|\nabla T|^2\,\mathrm{d}x \ge \kappa_{\min}\|\nabla T\|_{L^2(\Omega)}^2 \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2}\|\nabla T\|_{L^2(\Omega)}^2\right).
+	\end{equation*}
+	Since functions in $H^1_{0,\text{heat}}(\Omega)$ vanish on $\partial\Omega_{\mathrm{temp}}$ and a Poincaré inequality holds on $H^1_{0,\text{heat}}(\Omega)$, there exists $C_P>0$ such that $\|T\|_{L^2(\Omega)}\le C_P\|\nabla T\|_{L^2(\Omega)}$. 
+	\begin{equation*}
 		\begin{aligned}
 		& b(T,T) \ge \kappa_{-} \left( \frac{1}{2}  \|\nabla T\|_{L^2(\Omega)}^2 + \frac{1}{2C_P^2}\|T\|_{L^2(\Omega)}^2\right) \ge \alpha\|T\|_{H^1(\Omega)}^2 \\
 		& \text{With } \alpha = \min\left(\frac{\kappa_{-}}{2}, \frac{\kappa_{-}}{2C_P^2}\right) > 0.
 		\end{aligned}
-    \end{equation*}
+	\end{equation*}
 \end{itemize}
 
 Therefore $b(\cdot,\cdot)$ is continuous and coercive on the Hilbert space $H^1_{0,\text{heat}}(\Omega)$, and $\ell_T\in H^1_{0,\text{heat}}(\Omega)'$. By the Lax--Milgram theorem there exists a unique $T\in H^1_{0,\text{heat}}(\Omega)$ such that
@@ -1279,14 +1280,14 @@ Therefore $b(\cdot,\cdot)$ is continuous and coercive on the Hilbert space $H^1_
 b(T,\theta)=\ell_T(\theta)\qquad\forall\theta\in H^1_{0,\text{heat}}(\Omega).
 \]
 
-The well-posedness of the displacement problem is simalar to Section \ref{sec:Pure displacement weak-formulation}. Here, we can add that $\ell_U$ is continuous, $a$ is continuous and coercive with new constants:
+The well-posedness of the displacement problem is similar to Section \ref{sec:Pure displacement weak-formulation}. Here, we can add that $\ell_U$ is continuous, $a$ is continuous and coercive with new constants:
 \begin{itemize}
 	\item $\forall v \in \boldsymbol{H}^1_{\vec 0,D}(\Omega),$
 	\begin{equation*}
 	\begin{aligned}
 	|\ell_U(v)| & \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\right)\norm{\vec v}_{\boldsymbol H^1(\Omega)} + (3 \lambda_+ + 2 \mu_+) \alpha_+ \|T\|_{L^2(\Omega)} \|\div \vec v\|_{L^2(\Omega)} \\
-	& \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\right)\norm{\vec v}_{\boldsymbol H^1(\Omega)} + 2(3 \lambda_+ + 2 \mu_+) \alpha_+ \|T\|_{L^2(\Omega)} \|\vec v\|_{\boldsymbol H^1(\Omega)}. \\
-	|\ell_U(v)| & \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)} + 2(3 \lambda_+ + 2 \mu_+) \alpha_+ \|T\|_{L^2(\Omega)} \right) \|\vec v\|_{\boldsymbol H^1(\Omega)}.
+	& \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\right)\norm{\vec v}_{\boldsymbol H^1(\Omega)} + 3(3 \lambda_+ + 2 \mu_+) \alpha_+ \|T\|_{L^2(\Omega)} \|\vec v\|_{\boldsymbol H^1(\Omega)}. \\
+	|\ell_U(v)| & \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)} + 3(3 \lambda_+ + 2 \mu_+) \alpha_+ \|T\|_{L^2(\Omega)} \right) \|\vec v\|_{\boldsymbol H^1(\Omega)}.
 	\end{aligned}
 	\end{equation*}
 	\item $\forall \vec u, \vec v \in \boldsymbol{H}^1_{\vec 0,D}(\Omega),$
@@ -1301,7 +1302,7 @@ The well-posedness of the displacement problem is simalar to Section \ref{sec:Pu
 \end{itemize}
 
 \subsection{Numerical simulation}
-Denotes by $V^h \subset H^1_{0,\text{heat}}(\Omega)$ a finite-dimensional subspace of test functions for temperature, $\boldsymbol{V}^h \subset \boldsymbol{H}^1_{\vec 0,D}(\Omega)$ a finite-dimensional subspace of test functions for displacement. $d$ is the degree of the B-spline spaces used to approximate the solution. Let's suppose that $(T,\vec u) \in H^{s+1}(\Omega) \times \boldsymbol{H}^{s+1}(\Omega)$ for some $s \in [1, d+1]$ is solving \eqref{eq:weak-thermoelasticity} and let's denote the corresponding approximations by $(T^h,\vec u^h) \in V^h \times \boldsymbol{V}^h$. The best approximation estimates for the B-spline spaces $V^h$ and $\boldsymbol{V}^h$ is: 
+Denote by $V^h \subset H^1_{0,\text{heat}}(\Omega)$ a finite-dimensional subspace of test functions for temperature, $\boldsymbol{V}^h \subset \boldsymbol{H}^1_{\vec 0,D}(\Omega)$ a finite-dimensional subspace of test functions for displacement. $d$ is the degree of the B-spline spaces used to approximate the solution. Let's suppose that $(T,\vec u) \in H^{s+1}(\Omega) \times \boldsymbol{H}^{s+1}(\Omega)$ for some $s \in [1, d+1]$ is solving \eqref{eq:weak-thermoelasticity} and let's denote the corresponding approximations by $(T^h,\vec u^h) \in V^h \times \boldsymbol{V}^h$. The best approximation estimates for the B-spline spaces $V^h$ and $\boldsymbol{V}^h$ are: 
 \begin{equation}
 	\begin{aligned}
 		& \|T - T^h\|_{H^1(\Omega)} \leq C_1 h^q \|T\|_{H^{q+1}(\Omega)}, \\
@@ -1337,7 +1338,7 @@ The first result I obtained was the following plot:
 	\label{fig:error_temp_d2}
 \end{figure}
 
-In this figure, we can observe that the error in the temperature field is decreasing with the number of cells $n_{\text{cells}}$ until $n_{\text{cells}} = 32$. After that, the error is increasing and decreases again. This behavior is likely due to the interaction between the mesh refinement, the B-spline approximation properties and the properties of the medium. When the degree of the B-splines is set to 3, we can see notice in the figure \ref{fig:error_temp_d3}, that the hollow moves to a lower number of cells.
+In this figure, we can observe that the error in the temperature field is decreasing with the number of cells $n_{\text{cells}}$ until $n_{\text{cells}} = 32$. After that, the error is increasing and decreases again. This behavior is likely due to the interaction between the mesh refinement, the B-spline approximation properties and the properties of the medium. When the degree of the B-splines is set to 3, we can see in figure \ref{fig:error_temp_d3} that the hollow moves to a lower number of cells.
 
 \begin{figure}[!h]
 	\centering
@@ -1347,9 +1348,9 @@ In this figure, we can observe that the error in the temperature field is decrea
 \end{figure}
 
 The same phenomenon is observed for the displacement field.
-One reason that can explain this phenomenon is the placement of the B-spline knots and the corresponding basis functions. As the mesh is refined, the B-spline basis functions become more localized, which can lead to better approximation properties in certain regions of the domain. In the medium that we are considering, the line $y = \text{lim} = 17.0$ plays a crucial role in the behavior of the solution because it corresponds to a significant change in the material properties. Moreover, \texttt{PSYDAC} cannot handle coefficients defined piecewise so it is necessary to an approximation of Heaviside functions to defined coeffients. For example, $\lambda(y)$ is defined by:
+One reason that can explain this phenomenon is the placement of the B-spline knots and the corresponding basis functions. As the mesh is refined, the B-spline basis functions become more localized, which can lead to better approximation properties in certain regions of the domain. In the medium that we are considering, the line $y = \text{lim} = 17.0$ plays a crucial role in the behavior of the solution because it corresponds to a significant change in the material properties. Moreover, \texttt{PSYDAC} cannot handle coefficients defined piecewise so it is necessary to use an approximation of Heaviside functions to define coefficients. For example, $\lambda(y)$ is defined by:
 $$ \lambda(y) = \big( (\lambda_W - \lambda_{Cu}) \frac{x}{\text{lim}} + \lambda_{Cu} \big) \text{H}(\text{lim}-x) + \lambda_{W} \text{H}(x-\text{lim}) \qquad H \text{ is the Heaviside function}.$$
-One hypothesis that can be made to verify the role of the line $y = \text{lim}$ is to move its value up and down and observe the effect on the solution. Especially, it's possible to move the value of $\text{lim}$ to $16.5$. This value of corresponds to line with breakpoints when the domain $\Omega$ is discretized into different cells. 
+One hypothesis that can be made to verify the role of the line $y = \text{lim}$ is to move its value up and down and observe the effect on the solution. Especially, it's possible to move the value of $\text{lim}$ to $16.5$. This value corresponds to lines with breakpoints when the domain $\Omega$ is discretized into different cells. 
 \begin{figure}[!h]
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
@@ -1367,17 +1368,17 @@ One hypothesis that can be made to verify the role of the line $y = \text{lim}$ 
 \end{figure}
 
 In this case, we can observe the optimal convergence behavior of the error as predicted by the theory. So the position of the line $y = \text{lim}$ is crucial for the accuracy of the solution and the simulation.
-To make the simulation possible in case described in subsection \ref{subsec:problem_setup_parameters}, we need to get a simulation setup that solve the problem when $\text{lim} = 17$.
-For the moment, the function which discretised the domain and create the finite dimensional spline space takes only the number of cells per direction as argument. I have implemeted a new feature to the library which allows the user to provide a custom discretisation grid. This feature required to add new functions to the \texttt{Geometry} class and modify the previous \texttt{discretize} function in \texttt{PSYDAC}. To ensure the correct working of this new feature, I have also implemented a set of unit tests.
+To make the simulation possible in the case described in subsection \ref{subsec:problem_setup_parameters}, we need to get a simulation setup that solves the problem when $\text{lim} = 17$.
+For the moment, the function which discretizes the domain and creates the finite dimensional spline space takes only the number of cells per direction as argument. I have implemented a new feature to the library which allows the user to provide a custom discretization grid. This feature required adding new functions to the \texttt{Geometry} class and modifying the previous \texttt{discretize} function in \texttt{PSYDAC}. To ensure the correct working of this new feature, I have also implemented a set of unit tests.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/custom_grid.png}
-	\caption{Example of a custom discretisation grid}
+	\caption{Example of a custom discretization grid}
 	\label{fig:custom_grid_example}
 \end{figure}
-This new feature allows the user to define a custom grid for the discretisation of the domain. A entire description of this feature is available on GitHub : \href{https://github.com/pyccel/psydac/pull/518}{https://github.com/pyccel/psydac/pull/518}
+This new feature allows the user to define a custom grid for the discretization of the domain. A complete description of this feature is available on GitHub: \href{https://github.com/pyccel/psydac/pull/518}{https://github.com/pyccel/psydac/pull/518}
 
-With this features, we can now simulate correctly the problem when $\text{lim} = 17$ as it was described in the simplified problem setup. The results are shown in the figures below.
+With this feature, we can now simulate correctly the problem when $\text{lim} = 17$ as it was described in the simplified problem setup. The results are shown in the figures below.
 \begin{figure}[!h]
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{figures/figures_thermoelas_degree/Disp_X_max=22_Y_max=22_lim=17_d=2_disp.png}
@@ -1422,7 +1423,7 @@ With this features, we can now simulate correctly the problem when $\text{lim} =
 		\caption{Temperature field for degree 5 B-splines}
 		\label{fig:temp_d5_lim_17}
 	\end{subfigure}
-	\caption{Error plots of thermoelasticity with different degree B-splines using custom grid discretisation with $\text{lim} = 17$}
+	\caption{Error plots of thermoelasticity with different degree B-splines using custom grid discretization with $\text{lim} = 17$}
 \end{figure}
 
 From the results presented in the previous figures, we can observe that the error curves validate the theoretical estimates established in equation \eqref{eq:approximation-estimates}. The convergence behavior follows the expected order for both the temperature and displacement fields across all tested degrees of B-splines. The numerical solution demonstrates optimal convergence rates consistent with the theoretical predictions for smooth solutions.
@@ -1461,8 +1462,8 @@ where $d^\ell$ is the continuous differential operator. This guarantees the \emp
 
 This multipatch combined with the broken-FEEC approach provides:
 \begin{enumerate}
-    \item \textbf{Geometric flexibility}: each patch can have its own parametrization, allowing the exact modelling of complex CAD geometries;
-    \item \textbf{Computational locality}: operators and projections involve only neighboring patches, enhancing scalability for large-scale parallel simulations.
+	\item \textbf{Geometric flexibility}: each patch can have its own parametrization, allowing the exact modeling of complex CAD geometries;
+	\item \textbf{Computational locality}: operators and projections involve only neighboring patches, enhancing scalability for large-scale parallel simulations.
 \end{enumerate}
 
 For example, \texttt{PSYDAC} can reproduce a Pretzel geometry by defining multiple patches that conform to the intricate shape of the object. Each patch can be individually parameterized to capture the local geometry accurately, while the multipatch framework ensures that the overall simulation remains consistent and stable. Then, it's possible to solve Poisson's equation, Time-dependent Maxwell equations on a Pretzel geometry.
@@ -1475,9 +1476,9 @@ For example, \texttt{PSYDAC} can reproduce a Pretzel geometry by defining multip
 
 In this context, the multipatch framework is particularly advantageous for handling the thermoelasticity problem with this unusual geometry. 
 
-\subsection{A simple multipatch : square hole}
+\subsection{A simple multipatch: square hole}
 
-To take the grips on the multipatch framework, we start with a simple example: a square domain with a square hole in the center. This geometry can be easily represented using a multipatch approach with 8 square patches. Actually, the domain can be described with fewer patches but to define correctly the boundary conditions, we need to define the patches in a way that allows us to apply the Dirichlet boundary conditions on the entire boundary of the domain.
+To get familiar with the multipatch framework, we start with a simple example: a square domain with a square hole in the center. This geometry can be easily represented using a multipatch approach with 8 square patches. Actually, the domain can be described with fewer patches but to define correctly the boundary conditions, we need to define the patches in a way that allows us to apply the Dirichlet boundary conditions on the entire boundary of the domain.
 
 \begin{figure}[!h]
 	\centering
@@ -1485,7 +1486,7 @@ To take the grips on the multipatch framework, we start with a simple example: a
 	\caption{Multipatch representation of a square domain with a square hole in the center.}
 \end{figure}
 
-In this case, the hole is represented by a square $[5,17] \times [3,15]$ and its surrounded by 8 patches. Each patch is obtained by applying a transformation to the reference square $[0,1]^2$. The patches are defined as follows: $\forall (\hat x, \hat y) \in [0,1]^2$,
+In this case, the hole is represented by a square $[5,17] \times [3,15]$ and is surrounded by 8 patches. Each patch is obtained by applying a transformation to the reference square $[0,1]^2$. The patches are defined as follows: $\forall (\hat x, \hat y) \in [0,1]^2$,
 \begin{itemize}
 	\item Patch 1: $\Omega_1 := [0,5] \times [0,3]$ with $F_1(\hat x, \hat y) = (5\hat x, 3\hat y)$
 	\item Patch 2: $\Omega_2 := [5,17] \times [0,3]$ with $F_2(\hat x, \hat y) = (12\hat x + 5, 3\hat y)$
@@ -1504,7 +1505,7 @@ The use of a multipatch domain needs to ensure that the patches are properly ali
 To do so, we call $\Sigma_{ij}$ the interface between patches $\Omega_i$ and $\Omega_j$, such that $\Sigma_{ij} = \partial \Omega_i \cap \partial \Omega_j$.
 
 Then, bilinear forms are penalized across the interfaces to ensure continuity and stability: this is called Nitsche's method. 
-This method consist to add a penalty term to the bilinear forms that involves the traces of the functions on the interface $\Sigma_{ij}$, a symmetrization term and a penalty term that ensures the continuity of the traces across the interface. It is also possible to add a weak Dirichlet condition on the boundary to enforce the desired behavior.
+This method consists of adding a penalty term to the bilinear forms that involves the traces of the functions on the interface $\Sigma_{ij}$, a symmetrization term and a penalty term that ensures the continuity of the traces across the interface. It is also possible to add a weak Dirichlet condition on the boundary to enforce the desired behavior.
 
 Consequently, the bilinear forms are redefined as follows:
 
@@ -1512,7 +1513,7 @@ Consequently, the bilinear forms are redefined as follows:
 a(\vec u,\vec v) &= a_\Omega(\vec u,\vec v) + \sum_{i,j} a_{ij}(\vec u,\vec v) \\
 b(T,\Theta) &= b_\Omega(T,\Theta) + \sum_{i,j} b_{ij}(T,\Theta)
 \end{align*}
-With : 
+With: 
 \begin{equation*}
 	\begin{aligned}
 	& a_\Omega : \left\{
@@ -1595,7 +1596,7 @@ For the multipatch convergence test, we impose Dirichlet boundary conditions on 
 	\vec u &= \vec u_e \quad &&\text{on } \partial\Omega
 \end{align}
 
-With these homogeneous boundary conditions, the corresponding source terms are computed as:
+With these boundary conditions, the corresponding source terms are computed as:
 \begin{equation*}
 	\begin{aligned}
 	& Q = - \div(\kappa(y) \grad T_e), \\
@@ -1610,30 +1611,30 @@ This test configuration allows us to verify that the multipatch implementation c
 	\begin{subfigure}[b]{\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/figures_multipatch/temperature.png}
-		\caption{Temperature field : $T_e$ (left) - $T_h$ (center) - Error (right)}
+		\caption{Temperature field: $T_e$ (left) - $T_h$ (center) - Error (right)}
 	\end{subfigure}
 \end{figure}
 
-Unfortunately, my implementation of the multipatch method is not yet complete. The simulation is running, but the displacement problem doesn't converge as expected. The displacement numerical solution seems to get some continuity problems between interfaces, while the thermal simulation seems to be working correctly.
+Unfortunately, my implementation of the multipatch method is not yet complete. The simulation is running, but the displacement problem doesn't converge as expected. The displacement numerical solution seems to have some continuity problems between interfaces, while the thermal simulation seems to be working correctly.
 
 \begin{figure}  \ContinuedFloat
 	\centering
 	\begin{subfigure}[b]{\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/figures_multipatch/ux.png}
-		\caption{Displacement field on x-axis : $u_{e,x}$ (left) - $u_{h,x}$ (center) - Error (right)}
+		\caption{Displacement field on x-axis: $u_{e,x}$ (left) - $u_{h,x}$ (center) - Error (right)}
 		\label{fig:ux_multipatch}
 	\end{subfigure}
 	\begin{subfigure}[b]{\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/figures_multipatch/uy.png}
-		\caption{Displacement field on y-axis : $u_{e,y}$ (left) - $u_{h,y}$ (center) - Error (right)}
+		\caption{Displacement field on y-axis: $u_{e,y}$ (left) - $u_{h,y}$ (center) - Error (right)}
 		\label{fig:uy_multipatch}
 	\end{subfigure}
 	\caption{Simulation plots on a multipatch domain with $n_{cells} = 64$ per direction and domain with degree $p = 2$ B-Splines}
 \end{figure}
 
-As we can see on figures \ref{fig:ux_multipatch} and \ref{fig:uy_multipatch}, the displacement field on the x-axis is not continuous across the interfaces, which leads to a non-convergence of the numerical solution. The error is not decreasing as expected, and the solution is not smooth across the interfaces. This issue is likely due to the Nitsche's method implementation or the way the bilinear forms are defined across the interfaces. Even by moving the values of constant $\gamma_u$ to different values, the solution is not converging as expected\dots
+As we can see in figures \ref{fig:ux_multipatch} and \ref{fig:uy_multipatch}, the displacement field on the x-axis is not continuous across the interfaces, which leads to non-convergence of the numerical solution. The error is not decreasing as expected, and the solution is not smooth across the interfaces. This issue is likely due to the Nitsche's method implementation or the way the bilinear forms are defined across the interfaces. Even by changing the values of constant $\gamma_u$ to different values, the solution is not converging as expected...
 
 \begin{figure}[!h]
 	\centering
@@ -1652,8 +1653,8 @@ As we can see on figures \ref{fig:ux_multipatch} and \ref{fig:uy_multipatch}, th
 	\caption{Error plots on a multipatch domain with degree $p = 2$ B-Splines}
 \end{figure}
 
-Looking at the error plots across the number of cells, the error on the displacement field seems to be constant, while the error on the temperature field is decreasing. To a certain extent, the error on temperature is decreasing as expected\dots
-One can suppose that the Nitsche's method is not enforcing the continuity of the displacement field across the interfaces properly, leading to the observed constant error. But, this problem needs further investigation and potentially a different approach to ensure the continuity of the displacement field across the interfaces.
+Looking at the error plots across the number of cells, the error on the displacement field seems to be constant, while the error on the temperature field is decreasing. To a certain extent, the error on temperature is decreasing as expected...
+One can suppose that the Nitsche's method is not enforcing the continuity of the displacement field across the interfaces properly, leading to the observed constant error. However, this problem needs further investigation and potentially a different approach to ensure the continuity of the displacement field across the interfaces.
 
 \section{Conclusion}
 
