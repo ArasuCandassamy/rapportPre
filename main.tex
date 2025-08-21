@@ -240,7 +240,7 @@ literate=
 
 This report presents the work conducted during a research internship at the Max-Planck Institute for Plasma Physics in the Numerical Methods for Plasma Physics department. This report is focusing on the implementation and validation of solid mechanics equations using the \texttt{Psydac}, a finite element library on Python.
 
-The primary objective of this internship was to explore and extend Psydac's capabilities to solve partial differential equations from solid mechanics, which had not been previously tested in this library. The work focused on two main areas: linear elasticity and stationary thermoelasticity problems and their execution on a supercomputer. For linear elasticity, two different formulations, pure displacement and mixed displacement-pressure formulations were implemented and analyzed. 
+The primary objective of this internship was to explore and extend Psydac's capabilities to solve partial differential equations from solid mechanics, which had not been previously tested in this library. The work focused on two main areas: linear elasticity and stationary thermoelasticity problems and their execution on a supercomputer. For linear elasticity, two formulations, pure displacement and mixed displacement-pressure formulations, were implemented and analyzed. 
 
 The thermoelasticity study involved solving coupled thermo-mechanical problems on composite materials with spatially varying properties. This work required the development of enhanced discretization capabilities, including the implementation of custom grid discretization features to handle material property discontinuities. Additionally, a multipatch framework was explored to address complex geometries with holes, utilizing Nitsche's method for interface coupling.
 
@@ -304,15 +304,15 @@ This internship would not have been the same without all of these wonderful peop
 \newpage
 \chapter{Introduction}
 
-This report presents the work conducted during a three-month research internship at the Max Planck Institute for Plasma Physics (IPP) from May to August 2025. The IPP is one of Europe's leading research institutions dedicated to fusion energy research, with two main sites in Garching near Munich and Greifswald. The institute focuses on developing the scientific and technological foundations for fusion power plants, conducting experiments on major facilities like ASDEX Upgrade and Wendelstein 7-X stellarator. \\
+The Max Planck Institute of Plasma Physics (IPP) is one of the leading research institutions dedicated to fusion energy research, with two main sites in Garching near Munich and Greifswald. The institute focuses on developing the scientific and technological foundations for fusion power plants, conducting experiments on major facilities like ASDEX Upgrade and Wendelstein 7-X stellarator. \\
 
-Within IPP, the Numerical Methods for Plasma Physics (NMPP) department plays a crucial role in developing advanced computational tools for plasma simulations. The department is responsible for creating and maintaining several high-performance computing libraries that support the institute's research activities. Among these tools, \texttt{GEMPIC} (Geometric Electromagnetic Particle-In-Cell) provides sophisticated particle simulation capabilities for kinetic plasma modeling, while \texttt{Struphy} offers specialized structure-preserving algorithms for long-term plasma evolution studies. These libraries collectively form a comprehensive computational ecosystem that enables researchers to tackle the challenging multi-physics problems inherent in fusion plasma research.\\
+At IPP, the Numerical Methods for Plasma Physics (NMPP) department plays a crucial role in developing advanced computational tools for plasma physics simulations. The department is responsible for creating and maintaining several high-performance computing libraries that support the institute's research activities. Among these tools, \texttt{GEMPIC} (Geometric Electromagnetic Particle-In-Cell) provides sophisticated particle simulation capabilities for kinetic plasma modelling, while \texttt{Struphy} offers specialized structure-preserving algorithms for long-term plasma evolution studies. These libraries collectively form a comprehensive computational ecosystem that enables researchers to tackle the challenging multi-physics problems inherent in fusion plasma research.\\
 
-At the heart of this computational infrastructure lies \texttt{Psydac}, a state-of-the-art finite element library that implements isogeometric analysis using B-splines and NURBS. Originally developed for plasma physics applications, \texttt{Psydac} leverages the power of spline-based discretizations to achieve high-order accuracy while maintaining geometric flexibility. The library incorporates advanced features such as multipatch domains, parallel computing capabilities, and integration with high-performance computing environments. Its modular design, built upon \texttt{SymPDE} for symbolic problem formulation and \texttt{Pyccel} for code acceleration, makes it particularly well-suited for solving complex partial differential equations across various physics domains.\\
+\texttt{Psydac} is a finite element library developed by NMPP. It implements isogeometric analysis using B-splines and NURBS to solve partial differential equations from plasma physics. \texttt{Psydac} leverages the power of spline-based discretizations to achieve high-order accuracy while maintaining geometric flexibility. The library incorporates advanced features such as multipatch domains, parallel computing capabilities, and integration with high-performance computing environments. Its modular design, built upon \texttt{SymPDE} for symbolic problem formulation and \texttt{Pyccel} for code acceleration, makes it particularly well-suited for solving complex partial differential equations across various physics domains.\\
 
-The primary objective of this internship was to explore and extend \texttt{Psydac}'s capabilities beyond its traditional plasma physics applications into the realm of solid mechanics. This work involved implementing and validating solutions for linear elasticity and thermoelasticity problems, areas that had not been previously tested within the library's framework. The research encompassed two main directions: developing pure displacement and mixed displacement-pressure formulations for elasticity problems, and addressing thermoelasticity challenges involving composite materials with spatially varying properties.\\
+The primary objective of this internship was to explore \texttt{Psydac}'s capabilities to solve equations from solid mechanics. This work involved implementing and validating solutions for linear elasticity and stationary thermoelasticity problems, areas that had not been previously tested within the library's framework. The research encompassed two main directions: developing pure displacement and mixed displacement-pressure formulations for linear elasticity problems, and addressing thermoelasticity challenges involving composite materials with spatially varying properties.\\
 
-This report is structured into two main chapters that document the progression of this work. Chapter 2 focuses on linear elasticity, beginning with the mathematical foundations and weak formulations, followed by extensive numerical simulations using \texttt{Psydac} on the Raven supercomputer. Special attention is given to the comparison between pure displacement and mixed formulations, particularly in the context of nearly incompressible materials where volumetric locking becomes a significant concern. Chapter 3 addresses thermoelasticity problems, starting with a simplified geometry before tackling the full complexity of composite materials with material property discontinuities. This chapter also presents the development of enhanced discretization capabilities, including custom grid features that were specifically implemented to handle material interfaces. The work concludes with an exploration of multipatch frameworks for complex geometries, demonstrating \texttt{Psydac}'s versatility in handling domains with holes using Nitsche's method for interface coupling.\\
+This report is structured into two main chapters that document the progression of this work. Chapter 2 focuses on linear elasticity, beginning with the mathematical foundations and its well-posedness, followed by extensive numerical simulations using \texttt{Psydac} on the Raven supercomputer. Special attention is given to the comparison between two formulations, particularly in the context of nearly incompressible materials where volumetric locking becomes a significant concern. Chapter 3 addresses the stationary thermoelasticity problem. This problem is inspired by a real application presented at the IPP Days (two days of presentations and discussions on the latest advancements in plasma physics and fusion research). It starts with a resolution on a simplified geometry, before exploring a more complex configuration with a multipatch domain. This chapter will briefly present a feature that I have implemented to handle discretisation on a custom grid.\\
 
 Through this comprehensive study, the internship shows \texttt{Psydac}'s potential for broader engineering applications while contributing new capabilities to the library's functionality. The results validate the effectiveness of isogeometric analysis for solid mechanics problems and highlight both the advantages and challenges of extending specialized plasma physics tools to other domains.
 
@@ -321,14 +321,14 @@ Through this comprehensive study, the internship shows \texttt{Psydac}'s potenti
 
 \section{Physical Model and Strong Formulation}
 The following presentation of the context of work and physical background comes from \cite{gould_introduction_2013} and \cite{ern_theory_2004}.
-Let's denote by $\Omega \subset \mtr^3$ a deformable medium characterized by $\lambda$ and $\mu$ Lamé's coefficient ($\lambda, \mu > 0$). $\Omega$ is a bounded open domain with lipschitzian boundary. $\lambda$ is called Lamé's first coefficient, $\mu$ is the shear modulus. These coefficient are related to the Young modulus and Poisson coefficient of the medium. The deformable medium is under an external load $\vec f : \Omega \rightarrow \mtr^3$. Then, we are looking for $\vec u : \Omega \rightarrow \mtr^3$ the displacement field, when the equilibrium is reached. 
+Let's denote by $\Omega \subset \mtr^3$ a deformable medium characterized by $\lambda$ and $\mu$ Lamé's coefficients ($\lambda, \mu > 0$). $\Omega$ is a bounded open domain with lipschitzian boundary. $\lambda$ is called Lamé's first coefficient, $\mu$ is the shear modulus. These coefficients are related to the Young's modulus and Poisson's ratio of the medium. The deformable medium is under an external load $\vec f : \Omega \rightarrow \mtr^3$. Then, we are looking for $\vec u : \Omega \rightarrow \mtr^3$ the displacement field, when the equilibrium is reached. 
 
 The material verifies the following equilibrium condition : 
 \begin{equation}
 \label{eq:equilibrium}
     \div \boldsymbol{\sigma} (\vec u) + \vec f = \vec 0 \text{ in } \Omega,
 \end{equation}
-where $\boldsymbol{\sigma} (\vec u)$ is the Cauchy Stress Tensor, defined by $\boldsymbol{\sigma} (\vec u) = C : \boldsymbol{\varepsilon} (\vec u)$. $C$ is the fourth-order stiffness tensor and $\boldsymbol{\varepsilon} (\vec u) := \frac{1}{2}(\grad \vec u + (\grad \vec u)^T)$ is the strain tensor. In the context of linear elascity, the relation between $\boldsymbol{\varepsilon} (\vec u)$ and $\boldsymbol{\sigma} (\vec u)$ is simpler : 
+where $\boldsymbol{\sigma} (\vec u)$ is the Cauchy Stress Tensor, defined by $\boldsymbol{\sigma} (\vec u) = C : \boldsymbol{\varepsilon} (\vec u)$. $C$ is the fourth-order stiffness tensor and $\boldsymbol{\varepsilon} (\vec u) := \frac{1}{2}(\grad \vec u + (\grad \vec u)^T)$ is the strain tensor. In the context of linear elasticity, the relation between $\boldsymbol{\varepsilon} (\vec u)$ and $\boldsymbol{\sigma} (\vec u)$ is simpler : 
 
 \begin{equation}
 \label{eq:hooklaw}
@@ -347,7 +347,7 @@ For boundary conditions, there are two types of boundary conditions : Dirichlet 
 
 Let's decompose $\partial \Omega$ as $\partial \Omega_D$ and $\partial \Omega_N$ such that $\partial \Omega_D \cup \partial \Omega_N = \partial \Omega$, $\partial \Omega_D \cap \partial \Omega_N = \emptyset$. Let's denote by $\vec t_N : \partial \Omega_N \rightarrow \mtr^3$ the normal traction force and $\vec n$ the normal vector of $\partial \Omega$ outside-oriented. We can consider the boundary displacement on $\partial \Omega_D$ as equal to $\vec 0$. 
 
-In case of non-homogenous boundary conditions $\vec g : \partial \Omega_D \rightarrow \mtr^3$, we can solve the problem for $\vec u - \vec g$ by modifying the source term. Then, the solution of linear elasticity problem should verify :
+In case of non-homogeneous boundary conditions $\vec g : \partial \Omega_D \rightarrow \mtr^3$, we can solve the problem for $\vec u - \vec g$ by modifying the source term. Then, the solution of linear elasticity problem should verify :
 $
 \left\{ \begin{array}{ll}
 \vec u = \vec 0 & \partial \Omega_D \\
@@ -355,7 +355,7 @@ $
 \end{array} \right.
 $
 
-Physically, $\vec f$ is a "volume force" on $\Omega$ and $\vec t_N$ is a "surface force". 
+Physically, $\vec f$ is a "body force" on $\Omega$ and $\vec t_N$ is a "surface traction". 
 The strong formulation of this problem is : \\
 For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(\partial \Omega_N)$, find $\vec u \in \boldsymbol H^1(\Omega)$ such that : 
 
@@ -365,7 +365,7 @@ For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(
 \left\{
 \begin{aligned}
     & - \div \boldsymbol{\sigma} (\vec u) = \vec f & \text{ in } & \Omega \hspace{1cm} \text{(Equilibrium)}\\
-    & \boldsymbol{\sigma} (\vec u) = \lambda (\div \vec u) I_3 + \mu (\grad \vec u + (\grad \vec u)^T) & \text{ in }& \Omega \hspace{1cm} \text{(Hook's law)} \\
+    & \boldsymbol{\sigma} (\vec u) = \lambda (\div \vec u) I_3 + \mu (\grad \vec u + (\grad \vec u)^T) & \text{ in }& \Omega \hspace{1cm} \text{(Hooke's law)} \\
     & \vec u = \vec 0 & \text{ in } &\partial \Omega_D \\
     & \boldsymbol{\sigma} (\vec u) \cdot \vec n = \vec t_N & \text{ in }& \partial \Omega_N
 \end{aligned}
@@ -377,13 +377,13 @@ where $\boldsymbol L^2(\Omega) = \left(L^2(\Omega) \right)^3, \boldsymbol L^2(\p
 
 \section{Pure displacement weak-formulation} \label{sec:Pure displacement weak-formulation}
 
-To derive the weak formulation from \eqref{eq:strong_form}, let's introduce the following functionnal space : $\boldsymbol H^1_{\vec 0,D}(\Omega) = \left\{ \vec v \in \boldsymbol H^1(\Omega) \Big| \vec v_{|\partial\Omega_D} = \vec 0 \right\},$
-which is a sub-hilbert space of $\boldsymbol H^1(\Omega)$ equipped with the same dot product (as a closed space of a Hilbert space). By taking the scalar product of the equilibrium equation from \eqref{eq:strong_form} with $\vec v \in \left(H^1_{\vec 0,D}(\Omega) \right)^3$ and applying a Green's formula, one gets that :
-$\int_\Omega \boldsymbol{\sigma} (\vec u) : (\grad \vec v) \dif V - \int_{\partial\Omega} \left(\boldsymbol{\sigma} (\vec u).\vec n \right).\vec v \dif S = \int_\Omega \vec f . \vec v \dif V$
+To derive the weak formulation from \eqref{eq:strong_form}, let's introduce the following functional space : $\boldsymbol H^1_{\vec 0,D}(\Omega) = \left\{ \vec v \in \boldsymbol H^1(\Omega) \Big| \vec v_{|\partial\Omega_D} = \vec 0 \right\},$
+which is a sub-Hilbert space of $\boldsymbol H^1(\Omega)$ equipped with the same inner product (as a closed space of a Hilbert space). By taking the scalar product of the equilibrium equation from \eqref{eq:strong_form} with $\vec v \in \left(H^1_{\vec 0,D}(\Omega) \right)^3$ and applying a Green's formula, one obtains :
+$\int_\Omega \boldsymbol{\sigma} (\vec u) : (\grad \vec v) \dif \Omega - \int_{\partial\Omega} \left(\boldsymbol{\sigma} (\vec u).\vec n \right).\vec v \dif \Gamma = \int_\Omega \vec f . \vec v \dif \Omega$
 
-One can remark that with \eqref{eq:hooklaw}, the tensor $\boldsymbol \sigma (\vec u)$ is symetric. It implies that : 
+One can remark that with \eqref{eq:hooklaw}, the tensor $\boldsymbol \sigma (\vec u)$ is symmetric. It implies that : 
 $\boldsymbol \sigma (\vec u) : \grad \vec v = \boldsymbol \sigma(\vec u) : \boldsymbol \varepsilon (\vec v)$
-Moreover, $\vec v \in \left(H^1_{\vec 0,D}(\Omega) \right)^3$, then $\vec v_{|\partial\Omega_D} = \vec 0$. So the weak formulation can be simplified into : 
+Moreover, $\vec v \in \left(H^1_{\vec 0,D}(\Omega) \right)^3$, then $\vec v_{|\partial\Omega_D} = \vec 0$. Thus, the weak formulation can be simplified to : 
 
 \begin{tcolorbox}
 \begin{equation}
@@ -406,29 +406,29 @@ With :
         & a : \left\{
         \begin{aligned}
             &\boldsymbol H^1_{\vec 0,D}(\Omega) \times \boldsymbol H^1_{\vec 0,D}(\Omega)  \rightarrow \mtr \\
-            &(\vec u,\vec v)  \longmapsto \int_\Omega \boldsymbol \sigma(\vec u) : \boldsymbol \varepsilon (\vec v) \dif V = \int_\Omega \lambda (\div \vec u) (\div \vec v) \dif V+ \int_\Omega 2\mu \boldsymbol \varepsilon(\vec u): \boldsymbol \varepsilon (\vec v)\dif V
+            &(\vec u,\vec v)  \longmapsto \int_\Omega \boldsymbol \sigma(\vec u) : \boldsymbol \varepsilon (\vec v) \dif \Omega = \int_\Omega \lambda (\div \vec u) (\div \vec v) \dif \Omega+ \int_\Omega 2\mu \boldsymbol \varepsilon(\vec u): \boldsymbol \varepsilon (\vec v)\dif \Omega
         \end{aligned}
         \right. \\
     	& l : \left\{
         \begin{aligned}
             &\boldsymbol H^1_{\vec 0,D}(\Omega) \rightarrow \mtr \\
-            &\vec v \longmapsto \int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega_N} \vec t_N.\vec v \dif S
+            &\vec v \longmapsto \int_\Omega \vec f . \vec v \dif \Omega + \int_{\partial\Omega_N} \vec t_N.\vec v \dif \Gamma
         \end{aligned}
         \right.
     \end{aligned}
 \end{equation*}
-In continuum mechanics, \eqref{eq:weakdisplacementform} is called the Principle of Virtual Work. Let's look at the well-posedness of \eqref{eq:weakdisplacementform}. Before starting, let's remind some notations and lemmas. \\
+In continuum mechanics, \eqref{eq:weakdisplacementform} is known as the Principle of Virtual Work. Let's look at the well-posedness of \eqref{eq:weakdisplacementform}. Before starting, let's recall some notations and lemmas. \\
 
-$\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsymbol H^1(\Omega), \norm{\vec v}_{\boldsymbol H^1(\Omega)} = \left(\sum_{i=1}^3 \norm{v}_{H^1(\Omega)} \right)^{1/2}$. 
+$\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsymbol H^1(\Omega), \norm{\vec v}_{\boldsymbol H^1(\Omega)} = \left(\sum_{i=1}^3 \norm{v}_{H^1(\Omega)}^2 \right)^{1/2}$. 
 \begin{lemma}
 \begin{enumerate}
-    \item $\displaystyle \forall \vec u \in \boldsymbol H^1(\Omega)$, $\int_\Omega (\div \vec u)^2 \dif V \leq 3 \norm{\vec u}_{\boldsymbol H^1(\Omega)}^2$
+    \item $\displaystyle \forall \vec u \in \boldsymbol H^1(\Omega)$, $\int_\Omega (\div \vec u)^2 \dif \Omega \leq 3 \norm{\vec u}_{\boldsymbol H^1(\Omega)}^2$
     \item $\displaystyle \forall \vec u \in \boldsymbol H^1(\Omega)$,$\boldsymbol \varepsilon(\vec u) : \boldsymbol \varepsilon(\vec u) \leq \grad \vec u : \grad \vec u$
     Then : $\int_\Omega \boldsymbol \varepsilon(\vec u) : \boldsymbol \varepsilon(\vec u) \dif\Omega \leq \int_\Omega \grad \vec u : \grad \vec u \dif \Omega \leq \norm{\vec u}_{\boldsymbol H^1(\Omega)}^2$
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-    By calculus, or a detailed version in \cite{cinatl_finite}
+    By direct computation, or a detailed version in \cite{cinatl_finite}
 \end{proof}
 
 \begin{lemma}
@@ -465,12 +465,13 @@ $\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsy
     & \leq \left( \norm{\vec f}_{\boldsymbol L^2(\Omega)} + \norm{\gamma_0} \norm{\vec t_N}_{\boldsymbol L^2(\partial \Omega_N)}\right)\norm{\vec v}_{\boldsymbol H^1(\Omega)}\\
     \end{aligned}
     \end{equation*}
+	Where $\gamma_0$ is the trace operator.
     \item $a(.,.)$ is continuous: 
     \begin{equation*}
         \begin{aligned}
         \forall \vec u, \vec v \in \boldsymbol H^1_{\vec 0,D}(\Omega), \left| a(\vec u, \vec v) \right| 
-        & \leq \left| a(\vec u, \vec u) \right|^{1/2} \left| a(\vec v, \vec v) \right|^{1/2} & \text{By Cauchy-Schwarz Inequlity as $a(.,.)$ is} \\
-        & & \text{a symetric and positive bilinear form} \\
+        & \leq \left| a(\vec u, \vec u) \right|^{1/2} \left| a(\vec v, \vec v) \right|^{1/2} & \text{By the Cauchy-Schwarz Inequality as $a(.,.)$ is} \\
+        & & \text{a symmetric and positive bilinear form} \\
         \left| a(\vec u, \vec v) \right| & \leq (3\lambda + 2\mu)\norm{\vec u}_{\boldsymbol H^1(\Omega)}\norm{\vec v}_{\boldsymbol H^1(\Omega)}.
         \end{aligned}
     \end{equation*}
@@ -479,14 +480,14 @@ $\norm{.}_{\boldsymbol H^1(\Omega)}$ is defined as : $\forall \vec v \in \boldsy
             \item If $\Omega_D = \Omega$, then $\boldsymbol H^1_{\vec 0,D}(\Omega) = \boldsymbol H^1_{\vec 0}(\Omega)$ and we can apply \textbf{Lemma \ref{Korn1}} : there exists $C > 0$ such that:
             \begin{equation*}
                 \begin{aligned}
-                    \forall \vec u \in \boldsymbol H^1_{\vec 0,D}(\Omega), \hspace{0.3cm} a(u,u) 
-                    &= \int_\Omega \lambda (\div \vec u)^2 \dif V + \int_\Omega 2\mu \boldsymbol \varepsilon(\vec u): \boldsymbol \varepsilon (\vec u)\dif V \\
+                    \forall \vec u \in \boldsymbol H^1_{\vec 0,D}(\Omega), \hspace{0.3cm} a(\vec u, \vec u) 
+                    &= \int_\Omega \lambda (\div \vec u)^2 \dif \Omega + \int_\Omega 2\mu \boldsymbol \varepsilon(\vec u): \boldsymbol \varepsilon (\vec u)\dif \Omega \\
                     & \geq 2\mu \norm{\boldsymbol \varepsilon(\vec u)}_{\boldsymbol{L}^2(\Omega)} \\
-                    a(u,u) & \geq 2\mu C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}^2
+                    a(\vec u, \vec u) & \geq 2\mu C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}^2
                 \end{aligned}
             \end{equation*}
             \item If $\Omega_D \subsetneq \Omega$, we can now apply \textbf{Lemma \ref{Korn2}} : there exists $C >0$ such that:
-            $\forall \vec u \in \boldsymbol H^1_{\vec 0,D}(\Omega), \hspace{0.3cm}a(u,u) \geq 2\mu C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}$
+            $\forall \vec u \in \boldsymbol H^1_{\vec 0,D}(\Omega), \hspace{0.3cm}a(\vec u, \vec u) \geq 2\mu C \norm{\vec u}_{\boldsymbol{H}^1(\Omega)}^2$
         \end{itemize}
 \end{itemize}
 
@@ -498,23 +499,23 @@ When, $\left| \Omega_D \right| = 0$, \eqref{eq:weakdisplacementform} turns into 
 \left\{
     \begin{aligned}
     &\text{Find } \vec u \in \boldsymbol H^1(\Omega) \text{ such that :}\\
-    & a(\vec u,\vec v) = \int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega} \vec t_N.\vec v \dif S =:l(\vec v) \hspace{0.5cm} \forall \vec v \in \boldsymbol H^1(\Omega)
+    & a(\vec u,\vec v) = \int_\Omega \vec f . \vec v \dif \Omega + \int_{\partial\Omega} \vec t_N.\vec v \dif \Gamma =:l(\vec v) \hspace{0.5cm} \forall \vec v \in \boldsymbol H^1(\Omega)
     \end{aligned}
 \right.
 \end{equation}
 \end{tcolorbox}
 
-This problem isn't really well-posed. Regarding to the Rigid Displacement Field (translations and rotations) $\boldsymbol{\mathcal{R}} = \left\{\vec v \in \boldsymbol H^1(\Omega) \left| \exists x_1, x_2 \in \mtr^3, \vec v(x) = x_1 + x_2 \times x \right. \right\}$, $\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm} \div v = 0 \text{ and } \boldsymbol \varepsilon(\vec v) = 0.$
+This problem is not truly well-posed. Regarding the Rigid Displacement Field (translations and rotations) $\boldsymbol{\mathcal{R}} = \left\{\vec v \in \boldsymbol H^1(\Omega) \left| \exists a, b \in \mtr^3, \vec v(x) = a + b \times x \right. \right\}$, $\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm} \div v = 0 \text{ and } \boldsymbol \varepsilon(\vec v) = 0.$
 Then : $\forall \vec u \in \boldsymbol H^1(\Omega), \forall \vec v \in \boldsymbol{\mathcal{R}},\hspace{0.3cm} a(\vec u, \vec v)= 0.$
-So, the weak formulation \eqref{eq:puretractionproblem} is solvable iff the following compatibility equality holds : $\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm}\int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega} \vec t_N.\vec v \dif S = 0,$
-and in this case, there exists an unique solution $\vec u \in \hat{\boldsymbol H}^1(\Omega) := \left\{\vec v \in \boldsymbol H^1(\Omega) \left| \displaystyle \int_\Omega \vec v \dif V = \int_\Omega  \curl \vec v \dif V = \vec 0 \right. \right\}$ 
+So, the weak formulation \eqref{eq:puretractionproblem} is solvable iff the following compatibility condition holds : $\forall \vec v \in \boldsymbol{\mathcal{R}}, \hspace{0.3cm}\int_\Omega \vec f . \vec v \dif \Omega + \int_{\partial\Omega} \vec t_N.\vec v \dif \Gamma = 0,$
+and in this case, there exists an unique solution $\vec u \in \hat{\boldsymbol H}^1(\Omega) := \left\{\vec v \in \boldsymbol H^1(\Omega) \left| \displaystyle \int_\Omega \vec v \dif \Omega = \int_\Omega  \curl \vec v \dif \Omega = \vec 0 \right. \right\}$ 
 In case of \textbf{Pure Traction Problem}, we are looking for a solution modulo a rigid displacement field.
 \textit{A more rigorous proof of the equivalence can be found in \cite{brenner_mathematical_2008} and \cite{chen_variational}.}
 
 
 \section{Numerical simulation using \texttt{PSYDAC} on the Supercomputer Raven}
 
-\texttt{PSYDAC} is high-level programming IDE and very intuitive to use. It is using \texttt{SymPDE} and \texttt{Pyccel}. \texttt{SymPDE} implements in \texttt{Python} abstract objects (Functionnal Space, diffential operators, linear and bilinear forms...). \texttt{Pyccel} is a transpiler, used to convert a \texttt{Python} Code into a \texttt{C} or \texttt{Fortran} code, in order to take advantage from code acceleration and parallelization. The figure \ref{fig:Dependancy_Psydac} summarize the dependancy between \texttt{PSYDAC}, \texttt{SymPDE} and \texttt{Pyccel}. A more detailled presentation of \texttt{PSYDAC} can be found in \cite{guclu_psydac_2022}.
+\texttt{PSYDAC} is a high-level programming IDE and very intuitive to use. It uses \texttt{SymPDE} and \texttt{Pyccel}. \texttt{SymPDE} implements in \texttt{Python} abstract objects (Functional Space, diffential operators, linear and bilinear forms...). \texttt{Pyccel} is a transpiler, used to convert a \texttt{Python} Code into a \texttt{C} or \texttt{Fortran} code, in order to take advantage from code acceleration and parallelization. The figure \ref{fig:Dependancy_Psydac} summarize the dependancy between \texttt{PSYDAC}, \texttt{SymPDE} and \texttt{Pyccel}. A more detailled presentation of \texttt{PSYDAC} can be found in \cite{guclu_psydac_2022}.
 
 \begin{figure}[!h]
     \centering
@@ -809,7 +810,7 @@ As we can see in figure \ref{fig:error_kappa_degree_4}, the convergence is not r
 One way to avoid this issue is to use a mixed formulation, where the pressure field is introduced as an additional variable. This will be presented in the next section.
 
 \section{Mixed displacement-pressure formulation}
-To introduce this formulation, let's consider again the strong formulation from \eqref{eq:strong_form}. Then, denotes by $p$ the pressure field, defined by $\displaystyle p = - \lambda \div{\vec u}$. As we are seeking $\vec u \in \boldsymbol{H}^1(\Omega)$, $p$ is naturally living in $L^2(\Omega)$. Then Hook's law can be rewritten : $\boldsymbol{\sigma} (\vec u,p) = -p I_3 + 2\mu \boldsymbol{\varepsilon(\vec u)} \text{ in }  \Omega $ \\
+To introduce this formulation, let's consider again the strong formulation from \eqref{eq:strong_form}. Then, denotes by $p$ the pressure field, defined by $\displaystyle p = - \lambda \div{\vec u}$. As we are seeking $\vec u \in \boldsymbol{H}^1(\Omega)$, $p$ is naturally living in $L^2(\Omega)$. Then Hooke's law can be rewritten : $\boldsymbol{\sigma} (\vec u,p) = -p I_3 + 2\mu \boldsymbol{\varepsilon(\vec u)} \text{ in }  \Omega $ \\
 So the strong formulation can be re-write as : For a given $\vec f \in \boldsymbol L^2(\Omega)$, $\vec t_N \in \boldsymbol L^2(\partial \Omega_N)$, find $(\vec u, p) \in \boldsymbol H^1(\Omega)\times L^2(\Omega)$ such that : 
 
 \begin{tcolorbox}
@@ -847,14 +848,14 @@ With :
 		& \tilde{a} : \left\{
 		\begin{aligned}
 			&\left( \boldsymbol H^1_{\vec 0,D}(\Omega) \times L^2(\Omega) \right)^2 \rightarrow \mtr \\
-			&((\vec u,p),(\vec v,q))  \longmapsto \int_\Omega \left( 2\mu \boldsymbol{\varepsilon}(\vec u) : \boldsymbol{\varepsilon}(\vec v) - p (\div \vec v) + (\div \vec u)q + \frac{1}{\lambda} pq \right) \dif V
+			&((\vec u,p),(\vec v,q))  \longmapsto \int_\Omega \left( 2\mu \boldsymbol{\varepsilon}(\vec u) : \boldsymbol{\varepsilon}(\vec v) - p (\div \vec v) + (\div \vec u)q + \frac{1}{\lambda} pq \right) \dif \Omega
 		\end{aligned}
 		\right. \\
 		& l : 
 		\left\{
 		\begin{aligned}
 			&\boldsymbol H^1_{\vec 0,D}(\Omega) \rightarrow \mtr \\
-			&\vec v \longmapsto \int_\Omega \vec f . \vec v \dif V + \int_{\partial\Omega_N} \vec t_N.\vec v \dif S
+			&\vec v \longmapsto \int_\Omega \vec f . \vec v \dif \Omega + \int_{\partial\Omega_N} \vec t_N.\vec v \dif \Gamma
 		\end{aligned}
 		\right.
 	\end{aligned}
@@ -1475,7 +1476,7 @@ where $d^\ell$ is the continuous differential operator. This guarantees the \emp
 
 This multipatch combined with the broken-FEEC approach provides:
 \begin{enumerate}
-    \item \textbf{Geometric flexibility}: each patch can have its own parametrization, allowing the exact modeling of complex CAD geometries;
+    \item \textbf{Geometric flexibility}: each patch can have its own parametrization, allowing the exact modelling of complex CAD geometries;
     \item \textbf{Computational locality}: operators and projections involve only neighboring patches, enhancing scalability for large-scale parallel simulations.
 \end{enumerate}
 
@@ -1523,7 +1524,7 @@ This method consist to add a penalty term to the bilinear forms that involves th
 Consequently, the bilinear forms are redefined as follows:
 
 \begin{align*}
-a(u,v) &= a_\Omega(u,v) + \sum_{i,j} a_{ij}(u,v) \\
+a(\vec u,\vec v) &= a_\Omega(\vec u,\vec v) + \sum_{i,j} a_{ij}(\vec u,\vec v) \\
 b(T,\Theta) &= b_\Omega(T,\Theta) + \sum_{i,j} b_{ij}(T,\Theta)
 \end{align*}
 With : 
